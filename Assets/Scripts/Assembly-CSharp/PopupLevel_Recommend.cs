@@ -39,7 +39,7 @@ public class PopupLevel_Recommend : MonoBehaviour
 
 	public TUILabel label_btn_buy_press;
 
-	private string weapon_texture_path = "TUI/Weapon/";
+	private string weapon_texture_path = "Artist/Textures/Weapon/";
 
 	private Vector3 role_normal_pos = Vector3.zero;
 
@@ -140,8 +140,11 @@ public class PopupLevel_Recommend : MonoBehaviour
 		}
 		img_role.texture = string.Empty;
 		img_role.gameObject.SetActiveRecursively(false);
-		string weaponTexture = TUIMappingInfo.Instance().GetWeaponTexture(id);
-		SetCustomizeTexture(img_weapon, weapon_texture_path + weaponTexture);
+		UITextureUtil.LoadWeaponLikeIcon(
+			img_weapon,
+			id,
+			weapon_texture_path
+		);
 		img_weapon.gameObject.SetActiveRecursively(true);
 		level_stars.SetStars(level_need);
 		level_stars.gameObject.SetActiveRecursively(true);
@@ -261,7 +264,7 @@ public class PopupLevel_Recommend : MonoBehaviour
 		}
 		else
 		{
-			m_sprite.CustomizeRect = new Rect(0f, 0f, m_sprite.CustomizeTexture.width, m_sprite.CustomizeTexture.height);
+			m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
 		}
 	}
 

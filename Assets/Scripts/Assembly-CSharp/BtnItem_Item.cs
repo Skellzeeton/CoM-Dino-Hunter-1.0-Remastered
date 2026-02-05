@@ -16,7 +16,7 @@ public class BtnItem_Item : MonoBehaviour
 
 	private TUIPopupInfo popup_info;
 
-	private string weapon_texture_path = "TUI/Weapon/";
+	private string weapon_texture_path = "Artist/Textures/Weapon/";
 
 	private string skill_texture_path = "TUI/Skill/";
 
@@ -89,28 +89,23 @@ public class BtnItem_Item : MonoBehaviour
 		case Popup_Show.PopupType.Weapons03:
 		{
 			string weaponTexture = TUIMappingInfo.Instance().GetWeaponTexture(popup_info.texture_id);
-			if (m_use_customize)
+			if (string.IsNullOrEmpty(weaponTexture))
 			{
-				SetCustomizeTexture(img_normal, weapon_texture_path + weaponTexture);
-				SetCustomizeTexture(img_pressed, weapon_texture_path + weaponTexture);
+				Debug.LogWarning("Missing weapon texture mapping for id: " + popup_info.texture_id);
+				break;
 			}
-			else
-			{
-				if (img_normal != null)
-				{
-					img_normal.texture = weaponTexture;
-				}
-				if (img_pressed != null)
-				{
-					img_pressed.texture = weaponTexture;
-				}
-			}
+
+			// Always load like ScrollList_WeaponItem so material is assigned
+			SetCustomizeTexture(img_normal, weapon_texture_path + weaponTexture);
+			SetCustomizeTexture(img_pressed, weapon_texture_path + weaponTexture);
+
 			if (img_bg != null)
 			{
 				img_bg.gameObject.SetActiveRecursively(false);
 			}
 			break;
 		}
+
 		case Popup_Show.PopupType.Props:
 		{
 			string stashTexture = TUIMappingInfo.Instance().GetStashTexture(popup_info.texture_id);
@@ -151,7 +146,7 @@ public class BtnItem_Item : MonoBehaviour
 		}
 		else
 		{
-			m_sprite.CustomizeRect = new Rect(0f, 0f, m_sprite.CustomizeTexture.width, m_sprite.CustomizeTexture.height);
+			m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
 		}
 	}
 

@@ -11,7 +11,7 @@ public class BtnSelect_Item : MonoBehaviour
 
 	private TUIPopupInfo popup_info;
 
-	private string weapon_texture_path = "TUI/Weapon/";
+	private string weapon_texture_path = "Artist/Textures/Weapon/";
 
 	private string texture_mark = "new";
 
@@ -35,10 +35,15 @@ public class BtnSelect_Item : MonoBehaviour
 		case Popup_Show.PopupType.Weapons02:
 		case Popup_Show.PopupType.Weapons03:
 		{
-			string weaponTexture = TUIMappingInfo.Instance().GetWeaponTexture(popup_info.texture_id);
+			string weaponTexture = TUIMappingInfo.Instance().GetWeaponTexture(texture_id);
+			if (string.IsNullOrEmpty(weaponTexture))
+			{
+				Debug.LogWarning("Missing weapon texture mapping for id: " + texture_id);
+				return;
+			}
 			if (img_item != null)
 			{
-				img_item.texture = weaponTexture;
+				SetGoodsCustomizeTexture(img_item, weapon_texture_path + weaponTexture);
 			}
 			break;
 		}
@@ -74,7 +79,7 @@ public class BtnSelect_Item : MonoBehaviour
 		}
 		else
 		{
-			m_sprite.CustomizeRect = new Rect(0f, 0f, m_sprite.CustomizeTexture.width, m_sprite.CustomizeTexture.height);
+			m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
 		}
 	}
 

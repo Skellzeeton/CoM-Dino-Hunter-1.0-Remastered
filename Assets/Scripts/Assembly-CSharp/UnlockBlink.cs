@@ -14,7 +14,7 @@ public class UnlockBlink : MonoBehaviour
 
 	private float now_time;
 
-	private string weapon_path = "TUI/Weapon/";
+	private string weapon_path = "Artist/Textures/Weapon/";
 
 	private string skill_path = "TUI/Skill/";
 
@@ -52,22 +52,23 @@ public class UnlockBlink : MonoBehaviour
 	public void OpenBlinkWeapon(int m_id, string m_text, bool m_use_customize = false)
 	{
 		open_blink = true;
-		base.transform.localPosition = new Vector3(0f, 0f, base.transform.localPosition.z);
+		transform.localPosition = new Vector3(0f, 0f, transform.localPosition.z);
+
 		string weaponTexture = TUIMappingInfo.Instance().GetWeaponTexture(m_id);
-		if (m_use_customize)
+		if (string.IsNullOrEmpty(weaponTexture))
 		{
-			SetCustomizeTexture(img_texture, weapon_path + weaponTexture);
+			Debug.LogWarning("Missing weapon texture mapping for id: " + m_id);
+			return;
 		}
-		else if (img_texture != null)
-		{
-			img_texture.texture = weaponTexture;
-		}
+		SetCustomizeTexture(img_texture, weapon_path + weaponTexture);
 		if (img_texture.GetComponent<Animation>() != null)
 		{
 			img_texture.GetComponent<Animation>().Play();
 		}
+
 		label_text.Text = m_text;
 	}
+
 
 	public void OpenBlinkSkill(int m_id, string m_text, bool m_use_customize = false)
 	{
@@ -143,7 +144,7 @@ public class UnlockBlink : MonoBehaviour
 		}
 		else
 		{
-			m_sprite.CustomizeRect = new Rect(0f, 0f, m_sprite.CustomizeTexture.width, m_sprite.CustomizeTexture.height);
+			m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
 		}
 	}
 }
