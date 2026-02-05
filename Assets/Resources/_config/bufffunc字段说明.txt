@@ -1,0 +1,129 @@
+//
+//
+public enum kProEnum
+{
+    None = 0,
+    HPMax,          //
+    MoveSpeed,      //
+    MoveSpeedAcc,   //
+    Damage,         //
+    Protect,        //
+    Critical,       //
+    CriticalDmg,    //
+    ResistBeatBack,         //
+    FreezeTimeMinuseRate,   //
+    EquipStoneUp,           //
+    Invincible,             //
+
+
+    Split0 = 50,            //
+    All_Dmg,                //()
+    All_Dmg_Rate,           //()
+    All_Speed,              //
+    All_BeatBack,           //
+    All_Critical,           //()
+    All_CriticalDmg,        //()
+    All_Protect,            //
+    All_Capacity,           //
+
+
+    Split1 = 100,
+    Melee_Dmg,              //()
+    Melee_Dmg_Rate,         //()
+    Melee_Speed,            //
+    Melee_BeatBack,         //
+    Melee_Critical,         //()
+    Melee_CriticalDmg,      //()
+    Melee_Protect,          //
+
+    Split2 = 200,
+    Range_Dmg,              //()
+    Range_Dmg_Rate,         //()
+    Range_Speed,            //
+    Range_BeatBack,         //
+    Range_Critical,         //()
+    Range_CriticalDmg,      //()
+    Range_Protect,          //
+
+    Split3 = 300,
+    Crossbow_Dmg,              //()
+    Crossbow_Dmg_Rate,         //()
+    Crossbow_Speed,            //
+    Crossbow_BeatBack,         //
+    Crossbow_Critical,         //()
+    Crossbow_CriticalDmg,      //()
+    Crossbow_Protect,          //
+
+    Split4 = 400,
+    AutoRifle_Dmg,              //()
+    AutoRifle_Dmg_Rate,         //()
+    AutoRifle_Speed,            //
+    AutoRifle_BeatBack,         //
+    AutoRifle_Critical,         //()
+    AutoRifle_CriticalDmg,      //()
+    AutoRifle_Protect,          //
+
+    Split5 = 500,
+    ShotGun_Dmg,              //()
+    ShotGun_Dmg_Rate,         //()
+    ShotGun_Speed,            //
+    ShotGun_BeatBack,         //
+    ShotGun_Critical,         //()
+    ShotGun_CriticalDmg,      //()
+    ShotGun_Protect,          //
+
+    Split6 = 600,
+    HoldGun_Dmg,              //()
+    HoldGun_Dmg_Rate,         //()
+    HoldGun_Speed,            //
+    HoldGun_BeatBack,         //
+    HoldGun_Critical,         //()
+    HoldGun_CriticalDmg,      //()
+    HoldGun_Protect,          //
+
+    Split7 = 700,
+    Rocket_Dmg,              //()
+    Rocket_Dmg_Rate,         //()
+    Rocket_Speed,            //
+    Rocket_BeatBack,         //
+    Rocket_Critical,         //()
+    Rocket_CriticalDmg,      //()
+    Rocket_Protect,          //
+    Rocket_AOE_Range,        //AOE
+
+    Split20 = 2000,
+    Skill_CD_Faster,        //CD()
+    Skill_CD_Faster_Rate,   //CD()
+    Skill_RushDamageUp,     //
+    Skill_RushBeatBackUp,   //
+    Skill_Heal_Up,          //
+    Skill_BuffTime_Up,      //BUFF
+    Skill_BuffDmg_Up,       //BUFF
+    Skill_BuufDefence_Up,   //BUFF
+    Skill_BuffSS_Up,        //BUFF
+
+    Split30 = 3000,
+    Char_MoveSpeedUp,       //
+    Char_RecoverLife,       //
+    Char_MSEquip_Off,       //
+    Char_IncreaseGold,      //
+    Char_IncreaseExp,       //
+
+
+
+}
+
+<!--
+
+ 0
+ 1
+ 2
+ 3
+
+
+ 0
+ 1
+
+-->
+							                valuex                            valuey
+1                 : :        : :

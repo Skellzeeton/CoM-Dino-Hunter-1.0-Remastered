@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: blink_03
+  m_Shader: {fileID: 4800000, guid: 54b17cdae6b0fe7448273a85b278aaaa, type: 3}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 885c902cf842c7d4caae18221ea63478, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Shininess
+      second: 0.078125
+    - first:
+        name: _Parallax
+      second: 0.02
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.23134327, g: 0.15793929, b: 0.10013365, a: 0.60784316}
+    - first:
+        name: _SpecColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - first:
+        name: _AtmoColor
+      second: {r: 0.2370795, g: 0.6277911, b: 0.96268654, a: 0.5921569}

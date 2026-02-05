@@ -1,0 +1,362 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1019424302562948}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1019424302562948
+GameObject:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4767833683206514}
+  - 114: {fileID: 114568126053937907}
+  m_Layer: 0
+  m_Name: GameUI_PauseDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4767833683206514
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019424302562948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114568126053937907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019424302562948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
+  m_Name:
+  material: {fileID: 2100000, guid: 3173f4cb114abfd459da34b0d54b2652, type: 2}
+  sprites:
+  - name: guanbi
+    outer:
+      serializedVersion: 2
+      x: 443
+      y: 954
+      width: 64
+      height: 70
+    inner:
+      serializedVersion: 2
+      x: 443
+      y: 954
+      width: 64
+      height: 70
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: lvanniu
+    outer:
+      serializedVersion: 2
+      x: 192
+      y: 745
+      width: 204
+      height: 76
+    inner:
+      serializedVersion: 2
+      x: 192
+      y: 745
+      width: 204
+      height: 76
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: wuqikuang2
+    outer:
+      serializedVersion: 2
+      x: 252
+      y: 842
+      width: 190
+      height: 182
+    inner:
+      serializedVersion: 2
+      x: 279
+      y: 874
+      width: 137
+      height: 102
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: whitepixel
+    outer:
+      serializedVersion: 2
+      x: 253
+      y: 838
+      width: 2
+      height: 2
+    inner:
+      serializedVersion: 2
+      x: 253
+      y: 838
+      width: 2
+      height: 2
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: yinyue_guan
+    outer:
+      serializedVersion: 2
+      x: 397
+      y: 732
+      width: 84
+      height: 89
+    inner:
+      serializedVersion: 2
+      x: 397
+      y: 732
+      width: 84
+      height: 89
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0.011235955
+  - name: shengyin_kai
+    outer:
+      serializedVersion: 2
+      x: 443
+      y: 894
+      width: 63
+      height: 59
+    inner:
+      serializedVersion: 2
+      x: 443
+      y: 894
+      width: 63
+      height: 59
+    paddingLeft: 0.14285715
+    paddingRight: 0.1904762
+    paddingTop: 0.20338982
+    paddingBottom: 0.3220339
+  - name: yinyue_kai
+    outer:
+      serializedVersion: 2
+      x: 247
+      y: 687
+      width: 48
+      height: 57
+    inner:
+      serializedVersion: 2
+      x: 247
+      y: 687
+      width: 48
+      height: 57
+    paddingLeft: 0.3125
+    paddingRight: 0.4375
+    paddingTop: 0.2631579
+    paddingBottom: 0.31578946
+  - name: yingpian_guan
+    outer:
+      serializedVersion: 2
+      x: 128
+      y: 507
+      width: 84
+      height: 89
+    inner:
+      serializedVersion: 2
+      x: 128
+      y: 507
+      width: 84
+      height: 89
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0.011235955
+  - name: shengyin_guan
+    outer:
+      serializedVersion: 2
+      x: 213
+      y: 507
+      width: 84
+      height: 89
+    inner:
+      serializedVersion: 2
+      x: 213
+      y: 507
+      width: 84
+      height: 89
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0.011235955
+  - name: yingpian_kai
+    outer:
+      serializedVersion: 2
+      x: 192
+      y: 687
+      width: 54
+      height: 57
+    inner:
+      serializedVersion: 2
+      x: 192
+      y: 687
+      width: 54
+      height: 57
+    paddingLeft: 0.2777778
+    paddingRight: 0.2777778
+    paddingTop: 0.19298245
+    paddingBottom: 0.3859649
+  - name: sj_3
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 822
+      width: 251
+      height: 202
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 822
+      width: 251
+      height: 202
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: sj_1
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 501
+      width: 127
+      height: 95
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 501
+      width: 127
+      height: 95
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: neikuang2
+    outer:
+      serializedVersion: 2
+      x: 427
+      y: 601
+      width: 72
+      height: 72
+    inner:
+      serializedVersion: 2
+      x: 442
+      y: 616
+      width: 39
+      height: 35
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: sj_2
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 674
+      width: 191
+      height: 147
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 674
+      width: 191
+      height: 147
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: title_shuijing
+    outer:
+      serializedVersion: 2
+      x: 443
+      y: 831
+      width: 58
+      height: 62
+    inner:
+      serializedVersion: 2
+      x: 443
+      y: 831
+      width: 58
+      height: 62
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: neikuang1
+    outer:
+      serializedVersion: 2
+      x: 298
+      y: 525
+      width: 71
+      height: 71
+    inner:
+      serializedVersion: 2
+      x: 309
+      y: 535
+      width: 52
+      height: 50
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: kafeianniu
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 597
+      width: 204
+      height: 76
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 597
+      width: 204
+      height: 76
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: youxizhong_iaptitlebg
+    outer:
+      serializedVersion: 2
+      x: 205
+      y: 607
+      width: 221
+      height: 66
+    inner:
+      serializedVersion: 2
+      x: 205
+      y: 607
+      width: 221
+      height: 66
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}

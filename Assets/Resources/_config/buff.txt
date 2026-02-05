@@ -1,0 +1,56 @@
+<!--
+	slot 			BUFF,0 - 9
+	priority 	BUFF
+	functime 	buff(0)
+	effhold		buff"prefab, kBonePart"
+	effadd		buff"prefab, kBonePart"
+	effdel		buff"prefab, kBonePart"
+						kBonePart 0.  1.  2.  3.  4.  5.  6.
+audioeffhold	buff
+audioeffadd		buff
+audioeffdel		buff
+
+-->
+<root>
+<!-- 150% -->
+	<buff id="1" slot="1" priority="1" effhold="1203,3" effadd="1202,3" func="1" valuex="4" valuey="65686"/>
+	<!-- 10 -->
+	<buff id="2" slot="1" priority="1" func="1" valuex="65538" valuey="10"/>
+	<!-- 10,10 -->
+	<buff id="3" slot="1" priority="1" effhold="6001,3" effadd="6000,3" func="1,1" valuex="201,311" valuey="10,10"/>
+	<!-- 10 -->		
+	<buff id="4" slot="0" priority="1" func="1" valuex="2" valuey="10"/>
+	<!-- 30% -->		
+	<buff id="5" slot="0" priority="1" func="1" valuex="65538" valuey="65566"/>
+	<!-- 5 -->		
+	<buff id="6" slot="0" priority="1" functime="1" func="9" valuex="0" valuey="120"/>
+	<!-- 50% -->
+	<buff id="7" slot="1" priority="1" effhold="1205,3" effadd="1204,3" func="1" valuex="5" valuey="65586"/>
+	<!-- BUFF -->
+	<buff id="8" slot="1" priority="1" effhold="" effadd="1206,3" func="1" valuex="5" valuey="65586"/>
+	<!-- BUFF -->
+	<buff id="9" slot="1" priority="1" effhold="" effadd="1200,3" func="1" valuex="5" valuey="65586"/>
+	<!-- BUFF -->
+	<buff id="10" slot="2" priority="1" effhold="1205,3" effadd="1200,3" func="1" valuex="11" valuey="1"/>
+	
+	
+<!-- *********************************** start by 101************************************************************************* -->
+<!-- 150% -->
+	<buff id="101" slot="1" priority="1" effhold="1203,3" effadd="1202,3" func="1" valuex="52" valuey="50" audioeffadd="Skill_Power_up"/>	
+	<!-- 50% -->
+	<buff id="102" slot="1" priority="1" effhold="1205,3" effadd="1204,3" func="1" valuex="5" valuey="50" audioeffadd="Skill_Defense_up"/>
+	<!-- BUFF -->
+	<buff id="103" slot="1" priority="1" effhold="" effadd="1206,3" audioeffadd="Skill_Stealth_on" audioeffdel="Skill_Stealth_off"/>
+	<!-- BUFF -->
+	<buff id="104" slot="1" priority="1" effhold="" effadd="1200,3" audioeffadd="Skill_Hp_up"/>
+	
+	
+	
+<!-- ***********************************BUFF ID************************************************************************* -->
+<!--  1 -->
+	<buff id="4001" slot="1" priority="1"  func="1" valuex="2" valuey="65546"/>
+  <buff id="4002" slot="1" priority="1"  func="1" valuex="2" valuey="65556"/>
+	<buff id="4003" slot="1" priority="1"  func="1" valuex="2" valuey="65566"/>
+	<buff id="4004" slot="1" priority="1"  func="1" valuex="2" valuey="65576"/>
+	<buff id="4005" slot="1" priority="1"  func="1" valuex="2" valuey="65586"/>
+</root>

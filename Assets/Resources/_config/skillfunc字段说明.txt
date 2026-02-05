@@ -1,0 +1,27 @@
+public const int None       = 0;
+public const int Property   = 1;    //1                         : :             : :
+public const int AtkDmg     = 2;    //2                                                                @
+public const int AddBuff    = 3;    //3          BUFF                  BUFFID                           
+public const int BeatBack   = 4;    //4                                                              
+public const int DmgByAtk   = 5;    //5      x%         : :            @
+public const int Spawn      = 6;    //6                           ID                       ID
+public const int AtkDmgRange = 7;   //7                                                         
+public const int DmgByAtkRange = 8; //8     x%      : :                                  
+public const int Heal       = 9;    //9                                                           
+public const int Stealth    = 10;   //10                                  (s)
+public const int Stun       = 11;   //11            
+    public const int AddGold    = 100;  //100                               
+    public const int AddExp     = 101;  //101                               
+    public const int AddMaterial = 102; //102                               ID                        
+    /*
+    public enum kSkillProEnum
+    {
+        RemainTime = 0, //
+        BuffUp,         //BUFF
+        DamageUp,       //
+        BeatBack,       //
+        CDDown,         //CD
+        BuffUpID,       //BUFFID
+    }
+     */
+    public const int SkillPro = 12;   //12                          : :ID          

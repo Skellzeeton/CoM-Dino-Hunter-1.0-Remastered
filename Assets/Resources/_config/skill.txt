@@ -1,0 +1,291 @@
+<root>
+		<!-- 
+			type 					0: 1:
+			rangetype			0: 1:
+
+			rangetypevalue  0:","
+											1:",,[0360],[0]"
+			
+			targetlimit		0: 1: 2: 3:
+			skillmode 		1: 2: 3: 4: 5: 6:
+										
+			skillmodevalue	1:"[0-1]"
+										  2:","
+										  3:",[0 1]"
+										  4:",[0]"
+										  5:", ID, [kBonePart], , , , "
+										  6: ",,"
+										  
+										
+			timehold			
+			timepoint 		,0-1
+			name					
+			desc					
+			action				ID,,
+			bloodprefab		ID
+			limitfunc 		
+ 												                                 valuex                        valuey
+                      1                        : :           
+			
+		-->
+	<skillinfo>
+		<!-- *********************************** start by 1************************************************************************* -->
+		<!-- BUFF 4 12 -->
+		<skill id="1" lvl="1" type="0" targetlimit="3" action="13" rangetype="0" rangetypevalue="" skillmode="1" skillmodevalue="0.3" func="3,9" valuex="3,50" valuey="12,0"/>
+		<skill id="2" lvl="1" type="0" func="7" valuex="100" valuey="10"/>
+		<skill id="3" lvl="1" type="0" func="5,4" valuex="100,2" valuey="0,0"/>
+		<skill id="4" lvl="1" type="1" func="1" valuex="1" valuey="65546"/>
+		<skill id="4" lvl="2" type="1" func="1,1" valuex="9,2001" valuey="50,1"/>
+		<!-- 10 -->
+		<skill id="5" lvl="1" type="0" targetlimit="3" action="13" skillmode="1" skillmodevalue="0.3" func="3" valuex="7" valuey="10"/>
+		<!-- BUFF 6 12 -->
+		<skill id="6" lvl="1" type="0" targetlimit="3" action="13" rangetype="0" rangetypevalue="" skillmode="1" skillmodevalue="0.3" func="3" valuex="6" valuey="12"/>
+		<!--   +  -->
+		<skill id="7" lvl="1" type="0" action="4" rangetype="1" rangetypevalue="0,4,0,0" skillmode="6" skillmodevalue="10,1,0.2,8" func="5,4,11" valuex="100,2,5" valuey="0,0,0"/>
+		
+		<!-- *********************************** start by 1000************************************************************************* -->
+		<!-- :50% -->
+		<skill id="503" lvl="1" type="1" func="1" valuex="1" valuey="65586"/>
+		
+		<!-- *********************************** start by 10000************************************************************************* -->
+		<!-- 0.5s[0-5] -->
+		<skill id="10000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,8" skillmode="3" skillmodevalue="0.1" />	
+		<!--  -->
+		<skill id="10001" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,8" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 4s[5-50] -->
+		<skill id="10002" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,50" skillmode="3" skillmodevalue="4" />	
+		<!--  -->
+		<skill id="10003" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="0,5" skillmode="4" skillmodevalue="2,0" func="5,4" valuex="100,5" valuey="0,0" />
+				
+		<!-- 0.5s[5-50] -->
+		<skill id="10004" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,50" skillmode="3" skillmodevalue="4" />	
+		<!--  -->
+		<skill id="10005" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,5" skillmode="4" skillmodevalue="2,0" func="5,4" valuex="200,5" valuey="0,0"/>
+		
+		<!-- *********************************** start by 20000************************************************************************* -->
+		<!-- 0.5s[0-5] -->
+		<skill id="20000" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="0,5" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="20001" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,7" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 0.5s[10-30] -->
+		<skill id="20002" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,30" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="20003" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="10,30" skillmode="5" skillmodevalue="0.5,170,6,20,0,70,1" func="5" valuex="200" valuey="0"/>
+		
+		<!-- 0.5s[0-10] -->
+		<skill id="20004" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="0,10" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="20005" lvl="1" type="0" action="10004" rangetype="1" rangetypevalue="0,10,0,0" skillmode="1" skillmodevalue="0.3" func="5,4" valuex="200,5" valuey="0,100"/>
+
+		<!--  -->
+		<skill id="20006" lvl="1" type="0" action="2504" rangetype="0" rangetypevalue="10,20" skillmode="4" skillmodevalue="2, -5" />	
+		<!-- ,200% 5 -->
+		<skill id="20007" lvl="1" type="0" action="1000" rangetype="1" rangetypevalue="0,7,120,0" skillmode="1" skillmodevalue="0.3" func="5,4" valuex="200,5" valuey="0,0"/>
+		
+		<!--  -->
+		<skill id="20008" lvl="1" type="0" action="2504" rangetype="0" rangetypevalue="10,20" skillmode="4" skillmodevalue="0, -5" />	
+		<!-- ,200% 5 -->
+		<skill id="20009" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,10" skillmode="1" skillmodevalue="0.3" func="5,4" valuex="200,5" valuey="0,0"/>
+		
+		<!--  -->
+		<skill id="20010" lvl="1" type="0" action="2504" rangetype="0" rangetypevalue="10,20" skillmode="4" skillmodevalue="2, -5" />
+		<!-- ,200% 5 -->
+		<skill id="20011" lvl="1" type="0" action="10004" rangetype="1" rangetypevalue="0,10,0,0" skillmode="1" skillmodevalue="0.3" func="5,4" valuex="200,5" valuey="0,0"/>
+		
+		<!-- 0.5s[10-30] -->
+		<skill id="20012" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,30" skillmode="3" skillmodevalue="0.5" />	
+		<!--  2 -->
+		<skill id="20013" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="10,30" skillmode="5" skillmodevalue="0.2,175,7,20,0,70,2" func="5" valuex="200" valuey="0"/>
+		
+		<!-- 0.5s[10-30] -->
+		<skill id="20014" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,30" skillmode="3" skillmodevalue="0.3" />	
+		<!--  3 -->
+		<skill id="20015" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="10,30" skillmode="5" skillmodevalue="0.2,175,7,20,0,70,3" func="5" valuex="200" valuey="0"/>
+		
+		<!--  25% -->
+		<skill id="20050" lvl="1" type="1" func="1" valuex="2" valuey="65561"/>
+		<!--  25% -->
+		<skill id="20051" lvl="1" type="1" func="1" valuex="2" valuey="65561"/>			
+		<!--  50% -->
+		<skill id="20052" lvl="1" type="1" func="1" valuex="2" valuey="65586"/>
+		<!--  75% -->
+		<skill id="20053" lvl="1" type="1" func="1" valuex="2" valuey="65611"/>	
+		
+		<!-- *********************************** start by 30000************************************************************************* -->
+		<!-- 0.1s[0-3] -->
+		<skill id="30000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,3" skillmode="3" skillmodevalue="0.1" />	
+		<!--  -->
+		<skill id="30001" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,4" skillmode="1" skillmodevalue="0.4" func="5" valuex="100" valuey="0" />
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="30002" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="3,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="30003" lvl="1" type="0" action="2504" rangetype="0" rangetypevalue="3,20" skillmode="4" skillmodevalue="2,-2" />
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="30004" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="10,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="30005" lvl="1" type="0" action="2504" rangetype="0" rangetypevalue="10,20" skillmode="4" skillmodevalue="0,-2" />
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="30006" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="30007" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="0,4" skillmode="6" skillmodevalue="20,5,0.5" func="5,4" valuex="100,2" valuey="0,0" />
+		<!--  -->
+		<skill id="30008" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,4" skillmode="1" skillmodevalue="0.5" func="4" valuex="2" valuey="0" />
+		
+		<!--  +50 -->
+		<skill id="30100" lvl="1" type="1" func="1" valuex="9" valuey="50" />
+		
+		<!-- *********************************** start by 40000************************************************************************* -->
+		<!-- 0.5s[0-5] -->
+		<skill id="40000" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="0,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="40001" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="0,20" skillmode="5" skillmodevalue="0.5,171,6,40,0,0,1" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="40002" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="40003" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="10,20" skillmode="5" skillmodevalue="0.5,171,6,40,0,0,1" func="5" valuex="100" valuey="0"/>
+		<!--  -->
+		<skill id="40004" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="10,20" skillmode="5" skillmodevalue="0.5,171,6,40,0,0,1" func="5" valuex="100" valuey="0"/>
+		<!--  -->
+		<skill id="40005" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="10,20" skillmode="5" skillmodevalue="0.5,171,6,40,45,0,1" func="5" valuex="100" valuey="0"/>
+		<!--  -->
+		<skill id="40006" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="10,20" skillmode="5" skillmodevalue="0.5,171,6,40,-45,0,1" func="5" valuex="100" valuey="0"/>
+		<!-- 2 -->
+		<skill id="40007" lvl="1" type="0" action="10005" rangetype="1" rangetypevalue="5,10" skillmode="5" skillmodevalue="0.7,173,6,5,0,70,2" func="5" valuex="100" valuey="0"/>
+		<!-- 4 -->
+		<skill id="40008" lvl="1" type="0" action="10005" rangetype="1" rangetypevalue="5,10" skillmode="5" skillmodevalue="0.7,173,6,5,0,70,4" func="5" valuex="100" valuey="0"/>
+		
+		<!-- *********************************** start by 50000************************************************************************* -->
+		<!-- 0.5s[0-5] -->
+		<skill id="50000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,5" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="50001" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,7" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="50002" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="50003" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="0,20" skillmode="5" skillmodevalue="0.5,175,6,30,0,45,3" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="50004" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="10,20" skillmode="3" skillmodevalue="1" />	
+		<!--  -->
+		<skill id="50005" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,4" skillmode="6" skillmodevalue="20,1,0.5" func="5,4" valuex="100,2" valuey="0,0"/>
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="50006" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,20" skillmode="3" skillmodevalue="0.5" />
+		<!--  -->
+		<skill id="50007" lvl="1" type="0" action="10004" rangetype="1" rangetypevalue="0,4,0" skillmode="1" skillmodevalue="0.2" func="5,4" valuex="100,5" valuey="0,0"/>	
+
+		<!-- *********************************** start by 60000************************************************************************* -->
+		<!-- 0.5s[0-5] -->
+		<skill id="60000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,5" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="60001" lvl="1" type="0" action="1000" rangetype="1" rangetypevalue="0,7,60,0" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 0.5s[0-5] -->
+		<skill id="60002" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,10" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="60003" lvl="1" type="0" action="10001" rangetype="1" rangetypevalue="0,12,60,0" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+		
+		<!-- 0.5s[10-20] -->
+		<skill id="60004" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="10,20" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="60005" lvl="1" type="0" action="2504" rangetype="0" rangetypevalue="10,20" skillmode="4" skillmodevalue="2,-5"/>
+		
+		<!-- 0.5s[0-10] -->
+		<skill id="60006" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,10" skillmode="3" skillmodevalue="0.5" />	
+		<!--  -->
+		<skill id="60007" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="0,5" skillmode="1" skillmodevalue="0.8" func="5,4" valuex="100,2" valuey="0,0"/>
+		
+		<!-- 1.5s[10-20] -->
+		<skill id="60008" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="10,20" skillmode="3" skillmodevalue="1.5,0" />	
+		<!--  -->
+		<skill id="60009" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,5" skillmode="6" skillmodevalue="20,2,0.5" func="5,4" valuex="100,2" valuey="0,0"/>
+		<!--  -->
+		<skill id="60010" lvl="1" type="0" action="10005" rangetype="0" rangetypevalue="0,5" skillmode="1" skillmodevalue="0.5" />
+	</skillinfo>
+
+	<comboinfo>	
+		<!-- *********************************** start by 10000************************************************************************* -->
+		<!--  -->
+		<combo id="10000" skilllist="10000,10001" /> 
+		<!--  -->
+		<combo id="10001" skilllist="10002,10003" /> 
+		<!--  -->
+		<combo id="10002" skilllist="10004,10005" /> 
+		
+		<!-- *********************************** start by 20000************************************************************************* -->
+		<!--  -->
+		<combo id="20000" skilllist="20000,20001" /> 
+		<!--  -->
+		<combo id="20001" skilllist="20002,20003" />
+		<!--  -->
+		<combo id="20002" skilllist="20004,20005" />
+		<!--  -->
+		<combo id="20003" skilllist="20006,20007" />
+		<!--  -->
+		<combo id="20004" skilllist="20008,20009" />
+		<!--  -->
+		<combo id="20005" skilllist="20010,20011" />
+		<!-- 2 -->
+		<combo id="20006" skilllist="20012,20013" />
+		<!-- 3 -->
+		<combo id="20007" skilllist="20014,20015" />
+		
+		<!-- *********************************** start by 30000************************************************************************* -->
+		<!--  -->
+		<combo id="30000" skilllist="30000,30001" /> 
+		<!--  -->
+		<combo id="30001" skilllist="30006,30007,30008" /> 
+		<!--  -->
+		<combo id="30002" skilllist="30002,30003,30001" /> 
+		<!--  -->
+		<combo id="30003" skilllist="30004,30005,30001" /> 
+		
+		<!-- *********************************** start by 40000************************************************************************* -->
+		<!--  -->
+		<combo id="40000" skilllist="40000,40001" /> 
+		<!--  -> -->
+		<combo id="40001" skilllist="40002,40005,40006" /> 
+		<!--  -> -->
+		<combo id="40002" skilllist="40002,40006,40005" /> 
+		<!--  ->-> -->
+		<combo id="40003" skilllist="40002,40005,40004,40006" /> 
+		<!--   -->
+		<combo id="40004" skilllist="40002,40007" /> 
+		<!--   -->
+		<combo id="40005" skilllist="40002,40008" /> 
+		
+		<!-- *********************************** start by 50000************************************************************************* -->
+		<!--  -->
+		<combo id="50000" skilllist="50000,50001" /> 
+		<!--  -->
+		<combo id="50001" skilllist="50002,50003" /> 
+		<!--  -->
+		<combo id="50002" skilllist="50004,50005" /> 
+		<!--  -->
+		<combo id="50003" skilllist="50004,50005,50007" /> 
+		
+		<!-- *********************************** start by 60000************************************************************************* -->
+		<!--  -->
+		<combo id="60000" skilllist="60000,60001" /> 
+		<!--  -->
+		<combo id="60001" skilllist="60002,60003" /> 
+		<!--  -->
+		<combo id="60002" skilllist="60004,60005,60001" /> 
+		<!--  -->
+		<combo id="60003" skilllist="60004,60005,60003" /> 
+		<!--  -->
+		<combo id="60004" skilllist="60006,60007" /> 
+		<!--  -->
+		<combo id="60005" skilllist="60004,60005,60007" /> 
+		<!--  -->
+		<combo id="60006" skilllist="60008,60009,60010" /> 
+		
+	</comboinfo>
+</root>
