@@ -292,7 +292,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="1" recommandlevel="3" islimit="false" />
 	</gamelevel>
 
-		<gamelevel id="5004" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="5004001,5004002,5004003" task="5004"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="15004" dropcount="1" dropcountrate="100" exp="48"  gold="25" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
+		<gamelevel id="5004" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="5004001,5004002,5004003" task="5004"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="15004" dropcount="1" dropcountrate="100" exp="48"  gold="25" desc="Kill all dinos\nMelee weapons only" name="Dino Slaughter" proccess="1" limitmelee="true">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>

@@ -143,6 +143,10 @@ public class iGameLevelCenter
 			{
 				gameLevelInfo.m_nProccess = int.Parse(value);
 			}
+			if (MyUtils.GetAttribute(childNode, "limitmelee", ref value))
+			{
+				gameLevelInfo.m_bLimitMelee = bool.Parse(value);
+			}
 			foreach (XmlNode childNode2 in childNode.ChildNodes)
 			{
 				if (childNode2.Name == "MonsterNumLimit")

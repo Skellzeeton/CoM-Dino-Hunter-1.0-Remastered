@@ -63,6 +63,8 @@ public class GameLevelInfo
 	public bool m_bRecommandLimit;
 
 	public int m_nProccess;
+	
+	public bool m_bLimitMelee;
 
 	public GameLevelInfo()
 	{

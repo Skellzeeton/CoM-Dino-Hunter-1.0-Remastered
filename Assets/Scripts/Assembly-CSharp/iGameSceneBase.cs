@@ -651,19 +651,42 @@ public class iGameSceneBase
 			}
 		}
 		bool flag = false;
-		for (int j = 0; j < 3; j++)
+		if (CurGameLevelInfo.m_bLimitMelee)
 		{
-			CWeaponBase weapon = m_GameState.GetWeapon(j);
-			if (weapon != null && weapon.CurWeaponLvlInfo != null && weapon.CurWeaponLvlInfo.nType != 1)
+			for (int j = 0; j < 3; j++)
 			{
-				m_User.SwitchWeapon(j);
-				flag = true;
-				break;
+				CWeaponBase weapon = m_GameState.GetWeapon(j);
+				if (weapon != null &&
+				    weapon.CurWeaponLvlInfo != null &&
+				    weapon.CurWeaponLvlInfo.nType == 1)
+				{
+					m_User.SwitchWeapon(j);
+					flag = true;
+					break;
+				}
 			}
 		}
+		else
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				CWeaponBase weapon = m_GameState.GetWeapon(j);
+				if (weapon != null &&
+				    weapon.CurWeaponLvlInfo != null &&
+				    weapon.CurWeaponLvlInfo.nType != 1)
+				{
+					m_User.SwitchWeapon(j);
+					flag = true;
+					break;
+				}
+			}
+		}
+
 		if (!flag)
 		{
-			m_User.SwitchWeapon(0);
+			CWeaponBase weapon = m_GameState.GetWeapon(0);
+			if (weapon != null && weapon.CurWeaponLvlInfo != null)
+				m_User.SwitchWeapon(0);
 		}
 		if (m_GameUI != null)
 		{

@@ -315,6 +315,13 @@ public class CCharUser : CCharPlayer
 		{
 			return;
 		}
+		if (m_GameScene != null &&
+		    m_GameScene.CurGameLevelInfo != null &&
+		    m_GameScene.CurGameLevelInfo.m_bLimitMelee &&
+		    weaponInfo.nType != 1)
+		{
+			return;
+		}
 		m_nCurWeaponIndex = nIndex;
 		SetFire(false);
 		UnEquipWeapon();
