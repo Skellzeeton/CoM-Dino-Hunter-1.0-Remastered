@@ -76,6 +76,9 @@ public class iTaskCenter
 			case 6:
 				cTaskInfo = LoadAttributeInfinite(nID, childNode);
 				break;
+			case 7:
+				cTaskInfo = LoadAttributeTimed(nID, childNode);
+				break;
 			}
 			if (cTaskInfo == null)
 			{
@@ -207,5 +210,12 @@ public class iTaskCenter
 		cTaskInfoInfinite.nID = nID;
 		cTaskInfoInfinite.nType = 6;
 		return cTaskInfoInfinite;
+	}
+	protected CTaskInfoTimed LoadAttributeTimed(int nID, XmlNode node)
+	{
+		CTaskInfoTimed cTaskInfoTimed = new CTaskInfoTimed();
+		cTaskInfoTimed.nID = nID;
+		cTaskInfoTimed.nType = 7;
+		return cTaskInfoTimed;
 	}
 }

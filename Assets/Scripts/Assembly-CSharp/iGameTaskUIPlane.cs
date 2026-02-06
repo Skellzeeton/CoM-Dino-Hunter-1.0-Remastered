@@ -70,8 +70,8 @@ public class iGameTaskUIPlane : MonoBehaviour
 		case 5:
 			gameObject = m_GameUI.AddControl(2007, base.transform);
 			break;
-		case 6:
-			gameObject = m_GameUI.AddControl(2008, base.transform);
+		case 7:
+			gameObject = m_GameUI.AddControl(2005, base.transform);
 			break;
 		}
 		if (gameObject == null)

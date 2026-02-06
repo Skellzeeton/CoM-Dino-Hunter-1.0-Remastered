@@ -13,4 +13,7 @@ public class kTaskType
 	public const int Butcher = 5;
 
 	public const int Infinite = 6;
+	
+	public const int Timed = 7;
+
 }

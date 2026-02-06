@@ -17,7 +17,8 @@ public class LevelPointEx : MonoBehaviour
 		Killing = 1,
 		Defended = 2,
 		Steal = 3,
-		Survival = 4
+		Survival = 4,
+		Timed = 7
 	}
 
 	public int level_id;
@@ -65,6 +66,10 @@ public class LevelPointEx : MonoBehaviour
 	private string texture_steal01 = "furenwu_4";
 
 	private string texture_steal02 = "furenwu_4hui";
+	
+	private string texture_timed01 = "furenwu_2";
+
+	private string texture_timed02 = "furenwu_2hui";
 
 	private string texture_unchoose = "furenwudian";
 
@@ -256,6 +261,12 @@ public class LevelPointEx : MonoBehaviour
 			img_icon_press.texture = texture_survival02;
 			img_icon_disable.texture = texture_survival02;
 		}
+		else if (level_point_ex_type == LevelPointExType.Timed)
+		{
+			img_icon_normal.texture = texture_survival02;
+			img_icon_press.texture = texture_survival02;
+			img_icon_disable.texture = texture_survival02;
+		}
 		else
 		{
 			Debug.Log("warning! level type no set!");
@@ -287,6 +298,12 @@ public class LevelPointEx : MonoBehaviour
 			img_icon_disable.texture = texture_steal02;
 		}
 		else if (level_point_ex_type == LevelPointExType.Survival)
+		{
+			img_icon_normal.texture = texture_survival01;
+			img_icon_press.texture = texture_survival01;
+			img_icon_disable.texture = texture_survival02;
+		}
+		else if (level_point_ex_type == LevelPointExType.Timed)
 		{
 			img_icon_normal.texture = texture_survival01;
 			img_icon_press.texture = texture_survival01;

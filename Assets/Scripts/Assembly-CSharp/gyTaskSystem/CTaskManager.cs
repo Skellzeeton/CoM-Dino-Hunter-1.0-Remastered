@@ -136,24 +136,27 @@ namespace gyTaskSystem
 				CTaskBase cTaskBase = null;
 				switch (cTaskInfo.nType)
 				{
-				case 2:
-					cTaskBase = new CTaskHunter();
-					break;
-				case 1:
-					cTaskBase = new CTaskCollection();
-					break;
-				case 3:
-					cTaskBase = new CTaskDefence();
-					break;
-				case 4:
-					cTaskBase = new CTaskSurvival();
-					break;
-				case 5:
-					cTaskBase = new CTaskButcher();
-					break;
-				case 6:
-					cTaskBase = new CTaskInfinite();
-					break;
+					case 2:
+						cTaskBase = new CTaskHunter();
+						break;
+					case 1:
+						cTaskBase = new CTaskCollection();
+						break;
+					case 3:
+						cTaskBase = new CTaskDefence();
+						break;
+					case 4:
+						cTaskBase = new CTaskSurvival();
+						break;
+					case 5:
+						cTaskBase = new CTaskButcher();
+						break;
+					case 6:
+						cTaskBase = new CTaskInfinite();
+						break;
+					case 7:
+						cTaskBase = new CTaskTimed();
+						break;
 				}
 				if (cTaskBase != null)
 				{

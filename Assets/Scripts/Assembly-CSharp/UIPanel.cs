@@ -84,18 +84,18 @@ public class UIPanel : MonoBehaviour
 	/// Matrix that will transform the specified world coordinates to relative-to-panel coordinates.
 	/// </summary>
 
-	[HideInInspector] public Matrix4x4 worldToLocal = Matrix4x4.identity;
+	 public Matrix4x4 worldToLocal = Matrix4x4.identity;
 
 	// Panel's alpha (affects the alpha of all widgets)
-	[HideInInspector][SerializeField] float mAlpha = 1f;
+	[SerializeField] float mAlpha = 1f;
 
 	// Whether generated geometry is shown or hidden
-	[HideInInspector][SerializeField] DebugInfo mDebugInfo = DebugInfo.Gizmos;
+	[SerializeField] DebugInfo mDebugInfo = DebugInfo.Gizmos;
 
 	// Clipping rectangle
-	[HideInInspector][SerializeField] UIDrawCall.Clipping mClipping = UIDrawCall.Clipping.None;
-	[HideInInspector][SerializeField] Vector4 mClipRange = Vector4.zero;
-	[HideInInspector][SerializeField] Vector2 mClipSoftness = new Vector2(40f, 40f);
+	[SerializeField] UIDrawCall.Clipping mClipping = UIDrawCall.Clipping.None;
+	[SerializeField] Vector4 mClipRange = Vector4.zero;
+	[SerializeField] Vector2 mClipSoftness = new Vector2(40f, 40f);
 
 #if OLD_UNITY
 	// List of managed transforms
