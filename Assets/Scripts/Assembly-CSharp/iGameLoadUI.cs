@@ -43,9 +43,9 @@ public class iGameLoadUI : MonoBehaviour
 			gameState.m_sLoadScene = string.Empty;
 		}
         float multiplier = 1f;
-        if (Screen.width < 1280 && Screen.height < 960) multiplier = 1.5f;
-        else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 2.75f;
-        else multiplier = 2.5f;
+        if (Screen.width < 1280 && Screen.height < 960) multiplier = 1.25f;
+        else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 1.75f;
+        else multiplier = 1.5f;
         foreach (Transform item in m_UIManager.mParent)
         {
             if (item.name.IndexOf("Anchor") != -1)

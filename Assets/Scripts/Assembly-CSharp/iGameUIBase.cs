@@ -83,8 +83,8 @@ public class iGameUIBase : MonoBehaviour
         if (SceneScaler.ShouldScale())
         {
             if (Screen.width < 1280 && Screen.height < 960) multiplier = 1f;
-            else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 2.75f;
-            else multiplier = 2.5f;
+            else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 1.75f;
+            else multiplier = 1.5f;
         }
         foreach (Transform item in m_UIManager.mParent)
         {
