@@ -146,9 +146,17 @@ public class BtnItem_Item : MonoBehaviour
 		}
 		else
 		{
-			m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
+			if (m_path.Contains("Stoneskin"))
+			{
+				m_sprite.CustomizeRect = new Rect(0f, 0f, 96f, 114f);
+			}
+			else
+			{
+				m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
+			}
 		}
 	}
+
 
 	public void PlayAnimation()
 	{
