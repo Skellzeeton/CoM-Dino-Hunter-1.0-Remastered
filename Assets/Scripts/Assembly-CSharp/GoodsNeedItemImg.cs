@@ -39,18 +39,15 @@ public class GoodsNeedItemImg : MonoBehaviour
     private void SetGoodsCustomizeTexture(TUIMeshSprite m_sprite, string m_path)
     {
         if (m_sprite == null) return;
-
         m_sprite.texture = string.Empty;
         m_sprite.UseCustomize = true;
         m_sprite.CustomizeTexture = Resources.Load(m_path) as Texture;
-
         if (m_sprite.CustomizeTexture == null)
         {
             Debug.LogWarning("Missing texture: " + m_path);
         }
         else
         {
-            // Set fixed rect offset: X=0, Y=38, W=90, H=90
             m_sprite.CustomizeRect = new Rect(0f, 38f, 90f, 90f);
         }
     }
