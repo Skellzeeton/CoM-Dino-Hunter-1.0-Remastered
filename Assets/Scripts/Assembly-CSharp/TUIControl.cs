@@ -87,14 +87,13 @@ public class TUIControl : MonoBehaviour
 
 	protected static int CompareControl(TUIControl l, TUIControl r)
 	{
-		if (l.transform.position.z < r.transform.position.z)
-		{
-			return -1;
-		}
-		if (l.transform.position.z > r.transform.position.z)
-		{
-			return 1;
-		}
+		float lz = l.transform.position.z;
+		float rz = r.transform.position.z;
+		if (lz < rz) return -1;
+		if (lz > rz) return 1;
+		bool lb = l is TUIBlock;
+		bool rb = r is TUIBlock;
+		if (lb != rb) return lb ? 1 : -1;
 		return 0;
 	}
 
