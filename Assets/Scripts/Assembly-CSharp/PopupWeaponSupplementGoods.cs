@@ -142,10 +142,7 @@ public class PopupWeaponSupplementGoods : MonoBehaviour
         sprite.CustomizeTexture = null;
         sprite.CustomizeRect = new Rect(0f, 0f, 0f, 0f);
     }
-
-    // ----------------------------------------------------
-    // CUSTOM LOAD (NO ATLAS)
-    // ----------------------------------------------------
+    
     private void SetGoodsCustomizeTexture(TUIMeshSprite m_sprite, string m_path)
     {
         if (m_sprite == null) return;
@@ -160,14 +157,10 @@ public class PopupWeaponSupplementGoods : MonoBehaviour
         }
         else
         {
-            // Fixed optimized rect
             m_sprite.CustomizeRect = new Rect(0f, 38f, 90f, 90f);
         }
     }
-
-    // ----------------------------------------------------
-    // QUALITY
-    // ----------------------------------------------------
+    
     private string GetQualityType(GoodsQualityType m_type)
     {
         switch (m_type)
