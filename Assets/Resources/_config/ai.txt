@@ -29,7 +29,7 @@
 	<!-- BOSSAI -->
 		<ai id="30201" skill="30004,30001" skillrate="60,40" behavior="3" />		
 			<!-- BOSS -->
-		<ai id="30301" skill="30004,30001,30002,30003,30005,30006" skillrate="20,20,15,15,15,15" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
+		<ai id="30301" skill="30010,30007,30008,30009,30011,30012" skillrate="20,20,15,15,15,15" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
 	
 	
 	
@@ -65,7 +65,7 @@
 		<ai id="70201" skill="" skillrate="" behavior="3" />	
 		
 				<!--  -->
-		<ai id="80101" skill="50006" skillrate="100" behavior="1" />	
+		<ai id="80101" skill="50007" skillrate="100" behavior="1" />	
 	<!--  -->
 		<ai id="80201" skill="" skillrate="" behavior="3" />	
 	
@@ -195,7 +195,7 @@
 			<aimanager id="702" ai="70201" />	
 			
 			<!--  -->
-			<aimanager id="801" ai="70101" />		
+			<aimanager id="801" ai="80101" />		
 				<!--  -->
 			<aimanager id="802" ai="70201" />				
 	

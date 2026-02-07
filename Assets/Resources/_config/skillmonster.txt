@@ -154,7 +154,8 @@
 		<!-- 1s[0-3] -->
 		<skill id="30011" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,4" skillmode="3" skillmodevalue="1,0" />	
 		
-		
+		<skill id="30012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="0,2.5" skillmode="6" skillmodevalue="20,1,0.25" func="5,4" valuex="50,4" valuey="0,4" />
+
 		<!--  +50 -->
 		<skill id="30100" lvl="1" type="1" func="1" valuex="9" valuey="50" />
 		
@@ -216,7 +217,9 @@
 		<skill id="50008" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="3,15" skillmode="3" skillmodevalue="2.5,1" />	
 		<!--  30%-->
 		<skill id="50009" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,3" skillmode="6" skillmodevalue="15,1.8,0.25" func="5,4" valuex="30,2" valuey="0,2"/>
-
+		
+		<skill id="50010" lvl="1" type="0" action="10002" actionloop="0" rangetype="0" rangetypevalue="3,15" skillmode="3" skillmodevalue="1" />
+		<skill id="50011" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,3" skillmode="6" skillmodevalue="15,1.5,0.25,1405" func="5,4" valuex="30,3" valuey="0,0"/>
 
 
 		<!-- *********************************** start by 60000************************************************************************* -->
@@ -311,9 +314,21 @@
 		<!-- BOSS -->
 		<combo id="30004" skilllist="30009,30010" coldown="4" freezetime="2"/> 
 		<!--  -->
-		<combo id="30005" skilllist="30004,30005,30011,30007,30008" coldown="7" freezetime="3"/> 
+		<combo id="30005" skilllist="30004,30005,30011,30012,30008" coldown="7" freezetime="3"/> 
 		<!--  -->
 		<combo id="30006" skilllist="30004,30005,30011,30003,30010" coldown="7" freezetime="3"/> 
+		<!--  -->
+		<combo id="30007" skilllist="30006,30007,30008" coldown="6" freezetime="0"/> 
+		<!--  -->
+		<combo id="30008" skilllist="30002,30003,30010" coldown="7" freezetime="0"/> 
+		<!--  -->
+		<combo id="30009" skilllist="30004,30005,30011,30010" coldown="7" freezetime="0"/> 
+		<!-- BOSS -->
+		<combo id="30010" skilllist="30009,30010" coldown="4" freezetime="0"/> 
+		<!--  -->
+		<combo id="30011" skilllist="30004,30005,30011,30012,30008" coldown="7" freezetime="0"/> 
+		<!--  -->
+		<combo id="30012" skilllist="30004,30005,30011,30003,30010" coldown="7" freezetime="0"/> 
 		
 		
 		<!-- *********************************** start by 40000************************************************************************* -->
@@ -350,6 +365,8 @@
 		<combo id="50005" skilllist="50004,50005,50001,50002,50003" coldown="8" freezetime="3"/>
 		<!--  -->
 		<combo id="50006" skilllist="50008,50009" coldown="8" freezetime="2.5"/>
+		
+		<combo id="50007" skilllist="50010,50011" coldown="8" freezetime="1.25"/>
 		 
 		<!--  
 		<combo id="50003" skilllist="50004,50005,50007" /> 

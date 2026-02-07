@@ -142,9 +142,17 @@ public class UnlockBlink : MonoBehaviour
 		{
 			Debug.Log("lose texture!");
 		}
-		else
+		if (m_path.Contains("Stoneskin"))
+		{
+			m_sprite.CustomizeRect = new Rect(0f, 0f, 96f, 114f);
+		}
+		else if (m_path.Contains("Weapon"))
 		{
 			m_sprite.CustomizeRect = new Rect(0f, 0f, 200f, 128f);
+		}
+		else
+		{
+			m_sprite.CustomizeRect = new Rect(0f, 0f, m_sprite.CustomizeTexture.width, m_sprite.CustomizeTexture.height);
 		}
 	}
 }
