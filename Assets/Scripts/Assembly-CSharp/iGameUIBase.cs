@@ -82,7 +82,7 @@ public class iGameUIBase : MonoBehaviour
         float multiplier = 1f;
         if (SceneScaler.ShouldScale())
         {
-            if (Screen.width < 1280 && Screen.height < 960) multiplier = 1f;
+            if (Screen.width < 1280 && Screen.height < 960) multiplier = 1.25f;
             else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 1.75f;
             else multiplier = 1.5f;
         }
