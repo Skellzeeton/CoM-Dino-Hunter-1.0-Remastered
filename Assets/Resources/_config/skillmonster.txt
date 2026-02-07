@@ -258,6 +258,11 @@
 		<skill id="60011" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,10" skillmode="3" skillmodevalue="0.1" />	
 	<!-- -->
 		<skill id="60012" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,10,0,0" skillmode="1" skillmodevalue="0.7" func="4,11" valuex="4,4" valuey="4,0"/>>
+		
+		<!-- ����Ŀ��0.5s[����0-4] -->
+		<skill id="80000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,4" skillmode="3" skillmodevalue="0.5" />	
+		<!-- ��ͨ˺ҧ 100%�˺�-->
+		<skill id="80001" lvl="1" type="0" action="1000" targetlimit="2" rangetype="0" rangetypevalue="0,4" skillmode="7" skillmodevalue="1,6" func="5" valuex="200" valuey="0"/>
 	
 	
 	
@@ -389,5 +394,9 @@
 		<combo id="60006" skilllist="60008,60009,60010" coldown="12" freezetime="2.5"/> 
 		<!--  -->
 		<combo id="60007" skilllist="60011,60012" coldown="10" freezetime="2"/> 
+		
+		<!-- ***********************************������������ start by 80000************************************************************************* -->
+		<!-- ��ͨ˺ҧ -->
+		<combo id="80000" skilllist="80000,80001" coldown="4" freezetime="2"/> 	
 	</comboinfo>
 </root>
