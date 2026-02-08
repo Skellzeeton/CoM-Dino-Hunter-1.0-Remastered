@@ -70,22 +70,6 @@ public class Scene_MainMenu : MonoBehaviour
 	public Popup_Credits popup_credits;
 
 	public Popup_Review popup_review;
-	
-	private const float MinMusicVolume = 0f;
-	private const float MaxMusicVolume = 0.5f;
-
-	private const float MinSFXVolume = 0f;
-	private const float MaxSFXVolume = 0.5f;
-
-	private const float VolumeDecrement = 0.1f;
-
-	private float currentSFXVolume;
-
-	private int musicPressCount = 0;
-
-	private int sfxPressCount = 0;
-
-	private int resetCounter = 0;
 
 	private Transform go_control;
 
@@ -630,7 +614,6 @@ public class Scene_MainMenu : MonoBehaviour
 	{
 		if (event_type == 1 || event_type == 2)
 		{
-			AdjustMusicVolume();
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMainMenu("TUIEvent_ChangeMusic"));
 		}
 	}
@@ -639,87 +622,9 @@ public class Scene_MainMenu : MonoBehaviour
 	{
 		if (event_type == 1 || event_type == 2)
 		{
-			AdjustSFXVolume();
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMainMenu("TUIEvent_ChangeSFX"));
 		}
 	}
-	
-	    private void AdjustMusicVolume()
-    {
-        musicPressCount++;
-
-        float current = TAudioManager.instance.musicVolume;
-
-        if (musicPressCount >= 2)
-        {
-            musicPressCount = 0;
-
-            if (Mathf.Approximately(current, 0.1f))
-            {
-                resetCounter++;
-                if (resetCounter >= 2)
-                {
-                    current = 0.5f;
-                    resetCounter = 0;
-                }
-                else
-                {
-                }
-            }
-            else
-            {
-                resetCounter = 0;
-
-                if (current <= MinMusicVolume)
-                    current = MaxMusicVolume;
-                else
-                    current -= VolumeDecrement;
-
-                current = Mathf.Clamp(current, MinMusicVolume, MaxMusicVolume);
-                current = Mathf.Round(current * 10f) / 10f;
-            }
-
-            TAudioManager.instance.musicVolume = current;
-        }
-    }
-
-    private void AdjustSFXVolume()
-    {
-        sfxPressCount++;
-
-        float current = TAudioManager.instance.soundVolume;
-
-        if (sfxPressCount >= 2)
-        {
-            sfxPressCount = 0;
-
-            if (Mathf.Approximately(current, 0.1f))
-            {
-                resetCounter++;
-                if (resetCounter >= 2)
-                {
-                    current = 1f;
-                    resetCounter = 0;
-                }
-                else
-                {
-                }
-            }
-            else
-            {
-                resetCounter = 0;
-                if (current <= MinSFXVolume)
-                    current = MaxSFXVolume;
-                else
-                    current -= VolumeDecrement;
-                current = Mathf.Clamp(current, MinSFXVolume, MaxSFXVolume);
-                current = Mathf.Round(current * 10f) / 10f;
-                Debug.Log("new sound volume: " + current);
-            }
-
-            TAudioManager.instance.soundVolume = current;
-        }
-    }
 
 	public void TUIEvent_TakeAchievement(TUIControl control, int event_type, float wparam, float lparam, object data)
 	{
