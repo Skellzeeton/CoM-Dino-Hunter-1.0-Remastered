@@ -2376,7 +2376,7 @@ public class iGameSceneBase
 			if (!(tAudioController == null))
 			{
 				tAudioController.PlayAudio(sAuido);
-				Object.Destroy(gameObject, 2f);
+				Object.Destroy(gameObject, 15f);
 			}
 		}
 	}
