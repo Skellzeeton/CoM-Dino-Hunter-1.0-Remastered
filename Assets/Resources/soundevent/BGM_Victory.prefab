@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4394813885057885}
   - component: {fileID: 82550468634969769}
   - component: {fileID: 114728418157344794}
-  - component: {fileID: 114494718183834816}
   m_Layer: 0
   m_Name: BGM_Victory
   m_TagString: Untagged
@@ -47,7 +46,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -157,18 +156,3 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
---- !u!114 &114494718183834816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398840984028733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56356c3667620a0da4f9e1efb9a4ada8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeInTime: 0
-  fadeOutTime: 100
-  autoFadeout: 0

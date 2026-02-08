@@ -14,7 +14,4 @@ public class kMobType
 
 	public const int RidgebackDragon = 6;
 	
-	public const int Ankylosaur = 7;
-
-	public const int Bombworm = 8;
 }

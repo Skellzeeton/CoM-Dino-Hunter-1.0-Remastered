@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4564659638405671}
   - component: {fileID: 82644584519981081}
   - component: {fileID: 114511047226036223}
-  - component: {fileID: 114674013344069522}
   m_Layer: 0
   m_Name: Amb_Map02_WindValley
   m_TagString: Untagged
@@ -47,7 +46,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -157,18 +156,3 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
---- !u!114 &114674013344069522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578084333079901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56356c3667620a0da4f9e1efb9a4ada8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeInTime: 100
-  fadeOutTime: 100
-  autoFadeout: 0

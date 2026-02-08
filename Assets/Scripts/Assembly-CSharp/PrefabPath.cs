@@ -42,8 +42,6 @@ public class PrefabPath
 
 	public const int model_ridgebackdragon_boss = 70;
 	
-	public const int model_bombworm1 = 10011;
-
 	public const int weapon_001 = 101;
 
 	public const int weapon_002 = 102;
