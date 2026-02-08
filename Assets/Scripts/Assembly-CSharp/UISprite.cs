@@ -32,13 +32,13 @@ public class UISprite : UIWidget
 	}
 
 	// Cached and saved values
-	[HideInInspector][SerializeField] UIAtlas mAtlas;
-	[HideInInspector][SerializeField] string mSpriteName;
-	[HideInInspector][SerializeField] bool mFillCenter = true;
-	[HideInInspector][SerializeField] Type mType = Type.Simple;
-	[HideInInspector][SerializeField] FillDirection mFillDirection = FillDirection.Radial360;
-	[HideInInspector][SerializeField] float mFillAmount = 1.0f;
-	[HideInInspector][SerializeField] bool mInvert = false;
+	[SerializeField] UIAtlas mAtlas;
+	[SerializeField] string mSpriteName;
+	[SerializeField] bool mFillCenter = true;
+	[SerializeField] Type mType = Type.Simple;
+	[SerializeField] FillDirection mFillDirection = FillDirection.Radial360;
+	[SerializeField] float mFillAmount = 1.0f;
+	[SerializeField] bool mInvert = false;
 
 	protected UIAtlas.Sprite mSprite;
 	protected Rect mInner;

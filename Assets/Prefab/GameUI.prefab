@@ -1,26 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1799155712517809}
-  m_IsPrefabParent: 1
-  m_IsExploded: 0
 --- !u!1 &1799155712517809
 GameObject:
-  serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
-  - 4: {fileID: 4437590107486098}
-  - 114: {fileID: 114171597525954036}
+  - component: {fileID: 4437590107486098}
+  - component: {fileID: 114171597525954036}
   m_Layer: 0
   m_Name: GameUI
   m_TagString: Untagged
@@ -31,24 +20,30 @@ GameObject:
 --- !u!4 &4437590107486098
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799155712517809}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114171597525954036
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799155712517809}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
-  m_Name:
+  m_Name: 
+  m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 4ae022633ba3c834d94d226990f6bddc, type: 2}
   sprites:
   - name: youxizhong_dengjibg
@@ -64,6 +59,7 @@ MonoBehaviour:
       y: 399
       width: 47
       height: 47
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.021276595
     paddingTop: 0
@@ -81,6 +77,7 @@ MonoBehaviour:
       y: 539
       width: 169
       height: 48
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.00591716
     paddingTop: 0
@@ -98,6 +95,7 @@ MonoBehaviour:
       y: 362
       width: 83
       height: 87
+    rotated: 0
     paddingLeft: 0.09638554
     paddingRight: 0.084337346
     paddingTop: 0
@@ -115,6 +113,7 @@ MonoBehaviour:
       y: 383
       width: 97
       height: 101
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.010309278
     paddingTop: 0
@@ -132,6 +131,7 @@ MonoBehaviour:
       y: 602
       width: 242
       height: 74
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
       y: 496
       width: 181
       height: 180
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.005524862
     paddingTop: 0.0055555557
@@ -166,6 +167,7 @@ MonoBehaviour:
       y: 9
       width: 39
       height: 29
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.025641026
     paddingTop: 0
@@ -183,6 +185,7 @@ MonoBehaviour:
       y: 6
       width: 41
       height: 46
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.024390243
     paddingTop: 0
@@ -200,6 +203,7 @@ MonoBehaviour:
       y: 2
       width: 87
       height: 93
+    rotated: 0
     paddingLeft: 0.06896552
     paddingRight: 0.057471264
     paddingTop: 0
@@ -217,6 +221,7 @@ MonoBehaviour:
       y: 472
       width: 69
       height: 66
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.014492754
     paddingTop: 0
@@ -234,6 +239,7 @@ MonoBehaviour:
       y: 447
       width: 48
       height: 48
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -251,6 +257,7 @@ MonoBehaviour:
       y: 514
       width: 154
       height: 24
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -268,6 +275,7 @@ MonoBehaviour:
       y: 280
       width: 85
       height: 81
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.011764706
     paddingTop: 0
@@ -285,6 +293,7 @@ MonoBehaviour:
       y: 284
       width: 91
       height: 98
+    rotated: 0
     paddingLeft: 0.043956045
     paddingRight: 0.032967035
     paddingTop: 0
@@ -302,6 +311,7 @@ MonoBehaviour:
       y: 471
       width: 58
       height: 67
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -319,6 +329,7 @@ MonoBehaviour:
       y: 450
       width: 85
       height: 88
+    rotated: 0
     paddingLeft: 0.08235294
     paddingRight: 0.07058824
     paddingTop: 0
@@ -336,6 +347,7 @@ MonoBehaviour:
       y: 190
       width: 92
       height: 93
+    rotated: 0
     paddingLeft: 0.032608695
     paddingRight: 0.032608695
     paddingTop: 0
@@ -353,6 +365,7 @@ MonoBehaviour:
       y: 768
       width: 256
       height: 175
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -370,6 +383,7 @@ MonoBehaviour:
       y: 770
       width: 2
       height: 2
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -387,6 +401,7 @@ MonoBehaviour:
       y: 449
       width: 164
       height: 19
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -404,6 +419,7 @@ MonoBehaviour:
       y: 541
       width: 164
       height: 19
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -421,6 +437,7 @@ MonoBehaviour:
       y: 14
       width: 32
       height: 24
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -438,6 +455,7 @@ MonoBehaviour:
       y: 483
       width: 54
       height: 55
+    rotated: 0
     paddingLeft: 0.037037037
     paddingRight: 0.037037037
     paddingTop: 0.07272727
@@ -455,6 +473,7 @@ MonoBehaviour:
       y: 337
       width: 44
       height: 250
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -472,6 +491,7 @@ MonoBehaviour:
       y: 774
       width: 250
       height: 250
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -489,6 +509,7 @@ MonoBehaviour:
       y: 677
       width: 586
       height: 90
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -506,6 +527,7 @@ MonoBehaviour:
       y: 358
       width: 129
       height: 137
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0.007751938
     paddingTop: 0
@@ -523,6 +545,7 @@ MonoBehaviour:
       y: 90
       width: 40
       height: 37
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -540,6 +563,7 @@ MonoBehaviour:
       y: 12
       width: 55
       height: 40
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -557,6 +581,7 @@ MonoBehaviour:
       y: 601
       width: 202
       height: 75
+    rotated: 0
     paddingLeft: 0.004950495
     paddingRight: 0.004950495
     paddingTop: 0
@@ -574,6 +599,7 @@ MonoBehaviour:
       y: 283
       width: 41
       height: 53
+    rotated: 0
     paddingLeft: 0.19512194
     paddingRight: 0.2195122
     paddingTop: 0.094339624
@@ -591,6 +617,7 @@ MonoBehaviour:
       y: 96
       width: 92
       height: 93
+    rotated: 0
     paddingLeft: 0.10869565
     paddingRight: 0.08695652
     paddingTop: 0.09677419
@@ -608,6 +635,7 @@ MonoBehaviour:
       y: 63
       width: 69
       height: 69
+    rotated: 0
     paddingLeft: 0.04347826
     paddingRight: 0.028985508
     paddingTop: 0.028985508
@@ -625,6 +653,7 @@ MonoBehaviour:
       y: 203
       width: 79
       height: 76
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -642,6 +671,7 @@ MonoBehaviour:
       y: 133
       width: 69
       height: 69
+    rotated: 0
     paddingLeft: 0.04347826
     paddingRight: 0.028985508
     paddingTop: 0.028985508
@@ -659,6 +689,7 @@ MonoBehaviour:
       y: 188
       width: 74
       height: 74
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -676,6 +707,7 @@ MonoBehaviour:
       y: 607
       width: 69
       height: 69
+    rotated: 0
     paddingLeft: 0.04347826
     paddingRight: 0.028985508
     paddingTop: 0.028985508
@@ -693,6 +725,7 @@ MonoBehaviour:
       y: 469
       width: 69
       height: 69
+    rotated: 0
     paddingLeft: 0.04347826
     paddingRight: 0.028985508
     paddingTop: 0.028985508
@@ -710,6 +743,7 @@ MonoBehaviour:
       y: 561
       width: 290
       height: 26
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -727,6 +761,7 @@ MonoBehaviour:
       y: 4
       width: 74
       height: 58
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -744,6 +779,7 @@ MonoBehaviour:
       y: 588
       width: 319
       height: 88
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -761,6 +797,7 @@ MonoBehaviour:
       y: 27
       width: 25
       height: 25
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -778,6 +815,7 @@ MonoBehaviour:
       y: 745
       width: 9
       height: 9
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -795,6 +833,7 @@ MonoBehaviour:
       y: 755
       width: 8
       height: 12
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -812,6 +851,7 @@ MonoBehaviour:
       y: 1
       width: 25
       height: 25
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -829,6 +869,7 @@ MonoBehaviour:
       y: 77
       width: 23
       height: 22
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -846,6 +887,7 @@ MonoBehaviour:
       y: 358
       width: 40
       height: 40
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -863,6 +905,7 @@ MonoBehaviour:
       y: 1
       width: 24
       height: 37
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -880,6 +923,7 @@ MonoBehaviour:
       y: 156
       width: 42
       height: 31
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -897,6 +941,7 @@ MonoBehaviour:
       y: 398
       width: 64
       height: 70
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -914,6 +959,7 @@ MonoBehaviour:
       y: 266
       width: 32
       height: 30
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -931,6 +977,7 @@ MonoBehaviour:
       y: 156
       width: 30
       height: 31
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -948,6 +995,7 @@ MonoBehaviour:
       y: 485
       width: 106
       height: 102
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -965,6 +1013,7 @@ MonoBehaviour:
       y: 469
       width: 68
       height: 69
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -982,6 +1031,7 @@ MonoBehaviour:
       y: 263
       width: 143
       height: 94
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -999,6 +1049,7 @@ MonoBehaviour:
       y: 768
       width: 256
       height: 256
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1016,6 +1067,7 @@ MonoBehaviour:
       y: 768
       width: 256
       height: 256
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1033,6 +1085,7 @@ MonoBehaviour:
       y: 146
       width: 106
       height: 116
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1050,6 +1103,7 @@ MonoBehaviour:
       y: 678
       width: 420
       height: 89
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1067,6 +1121,7 @@ MonoBehaviour:
       y: 39
       width: 106
       height: 106
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1084,6 +1139,7 @@ MonoBehaviour:
       y: 53
       width: 106
       height: 106
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1101,6 +1157,7 @@ MonoBehaviour:
       y: 160
       width: 106
       height: 106
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1118,6 +1175,7 @@ MonoBehaviour:
       y: 267
       width: 106
       height: 106
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1135,6 +1193,7 @@ MonoBehaviour:
       y: 374
       width: 106
       height: 106
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1152,6 +1211,7 @@ MonoBehaviour:
       y: 481
       width: 106
       height: 106
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1169,6 +1229,7 @@ MonoBehaviour:
       y: 89
       width: 0
       height: 0
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1186,6 +1247,7 @@ MonoBehaviour:
       y: 14
       width: 33
       height: 38
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1203,6 +1265,7 @@ MonoBehaviour:
       y: 100
       width: 28
       height: 60
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1220,6 +1283,7 @@ MonoBehaviour:
       y: 161
       width: 28
       height: 60
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1237,6 +1301,7 @@ MonoBehaviour:
       y: 222
       width: 28
       height: 60
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -1254,6 +1319,25 @@ MonoBehaviour:
       y: 297
       width: 30
       height: 60
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: title_jingyanicon
+    outer:
+      serializedVersion: 2
+      x: 528
+      y: 334
+      width: 58
+      height: 62
+    inner:
+      serializedVersion: 2
+      x: 528
+      y: 334
+      width: 58
+      height: 62
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0

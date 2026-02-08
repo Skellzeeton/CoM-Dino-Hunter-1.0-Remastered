@@ -42,19 +42,17 @@ public class iGameLoadUI : MonoBehaviour
 			StartCoroutine("LoadScene", gameState.m_sLoadScene);
 			gameState.m_sLoadScene = string.Empty;
 		}
-        float multiplier = 1f;
-        if (Screen.width < 1280 && Screen.height < 960) multiplier = 1.25f;
-        else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 1.75f;
-        else multiplier = 1.5f;
-        foreach (Transform item in m_UIManager.mParent)
-        {
-            if (item.name.IndexOf("Anchor") != -1)
-            {
-                Vector3 originalScale = item.localScale;
-                item.localScale = originalScale * multiplier;
-            }
-        }
-    }
+		float num = (float)Screen.height / 480f;
+		float num2 = (float)Screen.width / 640f;
+		float num3 = ((!(num < num2)) ? num2 : num);
+		foreach (Transform item in m_UIManager.mParent)
+		{
+			if (item.name.IndexOf("Anchor") != -1)
+			{
+				item.localScale *= num3;
+			}
+		}
+	}
 
 	private void Update()
 	{

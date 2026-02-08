@@ -80,7 +80,6 @@ public class TUIDataServer
 			{
 				gameState.GameLevel = 1001;
 				int wparam = 2;
-				CUISound.GetInstance().Stop("BGM_startscreen");
 				global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMain(m_event.GetEventName(), true, wparam));
 				return;
 			}

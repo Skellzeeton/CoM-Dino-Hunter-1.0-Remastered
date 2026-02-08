@@ -22,31 +22,31 @@ public class UILabel : UIWidget
 		Outline,
 	}
 
-	[HideInInspector][SerializeField] UIFont mFont;
-	[HideInInspector][SerializeField] string mText = "";
-	[HideInInspector][SerializeField] int mMaxLineWidth = 0;
-	[HideInInspector][SerializeField] int mMaxLineHeight = 0;
-	[HideInInspector][SerializeField] bool mEncoding = true;
-	[HideInInspector][SerializeField] int mMaxLineCount = 0; // 0 denotes unlimited
-	[HideInInspector][SerializeField] bool mPassword = false;
-	[HideInInspector][SerializeField] bool mShowLastChar = false;
-	[HideInInspector][SerializeField] Effect mEffectStyle = Effect.None;
-	[HideInInspector][SerializeField] Color mEffectColor = Color.black;
-	[HideInInspector][SerializeField] UIFont.SymbolStyle mSymbols = UIFont.SymbolStyle.Uncolored;
-	[HideInInspector][SerializeField] Vector2 mEffectDistance = Vector2.one;
-	[HideInInspector][SerializeField] bool mShrinkToFit = false;
+	[SerializeField] UIFont mFont;
+	[SerializeField] string mText = "";
+	[SerializeField] int mMaxLineWidth = 0;
+	[SerializeField] int mMaxLineHeight = 0;
+	[SerializeField] bool mEncoding = true;
+	[SerializeField] int mMaxLineCount = 0; // 0 denotes unlimited
+	[SerializeField] bool mPassword = false;
+	[SerializeField] bool mShowLastChar = false;
+	[SerializeField] Effect mEffectStyle = Effect.None;
+	[SerializeField] Color mEffectColor = Color.black;
+	[SerializeField] UIFont.SymbolStyle mSymbols = UIFont.SymbolStyle.Uncolored;
+	[SerializeField] Vector2 mEffectDistance = Vector2.one;
+	[SerializeField] bool mShrinkToFit = false;
 
 	/// <summary>
 	/// Obsolete, do not use. Use 'mMaxLineWidth' instead.
 	/// </summary>
 
-	[HideInInspector][SerializeField] float mLineWidth = 0;
+	[SerializeField] float mLineWidth = 0;
 
 	/// <summary>
 	/// Obsolete, do not use. Use 'mMaxLineCount' instead
 	/// </summary>
 
-	[HideInInspector][SerializeField] bool mMultiline = true;
+	[SerializeField] bool mMultiline = true;
 
 	bool mShouldBeProcessed = true;
 	string mProcessedText = null;

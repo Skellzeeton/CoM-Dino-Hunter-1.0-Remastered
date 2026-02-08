@@ -42,7 +42,7 @@ public class Scene_Main : MonoBehaviour
         global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMain("TUIEvent_EnterInfo"));
         if (music_open_now)
         {
-            CUISound.GetInstance().Play("BGM_startscreen");
+            CUISound.GetInstance().Play("BGM_theme");
         }
     }
 
@@ -123,8 +123,6 @@ public class Scene_Main : MonoBehaviour
                 else
                 {
                     next_scene = "Scene_MainMenu";
-                    CUISound.GetInstance().Stop("BGM_startscreen");
-                    CUISound.GetInstance().Play("BGM_theme");
                 }
                 if (!is_fade_out)
                 {

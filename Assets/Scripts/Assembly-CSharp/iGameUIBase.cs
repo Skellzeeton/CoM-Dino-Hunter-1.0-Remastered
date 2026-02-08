@@ -79,23 +79,18 @@ public class iGameUIBase : MonoBehaviour
 		m_GameTaskUIPlane = GetControl<iGameTaskUIPlane>("_AnchorTop/NGUITaskUIPlane");
 		m_MainPlayerPortraitInfo = new CUIProtraitInfo();
 		m_MainPlayerPortraitInfo.Initialize(m_UIManager.mHeadPortrait);
-        float multiplier = 1f;
-        if (SceneScaler.ShouldScale())
-        {
-            if (Screen.width < 1280 && Screen.height < 960) multiplier = 1.25f;
-            else if (Screen.width > 1920 || Screen.height > 1080) multiplier = 1.75f;
-            else multiplier = 1.5f;
-        }
-        foreach (Transform item in m_UIManager.mParent)
-        {
-            if (item.name.IndexOf("Anchor") != -1)
-            {
-                Vector3 originalScale = item.localScale;
-                item.localScale = originalScale * multiplier;
-            }
-        }
+		float num = (float)Screen.height / 480f;
+		float num2 = (float)Screen.width / 640f;
+		float num3 = ((!(num < num2)) ? num2 : num);
+		foreach (Transform item in m_UIManager.mParent)
+		{
+			if (item.name.IndexOf("Anchor") != -1)
+			{
+				item.localScale *= num3;
+			}
+		}
         Debug.Log("Screen size = " + Screen.width + " * " + Screen.height);
-        Debug.Log("Screen scale multiplier = " + multiplier);
+        Debug.Log("Screen scale multiplier = " + num3);
         m_SlipAssist = new CSlipAssistant();
 	}
 
@@ -119,17 +114,17 @@ public class iGameUIBase : MonoBehaviour
 		m_GameTaskUIPlane.Initialize();
 		InitTaskUI();
 		m_NGUIDamage = new CPoolManage();
-		m_NGUIDamage.Initialize("Artist/GameUI/NGUIDamage", mPreLoadNode, m_UIManager.mParent, 10);
+		m_NGUIDamage.Initialize("Artist/GameUI/NGUIDamage", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUILifeBar = new CPoolManage();
-		m_NGUILifeBar.Initialize("Artist/GameUI/NGUILifeBar", mPreLoadNode, m_UIManager.mParent, 10);
+		m_NGUILifeBar.Initialize("Artist/GameUI/NGUILifeBar", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUIScreenTip = new CPoolManage();
 		m_NGUIScreenTip.Initialize("Artist/GameUI/NGUIScreenTip", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUIGoldTip = new CPoolManage();
-		m_NGUIGoldTip.Initialize("Artist/GameUI/NGUIGoldTip", mPreLoadNode, m_UIManager.mParent, 10);
+		m_NGUIGoldTip.Initialize("Artist/GameUI/NGUIGoldTip", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUIMaterialTip = new CPoolManage();
-		m_NGUIMaterialTip.Initialize("Artist/GameUI/NGUIMaterialTip", mPreLoadNode, m_UIManager.mParent, 5);
+		m_NGUIMaterialTip.Initialize("Artist/GameUI/NGUIMaterialTip", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUITextTip = new CPoolManage();
-		m_NGUITextTip.Initialize("Artist/GameUI/NGUITextTip", mPreLoadNode, m_UIManager.mParent, 5);
+		m_NGUITextTip.Initialize("Artist/GameUI/NGUITextTip", mPreLoadNode, m_UIManager.mParent, 1);
 		Reset();
 	}
 
