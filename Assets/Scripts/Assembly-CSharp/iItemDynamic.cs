@@ -3,27 +3,17 @@ using UnityEngine;
 public class iItemDynamic : iItem
 {
 	public float fAbsorbDistance;
-
 	public float fAbsorbSpeed = 20f;
-
 	public GameObject m_GroundEffect;
 
 	protected Rigidbody m_Rigidbody;
-
 	protected bool m_bBump;
-
 	protected float m_fBumpSpeed = 3f;
-
 	protected float m_fBumpGravity = 10f;
-
 	protected float m_fBumpDamping;
-
 	protected float m_fBumpCurSpeed;
-
 	protected float m_fBumpSrcHeight;
-
 	protected float m_fFloorHeight;
-
 	protected bool m_bAbsorb;
 
 	private new void Awake()
@@ -69,21 +59,23 @@ public class iItemDynamic : iItem
 				CCharUser user = m_GameScene.GetUser();
 				if (user != null && Vector3.Distance(user.Pos, m_Transform.position) <= fAbsorbDistance)
 				{
-					if (m_GroundEffect != null)
-					{
-						Object.Destroy(m_GroundEffect);
-						m_GroundEffect = null;
-					}
-					m_bAbsorb = true;
-					m_bBump = false;
-					if (m_Collider != null)
-					{
-						Object.Destroy(m_Collider);
-						m_Collider = null;
-					}
+					BeginAbsorbCleanup();
 				}
 			}
 		}
+		if (!m_bAbsorb && fAbsorbDistance > 0f)
+		{
+			CCharUser userCheck = m_GameScene.GetUser();
+			if (userCheck != null)
+			{
+				float dist = Vector3.Distance(userCheck.Pos, m_Transform.position);
+				if (dist <= fAbsorbDistance)
+				{
+					BeginAbsorbCleanup();
+				}
+			}
+		}
+
 		if (!m_bAbsorb)
 		{
 			return;
@@ -95,8 +87,8 @@ public class iItemDynamic : iItem
 			return;
 		}
 		Vector3 vector = user2.GetBone(2).position - m_Transform.position;
-		float num = fAbsorbSpeed * deltaTime;
-		if (num >= vector.magnitude)
+		float step = fAbsorbSpeed * deltaTime;
+		if (step >= vector.magnitude)
 		{
 			if (ToughItem(user2))
 			{
@@ -105,7 +97,7 @@ public class iItemDynamic : iItem
 		}
 		else
 		{
-			m_Transform.position += vector.normalized * num;
+			m_Transform.position += vector.normalized * step;
 		}
 	}
 
@@ -148,10 +140,16 @@ public class iItemDynamic : iItem
 			m_fFloorHeight = hitInfo.point.y;
 			return;
 		}
-		m_Rigidbody.Sleep();
-		Object.Destroy(m_Rigidbody);
-		m_Rigidbody = null;
-		m_Collider.isTrigger = true;
+		if (m_Rigidbody != null)
+		{
+			m_Rigidbody.Sleep();
+			Object.Destroy(m_Rigidbody);
+			m_Rigidbody = null;
+		}
+		if (m_Collider != null)
+		{
+			m_Collider.isTrigger = true;
+		}
 		m_bAbsorb = true;
 	}
 
@@ -170,6 +168,40 @@ public class iItemDynamic : iItem
 		if (!(m_Rigidbody == null))
 		{
 			m_Rigidbody.AddForce(v3Force);
+		}
+	}
+	
+	public void ForceAbsorb(float overrideSpeed)
+	{
+		fAbsorbSpeed = overrideSpeed;
+
+		// reuse your existing cleanup logic
+		BeginAbsorbCleanup();
+	}
+	
+	private void BeginAbsorbCleanup()
+	{
+		if (m_GroundEffect != null)
+		{
+			Object.Destroy(m_GroundEffect);
+			m_GroundEffect = null;
+		}
+		m_bAbsorb = true;
+		m_bBump = false;
+		if (m_Rigidbody != null)
+		{
+			try
+			{
+				m_Rigidbody.Sleep();
+			}
+			catch { }
+			Object.Destroy(m_Rigidbody);
+			m_Rigidbody = null;
+		}
+
+		if (m_Collider != null)
+		{
+			m_Collider.isTrigger = true;
 		}
 	}
 }

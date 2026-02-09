@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 82651861994575402}
   - component: {fileID: 114079822665994648}
   m_Layer: 0
-  m_Name: SVO_Voice_Male01_Dizzy
+  m_Name: SVO_Voice_Dizzy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: b175c94c3b3c46e4b8d6397be6cea34e, type: 3}
   probability: []
-  volumOffset: 0.05
-  pitchOffset: 0.05
+  volumOffset: 0
+  pitchOffset: 0
   loopMode: 0
   cutoff: 0
   delayTime: 0

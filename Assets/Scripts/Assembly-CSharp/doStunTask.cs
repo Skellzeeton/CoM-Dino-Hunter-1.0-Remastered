@@ -42,14 +42,7 @@ public class doStunTask : Task
 		CCharPlayer cCharPlayer = cCharBase as CCharUser;
 		if (cCharPlayer != null && cCharPlayer.CurCharInfoLevel != null)
 		{
-			if (cCharPlayer.CurCharInfoLevel.isMale)
-			{
-				cCharPlayer.PlayAudio("SVO_Voice_Male01_Dizzy");
-			}
-			else
-			{
-				cCharPlayer.PlayAudio("SVO_Voice_Female01_Dizzy");
-			}
+				cCharPlayer.PlayAudio("SVO_Voice_Dizzy");
 		}
 		cCharBase.SetCurTask(this);
 	}
@@ -70,14 +63,7 @@ public class doStunTask : Task
 		CCharPlayer cCharPlayer = cCharBase as CCharUser;
 		if (cCharPlayer != null && cCharPlayer.CurCharInfoLevel != null)
 		{
-			if (cCharPlayer.CurCharInfoLevel.isMale)
-			{
-				cCharPlayer.StopAudio("SVO_Voice_Male01_Dizzy");
-			}
-			else
-			{
-				cCharPlayer.StopAudio("SVO_Voice_Female01_Dizzy");
-			}
+				cCharPlayer.StopAudio("SVO_Voice_Dizzy");
 		}
 	}
 

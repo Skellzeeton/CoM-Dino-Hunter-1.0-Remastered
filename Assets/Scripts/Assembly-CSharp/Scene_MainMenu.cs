@@ -237,14 +237,14 @@ public class Scene_MainMenu : MonoBehaviour
 			case UnlockType.Skill:
 				if (sfx_open_now)
 				{
-					CUISound.GetInstance().Play("UI_Unlocked_weapon");
+					CUISound.GetInstance().Play("UI_Unlocked_character");
 				}
 				unlock_blink.OpenBlinkSkill(villiage_enter_info.unlock_skill_id, "New Skill Unlocked For Purchase!", true);
 				break;
 			case UnlockType.Role:
 				if (sfx_open_now)
 				{
-					CUISound.GetInstance().Play("UI_Unlocked_weapon");
+					CUISound.GetInstance().Play("UI_Unlocked_character");
 				}
 				unlock_blink.OpenBlinkRole(villiage_enter_info.unlock_role_id, "New Character Unlocked For Purchase!");
 				break;

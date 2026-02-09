@@ -297,7 +297,7 @@ public class CWeaponBase
 				break;
 			}
 			m_FireLight.range = 5f;
-			m_FireLight.intensity = 10f;
+			m_FireLight.intensity = 7.5f;
 			m_fFireLightTime = 0.5f + 1.6666667f * (m_pWeaponLvlInfo.fShootSpeed - 0.1f);
 		}
 	}

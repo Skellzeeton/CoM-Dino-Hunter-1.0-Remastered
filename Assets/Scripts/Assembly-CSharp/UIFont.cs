@@ -36,24 +36,24 @@ public class UIFont : MonoBehaviour
 		Colored,
 	}
 
-	[HideInInspector][SerializeField] Material mMat;
-	[HideInInspector][SerializeField] Rect mUVRect = new Rect(0f, 0f, 1f, 1f);
-	[HideInInspector][SerializeField] BMFont mFont = new BMFont();
-	[HideInInspector][SerializeField] int mSpacingX = 0;
-	[HideInInspector][SerializeField] int mSpacingY = 0;
-	[HideInInspector][SerializeField] UIAtlas mAtlas;
-	[HideInInspector][SerializeField] UIFont mReplacement;
-	[HideInInspector][SerializeField] float mPixelSize = 1f;
+	[SerializeField] Material mMat;
+	[SerializeField] Rect mUVRect = new Rect(0f, 0f, 1f, 1f);
+	[SerializeField] BMFont mFont = new BMFont();
+	[SerializeField] int mSpacingX = 0;
+	[SerializeField] int mSpacingY = 0;
+	[SerializeField] UIAtlas mAtlas;
+	[SerializeField] UIFont mReplacement;
+	[SerializeField] float mPixelSize = 1f;
 
 	// List of symbols, such as emoticons like ":)", ":(", etc
-	[HideInInspector][SerializeField] List<BMSymbol> mSymbols = new List<BMSymbol>();
+	[SerializeField] List<BMSymbol> mSymbols = new List<BMSymbol>();
 
 	// Used for dynamic fonts
-	[HideInInspector][SerializeField] Font mDynamicFont;
-	[HideInInspector][SerializeField] int mDynamicFontSize = 16;
-	[HideInInspector][SerializeField] FontStyle mDynamicFontStyle = FontStyle.Normal;
+	[SerializeField] Font mDynamicFont;
+	[SerializeField] int mDynamicFontSize = 16;
+	[SerializeField] FontStyle mDynamicFontStyle = FontStyle.Normal;
 #if DYNAMIC_FONT
-	[HideInInspector][SerializeField] float mDynamicFontOffset = 0f;
+	[SerializeField] float mDynamicFontOffset = 0f;
 #endif
 
 	// Cached value

@@ -932,6 +932,17 @@ public class iGameSceneBase
 		{
 			m_CameraReveal.Go(m_User.GetBone(1).gameObject, -20f, 2f, 10f);
 			iDataCenter dataCenter = m_GameData.GetDataCenter();
+			iItemDynamic[] allDrops = Object.FindObjectsOfType(typeof(iItemDynamic)) as iItemDynamic[];
+			if (allDrops != null)
+			{
+				foreach (iItemDynamic drop in allDrops)
+				{
+					if (drop != null)
+					{
+						drop.ForceAbsorb(25f);
+					}
+				}
+			}
 			if (dataCenter != null)
 			{
 				m_GameState.m_nLevelRewardGold = CurGameLevelInfo.nRewardGold;
@@ -977,6 +988,7 @@ public class iGameSceneBase
 			m_User.SetActionLayer(kAnimEnum.VictoryIdle, -1);
 			m_User.CrossAnim(kAnimEnum.Victory, WrapMode.Once, 0.3f, 1f, 0f);
 			CSoundScene.GetInstance().PlayBGM("BGM_Victory");
+			CUISound.GetInstance().Play("UI_Game_status");
 			//iGameApp.GetInstance().Flurry_WinStage(m_curGameLevelInfo.nID);
 		}
 		else

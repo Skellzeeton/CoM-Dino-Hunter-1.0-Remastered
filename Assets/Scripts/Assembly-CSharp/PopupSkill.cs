@@ -292,7 +292,7 @@ public class PopupSkill : MonoBehaviour
 				{
 					if (scene_skill.GetSFXOpen())
 					{
-						CUISound.GetInstance().Play("UI_Unlocked_weapon");
+						CUISound.GetInstance().Play("UI_Unlocked_character");
 					}
 				}
 				else
@@ -327,7 +327,7 @@ public class PopupSkill : MonoBehaviour
 				{
 					if (scene_skill.GetSFXOpen())
 					{
-						CUISound.GetInstance().Play("UI_Unlocked_weapon");
+						CUISound.GetInstance().Play("UI_Unlocked_character");
 					}
 				}
 				else
@@ -368,7 +368,7 @@ public class PopupSkill : MonoBehaviour
 				{
 					if (scene_skill.GetSFXOpen())
 					{
-						CUISound.GetInstance().Play("UI_Unlocked_weapon");
+						CUISound.GetInstance().Play("UI_Unlocked_character");
 					}
 				}
 				else
@@ -396,7 +396,7 @@ public class PopupSkill : MonoBehaviour
 				{
 					if (scene_skill.GetSFXOpen())
 					{
-						CUISound.GetInstance().Play("UI_Unlocked_weapon");
+						CUISound.GetInstance().Play("UI_Unlocked_character");
 					}
 				}
 				else
@@ -447,7 +447,7 @@ public class PopupSkill : MonoBehaviour
 					{
 						if (scene_skill.GetSFXOpen())
 						{
-							CUISound.GetInstance().Play("UI_Unlocked_weapon");
+							CUISound.GetInstance().Play("UI_Unlocked_character");
 						}
 					}
 					else
@@ -479,7 +479,7 @@ public class PopupSkill : MonoBehaviour
 					{
 						if (scene_skill.GetSFXOpen())
 						{
-							CUISound.GetInstance().Play("UI_Unlocked_weapon");
+							CUISound.GetInstance().Play("UI_Unlocked_character");
 						}
 					}
 					else
