@@ -151,6 +151,11 @@ public class CCharUser : CCharPlayer
 	public new void FixedUpdate()
 	{
 		base.FixedUpdate();
+		if (m_GameScene != null &&
+		    m_GameScene.GameStatus != iGameSceneBase.kGameStatus.Gameing)
+		{
+			return;
+		}
 		float deltaTime = Time.deltaTime;
 		if (m_CharMoveState == kCharMoveState.None)
 		{
@@ -218,8 +223,13 @@ public class CCharUser : CCharPlayer
 
 	public void MoveByCompass(float fRateX, float fRateY)
 	{
+		if (m_GameScene != null &&
+		    m_GameScene.GameStatus != iGameSceneBase.kGameStatus.Gameing)
+		{
+			MoveStop();
+			return;
+		}
 		Vector2 input = new Vector2(fRateX, fRateY);
-
 		if (input.sqrMagnitude > 0.0001f)
 		{
 			input = input.normalized;
