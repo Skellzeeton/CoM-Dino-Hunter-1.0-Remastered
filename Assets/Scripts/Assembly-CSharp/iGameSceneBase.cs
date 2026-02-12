@@ -939,7 +939,7 @@ public class iGameSceneBase
 				{
 					if (drop != null)
 					{
-						drop.ForceAbsorb(25f);
+						drop.ForceAbsorb(50f);
 					}
 				}
 			}

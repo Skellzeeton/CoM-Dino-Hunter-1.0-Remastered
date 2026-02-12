@@ -13,11 +13,12 @@ SubShader {
    Bind "texcoord", TexCoord0
    Bind "texcoord1", TexCoord1
   }
-  Color [_Color]
+  AlphaTest Greater 0.6
+  ZWrite On
+  Blend Off
   Cull Off
-  Fog { Mode Off }
   Blend SrcAlpha OneMinusSrcAlpha
-  SetTexture [_MainTex] { combine texture * primary }
+  SetTexture [_MainTex] { ConstantColor [_Color] combine texture * constant }
   SetTexture [_LightMap] { combine texture * previous }
  }
 }

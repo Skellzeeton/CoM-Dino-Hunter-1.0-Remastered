@@ -235,7 +235,7 @@ public class TUIMappingInfo
 		map_dictionary[5005] = "p6";
 		map_dictionary[5006] = "p2";
 		map_dictionary[5007] = "p7";
-		map_dictionary[5008] = "p2";
+		map_dictionary[5008] = "p8";
 		map_dictionary[5009] = "p5";
 		map_dictionary[5010] = "p1";
 		map_dictionary[5011] = "p6";
