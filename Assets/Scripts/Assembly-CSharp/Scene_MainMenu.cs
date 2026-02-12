@@ -107,6 +107,7 @@ public class Scene_MainMenu : MonoBehaviour
 			img_arrow_right.GetComponent<Animation>().wrapMode = WrapMode.Loop;
 			img_arrow_right.GetComponent<Animation>().Play();
 		}
+		CUISound.GetInstance().Play("Amb_MapMenu");
 	}
 
 	private void Start()
@@ -145,6 +146,7 @@ public class Scene_MainMenu : MonoBehaviour
 			if (switchSceneStr != null)
 			{
 				switchSceneStr(next_scene);
+				CUISound.GetInstance().Stop("Amb_MapMenu");
 			}
 		}
 	}
@@ -926,21 +928,15 @@ public class Scene_MainMenu : MonoBehaviour
 		float num = 0.37f;
 		float num2 = 0.65f;
 		float persentAngle = camera_village.GetPersentAngle();
-		if (persentAngle > num)
+		MeshRenderer leftRenderer = img_arrow_left.GetComponent<MeshRenderer>();
+		if (leftRenderer != null)
 		{
-			img_arrow_left.gameObject.SetActiveRecursively(true);
+			leftRenderer.enabled = (persentAngle > num);
 		}
-		else
+		MeshRenderer rightRenderer = img_arrow_right.GetComponent<MeshRenderer>();
+		if (rightRenderer != null)
 		{
-			img_arrow_left.gameObject.SetActiveRecursively(false);
-		}
-		if (persentAngle < num2)
-		{
-			img_arrow_right.gameObject.SetActiveRecursively(true);
-		}
-		else
-		{
-			img_arrow_right.gameObject.SetActiveRecursively(false);
+			rightRenderer.enabled = (persentAngle < num2);
 		}
 	}
 

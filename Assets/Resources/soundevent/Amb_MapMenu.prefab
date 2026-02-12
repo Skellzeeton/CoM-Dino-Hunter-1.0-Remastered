@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1595934260594433
+--- !u!1 &1754687347442574
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4814553867731682}
-  - component: {fileID: 82379729408313124}
-  - component: {fileID: 114172599744086538}
+  - component: {fileID: 4731055291095083}
+  - component: {fileID: 82546824832078439}
+  - component: {fileID: 114455249683477383}
   m_Layer: 0
-  m_Name: UI_Entergame
+  m_Name: Amb_MapMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4814553867731682
+--- !u!4 &4731055291095083
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595934260594433}
+  m_GameObject: {fileID: 1754687347442574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,22 +33,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82379729408313124
+--- !u!82 &82546824832078439
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595934260594433}
+  m_GameObject: {fileID: 1754687347442574}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -130,13 +130,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114172599744086538
+--- !u!114 &114455249683477383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595934260594433}
+  m_GameObject: {fileID: 1754687347442574}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
@@ -144,11 +144,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: 399d9fe046d7ff34c895aa90712d915c, type: 3}
+  - {fileID: 8300000, guid: 0f790df11a30f3d3986b30c376a8d82a, type: 3}
   probability: []
   volumOffset: 0
   pitchOffset: 0
-  loopMode: 0
+  loopMode: 1
   cutoff: 0
   delayTime: 0
   autoDestroy: 0

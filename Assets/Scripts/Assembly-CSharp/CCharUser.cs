@@ -151,11 +151,6 @@ public class CCharUser : CCharPlayer
 	public new void FixedUpdate()
 	{
 		base.FixedUpdate();
-		if (m_GameScene != null &&
-		    m_GameScene.GameStatus != iGameSceneBase.kGameStatus.Gameing)
-		{
-			return;
-		}
 		float deltaTime = Time.deltaTime;
 		if (m_CharMoveState == kCharMoveState.None)
 		{
@@ -223,8 +218,7 @@ public class CCharUser : CCharPlayer
 
 	public void MoveByCompass(float fRateX, float fRateY)
 	{
-		if (m_GameScene != null &&
-		    m_GameScene.GameStatus != iGameSceneBase.kGameStatus.Gameing)
+		if (m_GameScene.GameStatus == iGameSceneBase.kGameStatus.Pause)
 		{
 			MoveStop();
 			return;
