@@ -14,8 +14,6 @@ SubShader {
    Bind "texcoord1", TexCoord1
   }
   Color [_Color]
-  Fog { Mode Off }
-  Blend SrcAlpha OneMinusSrcAlpha
   AlphaTest Greater 0.5
   SetTexture [_MainTex] { combine texture * primary double }
   SetTexture [_LightMap] { combine texture * previous }
