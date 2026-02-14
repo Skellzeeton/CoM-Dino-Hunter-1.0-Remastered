@@ -605,6 +605,10 @@ public class CCharMob : CCharBase
 
 	public void SetFreeze(bool bFreeze, float fTime = 0f)
 	{
+		if (ID == 1303)
+		{
+			return;
+		}
 		m_bFreeze = bFreeze;
 		m_fFreezeTime = fTime;
 		ResetAI();
