@@ -654,11 +654,11 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Idle, "shootgun_ground_idle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Forward, "shootgun_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Back, "shootgun_ground_move_backward"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack, "shootgun_ground_attack01"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Forward, "shootgun_ground_attack01"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Back, "shootgun_ground_attack01"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Left, "shootgun_ground_attack01"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Right, "shootgun_ground_attack01"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack, "shootgun_ground_attack01_ingame"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Forward, "shootgun_ground_attack01_ingame"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Back, "shootgun_ground_attack01_ingame"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Left, "shootgun_ground_attack01_ingame"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Right, "shootgun_ground_attack01_ingame"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Hurt, "shootgun_ground_damage"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Front, "shootgun_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Behind, "shootgun_ground_damage_flyback"));
