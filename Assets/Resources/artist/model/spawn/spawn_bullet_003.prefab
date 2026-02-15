@@ -111,7 +111,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: b886e19e2d0130345b1e4fe4442f1e8d, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 7f08d16f69e8c9710a008edb25ed77d7, type: 2}
   m_Bones:
   - {fileID: 4503444533207796}
   m_BlendShapeWeights: []
@@ -9841,7 +9841,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4988693023889350}
-  - component: {fileID: 111132530869065421}
   - component: {fileID: 65559972836543157}
   - component: {fileID: 54634667758784063}
   - component: {fileID: 114196685782913771}
@@ -9870,22 +9869,6 @@ Transform:
   - {fileID: 4239097173075101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &111132530869065421
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945886600465402}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 1
 --- !u!65 &65559972836543157
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -123,7 +123,7 @@ icon="" proccess=""
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30019" countlist="2" countratelist="100" />
-		<recommand recommandtype="1" recommandid="11" recommandlevel="2" islimit="false" />
+		<recommand recommandtype="1" recommandid="21" recommandlevel="1" islimit="false" />
 	</gamelevel>
 	
 		<gamelevel id="1010" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10010001,10010002,10010003,10010004,10010005" task="1010"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11012" dropcount="1" dropcountrate="100" exp="462"  gold="90" desc="Hunt Megaraptor X 2" name="10.Lightening Flashes" proccess="3">
@@ -131,7 +131,7 @@ icon="" proccess=""
     			<limit type="1" maxnumber="12" />
     		</MonsterNumLimit>
     		<RewardMaterial material="30029" countlist="0,1,2,3" countratelist="0,40,20,10"  />
-    		<recommand recommandtype="3" recommandid="10002" recommandlevel="4" islimit="false" />
+    		<recommand recommandtype="1" recommandid="21" recommandlevel="2" islimit="false" />
     	</gamelevel>
 	
 	<gamelevel id="1011" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10011001,10011002,10011003,10011004,10011005,10011006" task="1011"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="11011" dropcount="1" dropcountrate="100" exp="400"  gold="84" desc="Hunt Terrordactyl X 2" name="11.Two Ancient Birds" proccess="3">
