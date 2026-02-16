@@ -33,7 +33,7 @@ public class CCharBossVelociraptor : CCharBoss
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Dead, "death01"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_DeadHeadShoot, "death01"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Hurt, "damage"));
-		m_AnimData.Add(new CAnimInfo(kAnimEnum.BigHurtFront, "damage"));
+		m_AnimData.Add(new CAnimInfo(kAnimEnum.BigHurtFront, "damage_head"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.BigHurtBehind, "damage"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Roar, "Roar"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_ShowTime, "Roar"));

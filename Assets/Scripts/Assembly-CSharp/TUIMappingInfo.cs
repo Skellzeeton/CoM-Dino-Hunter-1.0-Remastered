@@ -213,7 +213,7 @@ public class TUIMappingInfo
 		map_dictionary[1007] = "p8";
 		map_dictionary[1008] = "p2";
 		map_dictionary[1009] = "p4";
-		map_dictionary[1010] = "p3";
+		map_dictionary[1010] = "p9";
 		map_dictionary[1011] = "p2";
 		map_dictionary[1012] = "p5";
 		map_dictionary[1013] = "p7";

@@ -4,6 +4,8 @@ public class CCharMobTriceratops : CCharMob
 	{
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Idle, "Idle01"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.MoveForward, "Run01"));
+        m_AnimData.Add(new CAnimInfo(kAnimEnum.TurnLeft, "Left_Rotation01"));
+        m_AnimData.Add(new CAnimInfo(kAnimEnum.TurnRight, "Right_Rotation01"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Attack, "Attack02"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Dead, "Death01"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_DeadHitFly, "Death02"));

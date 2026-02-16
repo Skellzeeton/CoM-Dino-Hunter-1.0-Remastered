@@ -148,39 +148,50 @@ public class doMoveToTask : Task
 		return kTreeRunStatus.Executing;
 	}
 
-	protected void TurnRound(CCharBase charbase, Vector3 v3Forward)
+protected void TurnRound(CCharBase charbase, Vector3 v3Forward)
+{
+	if (v3Forward == Vector3.zero)
 	{
-		if (v3Forward == Vector3.zero)
-		{
-			return;
-		}
-		m_bRotateBody = true;
-		m_v3RotSrc = charbase.Dir2D;
-		m_v3RotDst = v3Forward;
-		m_fRotRate = 0f;
-		m_bWaitRotateBody = false;
-		float num = Vector3.Dot(m_v3RotSrc, m_v3RotDst);
-		if (num >= 0.8f)
-		{
-			return;
-		}
-		CCharMob cCharMob = charbase as CCharMob;
-		if (cCharMob == null)
-		{
-			return;
-		}
-		CMobInfoLevel mobInfo = cCharMob.GetMobInfo();
-		if (mobInfo != null && mobInfo.isWaitRot)
-		{
-			m_bWaitRotateBody = true;
-			if (Vector3.Cross(charbase.Dir2D, v3Forward).y > 0f)
-			{
-				charbase.CrossAnim(kAnimEnum.TurnRight, WrapMode.ClampForever, 0.3f, 1f, 0f);
-			}
-			else
-			{
-				charbase.CrossAnim(kAnimEnum.TurnLeft, WrapMode.ClampForever, 0.3f, 1f, 0f);
-			}
-		}
+		return;
 	}
+
+	m_bRotateBody = true;
+	m_v3RotSrc = charbase.Dir2D;
+	m_v3RotDst = v3Forward;
+	m_fRotRate = 0f;
+    float dot = Vector3.Dot(m_v3RotSrc, m_v3RotDst);
+	if (dot >= 0.85f)
+	{
+		m_bWaitRotateBody = false;
+		return;
+	}
+
+	CCharMob cCharMob = charbase as CCharMob;
+	if (cCharMob == null)
+	{
+		return;
+	}
+    bool turnRight = Vector3.Cross(charbase.Dir2D, v3Forward).y > 0f;
+    m_bWaitRotateBody = false;
+	if (turnRight)
+	{
+		charbase.CrossAnim(
+			kAnimEnum.TurnRight,
+			WrapMode.ClampForever,
+			0.2f,
+			1f,
+			0f
+		);
+	}
+	else
+	{
+		charbase.CrossAnim(
+			kAnimEnum.TurnLeft,
+			WrapMode.ClampForever,
+			0.2f,
+			1f,
+			0f
+		);
+	}
+}
 }
