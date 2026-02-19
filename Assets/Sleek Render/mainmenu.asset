@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: mainmenu
   m_EditorClassIdentifier: 
   bloomExpanded: 0
-  bloomEnabled: 1
+  bloomEnabled: 0
   bloomThreshold: 0.1
   bloomIntensity: 1
   bloomTint: {r: 1, g: 1, b: 1, a: 1}
   preserveAspectRatio: 0
-  bloomTextureWidth: 512
-  bloomTextureHeight: 512
+  bloomTextureWidth: 128
+  bloomTextureHeight: 128
   bloomLumaCalculationType: 0
   bloomLumaVector: {x: 0.2, y: 0.2, z: 0.2}
   colorizeExpanded: 0
