@@ -138,15 +138,15 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30042" countlist="90,10" countratelist="2,3"  />
+		<RewardMaterial material="30042" countlist="2,3" countratelist="90,10"  />
 		<recommand recommandtype="2" recommandid="3" recommandlevel="2" islimit="false" />
 	</gamelevel>
 		
-		<gamelevel id="1012" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004" task="1012" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11010"  dropcountrate="100" exp="342"  gold="120" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" proccess="3">
+		<gamelevel id="1012" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004,10012005" task="1012" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11010"  dropcountrate="100" exp="342"  gold="120" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" proccess="3">
     		<MonsterNumLimit>
-    			<limit type="1" maxnumber="10" />
+    			<limit type="1" maxnumber="20" />
     		</MonsterNumLimit>
-    		<RewardMaterial material="30026" countlist="90,10" countratelist="2,3" />
+    		<RewardMaterial material="30026" countlist="2,3" countratelist="90,10" />
     		<recommand recommandtype="1" recommandid="6" recommandlevel="2" islimit="false" />
     	</gamelevel>
 		
@@ -344,12 +344,12 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5010" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei03" isskyscene="false" nav_plane="0" bp_cfg="110101" gamewave="5010001,5010002,5010003,5010004" task="5010"  tpend_cfg="110401" sp_cfg_ground="110111" hp_cfg_def="1" dropgroup="15010" dropcount="1" dropcountrate="100" exp="238"  gold="90" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5010" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei03" isskyscene="false" nav_plane="0" bp_cfg="110101" gamewave="5010001,5010002,5010003,5010004" task="5010"  tpend_cfg="110401" sp_cfg_ground="110111" hp_cfg_def="1" dropgroup="15010" dropcount="1" dropcountrate="100" exp="238"  gold="90" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30030" countlist="0,1,2,3" countratelist="20,50,20,10" />
-		<RewardMaterial material="30024" countlist="0,1,2,3" countratelist="20,50,20,10" />
+		<RewardMaterial material="30030" countlist="2" countratelist="100" />
+		<RewardMaterial material="30024" countlist="2" countratelist="100" />
 			<recommand recommandtype="1" recommandid="11" recommandlevel="1" islimit="false" />
 	</gamelevel>
 
@@ -358,8 +358,8 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
-			<RewardMaterial material="30021" countlist="0,1,2,3" countratelist="20,50,20,10" />
-			<RewardMaterial material="30027" countlist="0,1,2,3" countratelist="20,50,20,10" />
+			<RewardMaterial material="30021" countlist="2" countratelist="100" />
+			<RewardMaterial material="30027" countlist="2" countratelist="100" />
 				<recommand recommandtype="2" recommandid="2" recommandlevel="1" islimit="false" />
 	</gamelevel>
 	
@@ -367,7 +367,7 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="15" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30034" countlist="0,1,2,3" countratelist="20,50,20,10" />
+		<RewardMaterial material="30034" countlist="2" countratelist="100" />
 		<recommand recommandtype="2" recommandid="3" recommandlevel="1" islimit="true" />
 	</gamelevel>	
 
@@ -375,7 +375,7 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30022" countlist="0,1,2,3" countratelist="20,50,20,10" />
+		<RewardMaterial material="30022" countlist="2" countratelist="100" />
 		<recommand recommandtype="1" recommandid="5" recommandlevel="3" islimit="false" />
 	</gamelevel>
 	
@@ -383,8 +383,8 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
-				<RewardMaterial material="30028" countlist="0,1,2,3" countratelist="20,50,20,10" />
-		    <RewardMaterial material="30031" countlist="0,1,2,3" countratelist="20,50,20,10" />
+				<RewardMaterial material="30028" countlist="2" countratelist="100" />
+		    <RewardMaterial material="30031" countlist="2" countratelist="100" />
 		    <recommand recommandtype="3" recommandid="10002" recommandlevel="3" islimit="false" />
 	</gamelevel>
 
@@ -393,7 +393,7 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="15" />
 		</MonsterNumLimit>
-	<RewardMaterial material="30025" countlist="90,10" countratelist="2,3" />
+	<RewardMaterial material="30025" countlist="2,3" countratelist="90,10" />
 	<recommand recommandtype="1" recommandid="21" recommandlevel="4" islimit="false" />
 	</gamelevel>
 
@@ -402,8 +402,8 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
-			<RewardMaterial material="30041" countlist="90,10" countratelist="2,3" />
-		<RewardMaterial material="30037" countlist="90,10" countratelist="2,3" />
+			<RewardMaterial material="30041" countlist="2,3" countratelist="90,10" />
+		<RewardMaterial material="30037" countlist="2,3" countratelist="90,10" />
 			<recommand recommandtype="1" recommandid="6" recommandlevel="4" islimit="false" />
 	</gamelevel>
 
@@ -411,7 +411,7 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="18" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30035" countlist="90,10" countratelist="2,3" />
+		<RewardMaterial material="30035" countlist="2,3" countratelist="90,10" />
 		<recommand recommandtype="2" recommandid="2" recommandlevel="1" islimit="true" />
 	</gamelevel>	
 
@@ -419,8 +419,8 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30045" countlist="90,10" countratelist="2,3" />
-		<RewardMaterial material="30063" countlist="90,10" countratelist="2,3" />
+		<RewardMaterial material="30045" countlist="2,3" countratelist="90,10" />
+		<RewardMaterial material="30063" countlist="2,3" countratelist="90,10" />
 		<recommand recommandtype="1" recommandid="16" recommandlevel="5" islimit="false" />
 	</gamelevel>
 

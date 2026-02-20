@@ -644,7 +644,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_BigHurt_Front, "crossbow_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_BigHurt_Behind, "crossbow_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Skill, "crossbow_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Rush, "crossbow_ground_useskill_rush"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Rush, "crossbow_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Death, "crossbow_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Stun, "crossbow_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Victory, "crossbow_ground_victory"));
@@ -663,7 +663,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Front, "shootgun_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Behind, "shootgun_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Skill, "shootgun_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "shootgun_ground_useskill_rush"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "shootgun_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Death, "shootgun_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Stun, "shootgun_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Victory, "shootgun_ground_victory"));
@@ -682,7 +682,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_BigHurt_Front, "autorifle_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_BigHurt_Behind, "autorifle_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Skill, "autorifle_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Rush, "autorifle_ground_useskill_rush"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Rush, "autorifle_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Death, "autorifle_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Stun, "autorifle_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Victory, "autorifle_ground_victory"));
@@ -701,7 +701,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_BigHurt_Front, "holdgun_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_BigHurt_Behind, "holdgun_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Skill, "holdgun_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Rush, "holdgun_ground_useskill_rush"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Rush, "holdgun_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Death, "holdgun_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Stun, "holdgun_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Victory, "holdgun_ground_victory"));
@@ -720,7 +720,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_BigHurt_Front, "rocket_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_BigHurt_Behind, "rocket_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Skill, "rocket_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Rush, "rocket_ground_useskill_rush"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Rush, "rocket_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Death, "rocket_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Stun, "rocket_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Victory, "rocket_ground_victory"));
@@ -744,7 +744,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_BigHurt_Front, "melee_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_BigHurt_Behind, "melee_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_Skill, "melee_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_Rush, "melee_ground_useskill_rush"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_Rush, "melee_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_Death, "melee_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_Stun, "melee_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Melee_Victory, "melee_ground_victory"));

@@ -605,7 +605,7 @@ public class CCharMob : CCharBase
 
 	public void SetFreeze(bool bFreeze, float fTime = 0f)
 	{
-		if (ID == 1303)
+		if (ID == 1303 || ID == 903) 
 		{
 			return;
 		}

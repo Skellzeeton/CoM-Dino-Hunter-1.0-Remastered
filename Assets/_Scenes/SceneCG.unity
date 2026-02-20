@@ -266,10 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9c27a5d8af4f5585346c7be6a501fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 34}
-  videoImage: {fileID: 0}
-  renderTexture: {fileID: 0}
-  introClip: {fileID: 0}
 --- !u!82 &33
 AudioSource:
   m_ObjectHideFlags: 0
@@ -435,21 +431,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToPreload:
-  - prefab: {fileID: 1952882380158473, guid: 4451a2f9e4958544a91f05e3212d486d, type: 3}
-  - prefab: {fileID: 1393167931105232, guid: 315f67c44ca0e6d4a92e596952a4dbc9, type: 3}
   - prefab: {fileID: 1560494770998771, guid: d23db6e89fe44ab41937004a36a4e4ea, type: 3}
-  - prefab: {fileID: 1374661274049316, guid: 9da139fc695c55342bd50555c7cd4eab, type: 3}
-  - prefab: {fileID: 1102869035601409, guid: c5b30f48f878a3a4e91e6c0f2b9b6ea0, type: 3}
   - prefab: {fileID: 1699980911718780, guid: 6298c68cb47599b4ab3c75c15ae58fe1, type: 3}
   - prefab: {fileID: 1047560171733073, guid: f2a34687c4ef9db4399f5d08ae5495b2, type: 3}
-  - prefab: {fileID: 1044472598297887, guid: 0ed021e708f8af542b4f6457dc1a301f, type: 3}
-  - prefab: {fileID: 1100939112534306, guid: 1d499abbf7f748144b01bcd6e1cf8015, type: 3}
   - prefab: {fileID: 1921226980896773, guid: 175d4ce897c1d9c4ba4fa7657c9ba847, type: 3}
   - prefab: {fileID: 1572689102572129, guid: 592ddb9d4c8e78346bbf29505d98f677, type: 3}
-  - prefab: {fileID: 1262660607945480, guid: f5145ad777e517d47b596304de6527b2, type: 3}
-  - prefab: {fileID: 1798180357201212, guid: 8cc2cd795a4d6e146b64c50323780a5c, type: 3}
   - prefab: {fileID: 1095330877428080, guid: af3885f2424b98744ac96ec4f50235e7, type: 3}
-  - prefab: {fileID: 1105173881910633, guid: edf68105dab218f409ad1fe9e8c591eb, type: 3}
+  - prefab: {fileID: 1504228811745573, guid: 58138ed8d51109b428741c1603253e31, type: 3}
 --- !u!4 &627049958
 Transform:
   m_ObjectHideFlags: 0
