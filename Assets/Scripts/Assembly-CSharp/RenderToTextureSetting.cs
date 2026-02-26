@@ -18,7 +18,7 @@ public class RenderToTextureSetting : MonoBehaviour
             {
                 format = RenderTextureFormat.Default;
             }
-            rt = new RenderTexture(Mathf.FloorToInt(TextureSize.x), Mathf.FloorToInt(TextureSize.y), 16, format);
+            rt = new RenderTexture(Mathf.FloorToInt(TextureSize.x), Mathf.FloorToInt(TextureSize.y), 24, format);
             m_camera.targetTexture = rt;
             m_camera.aspect = rt.width / rt.height;
         }

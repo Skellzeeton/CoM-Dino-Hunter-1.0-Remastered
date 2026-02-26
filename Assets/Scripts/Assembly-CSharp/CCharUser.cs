@@ -108,6 +108,10 @@ public class CCharUser : CCharPlayer
 		{
 			return;
 		}
+		if (m_GameScene.GameStatus == iGameSceneBase.kGameStatus.Pause)
+		{
+			return;
+		}
 		UpdateAnimation();
 		if (m_curWeapon != null)
 		{
