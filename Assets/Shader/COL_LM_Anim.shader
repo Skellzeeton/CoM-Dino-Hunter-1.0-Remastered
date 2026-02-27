@@ -55,7 +55,9 @@ Shader "Triniti/Scene/COL_LM_Anim"
             {
                 fixed4 col = tex2D(_MainTex, i.uv) * _Color;
                 fixed4 lm = tex2D(_LightMap, i.uv2);
-                return col * lm;
+                fixed4 finalCol = col * lm;
+                finalCol.rgb *= 2.0;
+                return finalCol;
             }
             ENDCG
         }

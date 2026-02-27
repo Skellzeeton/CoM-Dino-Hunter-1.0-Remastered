@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7036372141128771315}
   - component: {fileID: 5484067133444708390}
   - component: {fileID: 1491288141154728582}
+  - component: {fileID: 3434295627441470241}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -195,3 +196,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 3d417cf48fde7da46b5a79811115e87f, type: 3}
+--- !u!1542919678 &3434295627441470241
+StreamingController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961356840392632627}
+  m_Enabled: 1
+  m_StreamingMipmapBias: 0
