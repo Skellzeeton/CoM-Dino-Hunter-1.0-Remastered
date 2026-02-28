@@ -101,7 +101,7 @@ public class CUIProtraitInfo
 	{
 		if (!(m_ProtraitLevel == null))
 		{
-			m_ProtraitLevel.text = nLevel.ToString();
+			m_ProtraitLevel.text = "LV." +  nLevel;
 		}
 	}
 

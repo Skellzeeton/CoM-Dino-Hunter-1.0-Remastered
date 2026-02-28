@@ -112,6 +112,7 @@ public class TUIMappingInfo
 		stash_dictionary[30072] = "jibeilong_BOSS_gusui1";
 		stash_dictionary[30073] = "bawanglong_BOSS_touke3";
 		stash_dictionary[30074] = "jibeilong_BOSS_gusui3";
+		stash_dictionary[80001] = "crystal1";
 		skill_dictionary = new Dictionary<int, string>();
 		skill_dictionary[2] = "chongfeng";
 		skill_dictionary[4] = "dunxing";

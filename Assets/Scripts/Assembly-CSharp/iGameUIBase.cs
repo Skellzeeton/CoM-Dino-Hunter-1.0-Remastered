@@ -79,8 +79,8 @@ public class iGameUIBase : MonoBehaviour
 		m_GameTaskUIPlane = GetControl<iGameTaskUIPlane>("_AnchorTop/NGUITaskUIPlane");
 		m_MainPlayerPortraitInfo = new CUIProtraitInfo();
 		m_MainPlayerPortraitInfo.Initialize(m_UIManager.mHeadPortrait);
-		float num = (float)Screen.height / 400f;
-		float num2 = (float)Screen.width / 560f;
+		float num = (float)Screen.height / 360f;
+		float num2 = (float)Screen.width / 520f;
 		float num3 = ((!(num < num2)) ? num2 : num);
 		foreach (Transform item in m_UIManager.mParent)
 		{
