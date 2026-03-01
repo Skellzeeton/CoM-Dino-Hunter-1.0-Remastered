@@ -139,7 +139,7 @@ icon="" proccess=""
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30042" countlist="2,3" countratelist="90,10"  />
-		<recommand recommandtype="2" recommandid="3" recommandlevel="2" islimit="false" />
+		<recommand recommandtype="1" recommandid="21" recommandlevel="2" islimit="false" />
 	</gamelevel>
 		
 		<gamelevel id="1012" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004,10012005" task="1012" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11010"  dropcountrate="100" exp="342"  gold="120" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" proccess="3">
@@ -147,7 +147,7 @@ icon="" proccess=""
     			<limit type="1" maxnumber="20" />
     		</MonsterNumLimit>
     		<RewardMaterial material="30026" countlist="2,3" countratelist="90,10" />
-    		<recommand recommandtype="1" recommandid="6" recommandlevel="2" islimit="false" />
+    		<recommand recommandtype="1" recommandid="21" recommandlevel="3" islimit="false" />
     	</gamelevel>
 		
 		<gamelevel id="1013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" isskyscene="false" nav_plane="0" bp_cfg="70101" gamewave="10013001,10013002,10013003,10013004,10013005,10013006" task="1013" sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11013" dropcount="1" dropcountrate="100" exp="528"  gold="96" desc="Hunt Killosaurus Rex X 2" name="13.Chase the Poison Killosaurus!" proccess="3">
@@ -379,9 +379,9 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="5" recommandlevel="3" islimit="false" />
 	</gamelevel>
 	
-			<gamelevel id="5014" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="5014001,5014002,5014004,5014004" task="5014" sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="15014" dropcount="1" dropcountrate="100" exp="342"  gold="110" desc="Survive 3:00" name="Survival" proccess="1">
+			<gamelevel id="5014" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="5014001,5014002,5014004,5014004,5014005" task="5014" sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="15014" dropcount="1" dropcountrate="100" exp="342"  gold="110" desc="Hunt Triserratops x5\nHunt Turboraptor x10" name="Dinosaur Hunting" proccess="1">
 		<MonsterNumLimit>
-			<limit type="1" maxnumber="15" />
+			<limit type="1" maxnumber="150" />
 		</MonsterNumLimit>
 				<RewardMaterial material="30028" countlist="2" countratelist="100" />
 		    <RewardMaterial material="30031" countlist="2" countratelist="100" />

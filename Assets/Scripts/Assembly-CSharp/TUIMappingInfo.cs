@@ -38,6 +38,7 @@ public class TUIMappingInfo
 	public TUIMappingInfo()
 	{
 		stash_dictionary = new Dictionary<int, string>();
+		stash_dictionary[20001] = "xunmenglong_putong_tougu2";
 		stash_dictionary[30001] = "bawanglong_BOSS_ya1";
 		stash_dictionary[30002] = "shuangguanlong_BOSS_duzhi1";
 		stash_dictionary[30003] = "shuangguanlong_gongyou_longpi1";
