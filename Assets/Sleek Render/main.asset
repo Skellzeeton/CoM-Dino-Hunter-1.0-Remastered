@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloomExpanded: 0
   bloomEnabled: 1
-  bloomThreshold: 0.15
-  bloomIntensity: 1
+  bloomThreshold: 0.25
+  bloomIntensity: 1.2
   bloomTint: {r: 1, g: 1, b: 1, a: 1}
   preserveAspectRatio: 0
   bloomTextureWidth: 256
@@ -33,6 +33,6 @@ MonoBehaviour:
   vignetteExpandRadius: 1.34
   vignetteColor: {r: 0, g: 0, b: 0, a: 1}
   brightnessContrastExpanded: 0
-  brightnessContrastEnabled: 0
+  brightnessContrastEnabled: 1
   contrast: 0.025
   brightness: 0
