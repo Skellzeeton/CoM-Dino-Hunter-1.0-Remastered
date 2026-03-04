@@ -107,7 +107,8 @@ icon="" proccess=""
 			<limit type="1" maxnumber="10" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30020" countlist="2" countratelist="100" />
-		<recommand recommandtype="1" recommandid="1" recommandlevel="4" islimit="false" />
+			<RewardMaterial material="30075" countlist="2" countratelist="100" />
+			<recommand recommandtype="1" recommandid="1" recommandlevel="4" islimit="false" />
 	</gamelevel>	
 
 	<gamelevel id="1008" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="1008001,1008002,1008003,1008004" task="1008"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="11008" dropcount="1" dropcountrate="100" exp="238"  gold="54" desc="Hunt Terrordactyl X 1" name="8.The King of the Sky" proccess="3">
@@ -159,12 +160,12 @@ icon="" proccess=""
 	</gamelevel>
 		
 		
-		<gamelevel id="1014" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10014001,10014002,10014003,10014004" task="1014"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11014" dropcount="1" dropcountrate="100" exp="598"  gold="100" desc="Hunt Spine King X 1" name="14.The Looming Danger" proccess="3">
+		<gamelevel id="1014" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10014001,10014002,10014003,10014004" task="1014"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11014" dropcount="1" dropcountrate="100" exp="598"  gold="100" desc="Hunt Spine King X 1\nMelee weapons only" name="14.The Looming Danger" proccess="3" limitmelee="true">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30032" countlist="2" countratelist="100"  />
-		<recommand recommandtype="1" recommandid="12" recommandlevel="1" islimit="false" />
+		<recommand recommandtype="1" recommandid="7" recommandlevel="1" islimit="false" />
 	</gamelevel>	
 	
 		<gamelevel id="1015"  scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10015001,10015002,10015003,10015004,10015005,10015006" task="1015"  sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11015" dropcount="1" dropcountrate="100" exp="672"  gold="220" desc="Hunt Megaraptor X 4" name="15.Purple Shadow in the Snow" proccess="3">
@@ -368,7 +369,8 @@ icon="" proccess=""
 			<limit type="1"  maxnumber="15" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30034" countlist="2" countratelist="100" />
-		<recommand recommandtype="1" recommandid="16" recommandlevel="1" islimit="false" />
+			 <RewardMaterial material="30075" countlist="2" countratelist="100" />
+			 <recommand recommandtype="1" recommandid="16" recommandlevel="1" islimit="false" />
 	</gamelevel>	
 
 	<gamelevel id="5013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei04" isskyscene="false" nav_plane="0" bp_cfg="120101" gamewave="5013001,5013002,5013003,5013004" task="5013"  tpend_cfg="120401" sp_cfg_ground="120111" hp_cfg_def="1" dropgroup="15013" dropcount="1" dropcountrate="100" exp="342"  gold="100" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">

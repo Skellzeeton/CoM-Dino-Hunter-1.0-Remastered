@@ -442,6 +442,18 @@ public class CCharUser : CCharPlayer
 	public override void SetStun(bool bStun, float fTime = 0f)
 	{
 		base.SetStun(bStun, fTime);
+		try
+		{
+			isStun = bStun;
+			StunTime = fTime;
+			var field = this.GetType().GetField("m_bStun", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			if (field != null)
+				field.SetValue(this, bStun);
+		}
+		catch
+		{
+		}
+
 		if (bStun)
 		{
 			MoveStop();

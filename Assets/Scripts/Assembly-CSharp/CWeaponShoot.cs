@@ -80,7 +80,7 @@ public class CWeaponShoot : CWeaponBase
 			switch (m_pWeaponLvlInfo.nElementType)
 			{
 			case 1:
-				component.PlayAudio("Fx_Impact_fire");
+				component.PlayAudio("Fx_Impact_flare");
 				break;
 			case 3:
 				component.PlayAudio("Fx_Impact_freeze");

@@ -255,10 +255,24 @@
 		<skill id="60010" lvl="1" type="0" action="10005" rangetype="0" rangetypevalue="0,5" skillmode="1" skillmodevalue="0.5"/>
 	
 	<!-- 0.1s[0-10] -->
-		<skill id="60011" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,10" skillmode="3" skillmodevalue="0.1" />	
-	<!-- -->
-		<skill id="60012" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,10,0,0" skillmode="1" skillmodevalue="0.7" func="4,11" valuex="4,4" valuey="4,0"/>>
+		<skill id="60011" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,10" skillmode="3" skillmodevalue="0.1" />
 		
+		<!-- Stun cloud -->
+		
+		<skill id="60012" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,10,0,0" skillmode="1" skillmodevalue="0.7" func="4,11" valuex="4,4" valuey="4,0"/>>
+
+		<!-- Enraged/elite spinosaurus boss skills below -->
+		
+		<!-- stun cloud -->
+
+		<skill id="60013" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,8,0,0" skillmode="1" skillmodevalue="0.7" func="4,5,11" valuex="18,270,2" valuey="4,0,0"/>>
+
+		<!-- Charge -->
+		
+		<skill id="60014" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="7,40" skillmode="3" skillmodevalue="2.4,0" />
+
+		<skill id="60015" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,4" skillmode="6" skillmodevalue="48,1,0.25" func="5,4,11" valuex="150,2,1" valuey="0,2,0"/>
+
 		<!-- ����Ŀ��0.5s[����0-4] -->
 		<skill id="80000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,4" skillmode="3" skillmodevalue="0.5" />	
 		<!-- ��ͨ˺ҧ 100%�˺�-->
@@ -393,8 +407,12 @@
 		<!--  -->
 		<combo id="60006" skilllist="60008,60009,60010" coldown="12" freezetime="2.5"/> 
 		<!--  -->
-		<combo id="60007" skilllist="60011,60012" coldown="10" freezetime="2"/> 
-		
+		<combo id="60007" skilllist="60011,60012" coldown="10" freezetime="2"/>
+		<!-- Enraged/elite boss skills -->
+		<combo id="60008" skilllist="60013" coldown="6" freezetime="1"/>
+
+		<combo id="60009" skilllist="60014,60015,60010,60008,60015,60010,60008,60015,60010" coldown="15" freezetime="2"/>
+
 		<!-- ***********************************������������ start by 80000************************************************************************* -->
 		<!-- ��ͨ˺ҧ -->
 		<combo id="80000" skilllist="80000,80001" coldown="4" freezetime="2"/> 	
