@@ -51,7 +51,7 @@ icon="" proccess=""
 	
 		<!-- *********************************** start by 1001************************************************************************* -->
 	
-		<gamelevel id="1001" cutscene_ambience="Amb_Rainforest_Show" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="1001001,1001002,1001003,1001004" task="1001" sp_cfg_ground="20111" hp_cfg_def="1" cutscene="forest_open" dropgroup="11001" dropcount="1" dropcountrate="100"  exp="22"  gold="24" desc="Hunt T Rex X 1" name="1.Set out on Your Journey" proccess="1">
+		<gamelevel id="1001" cutscene_ambience="Amb_Rainforest_Show" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="1001001,1001002,1001003,1001004" task="1001" sp_cfg_ground="20111" hp_cfg_def="1" cutscene="forest_open" dropgroup="11001" dropcount="1" dropcountrate="100"  exp="22"  gold="48" desc="Hunt T Rex X 1" name="1.Set out on Your Journey" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="8" />
 		</MonsterNumLimit>
@@ -59,7 +59,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="1" recommandlevel="1" islimit="false" />
 	</gamelevel>
 	
-	  <gamelevel id="1002" cutscene_ambience="Amb_Volcano_Show" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava2" isskyscene="false" nav_plane="0" bp_cfg="40101" gamewave="1002001,1002002,1002003,1002004" task="1002"  sp_cfg_ground="40111" hp_cfg_def="1"  cutscene="yanjiang01_open"  dropgroup="11002" dropcount="1" dropcountrate="100" exp="22"  gold="26" desc="Hunt Killosaurus Rex X 1" name="2.Scorching Poison" proccess="1">
+	  <gamelevel id="1002" cutscene_ambience="Amb_Volcano_Show" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava2" isskyscene="false" nav_plane="0" bp_cfg="40101" gamewave="1002001,1002002,1002003,1002004" task="1002"  sp_cfg_ground="40111" hp_cfg_def="1"  cutscene="yanjiang01_open"  dropgroup="11002" dropcount="1" dropcountrate="100" exp="22"  gold="52" desc="Hunt Killosaurus Rex X 1" name="2.Scorching Poison" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
@@ -67,7 +67,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="1" recommandlevel="1" islimit="false" />
 	</gamelevel>
 
-	<gamelevel id="1003" cutscene_ambience="Amb_WindValley_Show" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="1003001,1003002,1003003,1003004" task="1003"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" cutscene="shangu01_open" dropgroup="11003" dropcount="1" dropcountrate="100" exp="48"  gold="28" desc="Hunt Terrordactyl X 1" name="3.Echoes in the Valley" proccess="1">
+	<gamelevel id="1003" cutscene_ambience="Amb_WindValley_Show" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="1003001,1003002,1003003,1003004" task="1003"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" cutscene="shangu01_open" dropgroup="11003" dropcount="1" dropcountrate="100" exp="48"  gold="56" desc="Hunt Terrordactyl X 1" name="3.Echoes in the Valley" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="14" />
 		</MonsterNumLimit>
@@ -76,7 +76,7 @@ icon="" proccess=""
 	</gamelevel>
 	
 	
-		<gamelevel id="1004" cutscene_ambience="Amb_Volcano_Show" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="1004001,1004002,1004003,1004004" task="1004" sp_cfg_ground="30111" hp_cfg_def="1" cutscene="yanjiang_cave_open" dropgroup="11004" dropcount="1" dropcountrate="100" exp="48"  gold="40" desc="Hunt Triterrortops X 1" name="4.The Lake of Boiling Lava" proccess="3">
+		<gamelevel id="1004" cutscene_ambience="Amb_Volcano_Show" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="1004001,1004002,1004003,1004004" task="1004" sp_cfg_ground="30111" hp_cfg_def="1" cutscene="yanjiang_cave_open" dropgroup="11004" dropcount="1" dropcountrate="100" exp="48"  gold="60" desc="Hunt Triterrortops X 1" name="4.The Lake of Boiling Lava" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="40" />
 		</MonsterNumLimit>
@@ -84,7 +84,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="4" recommandlevel="2" islimit="false" />
 	</gamelevel>
 	
-	<gamelevel id="1005" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai02" isskyscene="false" nav_plane="0" bp_cfg="60101" gamewave="1005001,1005002,1005003,1005004" task="1005" sp_cfg_ground="60111" hp_cfg_def="1" dropgroup="11005" dropcount="1" dropcountrate="100" exp="78"  gold="42" desc="Hunt Megaraptor X 1" name="5.The Shadow In The Forest" proccess="3">
+	<gamelevel id="1005" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai02" isskyscene="false" nav_plane="0" bp_cfg="60101" gamewave="1005001,1005002,1005003,1005004" task="1005" sp_cfg_ground="60111" hp_cfg_def="1" dropgroup="11005" dropcount="1" dropcountrate="100" exp="78"  gold="84" desc="Hunt Megaraptor X 1" name="5.The Shadow In The Forest" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="32" />
 		</MonsterNumLimit>
@@ -94,7 +94,7 @@ icon="" proccess=""
 	
 	
 	
-			<gamelevel id="1006" cutscene_ambience="Amb_Snowfield_Show" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="1006001,1006002,1006003,1006004" task="1006"  sp_cfg_ground="200111" hp_cfg_def="1" cutscene="xuedi_open" dropgroup="11006" dropcount="1" dropcountrate="100" exp="150"  gold="92" desc="Hunt Spine King X 1" name="6.Fight or Frozen to Death" proccess="3">
+			<gamelevel id="1006" cutscene_ambience="Amb_Snowfield_Show" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="1006001,1006002,1006003,1006004" task="1006"  sp_cfg_ground="200111" hp_cfg_def="1" cutscene="xuedi_open" dropgroup="11006" dropcount="1" dropcountrate="100" exp="150"  gold="184" desc="Hunt Spine King X 1" name="6.Fight or Frozen to Death" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="10" />
 		</MonsterNumLimit>
@@ -102,7 +102,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="4" recommandlevel="3" islimit="false" />
 	</gamelevel>
 	
-		<gamelevel id="1007" cutscene_ambience="Amb_Snowfield_Show" cutscene="bingchuan01_open" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce" isskyscene="false" nav_plane="0" bp_cfg="220101" gamewave="1007001,1007002,1007003,1007004" task="1007"  sp_cfg_ground="220111" hp_cfg_def="1" dropgroup="11007" dropcount="1" dropcountrate="100" exp="192"  gold="50" desc="Hunt Killosaurus Rex X 1" name="7.The Freezing Night Sky" proccess="3">
+		<gamelevel id="1007" cutscene_ambience="Amb_Snowfield_Show" cutscene="bingchuan01_open" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce" isskyscene="false" nav_plane="0" bp_cfg="220101" gamewave="1007001,1007002,1007003,1007004" task="1007"  sp_cfg_ground="220111" hp_cfg_def="1" dropgroup="11007" dropcount="1" dropcountrate="100" exp="192"  gold="100" desc="Hunt Killosaurus Rex X 1" name="7.The Freezing Night Sky" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="10" />
 		</MonsterNumLimit>
@@ -111,7 +111,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="1" recommandlevel="4" islimit="false" />
 	</gamelevel>	
 
-	<gamelevel id="1008" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="1008001,1008002,1008003,1008004" task="1008"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="11008" dropcount="1" dropcountrate="100" exp="238"  gold="54" desc="Hunt Terrordactyl X 1" name="8.The King of the Sky" proccess="3">
+	<gamelevel id="1008" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="1008001,1008002,1008003,1008004" task="1008"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="11008" dropcount="1" dropcountrate="100" exp="238"  gold="108" desc="Hunt Terrordactyl X 1" name="8.The King of the Sky" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
@@ -119,7 +119,7 @@ icon="" proccess=""
 	<recommand recommandtype="1" recommandid="1" recommandlevel="4" islimit="false" />
 	</gamelevel>
 	
-		 <gamelevel id="1009" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano"  scenename="SceneLava2" isskyscene="false" nav_plane="0" bp_cfg="40101" gamewave="1009001,1009002,1009003,1009004" task="1009"  sp_cfg_ground="40111" hp_cfg_def="1" dropgroup="11009" dropcount="1" dropcountrate="100" exp="238"  gold="60" desc="Hunt T Rex X 1" name="9.Attack of the Ancient Giants" proccess="3">
+		 <gamelevel id="1009" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano"  scenename="SceneLava2" isskyscene="false" nav_plane="0" bp_cfg="40101" gamewave="1009001,1009002,1009003,1009004" task="1009"  sp_cfg_ground="40111" hp_cfg_def="1" dropgroup="11009" dropcount="1" dropcountrate="100" exp="238"  gold="120" desc="Hunt T Rex X 1" name="9.Attack of the Ancient Giants" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
@@ -127,7 +127,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="21" recommandlevel="1" islimit="false" />
 	</gamelevel>
 	
-		<gamelevel id="1010" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10010001,10010002,10010003,10010004,10010005" task="1010"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11012" dropcount="1" dropcountrate="100" exp="462"  gold="90" desc="Hunt Megaraptor X 2" name="10.Lightening Flashes" proccess="3">
+		<gamelevel id="1010" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10010001,10010002,10010003,10010004,10010005" task="1010"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11012" dropcount="1" dropcountrate="100" exp="462"  gold="150" desc="Hunt Megaraptor X 2" name="10.Lightening Flashes" proccess="3">
     		<MonsterNumLimit>
     			<limit type="1" maxnumber="16" />
     		</MonsterNumLimit>
@@ -135,7 +135,7 @@ icon="" proccess=""
     		<recommand recommandtype="1" recommandid="21" recommandlevel="2" islimit="false" />
     	</gamelevel>
 	
-	<gamelevel id="1011" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10011001,10011002,10011003,10011004,10011005,10011006" task="1011"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="11011" dropcount="1" dropcountrate="100" exp="400"  gold="84" desc="Hunt Terrordactyl X 2" name="11.Two Ancient Birds" proccess="3">
+	<gamelevel id="1011" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10011001,10011002,10011003,10011004,10011005,10011006" task="1011"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="11011" dropcount="1" dropcountrate="100" exp="400"  gold="168" desc="Hunt Terrordactyl X 2" name="11.Two Ancient Birds" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
@@ -143,7 +143,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="21" recommandlevel="2" islimit="false" />
 	</gamelevel>
 		
-		<gamelevel id="1012" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004,10012005" task="1012" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11010"  dropcountrate="100" exp="342"  gold="120" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" proccess="3">
+		<gamelevel id="1012" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004,10012005" task="1012" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11010"  dropcountrate="100" exp="342"  gold="240" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" proccess="3">
     		<MonsterNumLimit>
     			<limit type="1" maxnumber="20" />
     		</MonsterNumLimit>
@@ -151,7 +151,7 @@ icon="" proccess=""
     		<recommand recommandtype="1" recommandid="21" recommandlevel="3" islimit="false" />
     	</gamelevel>
 		
-		<gamelevel id="1013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" isskyscene="false" nav_plane="0" bp_cfg="70101" gamewave="10013001,10013002,10013003,10013004,10013005,10013006" task="1013" sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11013" dropcount="1" dropcountrate="100" exp="528"  gold="96" desc="Hunt Killosaurus Rex X 2" name="13.Chase the Poison Killosaurus!" proccess="3">
+		<gamelevel id="1013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" isskyscene="false" nav_plane="0" bp_cfg="70101" gamewave="10013001,10013002,10013003,10013004,10013005,10013006" task="1013" sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11013" dropcount="1" dropcountrate="100" exp="528"  gold="192" desc="Hunt Killosaurus Rex X 2" name="13.Chase the Poison Killosaurus!" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -160,7 +160,7 @@ icon="" proccess=""
 	</gamelevel>
 		
 		
-		<gamelevel id="1014" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai06" isskyscene="false" nav_plane="0" bp_cfg="210101" gamewave="10014001,10014002,10014003,10014004" task="1014"  sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11014" dropcount="1" dropcountrate="100" exp="598"  gold="100" desc="Hunt Spine King X 1" name="14.The Looming Danger" proccess="3" limitmelee="false">
+		<gamelevel id="1014" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai06" isskyscene="false" nav_plane="0" bp_cfg="210101" gamewave="10014001,10014002,10014003,10014004" task="1014"  sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11014" dropcount="1" dropcountrate="100" exp="598"  gold="200" desc="Hunt Spine King X 1" name="14.The Looming Danger" proccess="3" limitmelee="false">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -168,7 +168,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="7" recommandlevel="1" islimit="false" />
 	</gamelevel>	
 	
-		<gamelevel id="1015"  scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10015001,10015002,10015003,10015004,10015005,10015006" task="1015"  sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11015" dropcount="1" dropcountrate="100" exp="672"  gold="220" desc="Hunt Megaraptor X 4" name="15.Purple Shadow in the Snow" proccess="3">
+		<gamelevel id="1015"  scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10015001,10015002,10015003,10015004,10015005,10015006" task="1015"  sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11015" dropcount="1" dropcountrate="100" exp="672"  gold="220" desc="Hunt Megaraptor X 2" name="15.Purple Shadow in the Snow" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -176,7 +176,7 @@ icon="" proccess=""
 		<recommand recommandtype="3" recommandid="10003" recommandlevel="2" islimit="false" />
 	</gamelevel>
 	
-		 <gamelevel id="1016" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava2" isskyscene="false" nav_plane="0" bp_cfg="40101" gamewave="10016001,10016002,10016003,10016004,10016005,10016006,10016007" task="1016"  sp_cfg_ground="40111" hp_cfg_def="1" dropgroup="11016" dropcount="1" dropcountrate="100" exp="832"  gold="160" desc="Hunt Triterrortops X 1\nHunt Spine King X 1" name="16.Last Stand" proccess="3">
+		 <gamelevel id="1016" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava2" isskyscene="false" nav_plane="0" bp_cfg="40101" gamewave="10016001,10016002,10016003,10016004,10016005,10016006,10016007" task="1016"  sp_cfg_ground="40111" hp_cfg_def="1" dropgroup="11016" dropcount="1" dropcountrate="100" exp="832"  gold="260" desc="Hunt Triterrortops X 1\nHunt Spine King X 1" name="16.Last Stand" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="12" />
 		</MonsterNumLimit>
@@ -186,7 +186,7 @@ icon="" proccess=""
 	</gamelevel>
 	
 	
-			<gamelevel id="1017" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai01" isskyscene="false" nav_plane="0" bp_cfg="50101" gamewave="10017001,10017002,10017003,10017004,10017005,10017006,10017007" task="1017"  sp_cfg_ground="50111" hp_cfg_def="1" dropgroup="11017" dropcount="1" dropcountrate="100" exp="918"  gold="170" desc="Hunt Killosaurus Rex X 1\nHunt T Rex X 1" name="17.Overwhelming Power" proccess="3">
+			<gamelevel id="1017" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai01" isskyscene="false" nav_plane="0" bp_cfg="50101" gamewave="10017001,10017002,10017003,10017004,10017005,10017006,10017007" task="1017"  sp_cfg_ground="50111" hp_cfg_def="1" dropgroup="11017" dropcount="1" dropcountrate="100" exp="918"  gold="290" desc="Hunt Killosaurus Rex X 1\nHunt T Rex X 1" name="17.Overwhelming Power" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -195,7 +195,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="9" recommandlevel="4" islimit="false" />
 	</gamelevel>
 	
-		<gamelevel id="1018" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="10018001,10018002,10018003,10018004,10018005,10018006,10018007" task="1018"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="11018" dropcount="1" dropcountrate="100" exp="1008"  gold="180" desc="Hunt Spine King X 1\nHunt Megaraptor X 1" name="18.The Cave Expedition" proccess="3">
+		<gamelevel id="1018" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="10018001,10018002,10018003,10018004,10018005,10018006,10018007" task="1018"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="11018" dropcount="1" dropcountrate="100" exp="1008"  gold="360" desc="Hunt Spine King X 1\nHunt Megaraptor X 1" name="18.The Cave Expedition" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -205,7 +205,7 @@ icon="" proccess=""
 	</gamelevel>
 	
 	
-			<gamelevel id="1019" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai04" isskyscene="false" nav_plane="0" bp_cfg="80101" gamewave="10019001,10019002,10019003,10019004,10019005,10019006,10019007" task="1019"  sp_cfg_ground="80111" hp_cfg_def="1" dropgroup="11019" dropcount="1" dropcountrate="100" exp="1102"  gold="190" desc="Hunt Megaraptor X 1\nHunt Triterrortops X 1" name="19.Fight Your Way out" proccess="3">
+			<gamelevel id="1019" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai04" isskyscene="false" nav_plane="0" bp_cfg="80101" gamewave="10019001,10019002,10019003,10019004,10019005,10019006,10019007" task="1019"  sp_cfg_ground="80111" hp_cfg_def="1" dropgroup="11019" dropcount="1" dropcountrate="100" exp="1102"  gold="320" desc="Hunt Megaraptor X 1\nHunt Triterrortops X 1" name="19.Fight Your Way out" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -222,7 +222,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="1021" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10021001,10021002,10021003,10021004,10021005,10021006,10021007" task="1021" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11021" dropcountrate="100" exp="1302"  gold="210" desc="Hunt T Rex X 1\nHunt Spine King X 1" name="21.Unrelenting Force" proccess="3">
+	<gamelevel id="1021" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="10021001,10021002,10021003,10021004,10021005,10021006,10021007" task="1021" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="11021" dropcountrate="100" exp="1302"  gold="420" desc="Hunt T Rex X 1\nHunt Spine King X 1" name="21.Unrelenting Force" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -232,7 +232,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="1022" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10022001,10022002,10022003,10022004,10022005,10022006,10022007" task="1022"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11022" dropcount="1" dropcountrate="100" exp="1518"  gold="320" desc="Hunt T Rex X 1\nHunt Megaraptor X 1" name="22.An Unprecedented Challenge" proccess="3">
+	<gamelevel id="1022" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" isskyscene="false" nav_plane="0" bp_cfg="20101" gamewave="10022001,10022002,10022003,10022004,10022005,10022006,10022007" task="1022"  sp_cfg_ground="20111" hp_cfg_def="1" dropgroup="11022" dropcount="1" dropcountrate="100" exp="1518"  gold="450" desc="Hunt T Rex X 1\nHunt Megaraptor X 1" name="22.An Unprecedented Challenge" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -240,7 +240,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="23" recommandlevel="3" islimit="false" />
 	</gamelevel>	
 
-			<gamelevel id="1023" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" isskyscene="false" nav_plane="0" bp_cfg="70101" gamewave="10023001,10023002,10023003,10023004,10023005,10023006,10023007" task="1023"  sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11023" dropcount="1" dropcountrate="100" exp="1632"  gold="340" desc="Hunt Triterrortops X 1\nHunt Spine King X 1" name="23.The Path to Glory" proccess="3">
+			<gamelevel id="1023" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" isskyscene="false" nav_plane="0" bp_cfg="70101" gamewave="10023001,10023002,10023003,10023004,10023005,10023006,10023007" task="1023"  sp_cfg_ground="70111" hp_cfg_def="1" dropgroup="11023" dropcount="1" dropcountrate="100" exp="1632"  gold="490" desc="Hunt Triterrortops X 1\nHunt Spine King X 1" name="23.The Path to Glory" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -249,7 +249,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-		<gamelevel id="1024" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="10024001,10024002,10024003,10024004,10024005,10024006,10024007" task="1024"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="11024" dropcount="1" dropcountrate="100"  exp="1750"  gold="360" desc="Hunt Killosaurus Rex X 1\nHunt T Rex X 1" name="24.Triumphant Return" proccess="3">
+		<gamelevel id="1024" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="10024001,10024002,10024003,10024004,10024005,10024006,10024007" task="1024"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="11024" dropcount="1" dropcountrate="100"  exp="1750"  gold="720" desc="Hunt Killosaurus Rex X 1\nHunt T Rex X 1" name="24.Triumphant Return" proccess="3">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -264,7 +264,7 @@ icon="" proccess=""
 <!-- *********************************** start by 5001************************************************************************* -->
 
 
-	<gamelevel id="5001" cutscene_ambience="Amb_Rainforest_Show" cutscene="toudan01_jiaoxue" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan01" isskyscene="false" nav_plane="0" bp_cfg="150101" gamewave="5001001,5001002" task="5001"  tpbegin_cfg="150301" tpend_cfg="150401" sp_cfg_ground="150111" hp_cfg_def="1"  dropgroup="15001" dropcount="1" dropcountrate="100"  exp="22"  gold="40" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5001" cutscene_ambience="Amb_Rainforest_Show" cutscene="toudan01_jiaoxue" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan01" isskyscene="false" nav_plane="0" bp_cfg="150101" gamewave="5001001,5001002" task="5001"  tpbegin_cfg="150301" tpend_cfg="150401" sp_cfg_ground="150111" hp_cfg_def="1"  dropgroup="15001" dropcount="1" dropcountrate="100"  exp="22"  gold="20" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -273,7 +273,7 @@ icon="" proccess=""
 			<recommand recommandtype="2" recommandid="2" recommandlevel="1" islimit="false" />	
 	</gamelevel>
 	
-	<gamelevel id="5002" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei01" isskyscene="false" nav_plane="0" bp_cfg="90101" gamewave="5002001,5002002,5002003" task="5002"  tpend_cfg="90401" sp_cfg_ground="90111" hp_cfg_def="1" dropgroup="15002" dropcount="1" dropcountrate="100"  exp="22"  gold="40" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1" >
+	<gamelevel id="5002" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei01" isskyscene="false" nav_plane="0" bp_cfg="90101" gamewave="5002001,5002002,5002003" task="5002"  tpend_cfg="90401" sp_cfg_ground="90111" hp_cfg_def="1" dropgroup="15002" dropcount="1" dropcountrate="100"  exp="22"  gold="80" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1" >
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -308,7 +308,7 @@ icon="" proccess=""
 			<recommand recommandtype="2" recommandid="4" recommandlevel="1" islimit="true" />
 	</gamelevel>
 
-	<gamelevel id="5006" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5006001,5006002,5006003" task="5006"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="15006" dropcount="1" dropcountrate="100" exp="112"  gold="60" desc="Kill all dinos\nMelee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
+	<gamelevel id="5006" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5006001,5006002,5006003" task="5006"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="15006" dropcount="1" dropcountrate="100" exp="112"  gold="90" desc="Kill all dinos\nMelee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="15" />
 		</MonsterNumLimit>
@@ -317,7 +317,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5007" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei02" isskyscene="false" nav_plane="0" bp_cfg="100101" gamewave="5007001,5007002,5007003" task="5002"  tpend_cfg="100401" sp_cfg_ground="100111" hp_cfg_def="1" dropgroup="15007" dropcount="1" dropcountrate="100" exp="112"  gold="70" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5007" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei02" isskyscene="false" nav_plane="0" bp_cfg="100101" gamewave="5007001,5007002,5007003" task="5002"  tpend_cfg="100401" sp_cfg_ground="100111" hp_cfg_def="1" dropgroup="15007" dropcount="1" dropcountrate="100" exp="112"  gold="140" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -326,7 +326,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5008" BGM="BGM_Timed" BGM_ambience="Amb_Map04_Snowfield"  scenename="SceneIce" isskyscene="false" nav_plane="225" bp_cfg="220101" gamewave="5008001,5008002,5008003,5008004,5008005,5008006" task="5008"  sp_cfg_sky="220201" sp_cfg_ground="220111" hp_cfg_def="220501" dropgroup="15008" dropcount="1" dropcountrate="100" exp="150"  gold="70" desc="Kill all dinos in under 3:30" name="Short on Time" proccess="1">
+	<gamelevel id="5008" BGM="BGM_Timed" BGM_ambience="Amb_Map04_Snowfield"  scenename="SceneIce" isskyscene="false" nav_plane="225" bp_cfg="220101" gamewave="5008001,5008002,5008003,5008004,5008005,5008006" task="5008"  sp_cfg_sky="220201" sp_cfg_ground="220111" hp_cfg_def="220501" dropgroup="15008" dropcount="1" dropcountrate="100" exp="150"  gold="140" desc="Kill all dinos in under 3:30" name="Short on Time" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="320" />
 		</MonsterNumLimit>
@@ -345,7 +345,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5010" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei03" isskyscene="false" nav_plane="0" bp_cfg="110101" gamewave="5010001,5010002,5010003,5010004" task="5010"  tpend_cfg="110401" sp_cfg_ground="110111" hp_cfg_def="1" dropgroup="15010" dropcount="1" dropcountrate="100" exp="238"  gold="90" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5010" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei03" isskyscene="false" nav_plane="0" bp_cfg="110101" gamewave="5010001,5010002,5010003,5010004" task="5010"  tpend_cfg="110401" sp_cfg_ground="110111" hp_cfg_def="1" dropgroup="15010" dropcount="1" dropcountrate="100" exp="238"  gold="180" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -373,7 +373,7 @@ icon="" proccess=""
 			 <recommand recommandtype="1" recommandid="16" recommandlevel="1" islimit="false" />
 	</gamelevel>	
 
-	<gamelevel id="5013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei04" isskyscene="false" nav_plane="0" bp_cfg="120101" gamewave="5013001,5013002,5013003,5013004" task="5013"  tpend_cfg="120401" sp_cfg_ground="120111" hp_cfg_def="1" dropgroup="15013" dropcount="1" dropcountrate="100" exp="342"  gold="100" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5013" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei04" isskyscene="false" nav_plane="0" bp_cfg="120101" gamewave="5013001,5013002,5013003,5013004" task="5013"  tpend_cfg="120401" sp_cfg_ground="120111" hp_cfg_def="1" dropgroup="15013" dropcount="1" dropcountrate="100" exp="342"  gold="200" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -381,7 +381,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="5" recommandlevel="2" islimit="false" />
 	</gamelevel>
 	
-			<gamelevel id="5014" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="5014001,5014002,5014004,5014004,5014005" task="5014" sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="15014" dropcount="1" dropcountrate="100" exp="342"  gold="110" desc="Hunt Triserratops x5\nHunt Turboraptor x10" name="Dinosaur Hunting" proccess="1">
+			<gamelevel id="5014" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="5014001,5014002,5014004,5014004,5014005" task="5014" sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="15014" dropcount="1" dropcountrate="100" exp="342"  gold="220" desc="Hunt Triserratops x5\nHunt Turboraptor x10" name="Dinosaur Hunting" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="150" />
 		</MonsterNumLimit>
@@ -400,7 +400,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5016" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei05" isskyscene="false" nav_plane="0" bp_cfg="130101" gamewave="5016001,5016002,5016003,5016004" task="5016"  tpend_cfg="130401" sp_cfg_ground="130111" hp_cfg_def="1" dropgroup="15016" dropcount="1" dropcountrate="100" exp="462"  gold="120" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5016" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei05" isskyscene="false" nav_plane="0" bp_cfg="130101" gamewave="5016001,5016002,5016003,5016004" task="5016"  tpend_cfg="130401" sp_cfg_ground="130111" hp_cfg_def="1" dropgroup="15016" dropcount="1" dropcountrate="100" exp="462"  gold="240" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
@@ -427,7 +427,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5019" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei06" isskyscene="false" nav_plane="0" bp_cfg="140101" gamewave="5019001,5019002,5019003,5019004,5019005" task="5019"  tpend_cfg="140401" sp_cfg_ground="140111" hp_cfg_def="1" dropgroup="15019" dropcount="1" dropcountrate="100" exp="598"  gold="130" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5019" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei06" isskyscene="false" nav_plane="0" bp_cfg="140101" gamewave="5019001,5019002,5019003,5019004,5019005" task="5019"  tpend_cfg="140401" sp_cfg_ground="140111" hp_cfg_def="1" dropgroup="15019" dropcount="1" dropcountrate="100" exp="598"  gold="260" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
@@ -477,17 +477,17 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
-		<RewardMaterial material="30040" countlist="0,1,2,3" countratelist="50,35,10,5" />
-			<RewardMaterial material="30050" countlist="0,1,2,3" countratelist="50,35,10,5" />
+		<RewardMaterial material="30040" countlist="2,3,4" countratelist="85,10,5" />
+			<RewardMaterial material="30050" countlist="2,3,4" countratelist="85,10,5" />
 			<recommand recommandtype="1" recommandid="9" recommandlevel="3" islimit="false" />
 	</gamelevel>
 	
-		<gamelevel id="5025" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei01" isskyscene="false" nav_plane="0" bp_cfg="90101" gamewave="5025001,5025002,5025003,5025004,5025005" task="5025"  tpend_cfg="90401" sp_cfg_ground="90111" hp_cfg_def="1" dropgroup="15025" dropcount="1" dropcountrate="100" exp="832"  gold="200" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1"> 
+		<gamelevel id="5025" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei01" isskyscene="false" nav_plane="0" bp_cfg="90101" gamewave="5025001,5025002,5025003,5025004,5025005" task="5025"  tpend_cfg="90401" sp_cfg_ground="90111" hp_cfg_def="1" dropgroup="15025" dropcount="1" dropcountrate="100" exp="832"  gold="400" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1"> 
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
-			<RewardMaterial material="30044" countlist="0,1,2,3" countratelist="50,35,10,5" />
-				<RewardMaterial material="30058" countlist="0,1,2,3" countratelist="50,35,10,5" />
+			<RewardMaterial material="30044" countlist="2,3,4" countratelist="85,10,5" />
+				<RewardMaterial material="30058" countlist="2,3,4" countratelist="85,10,5" />
 					<recommand recommandtype="1" recommandid="13" recommandlevel="4" islimit="false" />
 	</gamelevel>
 
@@ -496,7 +496,7 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
-			<RewardMaterial material="30069" countlist="0,1,2,3" countratelist="50,35,10,5" />
+			<RewardMaterial material="30069" countlist="2,3,4" countratelist="85,10,5" />
 				<recommand recommandtype="1" recommandid="15" recommandlevel="1" islimit="true" />
 	</gamelevel>
 
@@ -505,8 +505,8 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
-			<RewardMaterial material="30055" countlist="0,1,2,3" countratelist="50,35,10,5" />
-				<RewardMaterial material="30065" countlist="0,1,2,3" countratelist="50,35,10,5" />
+			<RewardMaterial material="30055" countlist="2,3,4" countratelist="85,10,5" />
+				<RewardMaterial material="30065" countlist="2,3,4" countratelist="85,10,5" />
 						<recommand recommandtype="2" recommandid="3" recommandlevel="1" islimit="false" />
 	</gamelevel>
 
@@ -515,11 +515,11 @@ icon="" proccess=""
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
-			<RewardMaterial material="30061" countlist="0,1,2,3" countratelist="50,35,10,5" />
+			<RewardMaterial material="30061" countlist="2,3,4" countratelist="85,10,5" />
 			<recommand recommandtype="1" recommandid="7" recommandlevel="5" islimit="false" />
 	</gamelevel>
 
-	<gamelevel id="5029" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei06" isskyscene="false" nav_plane="0" bp_cfg="140101" gamewave="5029001,5029002,5029003,5029004,5029005" task="5029"  tpend_cfg="140401" sp_cfg_ground="140111" hp_cfg_def="1" dropgroup="15029" dropcount="1" dropcountrate="100" exp="1102"  gold="280" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5029" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei06" isskyscene="false" nav_plane="0" bp_cfg="140101" gamewave="5029001,5029002,5029003,5029004,5029005" task="5029"  tpend_cfg="140401" sp_cfg_ground="140111" hp_cfg_def="1" dropgroup="15029" dropcount="1" dropcountrate="100" exp="1102"  gold="560" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>

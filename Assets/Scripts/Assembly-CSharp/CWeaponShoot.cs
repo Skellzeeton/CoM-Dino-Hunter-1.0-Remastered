@@ -139,6 +139,7 @@ public class CWeaponShoot : CWeaponBase
 		num *= 1f - num4 / 100f;
 		mob.OnHit(0f - num, m_pWeaponLvlInfo, sBodyPart);
 		m_GameScene.AddDamageText(num, hitpos, bCritical);
+		base.m_GameScene.AddHitEffect(hitpos, Vector3.forward, 1115);
 		m_GameLogic = m_GameScene.GetGameLogic();
 		if (m_GameLogic != null)
 		{

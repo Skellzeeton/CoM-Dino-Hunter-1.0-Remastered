@@ -20,8 +20,8 @@ GraphicsSettings:
     m_Mode: 0
     m_Shader: {fileID: 0}
   m_LightHalo:
-    m_Mode: 0
-    m_Shader: {fileID: 0}
+    m_Mode: 1
+    m_Shader: {fileID: 105, guid: 0000000000000000f000000000000000, type: 0}
   m_LensFlare:
     m_Mode: 0
     m_Shader: {fileID: 0}
@@ -50,7 +50,7 @@ GraphicsSettings:
     m_Tier: 2
     m_Settings:
       standardShaderQuality: 0
-      renderingPath: 0
+      renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
       useReflectionProbeBoxProjection: 0
@@ -67,7 +67,7 @@ GraphicsSettings:
     m_Tier: 1
     m_Settings:
       standardShaderQuality: 0
-      renderingPath: 0
+      renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
       useReflectionProbeBoxProjection: 0
@@ -84,7 +84,7 @@ GraphicsSettings:
     m_Tier: 0
     m_Settings:
       standardShaderQuality: 0
-      renderingPath: 0
+      renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
       useReflectionProbeBoxProjection: 0
@@ -101,7 +101,7 @@ GraphicsSettings:
     m_Tier: 0
     m_Settings:
       standardShaderQuality: 0
-      renderingPath: 0
+      renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
       useReflectionProbeBoxProjection: 0
@@ -118,7 +118,7 @@ GraphicsSettings:
     m_Tier: 1
     m_Settings:
       standardShaderQuality: 0
-      renderingPath: 0
+      renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
       useReflectionProbeBoxProjection: 0
@@ -135,7 +135,7 @@ GraphicsSettings:
     m_Tier: 2
     m_Settings:
       standardShaderQuality: 0
-      renderingPath: 0
+      renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
       useReflectionProbeBoxProjection: 0

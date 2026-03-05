@@ -163,6 +163,7 @@ public class CWeaponMelee : CWeaponBase
 		num *= 1f - num4 / 100f;
 		mob.OnHit(0f - num, m_pWeaponLvlInfo, string.Empty);
 		m_GameScene.AddDamageText(num, hitpos, bCritical);
+		base.m_GameScene.AddHitEffect(hitpos, Vector3.forward, 1116);
 		iGameLogic.HitInfo hitinfo = new iGameLogic.HitInfo();
 		hitinfo.v3HitDir = hitdir;
 		hitinfo.v3HitPos = hitpos;

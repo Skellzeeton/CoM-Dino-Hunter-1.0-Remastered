@@ -84,6 +84,7 @@ public class iGameLogic
 					{
 						m_GameScene.AddDamageText(num20, hitinfo.v3HitPos, Color.red, bCritical4);
 					}
+					m_GameScene.AddHitEffect(hitinfo.v3HitPos, Vector3.forward, 1115);
 					ltDamageInfo.Add(num20);
 				}
 				break;
@@ -111,6 +112,7 @@ public class iGameLogic
 					{
 						m_GameScene.AddDamageText(num15, hitinfo.v3HitPos, Color.red, bCritical3);
 					}
+					m_GameScene.AddHitEffect(hitinfo.v3HitPos, Vector3.forward, 1115);
 					ltDamageInfo.Add(num15);
 				}
 				break;
@@ -139,6 +141,7 @@ public class iGameLogic
 						target.OnHit(0f - num8, hitinfo.weaponinfolevel, string.Empty);
 						hitinfo.isHurt = true;
 						m_GameScene.AddDamageText(num8, item.GetBone(1).position, bCritical);
+						m_GameScene.AddHitEffect(hitinfo.v3HitPos, Vector3.forward, 1115);
 					}
 				}
 				break;
@@ -168,6 +171,7 @@ public class iGameLogic
 						target.OnHit(0f - num13, hitinfo.weaponinfolevel, string.Empty);
 						hitinfo.isHurt = true;
 						m_GameScene.AddDamageText(num13, item2.GetBone(1).position, bCritical2);
+						m_GameScene.AddHitEffect(hitinfo.v3HitPos, Vector3.forward, 1115);
 					}
 				}
 				break;

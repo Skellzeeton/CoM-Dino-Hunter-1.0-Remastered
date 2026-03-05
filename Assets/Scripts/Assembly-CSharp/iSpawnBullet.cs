@@ -39,6 +39,8 @@ public class iSpawnBullet : MonoBehaviour
 
 	protected bool m_bEmission;
 
+	protected HashSet<int> m_HitTargets;
+
 	public int Owner
 	{
 		get
@@ -66,6 +68,7 @@ public class iSpawnBullet : MonoBehaviour
 			}
 		}
 		m_bEmission = false;
+		m_HitTargets = new HashSet<int>();
 	}
 
 	private void Start()
@@ -130,6 +133,10 @@ public class iSpawnBullet : MonoBehaviour
 			CCharBase component2 = collider.transform.root.GetComponent<CCharBase>();
 			if (component2 != null && !component2.isDead && cCharBase != component2 && !cCharBase.IsAlly(component2))
 			{
+				if (m_HitTargets.Contains(component2.UID))
+				{
+					return;
+				}
 				Vector3 v3HitDir = collider.transform.position - m_Transform.position;
 				Vector3 position = m_Transform.position;
 				if (m_GameScene.IsMyself(cCharBase) || (cCharBase.IsMonster() && m_GameScene.IsRoomMaster()))
@@ -168,12 +175,14 @@ public class iSpawnBullet : MonoBehaviour
 							{
 								m_GameScene.AddDamageText(num, component2.GetBone(1).position, bCritical);
 							}
+							m_GameScene.AddHitEffect(component2.GetBone(1).position, Vector3.forward, 1116);
 						}
 					}
 					iGameLogic.HitInfo hitinfo = new iGameLogic.HitInfo();
 					hitinfo.v3HitDir = v3HitDir;
 					hitinfo.v3HitPos = position;
 					m_GameLogic.CaculateFunc(cCharBase, component2, m_arrFunc, m_arrValueX, m_arrValueY, ref hitinfo);
+					m_HitTargets.Add(component2.UID);
 					if (component2.isDead)
 					{
 						CCharMob cCharMob = component2 as CCharMob;
@@ -246,6 +255,11 @@ public class iSpawnBullet : MonoBehaviour
 				{
 					continue;
 				}
+				if (m_HitTargets.Contains(item.UID))
+				{
+					continue;
+				}
+
 				if (item.IsMob() || item.IsBoss())
 				{
 					((CCharMob)item).SetLifeBarParam(1f);
@@ -280,6 +294,8 @@ public class iSpawnBullet : MonoBehaviour
 						{
 							m_GameScene.AddDamageText(num6, item.GetBone(1).position, bCritical2);
 						}
+						m_GameScene.AddHitEffect(item.GetBone(1).position, Vector3.forward, 1116);
+						m_HitTargets.Add(item.UID);
 					}
 				}
 				iGameLogic.HitInfo hitinfo2 = new iGameLogic.HitInfo();
@@ -358,6 +374,10 @@ public class iSpawnBullet : MonoBehaviour
 		m_Transform.forward = v3Force;
 		m_bActive = true;
 		OnInit();
+		if (m_HitTargets != null)
+		{
+			m_HitTargets.Clear();
+		}
 	}
 
 	public virtual void SetForce(Vector3 v3Force)

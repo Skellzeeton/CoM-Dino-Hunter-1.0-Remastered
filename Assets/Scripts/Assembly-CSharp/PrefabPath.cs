@@ -196,10 +196,16 @@ public class PrefabPath
 
 	public const int hit_normal_shotgun = 1111;
 
+	public const int hit_staff_heavy = 1112;
+	
+	public const int hit_blood = 1115;
+
+	public const int hit_blood_big = 1116;
+	
 	public const int weapon_008_effect = 1150;
 
 	public const int weapon_010_effect = 1151;
-
+	
 	public const int buff_hp_add = 1200;
 
 	public const int buff_hp_hold = 1201;

@@ -855,6 +855,8 @@ public class iGameSceneBase
 				}
 			}
 		}
+		PrefabManager.AddPool(1115, 1);
+		PrefabManager.AddPool(1116, 1);
 	}
 
 	public virtual void FinishGame()
