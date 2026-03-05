@@ -174,8 +174,6 @@ public class iItemDynamic : iItem
 	public void ForceAbsorb(float overrideSpeed)
 	{
 		fAbsorbSpeed = overrideSpeed;
-
-		// reuse your existing cleanup logic
 		BeginAbsorbCleanup();
 	}
 	

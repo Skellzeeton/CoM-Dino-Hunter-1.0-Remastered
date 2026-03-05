@@ -265,13 +265,13 @@
 		
 		<!-- stun cloud -->
 
-		<skill id="60013" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,8,0,0" skillmode="1" skillmodevalue="0.7" func="4,5,11" valuex="18,270,2" valuey="4,0,0"/>>
+		<skill id="60013" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,9,0,0" skillmode="1" skillmodevalue="0.7" func="4,5,11" valuex="18,270,2" valuey="4,0,0"/>>
 
 		<!-- Charge -->
 		
-		<skill id="60014" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="7,40" skillmode="3" skillmodevalue="2.4,0" />
+		<skill id="60014" lvl="1" type="0" action="10004" rangetype="0" rangetypevalue="11,400" skillmode="3" skillmodevalue="2.05,0" />
 
-		<skill id="60015" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,4" skillmode="6" skillmodevalue="48,1,0.25" func="5,4,11" valuex="150,2,1" valuey="0,2,0"/>
+		<skill id="60015" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,4" skillmode="6" skillmodevalue="62,1.8,0.25" func="5,4,11" valuex="90,4,1" valuey="0,2,0"/>
 
 		<!-- ����Ŀ��0.5s[����0-4] -->
 		<skill id="80000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,4" skillmode="3" skillmodevalue="0.5" />	
@@ -409,9 +409,9 @@
 		<!--  -->
 		<combo id="60007" skilllist="60011,60012" coldown="10" freezetime="2"/>
 		<!-- Enraged/elite boss skills -->
-		<combo id="60008" skilllist="60013" coldown="6" freezetime="1"/>
+		<combo id="60008" skilllist="60013" coldown="4" freezetime="0"/>
 
-		<combo id="60009" skilllist="60014,60015,60010,60008,60015,60010,60008,60015,60010" coldown="15" freezetime="2"/>
+		<combo id="60009" skilllist="60014,60015,60010,60008,60015,60008,60015,60010" coldown="27" freezetime="2"/>
 
 		<!-- ***********************************������������ start by 80000************************************************************************* -->
 		<!-- ��ͨ˺ҧ -->

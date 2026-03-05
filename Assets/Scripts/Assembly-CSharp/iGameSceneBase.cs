@@ -882,6 +882,7 @@ public class iGameSceneBase
 						m_StatusTime = mob.GetActionLen(kAnimEnum.Mob_Dead);
 						Time.timeScale = 0.4f;
 					}
+					CUISound.GetInstance().Play("UI_Game_status");
 					CSoundScene.GetInstance().PlayBGM("Amb_Cheer_Crowd");
 					m_GameState.LastKillBoss = -1;
 				}
