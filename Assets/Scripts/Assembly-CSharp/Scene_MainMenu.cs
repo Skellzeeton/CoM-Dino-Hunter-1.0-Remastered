@@ -494,30 +494,35 @@ public class Scene_MainMenu : MonoBehaviour
 					next_scene = "Scene_Equip";
 					go_control = go_camp_name;
 					PlayForwardAnimation(go_camp_name);
+					CUISound.GetInstance().Play("UI_Equip_enter");
 				}
 				else if (hitInfo2.transform == go_forge)
 				{
 					next_scene = "Scene_Forge";
 					go_control = go_forge_name;
 					PlayForwardAnimation(go_forge_name);
+					CUISound.GetInstance().Play("UI_Forge_enter");
 				}
 				else if (hitInfo2.transform == go_tavern)
 				{
 					next_scene = "Scene_Tavern";
 					go_control = go_tavern_name;
 					PlayForwardAnimation(go_tavern_name);
+					CUISound.GetInstance().Play("UI_Tavern_enter");
 				}
 				else if (hitInfo2.transform == go_skill)
 				{
 					next_scene = "Scene_Skill";
 					go_control = go_skill_name;
 					PlayForwardAnimation(go_skill_name);
+					CUISound.GetInstance().Play("UI_Skill_enter");
 				}
 				else if (hitInfo2.transform == go_stash)
 				{
 					next_scene = "Scene_Stash";
 					go_control = go_stash_name;
 					PlayForwardAnimation(go_stash_name);
+					CUISound.GetInstance().Play("UI_Stash_enter");
 				}
 			}
 			break;

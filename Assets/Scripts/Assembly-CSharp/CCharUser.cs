@@ -200,7 +200,7 @@ public class CCharUser : CCharPlayer
 		zero += m_ModelTransform.forward * m_v2Move.y;
 		zero += m_ModelTransform.right * m_v2Move.x;
 		Vector3 position = m_ModelTransform.position;
-		zero.y = -1f * deltaTime;
+		zero.y = -20f * deltaTime;
 		CollisionFlags collisionFlags = m_Controller.Move(zero);
 		m_bUpdatePos = true;
 	}

@@ -108,7 +108,7 @@ public class Scene_Main : MonoBehaviour
             connect_success = true;
             if (label_text != null)
             {
-                label_text.Text = "Touch to play";
+                label_text.Text = "touch to play";
             }
         }
         else if (m_event.GetEventName() == "TUIEvent_EnterLevel")
@@ -142,7 +142,7 @@ public class Scene_Main : MonoBehaviour
             connect_success = true;
             if (label_text != null)
             {
-                label_text.Text = "Touch to play";
+                label_text.Text = "touch to play";
             }
             else
             {

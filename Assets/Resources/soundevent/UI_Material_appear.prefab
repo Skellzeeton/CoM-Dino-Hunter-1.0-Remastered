@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4329418288405209}
   - component: {fileID: 82094517435126790}
   - component: {fileID: 114751142898163090}
+  - component: {fileID: -5122795076506310408}
   m_Layer: 0
   m_Name: UI_Material_appear
   m_TagString: Untagged
@@ -46,7 +47,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.725
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -145,9 +146,14 @@ MonoBehaviour:
   isSfx: 1
   audioClips:
   - {fileID: 8300000, guid: bac0bfdb3409f8a4e8a69724bc4f9f61, type: 3}
-  probability: []
-  volumOffset: 0.05
-  pitchOffset: 0.02
+  - {fileID: 8300000, guid: 580b16c2d910d2d9da767f9c885e6292, type: 3}
+  - {fileID: 8300000, guid: 580b16c2d910d2d9da767f9c885e6292, type: 3}
+  probability:
+  - 0.05
+  - 0.9
+  - 0.05
+  volumOffset: 0.1
+  pitchOffset: 0.1
   loopMode: 0
   cutoff: 0
   delayTime: 0
@@ -156,3 +162,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &-5122795076506310408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213874898472659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 1
+  deltaTime: 1.1

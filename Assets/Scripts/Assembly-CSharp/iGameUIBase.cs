@@ -680,7 +680,7 @@ public class iGameUIBase : MonoBehaviour
 		{
 			m_UIManager.mWeapon.Show(true);
 		}
-		if (MyUtils.isPad && m_UIManager.mFastWeapon != null)
+		if (m_UIManager.mFastWeapon != null)
 		{
 			m_UIManager.mFastWeapon.SetActiveRecursively(true);
 		}
@@ -960,7 +960,7 @@ public class iGameUIBase : MonoBehaviour
 			}
 		}
 		gyUIEventRegister2 = GetEventRegister(m_UIManager.mFastWeapon);
-		gyUIEventRegister2.RegisterOnClick(Event_SwitchWeapon);
+		gyUIEventRegister2.RegisterOnClick(Event_SwitchWeaponPrev);
 		gyUIEventRegister2 = GetEventRegister(m_UIManager.mSkill.gameObject);
 		gyUIEventRegister2.RegisterOnClick(Event_UseSkill);
 		if (m_UIManager.mPanelRevive != null)
@@ -1033,7 +1033,7 @@ public class iGameUIBase : MonoBehaviour
 			}
 		}
 		gyUIEventRegister2 = GetEventRegister(m_UIManager.mFastWeapon);
-		gyUIEventRegister2.RegisterOnClick(Event_SwitchWeapon);
+		gyUIEventRegister2.RegisterOnClick(Event_SwitchWeaponPrev);
 		gyUIEventRegister2 = GetEventRegister(m_UIManager.mSkill.gameObject);
 		gyUIEventRegister2.RegisterOnClick(Event_UseSkill);
 		if (m_UIManager.mPanelRevive != null)
@@ -1265,6 +1265,32 @@ public class iGameUIBase : MonoBehaviour
 			if (num >= 3)
 			{
 				num = 0;
+			}
+		}
+		curWeaponIndex = num;
+		user.SwitchWeapon(curWeaponIndex);
+	}
+	
+	protected void Event_SwitchWeaponPrev()
+	{
+		if (m_GameScene.GameStatus != iGameSceneBase.kGameStatus.Gameing && m_GameScene.GameStatus != iGameSceneBase.kGameStatus.GameOver_ShowTime)
+		{
+			return;
+		}
+		CUISound.GetInstance().Play("UI_Weapon_change");
+		CCharUser user = m_GameScene.GetUser();
+		if (user == null)
+		{
+			return;
+		}
+		int curWeaponIndex = user.CurWeaponIndex;
+		int num = curWeaponIndex - 1;
+		while (num != curWeaponIndex && m_GameState.GetWeapon(num) == null)
+		{
+			num--;
+			if (num < 0)
+			{
+				num = 2;
 			}
 		}
 		curWeaponIndex = num;

@@ -197,6 +197,8 @@ public class PrefabPath
 	public const int hit_normal_shotgun = 1111;
 
 	public const int hit_staff_heavy = 1112;
+
+	public const int hit_staff_blood_pfb = 1113;
 	
 	public const int hit_blood = 1115;
 

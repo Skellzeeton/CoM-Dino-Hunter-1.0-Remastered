@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4622964636678929}
   - component: {fileID: 82607422761173880}
   - component: {fileID: 114614855988864540}
+  - component: {fileID: 4269523516390585209}
   m_Layer: 0
   m_Name: Ani_Footstep_Dino02
   m_TagString: Untagged
@@ -46,7 +47,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSfx: 1
   audioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 968fa36acbafbfbd2bb95e6e7b67fe6e, type: 3}
   probability: []
   volumOffset: 0.05
   pitchOffset: 0.05
@@ -165,3 +166,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &4269523516390585209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986101953914286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 2
+  deltaTime: 0.2
