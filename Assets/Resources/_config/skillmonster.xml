@@ -167,7 +167,7 @@
 		<!--  0.1s[5-20] -->
 		<skill id="40000" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="5,16" skillmode="3" skillmodevalue="0.1" />	
 		<!--  100%-->
-		<skill id="40001" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,6,30,0,0,1" func="5" valuex="100" valuey="0"/>
+		<skill id="40001" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,6,30,0,0,1" func="5" valuex="50" valuey="0"/>
 		
 		<!--  0.1s[5-40] -->
 		<skill id="40002" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="0,15" skillmode="3" skillmodevalue="0.5" />	
@@ -189,8 +189,10 @@
 		<!--  50% 5 4-->
 		<skill id="40010" lvl="1" type="0" action="10006" rangetype="1" rangetypevalue="0,8,0,0" skillmode="1" skillmodevalue="0.8" func="5,4,11" valuex="50,5,2" valuey="0,5,0"/>
 		
-		
-		
+		<!--  100%-->
+		<skill id="40011" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,176,1,30,0,0,1" func="5" valuex="75" valuey="0"/>
+		<!--  100%-->
+		<skill id="40012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,3,30,0,0,1" func="5" valuex="100" valuey="0"/>
 		
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!-- 0.1s[0-3] -->
@@ -351,8 +353,8 @@
 		
 		
 		<!-- *********************************** start by 40000************************************************************************* -->
-		<!--  -->
-		<combo id="40000" skilllist="40000,40001" coldown="4" freezetime="2"/> 
+		<!-- Green spit -->
+		<combo id="40000" skilllist="40000,40001" coldown="8" freezetime="2"/> 
 		<!--  -> -->
 		<combo id="40001" skilllist="40000,40005,40006" coldown="6" freezetime="2"/> 
 		<!--  -> -->
@@ -366,9 +368,12 @@
 		<!-- BOSS -->
 		<combo id="40006" skilllist="40000,40003" coldown="4" freezetime="2"/> 		
 			<!--  -->
-		<combo id="40007" skilllist="40009,40010" coldown="8" freezetime="2.5"/> 		
-		
-		
+		<combo id="40007" skilllist="40009,40010" coldown="8" freezetime="2.5"/>
+		<!-- Purple spit -->
+		<combo id="40008" skilllist="40000,40011" coldown="4" freezetime="4"/>
+		<!--  -->
+		<combo id="40009" skilllist="40000,40012" coldown="4" freezetime="2"/>
+
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!--  -->
 		<combo id="50000" skilllist="50000,50001" coldown="4" freezetime="2"/> 

@@ -74,6 +74,7 @@ public class PrefabManager
 		m_dictData.Add(52, "Artist/Model/Character/model_triceratops2");
 		m_dictData.Add(53, "Artist/Model/Character/model_triceratops3");
 		m_dictData.Add(60, "Artist/Model/Character/model_tyrannosaurus_boss");
+		m_dictData.Add(61, "Artist/Model/Character/model_tyrannosaurus_elite");
 		m_dictData.Add(70, "Artist/Model/Character/model_ridgebackdragon_boss");
 		m_dictData.Add(101, "Artist/Model/Weapon/weapon_001");
 		m_dictData.Add(102, "Artist/Model/Weapon/weapon_002");
@@ -108,6 +109,8 @@ public class PrefabManager
 		m_dictData.Add(172, "Artist/Model/Spawn/spawn_venom_ground_green");
 		m_dictData.Add(173, "Artist/Model/Spawn/spawn_venom_yellow");
 		m_dictData.Add(174, "Artist/Model/Spawn/spawn_venom_ground_yellow");
+		m_dictData.Add(176, "Artist/Model/Spawn/spawn_venom_purple");
+		m_dictData.Add(177, "Artist/Model/Spawn/spawn_venom_ground_purple");
 		m_dictData.Add(250, "Artist/Model/Items/Egg");
 		m_dictData.Add(251, "Artist/Model/Items/Gold");
 		m_dictData.Add(252, "Artist/Model/Items/Material");
@@ -196,6 +199,9 @@ public class PrefabManager
 		m_dictData.Add(1914, "Artist/EffectCustom/snow_monster_step");
 		m_dictData.Add(1915, "Artist/Effect/Skill/fart/fart_pfb");
 		m_dictData.Add(1916, "Artist/Effect/Skill/sigh/sigh_pfb");
+		m_dictData.Add(1917, "Artist/Effect/Skill/venom_purple/venom01_purple_fire_pfb");
+		m_dictData.Add(1918, "Artist/Effect/Skill/venom_purple/venom04_purple_hitbody_pfb");
+		m_dictData.Add(1919, "Artist/Effect/Skill/venom_purple/venom03_purple_hit_pfb");
 		m_dictData.Add(2000, "Artist/GameUI/Task/NGUITaskTimeLimit");
 		m_dictData.Add(2001, "Artist/GameUI/Task/NGUITaskHunter");
 		m_dictData.Add(2002, "Artist/GameUI/Task/NGUITaskHunterList");

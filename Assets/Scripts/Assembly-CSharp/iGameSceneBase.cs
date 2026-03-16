@@ -1145,7 +1145,7 @@ public class iGameSceneBase
 			CTaskInfo taskInfo = task.GetTaskInfo();
 			if (taskInfo != null && taskInfo.nType == 2 && m_TaskManager.isAllCompleted)
 			{
-				m_GameUI.ShowTip("Return village in 10 seconds");
+				m_GameUI.ShowTip("Returning to the village in 10 seconds");
 				m_Status = kGameStatus.GameOver_ShowTime;
 				m_StatusTime = 10f;
 				m_StatusTimeCount = 0f;

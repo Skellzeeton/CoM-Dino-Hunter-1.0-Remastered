@@ -56,7 +56,6 @@ public class NPC_Village : MonoBehaviour
 			gameObject.transform.localPosition = new Vector3(0.5506728f, 0.5539323f, 0.6555531f);
 			gameObject.transform.eulerAngles = new Vector3(0f, 170.03f, 0f);
 			Object.Destroy(gameObject, 1f);
-			CUISound.GetInstance().Play("Mat_Blacksmith");
 		}
 	}
 }

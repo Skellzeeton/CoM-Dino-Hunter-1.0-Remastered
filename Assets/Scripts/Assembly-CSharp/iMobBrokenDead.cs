@@ -21,9 +21,7 @@ public class iMobBrokenDead : MonoBehaviour
 	protected float m_fSpeedYInt;
 
 	protected float m_fSpeedYAcc = -40f;
-
-	protected TAudioController m_AudioController;
-
+	
 	private void Start()
 	{
 		m_State = kDeadProcess.Wait;
@@ -37,8 +35,6 @@ public class iMobBrokenDead : MonoBehaviour
 		{
 			m_bFall = true;
 		}
-		m_AudioController = GetComponent<TAudioController>();
-		PlayAudio("Fx_Burst_body");
 	}
 
 	private void Update()
@@ -62,7 +58,6 @@ public class iMobBrokenDead : MonoBehaviour
 			if (m_fDisappearTime <= 0f)
 			{
 				m_State = kDeadProcess.Destroy;
-				StopAudio("Fx_Burst_body");
 				Object.Destroy(base.gameObject);
 			}
 			break;
@@ -77,22 +72,6 @@ public class iMobBrokenDead : MonoBehaviour
 				m_bFall = false;
 				m_State = kDeadProcess.Disappear;
 			}
-		}
-	}
-
-	public void PlayAudio(string sPrefabName)
-	{
-		if (!(m_AudioController == null))
-		{
-			m_AudioController.PlayAudio(sPrefabName);
-		}
-	}
-
-	public void StopAudio(string sPrefabName)
-	{
-		if (!(m_AudioController == null))
-		{
-			m_AudioController.StopAudio(sPrefabName);
 		}
 	}
 }

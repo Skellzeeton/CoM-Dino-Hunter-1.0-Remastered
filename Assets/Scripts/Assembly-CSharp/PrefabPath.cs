@@ -39,6 +39,8 @@ public class PrefabPath
 	public const int model_triceratops3 = 53;
 
 	public const int model_tyrannosaurus_boss = 60;
+	
+	public const int model_tyrannosaurus_elite = 61;
 
 	public const int model_ridgebackdragon_boss = 70;
 	
@@ -107,7 +109,11 @@ public class PrefabPath
 	public const int spawn_venom_ground_yellow = 174;
 
 	public const int spawn_rock_normal = 175;
-
+	
+	public const int spawn_venom_purple = 176;
+	
+	public const int spawn_venom_ground_purple = 177;
+	
 	public const int item_egg = 250;
 
 	public const int item_gold = 251;
@@ -287,6 +293,12 @@ public class PrefabPath
 	public const int dilophosaurus_pee = 1915;
 
 	public const int sigh = 1916;
+	
+	public const int venom_purple_fire = 1917;
+
+	public const int venom_purple_hit = 1918;
+
+	public const int venom_purple_hit_ground = 1919;
 
 	public const int GameTaskUITimeLimit = 2000;
 

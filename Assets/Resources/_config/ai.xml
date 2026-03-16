@@ -41,19 +41,19 @@
 		<ai id="40201" skill="40000" skillrate="100" behavior="3" />	
 		
 				<!--  -->
-		<ai id="50101" skill="40000" skillrate="100" behavior="1" />	
+		<ai id="50101" skill="40008" skillrate="100" behavior="1" />	
 	<!--  -->
-		<ai id="50201" skill="40000" skillrate="100" behavior="3" />	
+		<ai id="50201" skill="40008" skillrate="100" behavior="3" />	
 		
 	<!-- BOSS -->
-		<ai id="60101" skill="40000,40001,40002,40007" skillrate="40,20,20,20" behavior="1" />	
-		<ai id="60102" skill="40000,40001,40002,40004,40007" skillrate="20,20,20,20,20" behavior="1" skillpassive="20051" effectlist="1500"/>
-		<ai id="60103" skill="40000,40003,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
+		<ai id="60101" skill="40009,40001,40002,40007" skillrate="40,20,20,20" behavior="1" />	
+		<ai id="60102" skill="40009,40001,40002,40004,40007" skillrate="20,20,20,20,20" behavior="1" skillpassive="20051" effectlist="1500"/>
+		<ai id="60103" skill="40009,40003,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
 		
 	 <!-- BOSSAI -->
-		<ai id="60201" skill="40000" skillrate="100" behavior="3" />		
+		<ai id="60201" skill="40009" skillrate="100" behavior="3" />		
 			<!-- BOSS -->
-		<ai id="60301" skill="40000,40003,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
+		<ai id="60301" skill="40009,40003,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
 		
 		
 		

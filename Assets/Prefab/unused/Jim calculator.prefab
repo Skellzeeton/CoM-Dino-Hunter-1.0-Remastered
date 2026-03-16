@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1519509077993562
+--- !u!1 &1318111085217488
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4019248029046966}
-  - component: {fileID: 82210474057900452}
-  - component: {fileID: 114050532900901449}
+  - component: {fileID: 4664951447851943}
+  - component: {fileID: 82607225668578316}
+  - component: {fileID: 114972738993509442}
   m_Layer: 0
-  m_Name: Fx_Burst_body
+  m_Name: Jim calculator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4019248029046966
+--- !u!4 &4664951447851943
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519509077993562}
+  m_GameObject: {fileID: 1318111085217488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,13 +33,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82210474057900452
+--- !u!82 &82607225668578316
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519509077993562}
+  m_GameObject: {fileID: 1318111085217488}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -47,15 +47,15 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: 1
+  m_Pitch: 1.05
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 90
+  Priority: 128
   DopplerLevel: 0
-  MinDistance: 30
-  MaxDistance: 60
+  MinDistance: 6
+  MaxDistance: 12
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -97,15 +97,6 @@ AudioSource:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.62433857
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -139,13 +130,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114050532900901449
+--- !u!114 &114972738993509442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519509077993562}
+  m_GameObject: {fileID: 1318111085217488}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
@@ -153,12 +144,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: 626277536689b38419e26a04d925040d, type: 3}
-  - {fileID: 8300000, guid: fcadb8d3e143b524da2691854bef0d5f, type: 3}
+  - {fileID: 8300000, guid: 7a0ab411aff5c8f4fa4b004852355bd9, type: 3}
+  - {fileID: 8300000, guid: efd5a230a8198704b9708ed32e78fbd2, type: 3}
+  - {fileID: 8300000, guid: 70d88dbd7a27d0243bbf6bf91f1e838e, type: 3}
+  - {fileID: 8300000, guid: dd60b9a0f39de0f458bbb15171d63207, type: 3}
+  - {fileID: 8300000, guid: 4e9d793f3856ce240a5d207b64fcd091, type: 3}
+  - {fileID: 8300000, guid: 876a60bb1a566894ca7c848330ea0781, type: 3}
+  - {fileID: 8300000, guid: ef6738cf93aab3d4da7d3c1f7c782aa2, type: 3}
+  - {fileID: 8300000, guid: 1c8f5ac7e7a04df449a86ba92b71eda7, type: 3}
+  - {fileID: 8300000, guid: ab33cc2fead80cb44ade47076a12d756, type: 3}
+  - {fileID: 8300000, guid: e9dac3bbd1fcbb1428acd58c78cbb115, type: 3}
+  - {fileID: 8300000, guid: 2fc11111e8ef98549a6dca04473d444f, type: 3}
+  - {fileID: 8300000, guid: 86289ae67ff8dc14cb6c2d8f7469f4f4, type: 3}
   probability: []
-  volumOffset: 0.05
-  pitchOffset: 0.05
-  loopMode: 0
+  volumOffset: 0.4
+  pitchOffset: 1
+  loopMode: 2
   cutoff: 0
   delayTime: 0
   autoDestroy: 0

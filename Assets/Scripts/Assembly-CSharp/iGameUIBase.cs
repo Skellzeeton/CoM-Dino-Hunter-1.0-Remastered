@@ -227,7 +227,7 @@ public class iGameUIBase : MonoBehaviour
 			if (!(component == null))
 			{
 				gameObject.transform.parent = m_UIManager.mParent;
-				component.SetLabel(((int)fValue).ToString());
+				component.SetLabel(fValue.ToString("0.##"));
 				component.SetColor(color);
 				component.Go(v2Pos, mode);
 			}
