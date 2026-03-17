@@ -111,6 +111,7 @@ public class PrefabManager
 		m_dictData.Add(174, "Artist/Model/Spawn/spawn_venom_ground_yellow");
 		m_dictData.Add(176, "Artist/Model/Spawn/spawn_venom_purple");
 		m_dictData.Add(177, "Artist/Model/Spawn/spawn_venom_ground_purple");
+		m_dictData.Add(178, "Artist/Model/Spawn/spawn_rock_small");
 		m_dictData.Add(250, "Artist/Model/Items/Egg");
 		m_dictData.Add(251, "Artist/Model/Items/Gold");
 		m_dictData.Add(252, "Artist/Model/Items/Material");

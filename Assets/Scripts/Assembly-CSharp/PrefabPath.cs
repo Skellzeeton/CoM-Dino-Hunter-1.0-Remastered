@@ -114,6 +114,8 @@ public class PrefabPath
 	
 	public const int spawn_venom_ground_purple = 177;
 	
+	public const int spawn_rock_small = 178;
+	
 	public const int item_egg = 250;
 
 	public const int item_gold = 251;

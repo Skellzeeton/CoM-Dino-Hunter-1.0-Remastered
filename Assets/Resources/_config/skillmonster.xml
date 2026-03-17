@@ -190,9 +190,9 @@
 		<skill id="40010" lvl="1" type="0" action="10006" rangetype="1" rangetypevalue="0,8,0,0" skillmode="1" skillmodevalue="0.8" func="5,4,11" valuex="50,5,2" valuey="0,5,0"/>
 		
 		<!--  100%-->
-		<skill id="40011" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,176,1,30,0,0,1" func="5" valuex="75" valuey="0"/>
+		<skill id="40011" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,176,3,30,0,0,1" func="5" valuex="75" valuey="0"/>
 		<!--  100%-->
-		<skill id="40012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,3,30,0,0,1" func="5" valuex="100" valuey="0"/>
+		<skill id="40012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,6,30,0,0,1" func="5" valuex="100" valuey="0"/>
 		
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!-- 0.1s[0-3] -->
@@ -222,6 +222,13 @@
 		
 		<skill id="50010" lvl="1" type="0" action="10002" actionloop="0" rangetype="0" rangetypevalue="3,15" skillmode="3" skillmodevalue="1" />
 		<skill id="50011" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,3" skillmode="6" skillmodevalue="15,1.5,0.25,1405" func="5,4" valuex="30,3" valuey="0,0"/>
+
+		<!--  100-->
+		<skill id="50012" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,3" skillmode="1" skillmodevalue="0.5" func="5,4" valuex="25,2" valuey="0"/>
+		<!--  100-->
+		<skill id="50013" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,3" skillmode="1" skillmodevalue="0.5,178" func="5,4" valuex="25,0" valuey="0,0"/>
+		<!-- Chuck small rock -->
+		<skill id="50014" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,15" skillmode="5" skillmodevalue="0.6,178,1,35,0,45,1" func="5,4" valuex="55,1" valuey="0"/>
 
 
 		<!-- *********************************** start by 60000************************************************************************* -->
@@ -375,7 +382,7 @@
 		<combo id="40009" skilllist="40000,40012" coldown="4" freezetime="2"/>
 
 		<!-- *********************************** start by 50000************************************************************************* -->
-		<!--  -->
+		<!-- boss triceratops melee -->
 		<combo id="50000" skilllist="50000,50001" coldown="4" freezetime="2"/> 
 		<!--  -->
 		<combo id="50001" skilllist="50002,50003" coldown="6" freezetime="2"/> 
@@ -390,8 +397,13 @@
 		<!--  -->
 		<combo id="50006" skilllist="50008,50009" coldown="8" freezetime="2.5"/>
 		
-		<combo id="50007" skilllist="50010,50011" coldown="8" freezetime="1.25"/>
-		 
+		<combo id="50007" skilllist="50010,50011,50013" coldown="8" freezetime="1.25"/>
+		<!-- normal triceratops melee -->
+		<combo id="50008" skilllist="50000,50012" coldown="5" freezetime="2.5"/>
+
+		<combo id="50009" skilllist="50014" coldown="24" freezetime="2.5"/>
+		
+		<!-- normal triceratops melee -->
 		<!--  
 		<combo id="50003" skilllist="50004,50005,50007" /> 
 		-->

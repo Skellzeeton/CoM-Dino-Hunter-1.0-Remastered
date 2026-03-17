@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 54094518196469763}
   - component: {fileID: 114518018837060003}
   m_Layer: 0
-  m_Name: spawn_rock_normal
+  m_Name: spawn_rock_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.95042795, y: 5.476162, z: -6.425528}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f164d4d4d61fbab068851102acd8ebcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fAtkRange: 2.5
+  fAtkRange: 3.25
   nEffHit: 1900
   nEffHitGround: 1901
   nHitMask: 1902
