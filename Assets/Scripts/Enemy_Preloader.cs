@@ -20,8 +20,12 @@ public class Enemy_Preloader : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        if (!hasPreloaded)
+        {
+            StartCoroutine(PreloadPrefabs());
+            hasPreloaded = true;
+        }
         SceneManager.sceneLoaded += OnSceneLoaded;
-        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
     private void OnDestroy()
@@ -46,8 +50,6 @@ public class Enemy_Preloader : MonoBehaviour
         }
         else
         {
-            UnloadPrefabs();
-            hasPreloaded = false;
         }
     }
 
@@ -70,9 +72,9 @@ public class Enemy_Preloader : MonoBehaviour
                 continue;
 
             GameObject inst = Instantiate(entry.prefab);
+            DontDestroyOnLoad(inst);
             inst.transform.SetParent(null);
             inst.SetActive(true);
-            
             Animator animator = inst.GetComponentInChildren<Animator>();
             if (animator != null && animator.runtimeAnimatorController != null)
             {
