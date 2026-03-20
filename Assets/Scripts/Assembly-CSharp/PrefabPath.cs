@@ -83,6 +83,8 @@ public class PrefabPath
 	public const int weapon_019 = 119;
 
 	public const int weapon_021 = 121;
+	
+	public const int weapon_022 = 122;
 
 	public const int weapon_023 = 123;
 

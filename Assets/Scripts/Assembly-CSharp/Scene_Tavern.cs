@@ -244,6 +244,20 @@ public class Scene_Tavern : MonoBehaviour
 			do_fade_in = false;
 			m_fade.FadeIn();
 		}
+		else if (m_event.GetEventName() == "TUIEvent_RoleChange")
+		{
+			if (m_event.GetControlSuccess())
+			{
+				if (m_event.GetEventInfo() != null && m_event.GetEventInfo().GetPlayerInfo() != null)
+				{
+					popup_role.SetTopBarInfo(m_event.GetEventInfo().player_info);
+				}
+				else
+				{
+					Debug.Log("error!");
+				}
+			}
+		}
 	}
 
 	public void TUIEvent_MoveScreen(TUIControl control, int event_type, float wparam, float lparam, object data)
@@ -270,6 +284,19 @@ public class Scene_Tavern : MonoBehaviour
 			case PopupRoleBtnBuy.PopupRoleBuyState.State_Buy:
 				popup_role.ShowPopupBuy();
 				break;
+			case PopupRoleBtnBuy.PopupRoleBuyState.State_Use:
+			{
+				if (sfx_open_now)
+				{
+					CUISound.GetInstance().Play("UI_Use");
+				}
+				int roleChooseID = popup_role.GetRoleChooseID();
+				global::EventCenter.EventCenter.Instance.Publish(
+					this,
+					new TUIEvent.SendEvent_SceneTavern("TUIEvent_RoleChange", roleChooseID)
+				);
+				break;
+			}
 			default:
 				Debug.Log("error!");
 				break;

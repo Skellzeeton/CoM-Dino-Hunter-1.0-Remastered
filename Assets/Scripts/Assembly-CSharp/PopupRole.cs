@@ -121,7 +121,15 @@ public class PopupRole : MonoBehaviour
 		else
 		{
 			label_introduce_unlock.Text = string.Empty;
-			btn_buy.SetStateDisable();
+
+			if (role_now_id != m_info.id)
+			{
+				btn_buy.SetStateUse();
+			}
+			else
+			{
+				btn_buy.SetStateDisable();
+			}
 		}
 		SetRoleID(m_info.id);
 		SetActiveSkill(m_info.active_skill_list);
@@ -248,7 +256,7 @@ public class PopupRole : MonoBehaviour
 		}
 		}
 		item_choose.DoBuy();
-		btn_buy.SetStateDisable();
+		btn_buy.SetStateUse();
 		int id = item_choose.GetRoleInfo().id;
 		unlock_blink.OpenBlinkRole(id, "Purchase complete!");
 		if (scene_tavern != null)

@@ -1,3 +1,4 @@
+using System.Reflection;
 using UnityEngine;
 
 public class iCameraTrail : iCamera
@@ -64,7 +65,65 @@ public class iCameraTrail : iCamera
             m_AudioListenerTarget = target.gameObject.AddComponent<AudioListener>();
         SwitchToTargetListener();
         ShootMode(false);
-        SetViewMelee(bMeleeView);
+        bool isMeleeView = bMeleeView;
+        if (target != null)
+        {
+            CCharUser user = target as CCharUser;
+            if (user != null)
+            {
+                try
+                {
+                    FieldInfo gsField = user.GetType().GetField("m_GameState", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                    object gameState = gsField != null ? gsField.GetValue(user) : null;
+                    if (gameState != null)
+                    {
+                        MethodInfo getCurrWeaponMethod = gameState.GetType().GetMethod("GetCurrWeapon", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                        object currWeapon = getCurrWeaponMethod != null ? getCurrWeaponMethod.Invoke(gameState, null) : null;
+
+                        if (currWeapon != null)
+                        {
+                            PropertyInfo curLvlProp = currWeapon.GetType().GetProperty("CurWeaponLvlInfo", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                            FieldInfo curLvlField = currWeapon.GetType().GetField("CurWeaponLvlInfo", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+                            object curLvlObj = null;
+                            if (curLvlProp != null)
+                                curLvlObj = curLvlProp.GetValue(currWeapon, null);
+                            else if (curLvlField != null)
+                                curLvlObj = curLvlField.GetValue(currWeapon);
+                            if (curLvlObj != null)
+                            {
+                                PropertyInfo nTypeProp = curLvlObj.GetType().GetProperty("nType", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                                FieldInfo nTypeField = curLvlObj.GetType().GetField("nType", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                                int nType = -1;
+                                if (nTypeProp != null)
+                                {
+                                    object val = nTypeProp.GetValue(curLvlObj, null);
+                                    if (val is int) nType = (int)val;
+                                }
+                                else if (nTypeField != null)
+                                {
+                                    object val = nTypeField.GetValue(curLvlObj);
+                                    if (val is int) nType = (int)val;
+                                }
+                                if (nType == 1)
+                                    isMeleeView = true;
+                                else if (nType >= 0)
+                                    isMeleeView = false;
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    isMeleeView = bMeleeView;
+                }
+            }
+            else
+            {
+                isMeleeView = bMeleeView;
+            }
+        }
+        SetViewMelee(isMeleeView);
         m_Target = target;
         m_fDstYaw = m_fYaw = target.transform.eulerAngles.x;
         m_fDstPitch = m_fPitch = 28f;

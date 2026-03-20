@@ -615,6 +615,7 @@ public class Scene_Equip : MonoBehaviour
 		}
 		if (sfx_open_now)
 		{
+			CUISound.GetInstance().Play("UI_Button");
 			CUISound.GetInstance().Play("UI_Equip");
 		}
 		if (popup_skill.GetItemSelectInfo() != null)
@@ -650,6 +651,7 @@ public class Scene_Equip : MonoBehaviour
 		}
 		if (sfx_open_now)
 		{
+			CUISound.GetInstance().Play("UI_Button");
 			CUISound.GetInstance().Play("UI_Equip");
 		}
 		if (popup_weapon_now.GetItemSelectInfo() != null)

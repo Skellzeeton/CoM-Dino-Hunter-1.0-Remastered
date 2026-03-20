@@ -407,6 +407,29 @@ public class Scene_Map : MonoBehaviour
 			break;
 		}
 		case PopupLevel_Recommend.RecommendBtnState.RoleEquip:
+		{
+			if (sfx_open_now)
+			{
+				CUISound.GetInstance().Play("UI_Use");
+			}
+			TUIRecommendRoleInfo recommendRoleInfo = component.GetRecommendRoleInfo();
+			if (recommendRoleInfo == null)
+			{
+				Debug.Log("error!");
+				return;
+			}
+			int id = recommendRoleInfo.id;
+			global::EventCenter.EventCenter.Instance.Publish(
+				this,
+				new TUIEvent.SendEvent_SceneTavern("TUIEvent_RoleChange", id)
+			);
+			global::EventCenter.EventCenter.Instance.Publish(
+				this,
+				new TUIEvent.SendEvent_SceneMap("TUIEvent_TopBar")
+			);
+			popup_level_map.Hide();
+			return;
+		}
 		case PopupLevel_Recommend.RecommendBtnState.WeaponEquip:
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMap("TUIEvent_EnterEquip"));
 			break;

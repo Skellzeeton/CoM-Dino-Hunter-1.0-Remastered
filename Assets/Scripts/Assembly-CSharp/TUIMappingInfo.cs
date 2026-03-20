@@ -191,6 +191,7 @@ public class TUIMappingInfo
 		weapon_dictionary[18] = "Weapon018";
 		weapon_dictionary[19] = "Weapon019";
 		weapon_dictionary[21] = "Weapon021";
+		weapon_dictionary[22] = "Weapon022";
 		weapon_dictionary[23] = "Weapon023";
 		weapon_dictionary[10001] = "Stoneskin_001";
 		weapon_dictionary[10002] = "Stoneskin_002";

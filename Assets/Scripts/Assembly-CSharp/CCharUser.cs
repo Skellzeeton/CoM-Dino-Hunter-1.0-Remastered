@@ -227,16 +227,20 @@ public class CCharUser : CCharPlayer
 			MoveStop();
 			return;
 		}
+
 		Vector2 input = new Vector2(fRateX, fRateY);
-		if (input.sqrMagnitude > 0.0001f)
+		float magnitude = Mathf.Clamp01(input.magnitude);
+
+		if (magnitude > 0.0001f)
 		{
-			input = input.normalized;
-			m_v2MoveDir = input;
+			Vector2 dir = input.normalized;
+			m_v2MoveDir = dir;
 
 			float baseSpeed = m_Property.GetValue(kProEnum.MoveSpeed);
+			float speedScale = magnitude;
 
-			m_fCurSpeedMax = baseSpeed * Mathf.Abs(input.y);
-			m_fCurSpeedSideMax = baseSpeed * Mathf.Abs(input.x);
+			m_fCurSpeedMax = baseSpeed * Mathf.Abs(dir.y) * speedScale;
+			m_fCurSpeedSideMax = baseSpeed * Mathf.Abs(dir.x) * speedScale;
 
 			UpdateMoveAnim(m_v2MoveDir);
 
@@ -244,8 +248,11 @@ public class CCharUser : CCharPlayer
 			m_fCurSpeed = m_fCurSpeedMax;
 			m_fCurSpeedSide = m_fCurSpeedSideMax;
 		}
+		else
+		{
+			MoveStop();
+		}
 	}
-
 
 	public void MoveStop()
 	{
@@ -366,7 +373,8 @@ public class CCharUser : CCharPlayer
 			forward.y = 0f;
 			if (!(Vector3.Dot(base.Dir2D, forward) <= 0.1f))
 			{
-				UpdateUpBody(v3Point - m_ManualSpine.position);
+				Vector3 dir = (v3Point - m_ManualSpine.position).normalized;
+				UpdateUpBody(dir);
 				iGameApp.GetInstance().SetGizmosLine("lookat", m_ManualSpine.position, v3Point, Color.green);
 				m_bUpdateDir = true;
 			}

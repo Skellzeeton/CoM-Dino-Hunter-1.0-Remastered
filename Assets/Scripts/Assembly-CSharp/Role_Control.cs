@@ -62,6 +62,8 @@ public class Role_Control : MonoBehaviour
 	public Transform prefab_weapon_019;
 
 	public Transform prefab_weapon_021;
+	
+	public Transform prefab_weapon_022;
 
 	public Transform prefab_weapon_023;
 
@@ -114,6 +116,8 @@ public class Role_Control : MonoBehaviour
 	private Transform weapon_019;
 
 	private Transform weapon_021;
+	
+	private Transform weapon_022;
 
 	private Transform weapon_023;
 
@@ -376,6 +380,16 @@ public class Role_Control : MonoBehaviour
 			}
 			weapon_now = weapon_021;
 			weapon_type = WeaponType.Crossbow;
+			break;
+		case 22:
+			if (weapon_022 == null)
+			{
+				weapon_022 = (Transform)Object.Instantiate(prefab_weapon_022);
+				weapon_022.parent = base.transform;
+				weapon_022.localPosition = new Vector3(0f, 0f, 0f);
+			}
+			weapon_now = weapon_022;
+			weapon_type = WeaponType.LiquidFireGun;
 			break;
 		case 23:
 			if (weapon_023 == null)
