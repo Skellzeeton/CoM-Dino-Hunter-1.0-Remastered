@@ -22,6 +22,8 @@ public class Role_Control : MonoBehaviour
 	public Transform prefab_role_104;
 
 	public Transform prefab_role_105;
+	
+	public Transform prefab_role_106;
 
 	public Transform prefab_weapon_001;
 
@@ -76,6 +78,8 @@ public class Role_Control : MonoBehaviour
 	private Transform role_104;
 
 	private Transform role_105;
+	
+	private Transform role_106;
 
 	private Transform weapon_001;
 
@@ -441,6 +445,16 @@ public class Role_Control : MonoBehaviour
 				role_101.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
 			}
 			role_now = role_101;
+			break;
+		case 6:
+			if (role_106 == null)
+			{
+				role_106 = (Transform)Object.Instantiate(prefab_role_106);
+				role_106.parent = base.transform;
+				role_106.localPosition = new Vector3(0f, 0f, 0f);
+				role_106.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+			}
+			role_now = role_106;
 			break;
 		case 5:
 			if (role_105 == null)

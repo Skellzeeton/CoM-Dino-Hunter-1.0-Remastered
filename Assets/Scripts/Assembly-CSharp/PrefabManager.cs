@@ -132,6 +132,7 @@ public class PrefabManager
 		m_dictData.Add(1011, "Artist/Effect/Weapon/equip_001/equip_001_pfb");
 		m_dictData.Add(1012, "Artist/Effect/Weapon/equip_003/equip_003_pfb");
 		m_dictData.Add(1013, "Artist/Effect/Weapon/weapon_hellfire/weapon_hellfire_pfb");
+		m_dictData.Add(1014, "Artist/Effect/Weapon/weapon_blizzard/weapon_blizzard_pfb");
 		m_dictData.Add(1050, "Artist/Effect/Weapon/ammo_fire/ammo_fire_pfb02");
 		m_dictData.Add(1051, "Artist/Effect/Weapon/ammo_flash/ammo_flash_pfb02");
 		m_dictData.Add(1052, "Artist/Effect/Weapon/ammo_ice/ammo_ice_pfb02");

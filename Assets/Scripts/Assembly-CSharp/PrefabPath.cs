@@ -157,6 +157,8 @@ public class PrefabPath
 	public const int fire_normal_shotgun = 1012;
 
 	public const int fire_hellfire = 1013;
+	
+	public const int fire_blizzard = 1014;
 
 	public const int bullet_fire = 1050;
 

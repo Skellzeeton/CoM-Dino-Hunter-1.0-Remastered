@@ -209,6 +209,7 @@ public class TUIMappingInfo
 		role_dictionary[3] = "avatar4";
 		role_dictionary[4] = "avatar3";
 		role_dictionary[5] = "avatar2";
+		role_dictionary[6] = "avatar6";
 		map_dictionary = new Dictionary<int, string>();
 		map_dictionary[1001] = "p7";
 		map_dictionary[1002] = "p4";

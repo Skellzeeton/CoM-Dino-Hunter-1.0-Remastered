@@ -536,7 +536,7 @@ public class TUIDataServer
 				introduce = cCharacterInfoLevel.sDesc;
 			}
 			tUIGameInfo2.equip_info.role = new TUIPopupInfo(dataCenter2.CurCharID, name, introduce);
-			int[] array = new int[5] { 1, 2, 3, 4, 5 };
+			int[] array = new int[6] { 1, 6, 2, 3, 4, 5 };
 			tUIGameInfo2.equip_info.roles_list = new List<TUIPopupInfo>();
 			for (int i = 0; i < array.Length; i++)
 			{
@@ -1502,7 +1502,7 @@ public class TUIDataServer
 			CCharacterInfo cCharacterInfo = null;
 			CSkillInfo cSkillInfo = null;
 			CSkillInfoLevel cSkillInfoLevel = null;
-			int[] array = new int[5] { 1, 4, 3, 2, 5 };
+			int[] array = new int[6] { 1, 6, 4, 3, 2, 5 };
 			TUISkillListInfo[] array2 = new TUISkillListInfo[array.Length];
 			for (int i = 0; i < array2.Length; i++)
 			{
@@ -1635,7 +1635,7 @@ public class TUIDataServer
 								Dictionary<int, CSkillInfo> dataSkillInfo = skillCenter.GetDataSkillInfo();
 								if (dataSkillInfo != null)
 								{
-									int[] array3 = new int[5] { 1, 2, 3, 4, 5 };
+									int[] array3 = new int[6] { 1, 6, 4, 3, 2, 5 };
 									TUISkillListInfo[] array4 = new TUISkillListInfo[array3.Length];
 									for (int n = 0; n < array4.Length; n++)
 									{
@@ -1734,7 +1734,7 @@ public class TUIDataServer
 									Dictionary<int, CSkillInfo> dataSkillInfo2 = skillCenter2.GetDataSkillInfo();
 									if (dataSkillInfo2 != null)
 									{
-										int[] array5 = new int[5] { 1, 2, 3, 4, 5 };
+										int[] array5 = new int[6] { 1, 6, 4, 3, 2, 5 };
 										TUISkillListInfo[] array6 = new TUISkillListInfo[array5.Length];
 										for (int num3 = 0; num3 < array6.Length; num3++)
 										{
@@ -1830,7 +1830,7 @@ public class TUIDataServer
 									Dictionary<int, CSkillInfo> dataSkillInfo3 = skillCenter3.GetDataSkillInfo();
 									if (dataSkillInfo3 != null)
 									{
-										int[] array7 = new int[5] { 1, 2, 3, 4, 5 };
+										int[] array7 = new int[6] { 1, 6, 4, 3, 2, 5 };
 										TUISkillListInfo[] array8 = new TUISkillListInfo[array7.Length];
 										for (int num6 = 0; num6 < array8.Length; num6++)
 										{
@@ -2087,10 +2087,11 @@ public class TUIDataServer
 			}
 			TUIGameInfo tUIGameInfo2 = new TUIGameInfo();
 			tUIGameInfo2.weapon_info = new TUIWeaponInfo();
-			int[] array = new int[21]
+			// Add weapons to shop
+			int[] array = new int[22]
 			{
 				1, 21, 9, 10, 4, 16, 15, 18, 3, 11,
-				12, 17, 5, 13, 19, 2, 6, 7, 8, 14,
+				12, 17, 5, 13, 19, 2, 6, 7, 8, 14, 22,
 				23
 			};
 			CWeaponInfoLevel[] array2 = new CWeaponInfoLevel[5];
@@ -2877,8 +2878,9 @@ public class TUIDataServer
 			}
 			TUIGameInfo tUIGameInfo2 = new TUIGameInfo();
 			tUIGameInfo2.all_role_info = new TUIAllRoleInfo();
-			tUIGameInfo2.all_role_info.role_list = new TUIRoleInfo[5];
-			int[] array = new int[5] { 1, 4, 3, 2, 5 };
+			// Add new characters here
+			tUIGameInfo2.all_role_info.role_list = new TUIRoleInfo[6];
+			int[] array = new int[6] { 1, 6, 4, 3, 2, 5 };
 			for (int i = 0; i < array.Length; i++)
 			{
 				CCharacterInfo characterInfo2 = gameData2.GetCharacterInfo(array[i]);
