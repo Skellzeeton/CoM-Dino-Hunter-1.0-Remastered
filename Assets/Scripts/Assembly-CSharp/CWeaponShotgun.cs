@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CWeaponShotgun : CWeaponBase
 {
+	private const int EFF_FATAL_BOSS = 1904;
+
 	protected override void OnEquip(CCharPlayer player)
 	{
 		RefreshBulletUI();
@@ -177,6 +179,10 @@ public class CWeaponShotgun : CWeaponBase
 		if (!mob.isDead)
 		{
 			return;
+		}
+		if (mob.IsBoss())
+		{
+			m_GameScene.AddEffect(mob.GetBone(1).position, Vector3.forward, 4.25f, EFF_FATAL_BOSS);
 		}
 		CMobInfoLevel mobInfo = mob.GetMobInfo();
 		if (mobInfo != null)

@@ -377,8 +377,8 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 
 	</gamewave>
 
-<gamewave id="1008002" trigger="0" triggervalue="40" delay="" interval="0" number="1" loop="-1"  cutscene_BGM="BGM_Boss">
-<mob id="1202" level="6" spawnmode="1" startpoint="0"/>
+<gamewave id="1008002" trigger="0" triggervalue="40" delay="6.6" interval="0" number="1" loop="-1" cutscene="shangu_boss01" cutscene_BGM="BGM_Boss" cutscene_ambience="Amb_Windvalley_Boss_Show">
+<mob id="1202" level="6" spawnmode="1" startpoint="8"/>
 	</gamewave>
 
 	<gamewave id="1008003" trigger="0" triggervalue="65" delay="" interval="19" number="2" loop="-1"  >
@@ -2662,7 +2662,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 	</gamewave>
 
 
-	<gamewave id="5018002" trigger="5" triggervalue="40001,0" delay="" interval="4" number="2" loop="-1"  cutscene_BGM="BGM_Boss">
+	<gamewave id="5018002" trigger="5" triggervalue="40001,0" delay="" interval="4" number="2" loop="-1"  >
 <mob id="1" level="9" spawnmode="1" startpoint="0" />
 <mob id="2" level="9" spawnmode="1" startpoint="0" />
 <mob id="5" level="9" spawnmode="1" startpoint="0" />
@@ -2901,7 +2901,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 
 
 	<gamewave id="5021002" trigger="5" triggervalue="40001,0" delay="" interval="4" number="2" loop="-1"  cutscene_BGM="BGM_Boss">
-<mob id="903" level="10" spawnmode="1" startpoint="0" />
+<mob id="9" level="8" spawnmode="1" startpoint="0" />
 <mob id="1" level="10" spawnmode="1" startpoint="0" />
 <mob id="8" level="10" spawnmode="1" startpoint="0" />
 <mob id="4" level="10" spawnmode="1" startpoint="0" />

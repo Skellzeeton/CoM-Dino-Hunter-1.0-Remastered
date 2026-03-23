@@ -240,6 +240,8 @@ public class PrefabPath
 
 	public const int player_eatitem = 1301;
 
+	public const int player_levelup_female = 1302;
+	
 	public const int monster_roar = 1351;
 
 	public const int throw_rock = 1400;

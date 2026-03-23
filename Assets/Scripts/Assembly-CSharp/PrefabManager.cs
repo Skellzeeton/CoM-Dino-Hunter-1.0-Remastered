@@ -172,6 +172,7 @@ public class PrefabManager
 		m_dictData.Add(1206, "Artist/Effect/Skill/stealth/stealth_pfb");
 		m_dictData.Add(1300, "Artist/Effect/Character/Level_up/Level_up_pfb");
 		m_dictData.Add(1301, "Artist/Effect/Item/item/item_04_pfb");
+		m_dictData.Add(1302, "Artist/Effect/Character/Level_up/Level_up_female_pfb");
 		m_dictData.Add(1351, "Artist/Effect/Character/roar/roar_pfb");
 		m_dictData.Add(1400, "Artist/Effect/Skill/atk01/atk01_pfb");
 		m_dictData.Add(1401, "Artist/Effect/Skill/atk02/atk02_pfb");

@@ -426,7 +426,6 @@ public class Scene_Tavern : MonoBehaviour
 				CUISound.GetInstance().Play("UI_Cancle");
 			}
 			popup_role.CloseBlink();
-			popup_role.ShowGoEquipAfterBuy(sfx_open_now);
 		}
 	}
 

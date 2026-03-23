@@ -3,146 +3,128 @@ using UnityEngine;
 
 public class iSceneDamage : MonoBehaviour
 {
-	public enum kMode
-	{
-		Once = 0,
-		Continue = 1
-	}
+    public enum kMode
+    {
+        Once = 0,
+        Continue = 1
+    }
 
-	protected class CHurtTargetInfo
-	{
-		public CCharBase target;
+    protected class CHurtTargetInfo
+    {
+        public CCharBase target;
+        public float time;
+    }
 
-		public float time;
-	}
+    public kMode  m_Mode;
+    
+    public float  m_fInvertal;
+    
+    public float  m_fDamage;
 
-	public kMode m_Mode;
+    public int    m_nBuffID;
+    
+    public float  m_fBuffTime;
 
-	public float m_fInvertal;
+    protected iGameSceneBase m_GameScene;
+    
+    protected iGameUIBase    m_GameUI;
+    
+    protected bool           m_bActive;
 
-	public float m_fDamage;
+    protected List<CHurtTargetInfo> m_ltHurtTarget;
+    
+    protected List<CHurtTargetInfo> m_ltHurtTargetDestroy;
 
-	public int m_nBuffID;
+    private void Awake()
+    {
+        m_ltHurtTarget        = new List<CHurtTargetInfo>();
+        m_ltHurtTargetDestroy = new List<CHurtTargetInfo>();
+    }
 
-	public float m_fBuffTime;
+    private void Start()  { }
 
-	protected iGameSceneBase m_GameScene;
+    private void Update()
+    {
+        if (!m_bActive) return;
 
-	protected iGameUIBase m_GameUI;
+        if (m_GameScene == null)
+            m_GameScene = iGameApp.GetInstance().m_GameScene;
+        if (m_GameUI == null && m_GameScene != null)
+            m_GameUI = m_GameScene.GetGameUI();
+        if (m_GameScene == null || m_GameScene.isPause) return;
 
-	protected bool m_bActive;
+        foreach (CHurtTargetInfo item in m_ltHurtTarget)
+        {
+            item.time -= Time.deltaTime;
+            if (item.time <= 0f)
+                m_ltHurtTargetDestroy.Add(item);
+        }
+        foreach (CHurtTargetInfo item2 in m_ltHurtTargetDestroy)
+            m_ltHurtTarget.Remove(item2);
+        m_ltHurtTargetDestroy.Clear();
+    }
 
-	protected List<CHurtTargetInfo> m_ltHurtTarget;
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (m_bActive && m_Mode != kMode.Continue && m_GameScene != null && !m_GameScene.isPause)
+        {
+            CCharBase component = collider.transform.root.GetComponent<CCharBase>();
+            if (component != null && !component.isDead)
+                MakeDamage(component);
+        }
+    }
 
-	protected List<CHurtTargetInfo> m_ltHurtTargetDestroy;
+    private void OnTriggerStay(Collider collider)
+    {
+        if (m_bActive && m_Mode != kMode.Once && m_GameScene != null && !m_GameScene.isPause)
+        {
+            CCharBase component = collider.transform.root.GetComponent<CCharBase>();
+            if (component != null && !component.isDead)
+                MakeDamage(component);
+        }
+    }
 
-	private void Awake()
-	{
-		m_ltHurtTarget = new List<CHurtTargetInfo>();
-		m_ltHurtTargetDestroy = new List<CHurtTargetInfo>();
-	}
+    protected void ResetTime(CCharBase target)
+    {
+        CHurtTargetInfo info = new CHurtTargetInfo();
+        info.time   = m_fInvertal;
+        info.target = target;
+        m_ltHurtTarget.Add(info);
+    }
 
-	private void Start()
-	{
-	}
+    protected bool IsCanDamage(CCharBase target)
+    {
+        foreach (CHurtTargetInfo item in m_ltHurtTarget)
+            if (item.target == target) return false;
+        return true;
+    }
 
-	private void Update()
-	{
-		if (!m_bActive)
-		{
-			return;
-		}
-		if (m_GameScene == null)
-		{
-			m_GameScene = iGameApp.GetInstance().m_GameScene;
-		}
-		if (m_GameUI == null && m_GameScene != null)
-		{
-			m_GameUI = m_GameScene.GetGameUI();
-		}
-		if (m_GameScene == null || m_GameScene.isPause)
-		{
-			return;
-		}
-		foreach (CHurtTargetInfo item in m_ltHurtTarget)
-		{
-			item.time -= Time.deltaTime;
-			if (item.time <= 0f)
-			{
-				m_ltHurtTargetDestroy.Add(item);
-			}
-		}
-		foreach (CHurtTargetInfo item2 in m_ltHurtTargetDestroy)
-		{
-			m_ltHurtTarget.Remove(item2);
-		}
-		m_ltHurtTargetDestroy.Clear();
-	}
+    protected void MakeDamage(CCharBase target)
+    {
+        if (!IsCanDamage(target)) return;
+        ResetTime(target);
+        if (m_GameScene == null || !m_GameScene.IsMyself(target) || target.isDead) return;
+        float maxHP   = GetTargetMaxHP(target);
+        float damage  = maxHP > 0f ? maxHP * (m_fDamage / 100f) : m_fDamage;
+        target.OnHit(0f - damage, null, string.Empty);
+        m_GameScene.AddDamageText(damage, target.GetBone(1).position, Color.red);
+        if (m_nBuffID > 0)
+            target.AddBuff(m_nBuffID, m_fBuffTime);
+    }
 
-	private void OnTriggerEnter(Collider collider)
-	{
-		if (m_bActive && m_Mode != kMode.Continue && m_GameScene != null && !m_GameScene.isPause)
-		{
-			CCharBase component = collider.transform.root.GetComponent<CCharBase>();
-			if (!(component == null) && !component.isDead)
-			{
-				MakeDamage(component);
-			}
-		}
-	}
+    private float GetTargetMaxHP(CCharBase target)
+    {
+        CCharMob mob = target as CCharMob;
+        if (mob != null) return mob.HPMAX;
 
-	private void OnTriggerStay(Collider collider)
-	{
-		if (m_bActive && m_Mode != 0 && m_GameScene != null && !m_GameScene.isPause)
-		{
-			CCharBase component = collider.transform.root.GetComponent<CCharBase>();
-			if (!(component == null) && !component.isDead)
-			{
-				MakeDamage(component);
-			}
-		}
-	}
+        CCharUser user = target as CCharUser;
+        if (user != null) return user.MaxHP;
 
-	protected void ResetTime(CCharBase target)
-	{
-		CHurtTargetInfo cHurtTargetInfo = new CHurtTargetInfo();
-		cHurtTargetInfo.time = m_fInvertal;
-		cHurtTargetInfo.target = target;
-		m_ltHurtTarget.Add(cHurtTargetInfo);
-	}
+        return 0f;
+    }
 
-	protected bool IsCanDamage(CCharBase target)
-	{
-		foreach (CHurtTargetInfo item in m_ltHurtTarget)
-		{
-			if (item.target == target)
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-
-	protected void MakeDamage(CCharBase target)
-	{
-		if (!IsCanDamage(target))
-		{
-			return;
-		}
-		ResetTime(target);
-		if (m_GameScene != null && m_GameScene.IsMyself(target) && !target.isDead)
-		{
-			target.OnHit(0f - m_fDamage, null, string.Empty);
-			m_GameScene.AddDamageText(m_fDamage, target.GetBone(1).position, Color.red);
-			if (m_nBuffID > 0)
-			{
-				target.AddBuff(m_nBuffID, m_fBuffTime);
-			}
-		}
-	}
-
-	public void SetActive(bool bActive)
-	{
-		m_bActive = bActive;
-	}
+    public void SetActive(bool bActive)
+    {
+        m_bActive = bActive;
+    }
 }

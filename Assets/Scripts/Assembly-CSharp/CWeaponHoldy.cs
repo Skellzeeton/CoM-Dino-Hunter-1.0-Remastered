@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CWeaponHoldy : CWeaponBase
 {
+	private const int EFF_FATAL_BOSS = 1904;
+
 	protected float m_fRadius;
 
 	protected float m_fAngle;
@@ -210,6 +212,10 @@ public class CWeaponHoldy : CWeaponBase
 		if (!mob.isDead)
 		{
 			return;
+		}
+		if (mob.IsBoss())
+		{
+			m_GameScene.AddEffect(mob.GetBone(1).position, Vector3.forward, 4.25f, EFF_FATAL_BOSS);
 		}
 		CMobInfoLevel mobInfo = mob.GetMobInfo();
 		if (mobInfo != null)

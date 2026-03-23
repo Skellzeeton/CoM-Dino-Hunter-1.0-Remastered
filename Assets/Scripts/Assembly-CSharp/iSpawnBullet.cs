@@ -40,6 +40,8 @@ public class iSpawnBullet : MonoBehaviour
 	protected bool m_bEmission;
 
 	protected HashSet<int> m_HitTargets;
+	private const int EFF_FATAL_BOSS = 1904;
+	private const int EFF_FATAL_MOB  = 1905;
 
 	public int Owner
 	{
@@ -185,6 +187,8 @@ public class iSpawnBullet : MonoBehaviour
 					m_HitTargets.Add(component2.UID);
 					if (component2.isDead)
 					{
+						int fatalEff = component2.IsBoss() ? EFF_FATAL_BOSS : EFF_FATAL_MOB;
+						m_GameScene.AddEffect(component2.GetBone(1).position, Vector3.forward, 4.25f, fatalEff);
 						CCharMob cCharMob = component2 as CCharMob;
 						CCharUser cCharUser = cCharBase as CCharUser;
 						if (cCharUser != null && cCharMob != null)
@@ -304,6 +308,8 @@ public class iSpawnBullet : MonoBehaviour
 				m_GameLogic.CaculateFunc(cCharBase, item, m_arrFunc, m_arrValueX, m_arrValueY, ref hitinfo2);
 				if (item.isDead)
 				{
+					int fatalEff = item.IsBoss() ? EFF_FATAL_BOSS : EFF_FATAL_MOB;
+					m_GameScene.AddEffect(item.GetBone(1).position, Vector3.forward, 4f, fatalEff);
 					CCharMob cCharMob2 = item as CCharMob;
 					CCharUser cCharUser2 = cCharBase as CCharUser;
 					if (cCharUser2 != null && cCharMob2 != null)

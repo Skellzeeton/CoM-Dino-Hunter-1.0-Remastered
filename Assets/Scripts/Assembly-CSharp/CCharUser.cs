@@ -67,6 +67,11 @@ public class CCharUser : CCharPlayer
 			m_nCurWeaponIndex = value;
 		}
 	}
+	
+	public float MaxHP
+	{
+		get { return m_fHPMax; }
+	}
 
 	public new void Awake()
 	{
@@ -541,20 +546,24 @@ public class CCharUser : CCharPlayer
 			{
 				InitChar(base.ID, base.Level, base.EXP);
 				m_bUpdateProBuff = true;
-				GameObject gameObject = m_GameScene.AddEffect(Vector3.zero, Vector3.one, 5f, 1300);
-				gameObject.transform.parent = GetBone(3);
-				gameObject.transform.localPosition = new Vector3(0f, 0.01f, 0f);
-				gameObject.transform.localRotation = Quaternion.identity;
 				m_GameState.isCheckUnLock = true;
 				flag = true;
 				CGameNetSender.GetInstance().PlayerLevelUp(base.Level);
 				if (base.CurCharInfoLevel.isMale)
 				{
 					PlayAudio("UI_Upgrade_Male");
+					GameObject gameObject = m_GameScene.AddEffect(Vector3.zero, Vector3.one, 5f, 1300);
+					gameObject.transform.parent = GetBone(3);
+					gameObject.transform.localPosition = new Vector3(0f, 0.01f, 0f);
+					gameObject.transform.localRotation = Quaternion.identity;
 				}
 				else
 				{
 					PlayAudio("UI_Upgrade_Female");
+					GameObject gameObject = m_GameScene.AddEffect(Vector3.zero, Vector3.one, 5f, 1302);
+					gameObject.transform.parent = GetBone(3);
+					gameObject.transform.localPosition = new Vector3(0f, 0.01f, 0f);
+					gameObject.transform.localRotation = Quaternion.identity;
 				}
 			}
 		}
