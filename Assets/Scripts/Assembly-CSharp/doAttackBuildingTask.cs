@@ -86,7 +86,7 @@ public class doAttackBuildingTask : Task
 			m_fTimeCount = 0f;
 			cCharMob.CrossAnim(kAnimEnum.Idle, WrapMode.Loop, 0.3f, 1f, 0f);
 			cCharMob.m_TargetBuilding.AddHP(0f - mobInfo.fDamage);
-			cCharMob.m_TargetBuilding.PlayAudio("Mat_Fence_crash");
+			cCharMob.m_TargetBuilding.PlayAudio("Mat_Fence_impact");
 			if (m_GameScene.m_TaskManager != null)
 			{
 				CTaskDefence cTaskDefence = m_GameScene.m_TaskManager.GetTask() as CTaskDefence;

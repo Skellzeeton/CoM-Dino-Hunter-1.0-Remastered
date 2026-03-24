@@ -67,6 +67,7 @@ public class PrefabManager
 		m_dictData.Add(31, "Artist/Model/Character/model_velociraptor1");
 		m_dictData.Add(32, "Artist/Model/Character/model_velociraptor2");
 		m_dictData.Add(33, "Artist/Model/Character/model_velociraptor3");
+		m_dictData.Add(34, "Artist/Model/Character/model_velociraptor4");
 		m_dictData.Add(41, "Artist/Model/Character/model_dilophosaurus1");
 		m_dictData.Add(42, "Artist/Model/Character/model_dilophosaurus2");
 		m_dictData.Add(43, "Artist/Model/Character/model_dilophosaurus3");
@@ -76,6 +77,7 @@ public class PrefabManager
 		m_dictData.Add(60, "Artist/Model/Character/model_tyrannosaurus_boss");
 		m_dictData.Add(61, "Artist/Model/Character/model_tyrannosaurus_elite");
 		m_dictData.Add(70, "Artist/Model/Character/model_ridgebackdragon_boss");
+		m_dictData.Add(71, "Artist/Model/Character/model_ridgebackdragon_elite");
 		m_dictData.Add(101, "Artist/Model/Weapon/weapon_001");
 		m_dictData.Add(102, "Artist/Model/Weapon/weapon_002");
 		m_dictData.Add(103, "Artist/Model/Weapon/weapon_003");

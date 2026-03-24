@@ -484,14 +484,15 @@ public class Scene_Forge : MonoBehaviour
 			{
 				CUISound.GetInstance().Play("UI_Button");
 			}
-			TUISupplementInfo supplementInfo = popup_weapon.GetSupplementInfo();
+			return;
+			/*TUISupplementInfo supplementInfo = popup_weapon.GetSupplementInfo();
 			if (supplementInfo == null)
 			{
 				Debug.Log("error!");
 				return;
 			}
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneForge("TUIEvent_WeaponSuppplement", supplementInfo));
-			popup_weapon.CloseWeaponSupplement();
+			popup_weapon.CloseWeaponSupplement();*/
 		}
 	}
 

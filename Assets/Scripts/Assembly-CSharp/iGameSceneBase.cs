@@ -2095,6 +2095,7 @@ public class iGameSceneBase
 			else
 			{
 				m_GameUI.AddDmgUI(fDamage, v3Pos, Color.yellow, gyUILabelDmg.kMode.Mode1);
+				CUISound.GetInstance().Play("Fx_Impact_crit");
 			}
 		}
 	}
