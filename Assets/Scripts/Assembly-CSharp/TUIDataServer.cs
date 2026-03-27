@@ -2158,9 +2158,24 @@ public class TUIDataServer
 					dictionary7.Add(num4 + 1, array2[num4].nCapacity);
 				}
 				Dictionary<int, string> dictionary8 = new Dictionary<int, string>();
-				for (int num5 = 0; num5 < array2.Length; num5++)
+				dictionary8.Add(1, "DMG: " + (int)array2[0].fDamage);
+				for (int num5 = 1; num5 < array2.Length; num5++)
 				{
-					dictionary8.Add(num5 + 1, array2[num5].sLevelUpDesc);
+					int level   = num5 + 1;
+					int curDmg  = (int)array2[num5 - 1].fDamage;
+					int nextDmg = (int)array2[num5].fDamage;
+					int delta   = nextDmg - curDmg;
+					if (num5 + 1 < array2.Length && array2[num5 + 1] != null)
+					{
+						dictionary8.Add(level, "Next Upgrade:\n" + nextDmg
+						                                         + "({color:1eff0000}+" + delta + "{color})damage");
+					}
+					else
+					{
+						dictionary8.Add(level, "Next Upgrade:\n" + nextDmg
+						                                         + "({color:1eff0000}+" + delta + "{color})damage"
+						                                         + "\nThis is the final level.");
+					}
 				}
 				TUIWeaponUpdateInfo weapon_update_info = new TUIWeaponUpdateInfo(dictionary2, dictionary3, dictionary4, dictionary5, dictionary6, dictionary7, dictionary8);
 				List<TUIGoodsNeedInfo>[] array4 = new List<TUIGoodsNeedInfo>[5];
@@ -2293,7 +2308,49 @@ public class TUIDataServer
 					Dictionary<int, string> dictionary12 = new Dictionary<int, string>();
 					for (int num13 = 0; num13 < array5.Length; num13++)
 					{
-						dictionary11.Add(num13 + 1, array5[num13].sLevelUpDesc);
+						int hp = 0;
+						for (int fi = 0; fi < 3; fi++)
+						{
+							if (array5[num13].arrFunc[fi] == 1)
+							{
+								kProEnum kp = (kProEnum)MyUtils.Low32(array5[num13].arrValueX[fi]);
+								if (kp == kProEnum.HPMax)
+								{
+									hp = MyUtils.Low32(array5[num13].arrValueY[fi]);
+									break;
+								}
+							}
+						}
+
+						string levelDesc;
+						if (num13 == 0)
+						{
+							levelDesc = "HP: {color:1eff0000}" + hp + "{color}";
+						}
+						else
+						{
+							int prevHp = 0;
+							for (int fi = 0; fi < 3; fi++)
+							{
+								if (array5[num13 - 1].arrFunc[fi] == 1)
+								{
+									kProEnum kp = (kProEnum)MyUtils.Low32(array5[num13 - 1].arrValueX[fi]);
+									if (kp == kProEnum.HPMax)
+									{
+										prevHp = MyUtils.Low32(array5[num13 - 1].arrValueY[fi]);
+										break;
+									}
+								}
+							}
+							int delta = hp - prevHp;
+							levelDesc = "Next Upgrade:\nHP: " + hp + "({color:1eff0000}+" + delta + "{color})";
+							if (num13 + 1 >= array5.Length)
+							{
+								levelDesc += "\nThis stone cannot be upgraded further after this.";
+							}
+						}
+
+						dictionary11.Add(num13 + 1, levelDesc);
 						dictionary12.Add(num13 + 1, array5[num13].sDesc);
 					}
 					List<TUIGoodsNeedInfo>[] array6 = new List<TUIGoodsNeedInfo>[5];
@@ -2892,7 +2949,9 @@ public class TUIDataServer
 						break;
 					}
 					CCharSaveInfo character2 = dataCenter2.GetCharacter(characterInfo2.nID);
-					string introduce_unlock = "Complete Stage " + (characterInfo2.nUnLockLevel - 1000) + " to unlock";
+					string introduce_unlock = (characterInfo2.nUnLockLevel > 0)
+						? "Complete Stage " + (characterInfo2.nUnLockLevel - 1000) + " to unlock"
+						: string.Empty;
 					List<TUIPopupInfo> list = new List<TUIPopupInfo>();
 					CSkillInfoLevel skillInfo = gameData2.GetSkillInfo(cCharacterInfoLevel.nSkill, 1);
 					if (skillInfo != null)

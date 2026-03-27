@@ -195,7 +195,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="13" recommandlevel="3" islimit="false" />
 	</gamelevel>
 	
-		<gamelevel id="1018" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava" isskyscene="false" nav_plane="0" bp_cfg="30101" gamewave="10018001,10018002,10018003,10018004,10018005,10018006,10018007" task="1018"  sp_cfg_ground="30111" hp_cfg_def="1" dropgroup="11018" dropcount="1" dropcountrate="100" exp="1008"  gold="360" desc="Hunt Outraged Spine King X 1\nHunt Outraged Megaraptor X 1" name="18.The Cave Expedition" proccess="1">
+		<gamelevel id="1018" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce" isskyscene="false" nav_plane="0" bp_cfg="220101" gamewave="10018001,10018002,10018003,10018004,10018005,10018006,10018007" task="1018"  sp_cfg_ground="220111" hp_cfg_def="1" dropgroup="11018" dropcount="1" dropcountrate="100" exp="1008"  gold="360" desc="Hunt Outraged Spine King X 1\nHunt Outraged Megaraptor X 1" name="18.The Raging Cold" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -309,9 +309,9 @@ icon="" proccess=""
 			<recommand recommandtype="2" recommandid="4" recommandlevel="1" islimit="true" />
 	</gamelevel>
 
-	<gamelevel id="5006" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5006001,5006002,5006003" task="5006"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="15006" dropcount="1" dropcountrate="100" exp="112"  gold="130" desc="Kill all dinos\nMelee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
+	<gamelevel id="5006" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5006001,5006002" task="5006"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" dropgroup="15006" dropcount="1" dropcountrate="100" exp="112"  gold="130" desc="Kill all dinos\nMelee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
 		<MonsterNumLimit>
-			<limit type="1"  maxnumber="15" />
+			<limit type="1"  maxnumber="30" />
 		</MonsterNumLimit>
 				<RewardMaterial material="30008" countlist="2" countratelist="100" />
 				<recommand recommandtype="1" recommandid="2" recommandlevel="2" islimit="false" />
@@ -456,13 +456,13 @@ icon="" proccess=""
 	</gamelevel>
 
 
-			<gamelevel id="5022" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="5022001,5022002,5022003" task="5022" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="15022"  dropcountrate="100" exp="672"  gold="320" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
+			<gamelevel id="5022" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" isskyscene="false" nav_plane="0" bp_cfg="200101" gamewave="5022001,5022002,5022003" task="5022" sp_cfg_ground="200111" hp_cfg_def="1" dropgroup="15022"  dropcountrate="100" exp="672"  gold="320" desc="Kill all dinos\nMelee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
 		<MonsterNumLimit>
-			<limit type="1" maxnumber="15" />
+			<limit type="1" maxnumber="30" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30047" countlist="2" countratelist="100" />
 		<RewardMaterial material="30048" countlist="2" countratelist="100" />
-		<recommand recommandtype="1" recommandid="23" recommandlevel="1" islimit="false" />
+		<recommand recommandtype="1" recommandid="7" recommandlevel="2" islimit="false" />
 	</gamelevel>
 
 

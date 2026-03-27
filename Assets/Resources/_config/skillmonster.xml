@@ -282,6 +282,13 @@
 
 		<skill id="60015" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,4" skillmode="6" skillmodevalue="62,1.8,0.25" func="5,4,11" valuex="90,4,1" valuey="0,1,0"/>
 
+		<!-- Charge end + small rock spam -->
+		<skill id="60016" lvl="1" type="0" action="10005" rangetype="1" rangetypevalue="0,120" skillmode="5" skillmodevalue="0.2,178,1,75,0,2,18" func="5,4" valuex="75,6" valuey="0"/>
+		<!-- small rock spam -->
+		<skill id="60017" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,90" skillmode="5" skillmodevalue="0.7,178,1,75,0,2,18" func="5,6" valuex="75,6" valuey="0"/>
+		<!-- Large rock spam -->
+		<skill id="60018" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,90" skillmode="5" skillmodevalue="0.7,170,1,50,0,2,4" func="5,6,11" valuex="150,6,2" valuey="0"/>
+
 		<!-- ����Ŀ��0.5s[����0-4] -->
 		<skill id="80000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,4" skillmode="3" skillmodevalue="0.5" />	
 		<!-- ��ͨ˺ҧ 100%�˺�-->
@@ -428,7 +435,13 @@
 		<!-- Enraged/elite boss skills -->
 		<combo id="60008" skilllist="60013" coldown="4" freezetime="0"/>
 
-		<combo id="60009" skilllist="60014,60015,60010,60008,60015,60008,60015,60010" coldown="27" freezetime="2"/>
+		<combo id="60009" skilllist="60014,60015,60010,60008,60015,60008,60015,60010" coldown="37" freezetime="2"/>
+
+		<combo id="60010" skilllist="60008,60015,60008,60015,60008,60015,60016" coldown="22" freezetime="2"/>
+		
+		<combo id="60011" skilllist="60006,60017" coldown="9" freezetime="2"/>
+
+		<combo id="60012" skilllist="60006,60018" coldown="18" freezetime="2"/>
 
 		<!-- ***********************************������������ start by 80000************************************************************************* -->
 		<!-- ��ͨ˺ҧ -->

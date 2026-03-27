@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4220445877372412}
   - component: {fileID: 82870526849852082}
   - component: {fileID: 114383697434899326}
+  - component: {fileID: 4278385646974276932}
   m_Layer: 0
   m_Name: Fx_Crash_stone_large
   m_TagString: Untagged
@@ -165,3 +166,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &4278385646974276932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804348359244443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 2
+  deltaTime: 0.5

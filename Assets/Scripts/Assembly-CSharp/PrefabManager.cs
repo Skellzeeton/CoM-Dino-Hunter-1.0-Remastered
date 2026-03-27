@@ -163,14 +163,11 @@ public class PrefabManager
 		m_dictData.Add(1113, "Artist/Effect/Weapon/hit_staff/hit_staff_blood_pfb");
 		m_dictData.Add(1115, "Artist/Effect/Weapon/hit_01/hit_01_02_pfb");
 		m_dictData.Add(1116, "Artist/Effect/Weapon/hit_01/hit_01_pfb");
-		m_dictData.Add(1150, "Artist/Effect/Weapon/staff_fire/staff_fire_pfb");
-		m_dictData.Add(1151, "Artist/Effect/Weapon/firecrossbow/fireCrossbow_pfb");
 		m_dictData.Add(1200, "Artist/Effect/Skill/HP_UP/HP_up_start");
-		m_dictData.Add(1201, "Artist/Effect/Skill/HP_UP/HP_up_keep");
 		m_dictData.Add(1202, "Artist/Effect/Skill/power_up/power_up_start");
 		m_dictData.Add(1203, "Artist/Effect/Skill/power_up/power_up_keep");
 		m_dictData.Add(1204, "Artist/Effect/Skill/Defense_UP/Defense_up_start");
-		m_dictData.Add(1205, "Artist/EffectCustom/defence_keep");
+		m_dictData.Add(1205, "Artist/Effect/Skill/Defense_UP/Defense_up_keep");
 		m_dictData.Add(1206, "Artist/Effect/Skill/stealth/stealth_pfb");
 		m_dictData.Add(1300, "Artist/Effect/Character/Level_up/Level_up_pfb");
 		m_dictData.Add(1301, "Artist/Effect/Item/item/item_04_pfb");

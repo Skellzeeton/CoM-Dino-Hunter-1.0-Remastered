@@ -26,10 +26,14 @@ public class doBeatBackTask : Task
 		CCharBase cCharBase = inputParam as CCharBase;
 		if (!(cCharBase == null))
 		{
+			Vector3 v3BeatBackDir = cCharBase.m_v3BeatBackDir;
+			v3BeatBackDir.y = 0f;
+			Vector3 origin = cCharBase.Pos + new Vector3(0f, 0.2f, 0f) - v3BeatBackDir * 1f;
+			float distance = cCharBase.m_fBeatBackDis + 0.5f;
 			RaycastHit hitInfo;
-			if (Physics.Raycast(cCharBase.Pos, cCharBase.m_v3BeatBackDir, out hitInfo, cCharBase.m_fBeatBackDis + 0.8f, -1879048192))
+			if (Physics.Raycast(origin, v3BeatBackDir, out hitInfo, distance, -1874853888))
 			{
-				m_v3Dst = hitInfo.point - cCharBase.m_v3BeatBackDir * 0.8f;
+				m_v3Dst = hitInfo.point - new Vector3(0f, 0.2f, 0f) - v3BeatBackDir * 0.5f;
 			}
 			else
 			{

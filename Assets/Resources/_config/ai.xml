@@ -126,8 +126,10 @@
 	<!-- BOSS -->
 		<ai id="140201" skill="60000" skillrate="" behavior="3" />	
 		<!-- BOSS -->
-		<ai id="140301" skill="60008,60003,60006,60004,60005,60009" skillrate="20,20,20,20,20" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
-	
+		<ai id="140301" skill="60008,60003,60006,60004,60005,60009" skillrate="20,20,20,20,20,20" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
+		<ai id="140302" skill="60008,60003,60006,60004,60005,60010" skillrate="20,20,20,20,20,20" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
+		<ai id="140303" skill="60008,60003,60006,60011,60005,60009,60010" skillrate="20,20,20,20,20,20,20" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
+		<ai id="140304" skill="60008,60003,60006,60011,60012,60005,60009,60010" skillrate="20,20,20,20,20,20,20,20" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
 		<!-- ***********************************����************************************************************************* -->
 		<!-- ��ͨ���� -->
 		<ai id="170101" skill="80000" skillrate="100" behavior="1" />	
@@ -261,8 +263,13 @@
 				<!-- BOSS -->
 			<aimanager id="1402" ai="140201" />		
 					<!-- BOSS -->
-			<aimanager id="1403" ai="140301" />		
-			
+			<aimanager id="1403" ai="140301" />
+		<aimanager id="1404" ai="140301">
+			<trigger type="2" oprate="4" value="70" ai="140302" priority="1" />
+			<trigger type="2" oprate="4" value="35" ai="140303" priority="2" />
+			<trigger type="2" oprate="4" value="20" ai="140304" priority="3" />
+		</aimanager>
+
 		<!-- ***********************************AImanager************************************************************************* -->
 		    <!-- ������ -->
 			<aimanager id="1701" ai="170101"/>	
