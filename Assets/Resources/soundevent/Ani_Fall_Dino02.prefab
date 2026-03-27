@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4545948868989576}
   - component: {fileID: 82633497585443553}
   - component: {fileID: 114172575156377939}
+  - component: {fileID: 4954966000150706462}
   m_Layer: 0
   m_Name: Ani_Fall_Dino02
   m_TagString: Untagged
@@ -165,3 +166,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &4954966000150706462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431919014253659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 1
+  deltaTime: 0.5

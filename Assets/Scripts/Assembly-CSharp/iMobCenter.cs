@@ -202,6 +202,15 @@ public class iMobCenter
 					cMobInfoLevel.arrDropCountRate[m] = int.Parse(array[m]);
 				}
 			}
+			if (MyUtils.GetAttribute(childNode, "crystalrate", ref value))
+			{
+				cMobInfoLevel.nCrystalRate = int.Parse(value);
+			}
+			if (MyUtils.GetAttribute(childNode, "crystal", ref value))
+			{
+				cMobInfoLevel.nCrystal = int.Parse(value);
+			}
+
 			cMobInfoLevel.ltHardinessInfo.Clear();
 			for (int n = 1; n <= 5; n++)
 			{

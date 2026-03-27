@@ -277,6 +277,36 @@ public class CCharMob : CCharBase
 					}
 				}
 			}
+			int crystalDropCount = m_curMobInfoLevel.GetCrystalDropCount();
+			if (crystalDropCount > 0)
+			{
+				CDropGroupInfo crystalGroup = m_GameData.GetDropGrouInfo(1);
+				if (crystalGroup != null && crystalGroup.ltItem != null && crystalGroup.ltItem.Count > 0)
+				{
+					CDropGroupInfo tmpCrystalDrop = new CDropGroupInfo();
+					for (int ci = 0; ci < crystalGroup.ltItem.Count; ci++)
+					{
+						tmpCrystalDrop.Add(new CDropItem(
+							crystalGroup.ltItem[ci].nItemID,
+							crystalGroup.ltItem[ci].fRate));
+					}
+					for (int ci = 0; ci < crystalDropCount; ci++)
+					{
+						int crystalItem = tmpCrystalDrop.GetDropItem();
+						if (crystalItem > 0)
+						{
+							CUISound.GetInstance().Play("UI_Crystal_appear");
+							Vector3 onUnitSphere = UnityEngine.Random.onUnitSphere;
+							onUnitSphere.y = 1f;
+							m_GameScene.AddItem(
+								crystalItem,
+								GetBone(0).position,
+								onUnitSphere * UnityEngine.Random.Range(300f, 500f),
+								-1f);
+						}
+					}
+				}
+			}
 			if (UnityEngine.Random.Range(0, 101) <= m_curMobInfoLevel.nGoldRate)
 			{
 				GameObject poolObject = PrefabManager.GetPoolObject(302, 0f);
