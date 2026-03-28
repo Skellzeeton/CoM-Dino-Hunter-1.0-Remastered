@@ -118,6 +118,14 @@ public class CMonsterGenerateManager
 			m_EventManager.AddEvent(eventByFrame);
 		}
 	}
+	
+	public void NotifyMobDied()
+	{
+		foreach (CMonsterGenerate generator in m_ltMonsterGenerate)
+		{
+			generator.OnMobDied();
+		}
+	}
 
 	protected bool MGStart(List<object> ltParam)
 	{

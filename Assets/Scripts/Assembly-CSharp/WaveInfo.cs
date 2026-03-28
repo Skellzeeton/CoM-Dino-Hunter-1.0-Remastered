@@ -27,6 +27,8 @@ public class WaveInfo
 	public string sCutSceneAmbience;
 
 	public string sCutSceneBGM;
+	
+	public bool bForceWave;
 
 	public WaveInfo()
 	{

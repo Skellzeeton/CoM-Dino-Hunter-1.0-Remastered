@@ -75,6 +75,10 @@ public class iMGCenter
 			{
 				waveInfo.m_nLoop = int.Parse(value);
 			}
+			if (MyUtils.GetAttribute(childNode, "forcewave", ref value))
+			{
+				waveInfo.bForceWave = bool.Parse(value);
+			}
 			if (MyUtils.GetAttribute(childNode, "cutscene", ref value))
 			{
 				waveInfo.sCutScene = value;

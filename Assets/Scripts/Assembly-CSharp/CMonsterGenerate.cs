@@ -7,7 +7,8 @@ public class CMonsterGenerate
 		None = 0,
 		Destroy = 1,
 		Delay = 2,
-		Process = 3
+		Process = 3,
+		Waiting = 4
 	}
 
 	public int nNextWave = -1;
@@ -117,9 +118,19 @@ public class CMonsterGenerate
 		}
 		for (int num = m_curWaveInfo.m_nNumAtOnce; num > 0; num--)
 		{
-			GenerateMob(m_nCurIndex);
-			m_nCurIndex++;
-			m_nSequence++;
+			if (!GenerateMob(m_nCurIndex))
+			{
+				if (m_curWaveInfo.bForceWave)
+				{
+					m_State = GenerateState.Waiting;
+					return;
+				}
+			}
+			else
+			{
+				m_nCurIndex++;
+				m_nSequence++;
+			}
 		}
 		if (m_nCurIndex < m_curWaveInfo.GetWaveMobCount())
 		{
@@ -141,6 +152,15 @@ public class CMonsterGenerate
 		else
 		{
 			m_nCurIndex = 0;
+		}
+	}
+	
+	public void OnMobDied()
+	{
+		if (m_State == GenerateState.Waiting && m_curWaveInfo != null && m_curWaveInfo.bForceWave)
+		{
+			m_State = GenerateState.Process;
+			m_fTimeCount = m_curWaveInfo.m_fInterval;
 		}
 	}
 

@@ -1604,6 +1604,10 @@ public class iGameSceneBase
 		{
 			m_MobMap.Remove(charmob.UID);
 			charmob.Destroy();
+			if (m_MGManager != null)
+			{
+				m_MGManager.NotifyMobDied();
+			}
 		}
 	}
 
