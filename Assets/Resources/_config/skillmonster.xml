@@ -288,12 +288,6 @@
 		<skill id="60017" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,90" skillmode="5" skillmodevalue="0.7,178,1,75,0,2,18" func="5,6" valuex="75,6" valuey="0"/>
 		<!-- Large rock spam -->
 		<skill id="60018" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,90" skillmode="5" skillmodevalue="0.7,170,1,50,0,2,4" func="5,6,11" valuex="150,6,2" valuey="0"/>
-
-		<!-- ����Ŀ��0.5s[����0-4] -->
-		<skill id="80000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,4" skillmode="3" skillmodevalue="0.5" />	
-		<!-- ��ͨ˺ҧ 100%�˺�-->
-		<skill id="80001" lvl="1" type="0" action="1000" targetlimit="2" rangetype="0" rangetypevalue="0,4" skillmode="7" skillmodevalue="1,6" func="5" valuex="200" valuey="0"/>
-	
 	
 	
 	</skillinfo>
@@ -442,9 +436,5 @@
 		<combo id="60011" skilllist="60006,60017" coldown="9" freezetime="2"/>
 
 		<combo id="60012" skilllist="60006,60018" coldown="18" freezetime="2"/>
-
-		<!-- ***********************************������������ start by 80000************************************************************************* -->
-		<!-- ��ͨ˺ҧ -->
-		<combo id="80000" skilllist="80000,80001" coldown="4" freezetime="2"/> 	
 	</comboinfo>
 </root>

@@ -40,7 +40,7 @@ public class iStashCapacityCenter
 		{
 			int capacity = 100 + (i - 1) * 5;
 			int num = 100 + i * 5;
-			m_dictStashCapacity.Add(i, new CStashCapacity(i, false, 10000, capacity, "Add capacity to " + num));
+			m_dictStashCapacity.Add(i, new CStashCapacity(i, true, 5, capacity, "Add capacity to " + num));
 		}
 		return true;
 	}
