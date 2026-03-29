@@ -233,21 +233,23 @@ public class CCharUser : CCharPlayer
 			return;
 		}
 		Vector2 input = new Vector2(fRateX, fRateY);
-		if (input.sqrMagnitude > 0.0001f)
+		float magnitude = Mathf.Clamp01(input.magnitude);
+		if (magnitude > 0.0001f)
 		{
-			input = input.normalized;
-			m_v2MoveDir = input;
-
+			Vector2 dir = input.normalized;
+			m_v2MoveDir = dir;
 			float baseSpeed = m_Property.GetValue(kProEnum.MoveSpeed);
-
-			m_fCurSpeedMax = baseSpeed * Mathf.Abs(input.y);
-			m_fCurSpeedSideMax = baseSpeed * Mathf.Abs(input.x);
-
+			float speedScale = magnitude;
+			m_fCurSpeedMax = baseSpeed * Mathf.Abs(dir.y) * speedScale;
+			m_fCurSpeedSideMax = baseSpeed * Mathf.Abs(dir.x) * speedScale;
 			UpdateMoveAnim(m_v2MoveDir);
-
 			m_CharMoveState = kCharMoveState.Max;
 			m_fCurSpeed = m_fCurSpeedMax;
 			m_fCurSpeedSide = m_fCurSpeedSideMax;
+		}
+		else
+		{
+			MoveStop();
 		}
 	}
 

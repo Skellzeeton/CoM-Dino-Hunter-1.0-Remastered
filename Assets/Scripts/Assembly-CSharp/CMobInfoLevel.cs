@@ -27,7 +27,7 @@ public class CMobInfoLevel
     public int nDropGroup;
     public int[] arrDropCount;
     public int[] arrDropCountRate;
-    public int nCrystalRate;
+    public float fCrystalRate;
     public int nCrystal;
 
     public List<CHardinessInfo> ltHardinessInfo;
@@ -39,7 +39,7 @@ public class CMobInfoLevel
         ltHardinessInfo = new List<CHardinessInfo>();
         arrDropCount = new int[3] { -1, -1, -1 };
         arrDropCountRate = new int[3];
-        nCrystalRate  = 0;
+        fCrystalRate  = 0;
         nCrystal = 1;
     }
 
@@ -60,8 +60,8 @@ public class CMobInfoLevel
     
     public int GetCrystalDropCount()
     {
-        if (nCrystalRate <= 0) return 0;
-        if (Random.Range(0, 101) <= nCrystalRate)
+        if (fCrystalRate <= 0) return 0;
+        if (Random.value <= fCrystalRate / 100f)
             return nCrystal > 0 ? nCrystal : 1;
         return 0;
     }

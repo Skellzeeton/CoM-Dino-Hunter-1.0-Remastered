@@ -204,7 +204,7 @@ public class iMobCenter
 			}
 			if (MyUtils.GetAttribute(childNode, "crystalrate", ref value))
 			{
-				cMobInfoLevel.nCrystalRate = int.Parse(value);
+				cMobInfoLevel.fCrystalRate = ServerX.ParseFloat(value);
 			}
 			if (MyUtils.GetAttribute(childNode, "crystal", ref value))
 			{

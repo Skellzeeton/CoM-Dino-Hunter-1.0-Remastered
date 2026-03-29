@@ -677,6 +677,7 @@ public class PopupWeapon : MonoBehaviour
 			if (scene_forge.GetSFXOpen())
 			{
 				CUISound.GetInstance().Play("UI_Unlocked_weapon");
+				CUISound.GetInstance().Play("UI_Forge_craft");
 			}
 		}
 		else

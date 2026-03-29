@@ -643,6 +643,7 @@ public class Scene_MainMenu : MonoBehaviour
 		{
 			CUISound.GetInstance().Play("UI_Button");
 			CUISound.GetInstance().Play("UI_Coin_get");
+			CUISound.GetInstance().Play("UI_Collection");
 		}
 		if (control.transform.parent == null)
 		{

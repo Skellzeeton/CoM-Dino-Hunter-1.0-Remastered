@@ -418,6 +418,7 @@ public class Scene_Forge : MonoBehaviour
 			if (sfx_open_now)
 			{
 				CUISound.GetInstance().Play("UI_Button");
+				CUISound.GetInstance().Play("UI_Forge");
 			}
 			PopupWeaponBuy.PopupWeaponBuyState state = control.GetComponent<PopupWeaponBuy>().GetState();
 			if (state == PopupWeaponBuy.PopupWeaponBuyState.State_Update || state == PopupWeaponBuy.PopupWeaponBuyState.State_Craft)

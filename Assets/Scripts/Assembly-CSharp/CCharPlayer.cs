@@ -110,7 +110,7 @@ public class CCharPlayer : CCharBase
 
 	protected int m_nExp;
 
-	protected float m_fRecoverLifeTime = 20f;
+	protected float m_fRecoverLifeTime = 15f;
 
 	protected float m_fRecoverLifeTimeCount;
 
