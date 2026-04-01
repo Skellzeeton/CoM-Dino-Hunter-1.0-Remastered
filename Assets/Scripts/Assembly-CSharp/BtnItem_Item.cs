@@ -43,8 +43,10 @@ public class BtnItem_Item : MonoBehaviour
 		{
 			img_normal.texture = string.Empty;
 			img_normal.CustomizeTexture = null;
+			img_normal.UseCustomize = false;
 			img_pressed.texture = string.Empty;
 			img_pressed.CustomizeTexture = null;
+			img_pressed.UseCustomize = false;
 			if (label_value != null)
 			{
 				label_value.Text = string.Empty;
@@ -72,15 +74,18 @@ public class BtnItem_Item : MonoBehaviour
 		case Popup_Show.PopupType.Skills:
 		{
 			string skillTexture = TUIMappingInfo.Instance().GetSkillTexture(popup_info.texture_id);
-			if (m_use_customize)
+			if (string.IsNullOrEmpty(skillTexture))
 			{
-				SetCustomizeTexture(img_normal, skill_texture_path + skillTexture);
-				SetCustomizeTexture(img_pressed, skill_texture_path + skillTexture);
+				Debug.LogWarning("Missing skill texture mapping for id: " + popup_info.texture_id);
+				break;
 			}
-			else
+
+			SetCustomizeTexture(img_normal, skill_texture_path + skillTexture);
+			SetCustomizeTexture(img_pressed, skill_texture_path + skillTexture);
+
+			if (img_bg != null)
 			{
-				img_normal.texture = skillTexture;
-				img_pressed.texture = skillTexture;
+				img_bg.gameObject.SetActiveRecursively(false);
 			}
 			break;
 		}
