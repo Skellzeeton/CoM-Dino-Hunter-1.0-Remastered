@@ -3,7 +3,13 @@ using UnityEngine;
 public class iItem : MonoBehaviour
 {
 	public string sAudio = string.Empty;
+	
+	public string sAppearAudio = string.Empty;
+	
+	public string sLandAudio = string.Empty;
 
+	public int nPickupEffect = 1301;
+	
 	public bool isHasScreenTip;
 
 	public gyUIScreenTip m_ScreenTip;
@@ -113,6 +119,10 @@ public class iItem : MonoBehaviour
 				m_arrValueY[i] = m_curItemInfoLevel.arrValueY[i];
 			}
 		}
+		if (!string.IsNullOrEmpty(sAppearAudio))
+		{
+			CUISound.GetInstance().Play(sAppearAudio);
+		}
 	}
 
 	public void UpdateFunc(int index, int fun, int valuex, int valuey)
@@ -179,15 +189,18 @@ public class iItem : MonoBehaviour
 				iGameLogic.HitInfo hitinfo = new iGameLogic.HitInfo();
 				gameLogic.CaculateFunc(user, user, m_arrFunc, m_arrValueX, m_arrValueY, ref hitinfo);
 			}
-			GameObject gameObject = m_GameScene.AddEffect(Vector3.zero, Vector3.forward, 2f, 1301);
-			if (gameObject != null)
+			if (nPickupEffect > 0)
 			{
-				Transform bone = user.GetBone(3);
-				if (bone != null)
+				GameObject gameObject = m_GameScene.AddEffect(Vector3.zero, Vector3.forward, 2f, nPickupEffect);
+				if (gameObject != null)
 				{
-					gameObject.transform.parent = bone;
-					gameObject.transform.localPosition = Vector3.zero;
-					gameObject.transform.localRotation = Quaternion.identity;
+					Transform bone = user.GetBone(3);
+					if (bone != null)
+					{
+						gameObject.transform.parent = bone;
+						gameObject.transform.localPosition = Vector3.zero;
+						gameObject.transform.localRotation = Quaternion.identity;
+					}
 				}
 			}
 			break;

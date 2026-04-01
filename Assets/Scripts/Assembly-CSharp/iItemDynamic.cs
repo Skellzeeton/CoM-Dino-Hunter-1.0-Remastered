@@ -5,7 +5,7 @@ public class iItemDynamic : iItem
 	public float fAbsorbDistance;
 	public float fAbsorbSpeed = 20f;
 	public GameObject m_GroundEffect;
-
+	protected TAudioController m_AudioController;
 	protected Rigidbody m_Rigidbody;
 	protected bool m_bBump;
 	protected float m_fBumpSpeed = 3f;
@@ -19,6 +19,11 @@ public class iItemDynamic : iItem
 	private new void Awake()
 	{
 		base.Awake();
+		m_AudioController = GetComponent<TAudioController>();
+		if (m_AudioController == null)
+		{
+			m_AudioController = gameObject.AddComponent<TAudioController>();
+		}
 		m_Rigidbody = GetComponent<Rigidbody>();
 		if (m_Collider != null)
 		{
@@ -125,6 +130,10 @@ public class iItemDynamic : iItem
 			m_fBumpSrcHeight = position.y;
 			m_fBumpCurSpeed = m_fBumpSpeed;
 			m_fBumpDamping = 0f;
+			if (!string.IsNullOrEmpty(sLandAudio) && m_AudioController != null)
+			{
+				m_AudioController.PlayAudio(sLandAudio);
+			}
 		}
 	}
 

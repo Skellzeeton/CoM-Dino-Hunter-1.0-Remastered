@@ -539,6 +539,11 @@ public class CCharUser : CCharPlayer
 			if (num > 0)
 			{
 				InitChar(base.ID, base.Level, base.EXP);
+				if (m_GameScene != null && m_GameScene.IsSkyScene() && m_Property != null)
+				{
+					m_Property.SetValueBase(kProEnum.MoveSpeed, 10f);
+					m_Property.SetValueBase(kProEnum.MoveSpeedAcc, 10f);
+				}
 				m_bUpdateProBuff = true;
 				m_GameState.isCheckUnLock = true;
 				flag = true;

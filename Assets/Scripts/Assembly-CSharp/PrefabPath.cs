@@ -246,6 +246,10 @@ public class PrefabPath
 
 	public const int player_levelup_female = 1302;
 	
+	public const int player_eatmaterial = 1303;
+	
+	public const int gold_hover = 1304;
+	
 	public const int monster_roar = 1351;
 
 	public const int throw_rock = 1400;
@@ -303,8 +307,6 @@ public class PrefabPath
 	public const int snow_monster_step = 1914;
 
 	public const int dilophosaurus_pee = 1915;
-
-	public const int sigh = 1916;
 	
 	public const int venom_purple_fire = 1917;
 

@@ -172,6 +172,8 @@ public class PrefabManager
 		m_dictData.Add(1300, "Artist/Effect/Character/Level_up/Level_up_pfb");
 		m_dictData.Add(1301, "Artist/Effect/Item/item/item_04_pfb");
 		m_dictData.Add(1302, "Artist/Effect/Character/Level_up/Level_up_female_pfb");
+		m_dictData.Add(1303, "Artist/Effect/Item/item/item_06_pfb");
+		m_dictData.Add(1304, "Artist/Effect/Item/item/item_02_pfb");
 		m_dictData.Add(1351, "Artist/Effect/Character/roar/roar_pfb");
 		m_dictData.Add(1400, "Artist/Effect/Skill/atk01/atk01_pfb");
 		m_dictData.Add(1401, "Artist/Effect/Skill/atk02/atk02_pfb");
@@ -201,7 +203,6 @@ public class PrefabManager
 		m_dictData.Add(1913, "Artist/EffectCustom/snow_walker_step");
 		m_dictData.Add(1914, "Artist/EffectCustom/snow_monster_step");
 		m_dictData.Add(1915, "Artist/Effect/Skill/fart/fart_pfb");
-		m_dictData.Add(1916, "Artist/Effect/Skill/sigh/sigh_pfb");
 		m_dictData.Add(1917, "Artist/Effect/Skill/venom_purple/venom01_purple_fire_pfb");
 		m_dictData.Add(1918, "Artist/Effect/Skill/venom_purple/venom04_purple_hitbody_pfb");
 		m_dictData.Add(1919, "Artist/Effect/Skill/venom_purple/venom03_purple_hit_pfb");
