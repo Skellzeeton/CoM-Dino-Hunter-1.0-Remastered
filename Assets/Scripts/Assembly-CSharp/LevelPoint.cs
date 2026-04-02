@@ -73,6 +73,12 @@ public class LevelPoint : MonoBehaviour
 	{
 		UpdateWayPointAni(Time.deltaTime);
 	}
+	
+	private System.Collections.IEnumerator PlayExShowSoundDelayed(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		CUISound.GetInstance().Play("UI_Game_status");
+	}
 
 	public void SetLevelPointState(LevelPointState m_level_point_state, bool change_level_point_ex = true)
 	{
@@ -188,18 +194,29 @@ public class LevelPoint : MonoBehaviour
 			return;
 		}
 		m_time = 0f;
-		way_points_list[way_points_index].SetActiveRecursively(true);
+		GameObject wp = way_points_list[way_points_index];
+
+		if (wp != null)
+		{
+			wp.SetActiveRecursively(true);
+			CUISound.GetInstance().Play("UI_Waypoint");
+		}
 		way_points_index++;
 		if (way_points_index >= way_points_count)
 		{
 			way_points_index = 0;
 			open_way_points_show = false;
 			CloseLevelAnimation();
+			CUISound.GetInstance().Play("UI_Game_status");
 			if (next_level != null)
 			{
 				next_level.SetLevelPointState(LevelPointState.Open, false);
 				next_level.OpenLevelAnimation();
 				next_level.ShowWayExAffterTime(1f);
+				if (next_level.level_ex_list != null && next_level.level_ex_list.Length > 0)
+				{
+					StartCoroutine(PlayExShowSoundDelayed(1f));
+				}
 			}
 		}
 	}
