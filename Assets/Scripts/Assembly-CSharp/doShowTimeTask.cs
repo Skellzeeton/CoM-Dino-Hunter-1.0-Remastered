@@ -52,7 +52,8 @@ public class doShowTimeTask : Task
 			Transform bone = cCharMob.GetBone(6);
 			if (bone != null)
 			{
-				Object @object = PrefabManager.Get(1351);
+				int prefabID = cCharMob.IsBoss() ? 1351 : 1352;
+				Object @object = PrefabManager.Get(prefabID);
 				if (@object != null)
 				{
 					m_ShowTime = (GameObject)Object.Instantiate(@object);

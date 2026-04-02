@@ -13,6 +13,7 @@ public class CCharMobPterodactyl : CCharMob
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.BigHurtFront, "damage"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.BigHurtBehind, "damage"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Glide, "fly_circle"));
+		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_ShowTime, "exit"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Skill_Action_1, "attack02_01"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Skill_Action_2, "attack02_02"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Skill_Action_3, "attack05"));

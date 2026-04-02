@@ -144,7 +144,7 @@ public class CCharMob : CCharBase
 		m_MobBehaviourMode = kMobBehaviour.None;
 		m_ltPath = new List<Vector3>();
 		m_nDstHoverIndex = -1;
-		m_bShowTime = true;
+		m_bShowTime = false;
 		m_DeadMode = kDeadMode.None;
 		m_dictAssistAim = new Dictionary<int, Vector3>();
 		m_tmpDropGroupInfo = new CDropGroupInfo();

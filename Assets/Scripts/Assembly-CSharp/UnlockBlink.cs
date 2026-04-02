@@ -73,16 +73,14 @@ public class UnlockBlink : MonoBehaviour
 	public void OpenBlinkSkill(int m_id, string m_text, bool m_use_customize = false)
 	{
 		open_blink = true;
-		base.transform.localPosition = new Vector3(0f, 0f, base.transform.localPosition.z);
+		transform.localPosition = new Vector3(0f, 0f, transform.localPosition.z);
 		string skillTexture = TUIMappingInfo.Instance().GetSkillTexture(m_id);
-		if (m_use_customize)
+		if (string.IsNullOrEmpty(skillTexture))
 		{
-			SetCustomizeTexture(img_texture, skill_path + skillTexture);
+			Debug.LogWarning("Missing skill texture for id: " + m_id);
+			return;
 		}
-		else if (img_texture != null)
-		{
-			img_texture.texture = skillTexture;
-		}
+		SetCustomizeTexture(img_texture, skill_path + skillTexture);
 		if (img_texture.GetComponent<Animation>() != null)
 		{
 			img_texture.GetComponent<Animation>().Play();
@@ -107,14 +105,7 @@ public class UnlockBlink : MonoBehaviour
 	{
 		open_blink = true;
 		base.transform.localPosition = new Vector3(0f, 0f, base.transform.localPosition.z);
-		if (m_use_customize)
-		{
-			SetCustomizeTexture(img_texture, skill_path + m_texture_name);
-		}
-		else
-		{
-			img_texture.texture = m_texture_name;
-		}
+		SetCustomizeTexture(img_texture, skill_path + m_texture_name);
 		if (img_texture.GetComponent<Animation>() != null)
 		{
 			img_texture.GetComponent<Animation>().Play();

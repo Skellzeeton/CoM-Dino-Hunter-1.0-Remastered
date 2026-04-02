@@ -252,6 +252,8 @@ public class PrefabPath
 	
 	public const int monster_roar = 1351;
 
+	public const int mob_roar = 1352;
+
 	public const int throw_rock = 1400;
 
 	public const int slash_tail = 1401;
