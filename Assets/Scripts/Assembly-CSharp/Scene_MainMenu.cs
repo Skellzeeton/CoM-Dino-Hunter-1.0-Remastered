@@ -108,6 +108,7 @@ public class Scene_MainMenu : MonoBehaviour
 			img_arrow_right.GetComponent<Animation>().Play();
 		}
 		CUISound.GetInstance().Play("Amb_MapMenu");
+		CUISound.GetInstance().Play("Amb_torch");
 	}
 
 	private void Start()
@@ -147,6 +148,7 @@ public class Scene_MainMenu : MonoBehaviour
 			{
 				switchSceneStr(next_scene);
 				CUISound.GetInstance().Stop("Amb_MapMenu");
+				CUISound.GetInstance().Stop("Amb_torch");
 			}
 		}
 	}
