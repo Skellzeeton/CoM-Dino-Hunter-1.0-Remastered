@@ -267,9 +267,7 @@ public class PrefabPath
 	public const int triceratops_rush = 1405;
 
 	public const int velociraptor_blink = 1406;
-
-	public const int velociraptor_blink_disappear = 1407;
-
+	
 	public const int player_rush = 1408;
 
 	public const int player_stun = 1409;

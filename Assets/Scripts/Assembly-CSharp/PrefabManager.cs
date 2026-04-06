@@ -183,7 +183,6 @@ public class PrefabManager
 		m_dictData.Add(1404, "Artist/Effect/Character/charge_02/charge_02_01_pfb");
 		m_dictData.Add(1405, "Artist/Effect/Character/charge_03/charge_03_01_pfb");
 		m_dictData.Add(1406, "Artist/Effect/Skill/blink/blink_01_pfb");
-		m_dictData.Add(1407, "Artist/Effect/Custom/velociraptor_blink_disappear");
 		m_dictData.Add(1408, "Artist/Effect/Skill/strike/strike01_pfb");
 		m_dictData.Add(1409, "Artist/Effect/Skill/stun/stun_pfb");
 		m_dictData.Add(1500, "Artist/Effect/Character/anger/anger_eye_01");
