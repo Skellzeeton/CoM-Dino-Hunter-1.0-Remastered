@@ -14,7 +14,8 @@ public class TAudioEffectRandom : ITAudioEvent
 	}
 
 	public bool isSfx = true;
-
+	[Header("Preload Control")]
+	public bool alwaysPreload = false;
 	public AudioClip[] audioClips;
 
 	public float[] probability;
@@ -84,6 +85,21 @@ public class TAudioEffectRandom : ITAudioEvent
 			return true;
 		}
 	}
+	
+	private void PreloadClips()
+	{
+		TAudioController controller = GetComponentInParent<TAudioController>();
+		if (controller == null)
+			return;
+		foreach (var clip in audioClips)
+		{
+			if (clip != null)
+			{
+				controller.PlayAudio(name);
+				controller.StopAudio(name);
+			}
+		}
+	}
 
 	private void Awake()
 	{
@@ -102,6 +118,10 @@ public class TAudioEffectRandom : ITAudioEvent
 			{
 				nullProbability = 1f - num;
 			}
+		}
+		if (alwaysPreload)
+		{
+			PreloadClips();
 		}
 		if (audioClips.Length == 1 && loopMode == LoopMode.MultiLoop)
 		{
