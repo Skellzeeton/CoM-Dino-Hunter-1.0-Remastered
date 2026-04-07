@@ -3027,7 +3027,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 	
 	
 <!-- ***********************************5024********************************************************************* -->	
-<gamewave id="5024001" trigger="0" triggervalue="5" delay="" interval="5" number="2" loop="-1"  >
+<gamewave id="5024001" trigger="0" triggervalue="5" delay="" interval="2" number="2" loop="-1"  >
 <mob id="1" level="12" spawnmode="1" startpoint="0" />
 <mob id="1" level="12" spawnmode="1" startpoint="0" />
 <mob id="4" level="12" spawnmode="1" startpoint="0" />
@@ -3044,7 +3044,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 	</gamewave>
 
 
-	<gamewave id="5024002" trigger="5" triggervalue="40001,0" delay="" interval="4" number="2" loop="-1"  >
+	<gamewave id="5024002" trigger="5" triggervalue="40001,0" delay="" interval="1" number="2" loop="-1"  >
 <mob id="1" level="12" spawnmode="1" startpoint="0" />
 <mob id="1" level="12" spawnmode="1" startpoint="0" />
 <mob id="4" level="12" spawnmode="1" startpoint="0" />
@@ -3063,8 +3063,8 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 	</gamewave>			
 	
 	
-		<gamewave id="5024003" trigger="3" triggervalue="40001,1" delay="" interval="5" number="2" loop="-1"  cutscene_BGM="BGM_Boss">
-<mob id="1303" level="12" spawnmode="1" startpoint="0" />
+		<gamewave id="5024003" trigger="3" triggervalue="40001,1" delay="" interval="2" number="2" loop="-1"  cutscene_BGM="BGM_Boss">
+<mob id="1303" level="10" spawnmode="1" startpoint="0" />
 <mob id="1" level="12" spawnmode="1" startpoint="0" />
 <mob id="7" level="12" spawnmode="1" startpoint="0" />
 <mob id="2" level="12" spawnmode="1" startpoint="0" />
@@ -3082,7 +3082,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 
 	</gamewave>		
 	
-	<gamewave id="5024004" trigger="5" triggervalue="40001,1" delay="" interval="6" number="2" loop="-1"  >
+	<gamewave id="5024004" trigger="5" triggervalue="40001,1" delay="" interval="1" number="2" loop="-1"  >
 <mob id="1" level="12" spawnmode="1" startpoint="0" />
 <mob id="7" level="12" spawnmode="1" startpoint="0" />
 <mob id="4" level="12" spawnmode="1" startpoint="0" />

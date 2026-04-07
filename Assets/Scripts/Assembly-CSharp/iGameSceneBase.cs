@@ -63,6 +63,12 @@ public class iGameSceneBase
 	protected float m_StatusTimeCount;
 
 	protected int m_StatusStep;
+	
+	protected int m_nCurTriggerEndIndex = 0;
+	
+	protected List<CStartPoint> m_ltTriggerEndPoints = new List<CStartPoint>();
+	
+	protected CPointScreenTip m_curTriggerEndTip;
 
 	protected bool m_bMissionSuccess;
 
@@ -1346,11 +1352,12 @@ public class iGameSceneBase
 			switch (taskInfo.nType)
 			{
 			case 1:
-				if (!(m_User == null) && m_User.IsTakenItem() && m_curTriggerManagerEnd.IsInside2D(m_User.Pos))
+				if (!(m_User == null) && m_User.IsTakenItem() && IsInsideActiveTrigger(m_User.Pos))
 				{
 					int carryItem = m_User.GetCarryItem();
 					m_TaskManager.OnGetItem(carryItem);
 					m_User.DropItem();
+					AdvanceTriggerEnd();
 					AddStealItem(carryItem, 1);
 					CAchievementManager.GetInstance().AddAchievement(7, new object[1] { carryItem });
 					CGameNetSender.GetInstance().PlayerTakeItem(-1);
@@ -1373,6 +1380,14 @@ public class iGameSceneBase
 				break;
 			}
 		}
+	}
+	
+	private bool IsInsideActiveTrigger(Vector3 pos)
+	{
+		if (m_nCurTriggerEndIndex >= m_ltTriggerEndPoints.Count)
+			return false;
+
+		return m_ltTriggerEndPoints[m_nCurTriggerEndIndex].IsInside2D(pos);
 	}
 
 	protected virtual void UpdateStatus_CutScene(float deltaTime)
@@ -2086,6 +2101,15 @@ public class iGameSceneBase
 		}
 		return false;
 	}
+	
+	protected bool IsInsideCurrentTriggerEnd(Vector3 v3Pos)
+	{
+		if (m_ltScreenTipTriggerEnd.Count == 0)
+			return m_curTriggerManagerEnd != null && m_curTriggerManagerEnd.IsInside2D(v3Pos);
+		if (m_nCurTriggerEndIndex >= m_ltScreenTipTriggerEnd.Count)
+			return false;
+		return m_curTriggerManagerEnd != null && m_curTriggerManagerEnd.IsInside2D(v3Pos);
+	}
 
 	public void AddDamageText(float fDamage, Vector3 v3Pos, bool bCritical = false)
 	{
@@ -2236,31 +2260,18 @@ public class iGameSceneBase
 				}
 			}
 			Dictionary<int, CStartPoint> data = m_curTriggerManagerEnd.GetData();
-			if (data == null)
+			if (data != null)
 			{
-				break;
-			}
-			{
-				foreach (KeyValuePair<int, CStartPoint> item2 in data)
+				m_ltTriggerEndPoints.Clear();
+
+				foreach (var kvp in data)
 				{
-					CPointScreenTip cPointScreenTip = new CPointScreenTip();
-					cPointScreenTip.agent = new GameObject("triggerend_" + item2.Key);
-					if (!(cPointScreenTip.agent == null))
-					{
-						cPointScreenTip.agent.transform.position = item2.Value.GetCenter();
-						cPointScreenTip.screentip = m_GameUI.CreateScreenTip(m_User.gameObject, cPointScreenTip.agent);
-						if (cPointScreenTip.screentip == null)
-						{
-							Object.Destroy(cPointScreenTip.agent);
-							continue;
-						}
-						cPointScreenTip.screentip.SetIcon("baoxiang");
-						cPointScreenTip.screentip.isActive = false;
-						m_ltScreenTipTriggerEnd.Add(cPointScreenTip);
-					}
+					m_ltTriggerEndPoints.Add(kvp.Value);
 				}
-				break;
+				m_nCurTriggerEndIndex = 0;
+				CreateCurrentTriggerEnd();
 			}
+			break;
 		}
 		case 3:
 		{
@@ -2363,12 +2374,53 @@ public class iGameSceneBase
 
 	public void ShowTriggerEndScreenTip(bool bShow)
 	{
-		foreach (CPointScreenTip item in m_ltScreenTipTriggerEnd)
+		if (m_curTriggerEndTip != null && m_curTriggerEndTip.screentip != null)
 		{
-			if (!(item.screentip == null))
-			{
-				item.screentip.isActive = bShow;
-			}
+			m_curTriggerEndTip.screentip.isActive = bShow;
+		}
+	}
+
+	public void AdvanceTriggerEnd()
+	{
+		DestroyCurrentTriggerEnd();
+
+		m_nCurTriggerEndIndex++;
+
+		if (m_nCurTriggerEndIndex < m_ltTriggerEndPoints.Count)
+		{
+			CreateCurrentTriggerEnd();
+		}
+	}
+	
+	public void CreateCurrentTriggerEnd()
+	{
+		DestroyCurrentTriggerEnd();
+		if (m_nCurTriggerEndIndex >= m_ltTriggerEndPoints.Count)
+			return;
+		CStartPoint point = m_ltTriggerEndPoints[m_nCurTriggerEndIndex];
+		m_curTriggerEndTip = new CPointScreenTip();
+		m_curTriggerEndTip.agent = new GameObject("triggerend_" + m_nCurTriggerEndIndex);
+		if (m_curTriggerEndTip.agent == null)
+			return;
+		m_curTriggerEndTip.agent.transform.position = point.GetCenter();
+		m_curTriggerEndTip.screentip =
+			m_GameUI.CreateScreenTip(m_User.gameObject, m_curTriggerEndTip.agent);
+		if (m_curTriggerEndTip.screentip != null)
+		{
+			m_curTriggerEndTip.screentip.SetIcon("baoxiang");
+			m_curTriggerEndTip.screentip.isActive = m_User != null && m_User.IsTakenItem();
+		}
+	}
+	
+	void DestroyCurrentTriggerEnd()
+	{
+		if (m_curTriggerEndTip != null)
+		{
+			if (m_curTriggerEndTip.screentip != null)
+				Object.Destroy(m_curTriggerEndTip.screentip.gameObject);
+			if (m_curTriggerEndTip.agent != null)
+				Object.Destroy(m_curTriggerEndTip.agent);
+			m_curTriggerEndTip = null;
 		}
 	}
 
@@ -2464,64 +2516,18 @@ public class iGameSceneBase
 	public void StartIAPPurchase(int nNeed)
 	{
 		Debug.Log("StartIAPPurchase " + m_Status);
-		/*m_LastStatus = m_Status;
-		m_Status = kGameStatus.Gameing_IAP;
-		m_GameUI.ShowIAPUI(true, nNeed);
-		SetPause(true);
-		if (m_LastStatus == kGameStatus.GameOver_Revive)
-		{
-			m_GameUI.PauseReviveTime(true);
-		}*/
 	}
 
 	public void FinishIAPPurchase()
 	{
-		/*if (m_LastStatus != 0)
-		{
-			m_Status = m_LastStatus;
-			m_LastStatus = kGameStatus.None;
-		}
-		m_GameUI.ShowIAPUI(false);
-		SetPause(false);
-		if (m_Status == kGameStatus.GameOver_Revive)
-		{
-			m_GameUI.PauseReviveTime(false);
-		}*/
 	}
 
 	protected void IAPPurchaseSuccess()
 	{
-		/*CUISound.GetInstance().Play("UI_Button");
-		if (m_LastStatus != 0)
-		{
-			m_Status = m_LastStatus;
-			m_LastStatus = kGameStatus.None;
-		}
-		m_GameUI.ShowIAPUI(false);
-		SetPause(false);
-		if (m_Status == kGameStatus.GameOver_Revive)
-		{
-			m_GameUI.PauseReviveTime(false);
-			m_GameUI.ResetReviveTime();
-		}
-		Debug.Log(m_LastStatus);*/
 	}
 
 	protected void IAPPurchaseFailed()
 	{
-		/*CUISound.GetInstance().Play("UI_Button");
-		if (m_LastStatus != 0)
-		{
-			m_Status = m_LastStatus;
-			m_LastStatus = kGameStatus.None;
-		}
-		m_GameUI.ShowIAPUI(false);
-		SetPause(false);
-		if (m_Status == kGameStatus.GameOver_Revive)
-		{
-			m_GameUI.PauseReviveTime(false);
-			m_GameUI.ResetReviveTime();
-		}*/
 	}
 
 	public void PurchaseIAP(int nIAP)

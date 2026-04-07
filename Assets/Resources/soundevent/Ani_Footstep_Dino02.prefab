@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 968fa36acbafbfbd2bb95e6e7b67fe6e, type: 3}
   probability: []
@@ -178,5 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCount: 2
+  maxCount: 3
   deltaTime: 0.2
