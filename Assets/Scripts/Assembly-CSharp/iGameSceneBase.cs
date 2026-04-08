@@ -1842,20 +1842,16 @@ public class iGameSceneBase
 		m_ltItem.Add(gameObject2);
 	}
 
-	public void AddGold(int nGold, Vector3 v3Pos, Vector3 v3Dir, float fScaleRate)
+	public void AddGold(int nGold, Vector3 v3Pos, Vector3 v3Dir, float fScaleRate, int nGroundEffectPrefab = -1)
 	{
 		GameObject gameObject = PrefabManager.Get(251);
 		if (gameObject == null)
-		{
 			return;
-		}
 		GameObject gameObject2 = (GameObject)Object.Instantiate(gameObject);
 		if (gameObject2 == null)
-		{
 			return;
-		}
 		gameObject2.transform.position = v3Pos;
-		gameObject2.transform.forward = v3Dir;
+		gameObject2.transform.forward  = v3Dir;
 		gameObject2.transform.localScale *= fScaleRate;
 		iItem component = gameObject2.GetComponent<iItem>();
 		if (component != null)
@@ -1870,6 +1866,27 @@ public class iGameSceneBase
 				component.m_ScreenTip.SetIcon("dan");
 			}
 		}
+		if (nGroundEffectPrefab > 0)
+		{
+			iItemDynamic dynItem = gameObject2.GetComponent<iItemDynamic>();
+			if (dynItem != null)
+			{
+				GameObject effectPrefab = PrefabManager.Get(nGroundEffectPrefab);
+				if (effectPrefab != null)
+				{
+					GameObject effectInst = (GameObject)Object.Instantiate(effectPrefab);
+					if (effectInst != null)
+					{
+						effectInst.transform.parent        = gameObject2.transform;
+						effectInst.transform.localPosition = Vector3.zero;
+						effectInst.transform.localRotation = Quaternion.identity;
+						effectInst.SetActiveRecursively(false);
+						dynItem.m_GroundEffect = effectInst;
+					}
+				}
+			}
+		}
+ 
 		m_ltItem.Add(gameObject2);
 	}
 
@@ -2383,14 +2400,13 @@ public class iGameSceneBase
 	public void AdvanceTriggerEnd()
 	{
 		DestroyCurrentTriggerEnd();
-
 		m_nCurTriggerEndIndex++;
-
 		if (m_nCurTriggerEndIndex < m_ltTriggerEndPoints.Count)
 		{
 			CreateCurrentTriggerEnd();
 		}
 	}
+
 	
 	public void CreateCurrentTriggerEnd()
 	{

@@ -147,6 +147,7 @@ public class PrefabManager
 		m_dictData.Add(1060, "Artist/Effect/Weapon/ammo_rpg/ammo_rpg_03_pfb");
 		m_dictData.Add(1061, "Artist/Effect/Weapon/ammo_rpg/ammo_rpg_01_pfb");
 		m_dictData.Add(1062, "Artist/Effect/Weapon/ammo_rpg/ammo_rpg_02_pfb");
+		m_dictData.Add(1099, "Artist/Effect/Weapon/hit_fire_01/hit_fire_explode_pfb");
 		m_dictData.Add(1100, "Artist/Effect/Weapon/hit_fire_01/hit_fire_pfb");
 		m_dictData.Add(1101, "Artist/Effect/Weapon/hit_flash_01/hit_flash_01_pfb");
 		m_dictData.Add(1102, "Artist/Effect/Weapon/hit_ice_01/hit_ice_01_pfb");
