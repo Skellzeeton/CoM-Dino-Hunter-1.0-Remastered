@@ -121,6 +121,7 @@ public class PrefabManager
 		m_dictData.Add(300, "Artist/Model/BackPack/BackPackFly");
 		m_dictData.Add(301, "Artist/Model/BackPack/BackBag");
 		m_dictData.Add(302, "Artist/Model/Items/GoldEmitter");
+		m_dictData.Add(999, "Artist/Effect/Weapon/weapon_flash_01/weapon_flash_purple_01_pfb");
 		m_dictData.Add(1000, "Artist/Effect/Weapon/weapon_fire_01/weapon_fire_pfb");
 		m_dictData.Add(1001, "Artist/Effect/Weapon/weapon_flash_01/weapon_flash_01_pfb");
 		m_dictData.Add(1002, "Artist/Effect/Weapon/weapon_ice_01/weapon_ice_01_pfb");
@@ -136,7 +137,6 @@ public class PrefabManager
 		m_dictData.Add(1013, "Artist/Effect/Weapon/weapon_hellfire/weapon_hellfire_pfb");
 		m_dictData.Add(1014, "Artist/Effect/Weapon/weapon_blizzard/weapon_blizzard_pfb");
 		m_dictData.Add(1050, "Artist/Effect/Weapon/ammo_fire/ammo_fire_pfb02");
-		m_dictData.Add(1051, "Artist/Effect/Weapon/ammo_flash/ammo_flash_pfb02");
 		m_dictData.Add(1052, "Artist/Effect/Weapon/ammo_ice/ammo_ice_pfb02");
 		m_dictData.Add(1053, "Artist/Effect/Weapon/ammo_common/ammo_common_pfb02");
 		m_dictData.Add(1054, "Artist/EffectCustom/ammo_fire");
@@ -147,6 +147,8 @@ public class PrefabManager
 		m_dictData.Add(1060, "Artist/Effect/Weapon/ammo_rpg/ammo_rpg_03_pfb");
 		m_dictData.Add(1061, "Artist/Effect/Weapon/ammo_rpg/ammo_rpg_01_pfb");
 		m_dictData.Add(1062, "Artist/Effect/Weapon/ammo_rpg/ammo_rpg_02_pfb");
+		m_dictData.Add(1063, "Artist/EffectCustom/ammo_flash_purple");
+		m_dictData.Add(1098, "Artist/Effect/Weapon/hit_flash_01/hit_flash_purple_01_pfb");
 		m_dictData.Add(1099, "Artist/Effect/Weapon/hit_fire_01/hit_fire_explode_pfb");
 		m_dictData.Add(1100, "Artist/Effect/Weapon/hit_fire_01/hit_fire_pfb");
 		m_dictData.Add(1101, "Artist/Effect/Weapon/hit_flash_01/hit_flash_01_pfb");

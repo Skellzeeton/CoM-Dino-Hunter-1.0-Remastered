@@ -133,6 +133,8 @@ public class PrefabPath
 	public const int back_package = 301;
 
 	public const int gold_emitter = 302;
+	
+	public const int fire_flash_purple = 999;
 
 	public const int fire_fire = 1000;
 
@@ -165,9 +167,7 @@ public class PrefabPath
 	public const int fire_blizzard = 1014;
 
 	public const int bullet_fire = 1050;
-
-	public const int bullet_flash = 1051;
-
+	
 	public const int bullet_ice = 1052;
 
 	public const int bullet_normal = 1053;
@@ -187,6 +187,10 @@ public class PrefabPath
 	public const int bullet_rocket_ball = 1061;
 
 	public const int bullet_rocket_bird = 1062;
+	
+	public const int bullet_flash_crossbow_purple = 1063;
+	
+	public const int hit_flash_purple = 1098;
 	
 	public const int hit_fire_explode = 1099;
 
