@@ -321,6 +321,12 @@ public class iCameraTrail : iCamera
         {
             m_AudioListenerTarget.enabled = true;
         }
+
+        if (m_AudioListenerCamera != null)
+        {
+            m_AudioListenerCamera.enabled = false;
+        }
+
         m_CameraController.ActiveListener(false);
     }
 
@@ -330,6 +336,12 @@ public class iCameraTrail : iCamera
         {
             m_AudioListenerTarget.enabled = false;
         }
+
+        if (m_AudioListenerCamera != null)
+        {
+            m_AudioListenerCamera.enabled = true;
+        }
+
         m_CameraController.ActiveListener(true);
     }
 }

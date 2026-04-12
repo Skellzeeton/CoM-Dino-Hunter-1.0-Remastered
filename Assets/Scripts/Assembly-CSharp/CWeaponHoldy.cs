@@ -86,9 +86,12 @@ public class CWeaponHoldy : CWeaponBase
 
 	protected override void OnStop(CCharPlayer player)
 	{
-		player.StopAction(kAnimEnum.Attack);
-		player.StopAudio(m_pWeaponLvlInfo.sAudioFire);
-		player.PlayAudio("Weapon_flame_end");
+        player.StopAction(kAnimEnum.Attack);
+        player.StopAudio(m_pWeaponLvlInfo.sAudioFire);
+        if (m_pWeaponLvlInfo.nElementType == 3)
+            player.PlayAudio("Weapon_ice_end");
+        else
+            player.PlayAudio("Weapon_flame_end");
 		if (m_arrParticleSystem != null)
 		{
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;

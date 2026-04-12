@@ -5,7 +5,6 @@ public class iItemDynamic : iItem
 	public float fAbsorbDistance;
 	public float fAbsorbSpeed = 20f;
 	public GameObject m_GroundEffect;
-	protected TAudioController m_AudioController;
 	protected Rigidbody m_Rigidbody;
 	protected bool m_bBump;
 	protected float m_fBumpSpeed = 3f;
@@ -19,11 +18,6 @@ public class iItemDynamic : iItem
 	private new void Awake()
 	{
 		base.Awake();
-		m_AudioController = GetComponent<TAudioController>();
-		if (m_AudioController == null)
-		{
-			m_AudioController = gameObject.AddComponent<TAudioController>();
-		}
 		m_Rigidbody = GetComponent<Rigidbody>();
 		if (m_Collider != null)
 		{
@@ -35,10 +29,6 @@ public class iItemDynamic : iItem
 			m_GroundEffect.SetActiveRecursively(false);
 		}
 		m_bAbsorb = false;
-	}
-
-	private void Start()
-	{
 	}
 
 	private void Update()
@@ -80,7 +70,6 @@ public class iItemDynamic : iItem
 				}
 			}
 		}
-
 		if (!m_bAbsorb)
 		{
 			return;
@@ -112,7 +101,11 @@ public class iItemDynamic : iItem
 		{
 			m_GameScene = iGameApp.GetInstance().m_GameScene;
 		}
-		if (!(m_Rigidbody == null) && m_GameScene != null && base.transform.position.y <= m_fFloorHeight + m_Entity.transform.localPosition.y && m_Rigidbody.linearVelocity.y > -0.2f && m_Rigidbody.linearVelocity.y < 0.2f)
+		if (!(m_Rigidbody == null) &&
+		    m_GameScene != null &&
+		    base.transform.position.y <= m_fFloorHeight + m_Entity.transform.localPosition.y &&
+		    m_Rigidbody.linearVelocity.y > -0.2f &&
+		    m_Rigidbody.linearVelocity.y < 0.2f)
 		{
 			m_Rigidbody.Sleep();
 			Object.Destroy(m_Rigidbody);
@@ -122,7 +115,11 @@ public class iItemDynamic : iItem
 			{
 				m_GroundEffect.SetActiveRecursively(true);
 				m_GroundEffect.transform.parent = null;
-				m_GroundEffect.transform.position = new Vector3(m_GroundEffect.transform.position.x, m_fFloorHeight + 0.01f, m_GroundEffect.transform.position.z);
+				m_GroundEffect.transform.position = new Vector3(
+					m_GroundEffect.transform.position.x,
+					m_fFloorHeight + 0.01f,
+					m_GroundEffect.transform.position.z
+				);
 			}
 			Vector3 position = base.transform.position;
 			position.y = m_fFloorHeight;
@@ -130,9 +127,9 @@ public class iItemDynamic : iItem
 			m_fBumpSrcHeight = position.y;
 			m_fBumpCurSpeed = m_fBumpSpeed;
 			m_fBumpDamping = 0f;
-			if (!string.IsNullOrEmpty(sLandAudio) && m_AudioController != null)
+			if (!string.IsNullOrEmpty(sLandAudio))
 			{
-				m_AudioController.PlayAudio(sLandAudio);
+				PlayItemAudio(sLandAudio);
 			}
 		}
 	}
@@ -165,6 +162,7 @@ public class iItemDynamic : iItem
 	public override void Clear()
 	{
 		base.Clear();
+
 		if (m_GroundEffect != null)
 		{
 			Object.Destroy(m_GroundEffect);
@@ -179,13 +177,13 @@ public class iItemDynamic : iItem
 			m_Rigidbody.AddForce(v3Force);
 		}
 	}
-	
+
 	public void ForceAbsorb(float overrideSpeed)
 	{
 		fAbsorbSpeed = overrideSpeed;
 		BeginAbsorbCleanup();
 	}
-	
+
 	private void BeginAbsorbCleanup()
 	{
 		if (m_GroundEffect != null)
@@ -205,7 +203,6 @@ public class iItemDynamic : iItem
 			Object.Destroy(m_Rigidbody);
 			m_Rigidbody = null;
 		}
-
 		if (m_Collider != null)
 		{
 			m_Collider.isTrigger = true;

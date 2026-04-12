@@ -72,7 +72,7 @@ public class iGoldEmitter : MonoBehaviour
             return;
         Vector3 onUnitSphere = Random.onUnitSphere;
         onUnitSphere.y = 1f;
-        int groundEffectPrefab = (m_arrGoldSize[num] >= 2f || m_arrGoldValue[num] >= 10)
+        int groundEffectPrefab = (m_arrGoldSize[num] >= 2.5f || m_arrGoldValue[num] >= 25)
             ? LARGE_GOLD_GROUND_EFFECT
             : -1;
         gameScene.AddGold(

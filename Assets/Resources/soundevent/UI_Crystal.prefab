@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4805516564353555}
   - component: {fileID: 82751470953543976}
   - component: {fileID: 114187382521761230}
+  - component: {fileID: -1570713851273965185}
   m_Layer: 0
   m_Name: UI_Crystal
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 7348c3777db3f234d9a9707db88086c2, type: 3}
   probability: []
@@ -156,3 +158,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &-1570713851273965185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056692226475635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 1
+  deltaTime: 1.1
