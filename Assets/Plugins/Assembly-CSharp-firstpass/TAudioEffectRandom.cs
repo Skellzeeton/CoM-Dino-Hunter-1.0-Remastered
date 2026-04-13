@@ -88,16 +88,19 @@ public class TAudioEffectRandom : ITAudioEvent
 	
 	private void PreloadClips()
 	{
-		TAudioController controller = GetComponentInParent<TAudioController>();
-		if (controller == null)
-			return;
-		foreach (var clip in audioClips)
+		AudioSource source = GetComponent<AudioSource>();
+		if (source == null || audioClips == null)
 		{
-			if (clip != null)
+			return;
+		}
+		for (int i = 0; i < audioClips.Length; i++)
+		{
+			AudioClip clip = audioClips[i];
+			if (clip == null)
 			{
-				controller.PlayAudio(name);
-				controller.StopAudio(name);
+				continue;
 			}
+			clip.LoadAudioData();
 		}
 	}
 

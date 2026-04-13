@@ -58,6 +58,7 @@ public class iGameApp
 		m_GameData.Load();
 		m_GameState = new iGameState();
 		m_GameState.Initialize();
+		CUISound.GetInstance().PreloadAlwaysSounds();
 		CheckUnLock(true);
 		Screen.autorotateToLandscapeLeft = true;
 		Screen.autorotateToLandscapeRight = true;
@@ -84,6 +85,7 @@ public class iGameApp
 		m_GameState.CurScene = kGameSceneEnum.OutOfGame;
 		m_GameState.m_sLoadScene = sName;
 		Application.LoadLevel("SceneLoad");
+		CUISound.GetInstance().ScheduleUnloadAfterSceneChange(5f);
 	}
 
 	public void EnterScene(kGameSceneEnum gotoscene)
@@ -93,6 +95,7 @@ public class iGameApp
 		{
 			DestroyScene();
 		}
+		CUISound.GetInstance().ScheduleUnloadAfterSceneChange(5f);
 		Debug.Log("play theme " + gotoscene);
 		switch (gotoscene)
 		{

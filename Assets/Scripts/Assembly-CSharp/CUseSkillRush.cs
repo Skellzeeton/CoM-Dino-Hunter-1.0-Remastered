@@ -89,16 +89,16 @@ public class CUseSkillRush : CUseSkill
 			charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.3f, 1f, 0f);
 		}
 		charbase.Dir3D = vector2;
-		Debug.Log(charbase.UID + " start rush state");
+		//Debug.Log(charbase.UID + " start rush state");
 		return kUseSkillStatus.Success;
 	}
 
 	public override void OnExit(CCharBase charbase)
 	{
-		Debug.Log(charbase.UID + " out of the rush state");
+		//Debug.Log(charbase.UID + " out of the rush state");
 		if (m_SkillEffect != null)
 		{
-			Debug.Log(charbase.UID + " destroy the effect");
+			//Debug.Log(charbase.UID + " destroy the effect");
 			Object.Destroy(m_SkillEffect);
 			m_SkillEffect = null;
 		}

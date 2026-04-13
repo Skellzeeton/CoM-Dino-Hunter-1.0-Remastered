@@ -57,8 +57,8 @@ public class CDropGroupInfo
                 text2 = text2 + "," + ltItem[i].nItemID;
             }
         }
-        Debug.Log(text);
-        Debug.Log(text2);
+        //Debug.Log(text);
+        //Debug.Log(text2);
         float num = Random.Range(0f, array[ltItem.Count - 1]);
         for (int j = 0; j < ltItem.Count; j++)
         {

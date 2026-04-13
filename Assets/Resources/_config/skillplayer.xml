@@ -69,7 +69,7 @@ useaudio
 		<skillinfo>
 		<!-- *********************************** start by 1************************************************************************* -->
 		<!-- BUFF 1 8  -->
-		<skill id="1" lvl="1" type="0" icon="kuangbao" targetlimit="3" action="14"  skillmode="1" skillmodevalue="0.3" func="3" valuex="101" valuey="13" name="Kill Shot" desc="Increases weapon damage for a short time."/>
+		<skill id="1" lvl="1" type="0" icon="kuangbao" targetlimit="3" action="14"  skillmode="1" skillmodevalue="0.3" func="3" valuex="101" valuey="9" name="Kill Shot" desc="Increases weapon damage for a short time."/>
     <!--   +  -->
 		<skill id="2" lvl="1" type="0" icon="chongfeng" action="15" useaudio="Skill_Rush" rangetype="1" rangetypevalue="0,3,0,0" skillmode="6" skillmodevalue="25,0.35,0.05" func="4" valuex="2" valuey="100000" name="Bolt" desc="Dash forward to dodge attacks and to stun dinos in your path. Best used when cornered."/>
     <!-- 30% -->
@@ -92,19 +92,19 @@ useaudio
 		
 		
 		<!--  -->
-	<skill id="1002" lvl="1" type="1"   func="12" valuex="65537" valuey="5" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="250" levelupdesc="Kill Shot grants bonus damage.\n+{color:1eff0000}5%{color}bonus damage" desc="Kill Shot grants bonus damage.\n+{color:1eff0000}5%{color} bonus damage" iscrystalunlock="true" unlockprice="125"/>	
-	<skill id="1002" lvl="2" type="1"   func="12" valuex="65537" valuey="10" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="400" levelupdesc="Next Level:\n+10% bonus damage ({color:1eff0000}+5%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}10%{color} bonus damage"/>	
-	<skill id="1002" lvl="3" type="1"   func="12" valuex="65537" valuey="15" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="1500" levelupdesc="Next Level:\n+15% bonus damage ({color:1eff0000}+5%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}15%{color} bonus damage"/>		
-	<skill id="1002" lvl="4" type="1"   func="12" valuex="65537" valuey="20" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="2500" levelupdesc="Next Level:\n+20% bonus damage ({color:1eff0000}+5%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}20%{color} bonus damage"/>	
-	<skill id="1002" lvl="5" type="1"   func="12" valuex="65537" valuey="25" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="4750" levelupdesc="Next Level:\n+25% bonus damage ({color:1eff0000}+5%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}25%{color} bonus damage"/>	
+	<skill id="1002" lvl="1" type="1"   func="12" valuex="65537" valuey="6" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="250" levelupdesc="Kill Shot grants bonus damage.\n+{color:1eff0000}6%{color}bonus damage" desc="Kill Shot grants bonus damage.\n+{color:1eff0000}6%{color} bonus damage" iscrystalunlock="true" unlockprice="125"/>	
+	<skill id="1002" lvl="2" type="1"   func="12" valuex="65537" valuey="12" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="400" levelupdesc="Next Level:\n+12% bonus damage ({color:1eff0000}+6%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}12%{color} bonus damage"/>	
+	<skill id="1002" lvl="3" type="1"   func="12" valuex="65537" valuey="18" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="1500" levelupdesc="Next Level:\n+18% bonus damage ({color:1eff0000}+6%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}18%{color} bonus damage"/>		
+	<skill id="1002" lvl="4" type="1"   func="12" valuex="65537" valuey="24" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="2500" levelupdesc="Next Level:\n+24% bonus damage ({color:1eff0000}+6%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}24%{color} bonus damage"/>	
+	<skill id="1002" lvl="5" type="1"   func="12" valuex="65537" valuey="30" name="Killer Instinct" icon="passiveskill_1002" unlocklevel="10"  purchaseprice="4750" levelupdesc="Next Level:\n+30% bonus damage ({color:1eff0000}+6%{color}) " desc="Kill Shot grants bonus damage.\n+{color:1eff0000}30%{color} bonus damage"/>	
 		
 		
 		<!--  -->
-	<skill id="1003" lvl="1" type="1"   func="12" valuex="262145" valuey="2" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="250" levelupdesc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}2{color} seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}2{color} seconds." iscrystalunlock="true" unlockprice="125"/>	
-	<skill id="1003" lvl="2" type="1"   func="12" valuex="262145" valuey="4" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="400" levelupdesc="Next Level:\nCooldown reduced by 4 ({color:1eff0000}-2{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}4{color} seconds."/>	
-	<skill id="1003" lvl="3" type="1"   func="12" valuex="262145" valuey="6" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="1500" levelupdesc="Next Level:\nCooldown reduced by 6 ({color:1eff0000}-2{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}6{color} seconds."/>		
-	<skill id="1003" lvl="4" type="1"   func="12" valuex="262145" valuey="8" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="2500" levelupdesc="Next Level:\nCooldown reduced by 8 ({color:1eff0000}-2{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}8{color} seconds."/>	
-	<skill id="1003" lvl="5" type="1"   func="12" valuex="262145" valuey="10" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="4750" levelupdesc="Next Level:\nCooldown reduced by 10 ({color:1eff0000}-2{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}10{color} seconds."/>			
+	<skill id="1003" lvl="1" type="1"   func="12" valuex="262145" valuey="3" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="250" levelupdesc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}3{color} seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}3{color} seconds." iscrystalunlock="true" unlockprice="125"/>	
+	<skill id="1003" lvl="2" type="1"   func="12" valuex="262145" valuey="6" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="400" levelupdesc="Next Level:\nCooldown reduced by 6 ({color:1eff0000}-3{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}6{color} seconds."/>	
+	<skill id="1003" lvl="3" type="1"   func="12" valuex="262145" valuey="9" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="1500" levelupdesc="Next Level:\nCooldown reduced by 9 ({color:1eff0000}-3{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}9{color} seconds."/>		
+	<skill id="1003" lvl="4" type="1"   func="12" valuex="262145" valuey="12" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="2500" levelupdesc="Next Level:\nCooldown reduced by 12 ({color:1eff0000}-3{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}12{color} seconds."/>	
+	<skill id="1003" lvl="5" type="1"   func="12" valuex="262145" valuey="15" name="Kill Again" icon="passiveskill_1003" unlocklevel="16"  purchaseprice="4750" levelupdesc="Next Level:\nCooldown reduced by 15 ({color:1eff0000}-3{color}) seconds." desc="Reduces Kill Shot's cooldown.\nCooldown reduced by {color:1eff0000}15{color} seconds."/>			
 		
 		
 	<!--  -->
@@ -246,11 +246,11 @@ useaudio
 		
 		
 		<!--   -->
-	<skill id="3008" lvl="1" type="1"   func="1" valuex="58" valuey="2" name="Fully Loaded" icon="passiveskill_3008" unlocklevel="10" purchaseprice="250" iscrystalunlock="true" unlockprice="125" levelupdesc="Increases max ammo for all weapons.\n+{color:1eff0000}2%{color} ammo." desc="Increases max ammo for all weapons.\n+{color:1eff0000}2%{color} ammo."/>	
-	<skill id="3008" lvl="2" type="1"   func="1" valuex="58" valuey="4" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="400" levelupdesc="Next Level:\n+4% ammo ({color:1eff0000}+2%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}4%{color} ammo."/>	
-	<skill id="3008" lvl="3" type="1"   func="1" valuex="58" valuey="6" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="1500" levelupdesc="Next Level:\n+6% ammo ({color:1eff0000}+2%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}6%{color} ammo."/>		
-	<skill id="3008" lvl="4" type="1"   func="1" valuex="58" valuey="8" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="2500" levelupdesc="Next Level:\n+8% ammo ({color:1eff0000}+2%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}8%{color} ammo."/>	
-	<skill id="3008" lvl="5" type="1"   func="1" valuex="58" valuey="10" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="4750" levelupdesc="Next Level:\n+10% ammo ({color:1eff0000}+2%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}10%{color} ammo."/>	
+	<skill id="3008" lvl="1" type="1"   func="1" valuex="58" valuey="3" name="Fully Loaded" icon="passiveskill_3008" unlocklevel="10" purchaseprice="250" iscrystalunlock="true" unlockprice="125" levelupdesc="Increases max ammo for all weapons.\n+{color:1eff0000}3%{color} ammo." desc="Increases max ammo for all weapons.\n+{color:1eff0000}3%{color} ammo."/>	
+	<skill id="3008" lvl="2" type="1"   func="1" valuex="58" valuey="6" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="400" levelupdesc="Next Level:\n+6% ammo ({color:1eff0000}+3%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}6%{color} ammo."/>	
+	<skill id="3008" lvl="3" type="1"   func="1" valuex="58" valuey="9" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="1500" levelupdesc="Next Level:\n+9% ammo ({color:1eff0000}+3%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}9%{color} ammo."/>		
+	<skill id="3008" lvl="4" type="1"   func="1" valuex="58" valuey="12" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="2500" levelupdesc="Next Level:\n+12% ammo ({color:1eff0000}+3%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}12%{color} ammo."/>	
+	<skill id="3008" lvl="5" type="1"   func="1" valuex="58" valuey="15" name="Fully Loaded" icon="passiveskill_3008"  purchaseprice="4750" levelupdesc="Next Level:\n+15% ammo ({color:1eff0000}+3%{color}) " desc="Increases max ammo for all weapons.\n+{color:1eff0000}15%{color} ammo."/>	
 		
 		
 	<!--  -->
@@ -292,13 +292,6 @@ useaudio
 	<skill id="4004" lvl="3" type="1"   func="1" valuex="406" valuey="30" name="Every Shot Counts" icon="passiveskill_4004" unlocklevel="3"  purchaseprice="1500" levelupdesc="Next Level:\n+30% critical hit damage ({color:1eff0000}+10%{color}) " desc="Increases rifle critical hit damage.\n+{color:1eff0000}30%{color} critical hit damage."/>		
 	<skill id="4004" lvl="4" type="1"   func="1" valuex="406" valuey="40" name="Every Shot Counts" icon="passiveskill_4004" unlocklevel="3"  purchaseprice="2500" levelupdesc="Next Level:\n+40% critical hit damage ({color:1eff0000}+10%{color}) " desc="Increases rifle critical hit damage.\n+{color:1eff0000}40%{color} critical hit damage."/>	
 	<skill id="4004" lvl="5" type="1"   func="1" valuex="406" valuey="50" name="Every Shot Counts" icon="passiveskill_4004" unlocklevel="3"  purchaseprice="4750" levelupdesc="Next Level:\n+50% critical hit damage ({color:1eff0000}+10%{color}) " desc="Increases rifle critical hit damage.\n+{color:1eff0000}50%{color} critical hit damage."/>
-		
-		<!--  -->
-	<skill id="4006" lvl="1" type="1"   func="12" valuex="4" valuey="1" name="Shadow Rush" icon="passiveskill_4006" unlocklevel="1"  purchaseprice="250" levelupdesc="Increases Vanish's duration.\n+{color:1eff0000}1{color} seconds" desc="Increases Vanish's duration.\n+{color:1eff0000}1{color} seconds" iscrystalunlock="true" unlockprice="125"/>	
-	<skill id="4006" lvl="2" type="1"   func="12" valuex="4" valuey="2" name="Shadow Rush" icon="passiveskill_4006" unlocklevel="1"  purchaseprice="400" levelupdesc="Next Level:\n+2 seconds ({color:1eff0000}+1{color}) " desc="Increases Vanish's duration.\n+{color:1eff0000}2{color} seconds"/>	
-	<skill id="4006" lvl="3" type="1"   func="12" valuex="4" valuey="3" name="Shadow Rush" icon="passiveskill_4006" unlocklevel="1"  purchaseprice="1500" levelupdesc="Next Level:\n+3 seconds ({color:1eff0000}+1{color}) " desc="Increases Vanish's duration.\n+{color:1eff0000}3{color} seconds"/>		
-	<skill id="4006" lvl="4" type="1"   func="12" valuex="4" valuey="4" name="Shadow Rush" icon="passiveskill_4006" unlocklevel="1"  purchaseprice="2500" levelupdesc="Next Level:\n+4 seconds ({color:1eff0000}+1{color}) " desc="Increases Vanish's duration.\n+{color:1eff0000}4{color} seconds"/>	
-	<skill id="4006" lvl="5" type="1"   func="12" valuex="4" valuey="5" name="Shadow Rush" icon="passiveskill_4006" unlocklevel="1"  purchaseprice="4750" levelupdesc="Next Level:\n+5 seconds ({color:1eff0000}+1{color}) " desc="Increases Vanish's duration.\n+{color:1eff0000}5{color} seconds"/>			
 	
 	<!--  -->
 	<skill id="4007" lvl="1" type="1"   func="12" valuex="262148" valuey="2" name="One with the Shadows" icon="passiveskill_4007" unlocklevel="16"  purchaseprice="250" levelupdesc="Reduces Vanish's cooldown.\nCooldown reduced by {color:1eff0000}2{color} seconds" desc="Reduces Vanish's cooldown.\nCooldown reduced by {color:1eff0000}2{color} seconds" iscrystalunlock="true" unlockprice="125"/>	

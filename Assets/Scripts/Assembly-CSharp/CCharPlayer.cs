@@ -763,12 +763,10 @@ public class CCharPlayer : CCharBase
 			if (m_curCharacterInfoLevel.isMale)
 			{
 				m_AudioData.Add(kAudioEnum.Hurt, "SVO_Voice_Male01_Hurt");
-				m_AudioData.Add(kAudioEnum.Dead, "SVO_Voice_Male01_Death");
 			}
 			else
 			{
 				m_AudioData.Add(kAudioEnum.Hurt, "SVO_Voice_Female01_Hurt");
-				m_AudioData.Add(kAudioEnum.Dead, "SVO_Voice_Female01_Death");
 			}
 		}
 	}
