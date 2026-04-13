@@ -218,14 +218,6 @@ public class PrefabManager
 		m_dictData.Add(2006, "Artist/GameUI/Task/NGUITaskDefence");
 		m_dictData.Add(2007, "Artist/GameUI/Task/NGUITaskButcher");
 		m_dictData.Add(2008, "Artist/GameUI/Task/NGUITaskInfinite");
-		m_dictData.Add(2100, "Artist/GameUI/dlgProtratiTeamMate");
-		m_dictData.Add(2101, "Artist/GameUI/LifeBar");
-		m_dictData.Add(2102, "Artist/GameUI/txtDamageNormal");
-		m_dictData.Add(2103, "Artist/GameUI/txtDamageCritical");
-		m_dictData.Add(2104, "Artist/GameUI/txtExp");
-		m_dictData.Add(2015, "Artist/GameUI/dlgWaveStart");
-		m_dictData.Add(2900, "Artist/GameUI/txtMissionCompleted");
-		m_dictData.Add(2901, "Artist/GameUI/txtMissionFailed");
 		m_dictData.Add(3000, "_Config/ai");
 		m_dictData.Add(3001, "_Config/mob");
 		m_dictData.Add(3002, "_Config/skillplayer");
@@ -236,9 +228,7 @@ public class PrefabManager
 		m_dictData.Add(3007, "_Config/gamelevel");
 		m_dictData.Add(3008, "_Config/task");
 		m_dictData.Add(3009, "_Config/item");
-		m_dictData.Add(3010, "_Config/recipe");
 		m_dictData.Add(3011, "_Config/character");
-		m_dictData.Add(3012, "_Config/battlegroup");
 		m_dictData.Add(3013, "_Config/dropgroup");
 		m_dictData.Add(4000, "Artist/Custom/RoadSignPath");
 	}

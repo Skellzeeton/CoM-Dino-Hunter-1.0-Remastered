@@ -22,13 +22,9 @@ public class iGameData
 	protected iTaskCenter m_TaskCenter;
 
 	protected iItemCenter m_ItemCenter;
-
-	protected iRecipeCenter m_RecipeCenter;
-
+	
 	protected iCharacterCenter m_CharacterCenter;
-
-	protected iBattleGroupCenter m_BattleGroupCenter;
-
+	
 	protected iDropGroupCenter m_DropGroupCenter;
 
 	protected iLoadTipCenter m_LoadTipCenter;
@@ -50,7 +46,6 @@ public class iGameData
 		m_TaskCenter = new iTaskCenter();
 		m_ItemCenter = new iItemCenter();
 		m_CharacterCenter = new iCharacterCenter();
-		m_BattleGroupCenter = new iBattleGroupCenter();
 		m_DropGroupCenter = new iDropGroupCenter();
 		m_LoadTipCenter = new iLoadTipCenter();
 		m_StashCapacityCenter = new iStashCapacityCenter();
@@ -85,8 +80,6 @@ public class iGameData
 			m_ItemCenter.Load();
 			iGameApp.GetInstance().ScreenLog("Loading m_CharacterCenter");
 			m_CharacterCenter.Load();
-			iGameApp.GetInstance().ScreenLog("Loading m_BattleGroupCenter");
-			m_BattleGroupCenter.Load();
 			iGameApp.GetInstance().ScreenLog("Loading m_DropGroupCenter");
 			m_DropGroupCenter.Load();
 			iGameApp.GetInstance().ScreenLog("Loading m_LoadTipCenter");
@@ -133,11 +126,7 @@ public class iGameData
 	{
 		return m_ItemCenter;
 	}
-
-	public iBattleGroupCenter GetBattleGroupCenter()
-	{
-		return m_BattleGroupCenter;
-	}
+	
 
 	public iGameLevelCenter GetGameLevelCenter()
 	{
@@ -300,15 +289,6 @@ public class iGameData
 			return null;
 		}
 		return m_ItemCenter.Get(nID, nLevel);
-	}
-
-	public CRecipeInfo GetRecipeInfo(int nID)
-	{
-		if (m_RecipeCenter == null)
-		{
-			return null;
-		}
-		return m_RecipeCenter.Get(nID);
 	}
 
 	public CDropGroupInfo GetDropGrouInfo(int nID)

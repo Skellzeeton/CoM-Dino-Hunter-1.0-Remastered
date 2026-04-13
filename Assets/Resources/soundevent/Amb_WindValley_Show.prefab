@@ -143,12 +143,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 1bd08c1bbcf891e4abe2c9c8ef04ae3b, type: 3}
   - {fileID: 8300000, guid: 5ee9ab04308f65e4b96bc8c6c10afaf7, type: 3}
   probability: []
-  volumOffset: 0
-  pitchOffset: 0
+  volumOffset: 0.05
+  pitchOffset: 0.02
   loopMode: 0
   cutoff: 0
   delayTime: 0

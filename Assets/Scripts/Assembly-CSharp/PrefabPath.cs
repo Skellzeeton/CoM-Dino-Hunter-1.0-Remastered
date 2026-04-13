@@ -338,22 +338,6 @@ public class PrefabPath
 
 	public const int GameTaskUIInfinite = 2008;
 
-	public const int GameTeamMateProtrait = 2100;
-
-	public const int LifeBar = 2101;
-
-	public const int txtDamageNormal = 2102;
-
-	public const int txtDamageCritical = 2103;
-
-	public const int txtExp = 2104;
-
-	public const int txtWaveTip = 2015;
-
-	public const int UIMissionCompeleted = 2900;
-
-	public const int UIMissionFailed = 2901;
-
 	public const int configAI = 3000;
 
 	public const int configMob = 3001;
@@ -373,13 +357,9 @@ public class PrefabPath
 	public const int configTask = 3008;
 
 	public const int configItem = 3009;
-
-	public const int configRecipe = 3010;
-
+	
 	public const int configCharacter = 3011;
-
-	public const int configBattleGroup = 3012;
-
+	
 	public const int configDropGroup = 3013;
 
 	public const int PathWalker = 4000;
