@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Xml;
+using gyAchievementSystem;
 
 public class iDataCenter
 {
@@ -511,6 +512,11 @@ public class iDataCenter
 			xmlElement19.SetAttribute("id", item9.Key.ToString());
 			xmlElement19.SetAttribute("sign", item9.Value.ToString());
 		}
+		gyAchievementSystem.CAchievementCenter achievementCenter = gyAchievementSystem.CAchievementManager.GetInstance().GetAchievementCenter();
+		if (achievementCenter != null)
+		{
+			achievementCenter.SaveData(xmlDocument, xmlElement);
+		}
 		StringWriter stringWriter = new StringWriter();
 		xmlDocument.Save(stringWriter);
 		string content = XXTEAUtils.Encrypt(stringWriter.ToString(), iGameApp.GetInstance().GetKey());
@@ -592,6 +598,16 @@ public class iDataCenter
 						cLevelSaveInfo.isIgnoreCG = bool.Parse(value);
 					}
 					m_ltLevelSaveInfo.Add(cLevelSaveInfo);
+				}
+			}
+			else if (item.Name == "achievementdata")
+			{
+				gyAchievementSystem.CAchievementCenter achievementCenter =
+					gyAchievementSystem.CAchievementManager.GetInstance().GetAchievementCenter();
+
+				if (achievementCenter != null)
+				{
+					achievementCenter.LoadData(item);
 				}
 			}
 			else if (item.Name == "character")

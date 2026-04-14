@@ -20,6 +20,7 @@ namespace gyAchievementSystem
 				m_Instance = new CAchievementManager();
 				m_Instance.Initialize();
 			}
+
 			return m_Instance;
 		}
 
@@ -39,8 +40,8 @@ namespace gyAchievementSystem
 		{
 			m_AchievementCenter = new CAchievementCenter();
 			m_AchievementCenter.LoadInfo();
-			m_AchievementCenter.LoadData();
 			m_ltAchievementTip = new List<CAchievementTip>();
+			m_bNeedSave = false;
 		}
 
 		public void Update(float deltaTime)
@@ -54,11 +55,13 @@ namespace gyAchievementSystem
 			{
 				return;
 			}
+
 			CAchievementData data = m_AchievementCenter.GetData(nID);
 			if (data == null)
 			{
 				return;
 			}
+
 			int nCurValue = data.nCurValue;
 			data.nCurValue = nCount;
 			int stepCount = info.GetStepCount();
@@ -72,6 +75,7 @@ namespace gyAchievementSystem
 					{
 						data.nState = 2;
 					}
+
 					m_bNeedSave = true;
 					break;
 				}
@@ -98,6 +102,7 @@ namespace gyAchievementSystem
 			{
 				yield break;
 			}
+
 			foreach (CAchievementInfo info in dictAchievementInfo.Values)
 			{
 				CAchievementData data = m_AchievementCenter.GetData(info.nID);
@@ -111,6 +116,7 @@ namespace gyAchievementSystem
 					};
 					m_AchievementCenter.AddData(data.nID, data);
 				}
+
 				if (data.nState == 1)
 				{
 					yield return data;
@@ -125,9 +131,14 @@ namespace gyAchievementSystem
 
 		public void Save()
 		{
-			if (m_AchievementCenter != null)
+			iGameData gameData = iGameApp.GetInstance().m_GameData;
+			if (gameData != null)
 			{
-				m_AchievementCenter.SaveData();
+				iDataCenter dataCenter = gameData.GetDataCenter();
+				if (dataCenter != null)
+				{
+					dataCenter.Save();
+				}
 			}
 		}
 
@@ -137,12 +148,14 @@ namespace gyAchievementSystem
 			{
 				return 0;
 			}
+
 			CAchievementInfo info = m_AchievementCenter.GetInfo(nAchiID);
 			CAchievementData data = m_AchievementCenter.GetData(nAchiID);
 			if (info == null || data == null)
 			{
 				return 0;
 			}
+
 			int stepCount = info.GetStepCount();
 			for (int i = 0; i < stepCount; i++)
 			{
@@ -152,6 +165,7 @@ namespace gyAchievementSystem
 					return i;
 				}
 			}
+
 			return stepCount;
 		}
 
@@ -164,54 +178,69 @@ namespace gyAchievementSystem
 				{
 					continue;
 				}
+
 				switch (info.nType)
 				{
-				case 6:
-					if (arrParam != null && arrParam.Length == 2)
-					{
-						int num2 = (int)arrParam[0];
-						int num3 = (int)arrParam[1];
-						int nValue2 = -1;
-						if (info.GetParam(0, ref nValue2) && num2 == nValue2 && info.GetParam(1, ref nValue2) && num3 == nValue2)
+					case 6:
+						if (arrParam != null && arrParam.Length == 2)
 						{
-							SetAchievementCount(info.nID, achievementDatum.nCurValue + 1);
+							int num2 = (int)arrParam[0];
+							int num3 = (int)arrParam[1];
+							int nValue2 = -1;
+							if (info.GetParam(0, ref nValue2) && num2 == nValue2 && info.GetParam(1, ref nValue2) &&
+							    num3 == nValue2)
+							{
+								SetAchievementCount(info.nID, achievementDatum.nCurValue + 1);
+							}
 						}
-					}
-					break;
-				case 7:
-					if (arrParam != null && arrParam.Length == 1)
-					{
-						int num = (int)arrParam[0];
-						int nValue = -1;
-						if (info.GetParam(0, ref nValue) && num == nValue)
+
+						break;
+					case 7:
+						if (arrParam != null && arrParam.Length == 1)
 						{
-							SetAchievementCount(info.nID, achievementDatum.nCurValue + 1);
+							int num = (int)arrParam[0];
+							int nValue = -1;
+							if (info.GetParam(0, ref nValue) && num == nValue)
+							{
+								SetAchievementCount(info.nID, achievementDatum.nCurValue + 1);
+							}
 						}
-					}
-					break;
-				case 1:
-					if (arrParam != null && arrParam.Length == 1)
-					{
-						int nCount2 = (int)arrParam[0];
-						SetAchievementCount(info.nID, nCount2);
-					}
-					break;
-				case 2:
-					if (arrParam != null && arrParam.Length == 1)
-					{
-						int nCount = (int)arrParam[0];
-						SetAchievementCount(info.nID, nCount);
-					}
-					break;
-				default:
-					SetAchievementCount(info.nID, achievementDatum.nCurValue + 1);
-					break;
+
+						break;
+					case 1:
+						if (arrParam != null && arrParam.Length == 1)
+						{
+							int nCount2 = (int)arrParam[0];
+							SetAchievementCount(info.nID, nCount2);
+						}
+
+						break;
+					case 2:
+						if (arrParam != null && arrParam.Length == 1)
+						{
+							int nCount = (int)arrParam[0];
+							SetAchievementCount(info.nID, nCount);
+						}
+
+						break;
+					default:
+						SetAchievementCount(info.nID, achievementDatum.nCurValue + 1);
+						break;
 				}
 			}
+
 			if (m_bNeedSave)
 			{
 				m_bNeedSave = false;
-				m_AchievementCenter.SaveData();
+				iGameData gameData = iGameApp.GetInstance().m_GameData;
+				if (gameData != null)
+				{
+					iDataCenter dataCenter = gameData.GetDataCenter();
+					if (dataCenter != null)
+					{
+						dataCenter.Save();
+					}
+				}
 			}
 		}
 	}

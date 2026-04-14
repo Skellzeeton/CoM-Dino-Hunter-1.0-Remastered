@@ -263,7 +263,7 @@ public class TUIDataServer
 								dataCenter5.Save();
 							}
 							data2.SetGotReward(lparam - 1, true);
-							achievementCenter2.SaveData();
+							dataCenter5.Save();
 							flag = true;
 						}
 					}
@@ -458,7 +458,7 @@ public class TUIDataServer
 		}
 		else if (m_event.GetEventName() == "TUIEvent_OpenSupportURL")
 		{
-			Application.OpenURL("http://www.trinitigame.com/support?game=comdh&version=1.0.2");
+			Application.OpenURL("https://discord.gg/gv7Ebnmg7u");
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName()));
 		}
 		else if (m_event.GetEventName() == "TUIEvent_OpenReviewURL")
