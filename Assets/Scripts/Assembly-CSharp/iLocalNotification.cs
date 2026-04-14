@@ -76,7 +76,9 @@ public class iLocalNotification : MonoBehaviour
             AndroidNotificationCenter.SendNotification(notif, "default_channel");
 #endif
 
+#if UNITY_EDITOR
             Debug.Log("Scheduled notification: " + item.alertBody + " in " + item.time + " seconds.");
+#endif
         }
     }
 

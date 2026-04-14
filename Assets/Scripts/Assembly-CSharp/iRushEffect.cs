@@ -30,7 +30,8 @@ public class iRushEffect : _iAnimEventFollowBase
 			ParticleSystem[] array = componentsInChildren;
 			foreach (ParticleSystem particleSystem in array)
 			{
-				particleSystem.enableEmission = false;
+				var emission = particleSystem.emission; 
+				emission.enabled = false;
 			}
 			Object.Destroy(m_Effect, fDisappearTime);
 			m_Effect = null;

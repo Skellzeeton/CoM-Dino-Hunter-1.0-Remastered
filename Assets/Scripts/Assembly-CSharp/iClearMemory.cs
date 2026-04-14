@@ -24,14 +24,14 @@ public class iClearMemory : MonoBehaviour
 
 	protected IEnumerator Clear()
 	{
-		Debug.Log("Clear");
+		//Debug.Log("Clear");
 		GC.Collect();
 		yield return Resources.UnloadUnusedAssets();
 	}
 
 	protected void ClearImmidately()
 	{
-		Debug.Log("Clear");
+		//Debug.Log("Clear");
 		GC.Collect();
 		Resources.UnloadUnusedAssets();
 	}

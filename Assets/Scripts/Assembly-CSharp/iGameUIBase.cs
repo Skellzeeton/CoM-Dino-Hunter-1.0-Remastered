@@ -1564,6 +1564,7 @@ public class iGameUIBase : MonoBehaviour
 		}
 		CUISound.GetInstance().Play("UI_Material_get");
 		dataCenter.AddMaterialNum(gainMaterial.nItemID, num);
+		CAchievementManager.GetInstance().AddAchievement(14, new object[1] { num });
 		gainMaterial.nItemCount -= num;
 		m_UIManager.mPanelMaterial.SetIconAnimate(nIndex, num);
 		if (gainMaterial.nItemCount <= 0)
@@ -1636,6 +1637,7 @@ public class iGameUIBase : MonoBehaviour
 				return;
 			}
 			dataCenter.AddMaterialNum(gainMaterial.nItemID, num);
+			CAchievementManager.GetInstance().AddAchievement(14, new object[1] { num });
 			gainMaterial.nItemCount -= num;
 			m_UIManager.mPanelMaterial.SetIconAnimate(i, num);
 			if (gainMaterial.nItemCount <= 0)

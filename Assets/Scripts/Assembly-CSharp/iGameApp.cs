@@ -67,7 +67,7 @@ public class iGameApp
 		CLocalNotification.GetInstance().AddLocalNotification("Grab your weapon and hunt dinosaurs for rewards!", iMacroDefine.SecondsOneDay * 3);
 		CLocalNotification.GetInstance().AddLocalNotification("Grab your weapon and hunt dinosaurs for rewards!", iMacroDefine.SecondsOneDay * 7);
 		CLocalNotification.GetInstance().AddLocalNotification("Your villagers need you to help them forge weapons against dinosaurs!", iMacroDefine.SecondsOneDay * 14);
-		CLocalNotification.GetInstance().AddLocalNotification("Dinosaurs are running wild! Return to tame those fierce beasts!", iMacroDefine.SecondsOneDay * 21);
+		CLocalNotification.GetInstance().AddLocalNotification("Dinosaurs are running wild! Return to hunt those fierce beasts!", iMacroDefine.SecondsOneDay * 21);
 		//OpenClikPlugin.Initialize("9B11A42C-3F34-4897-8D16-F6A49E5CC750");
 	}
 
@@ -473,7 +473,7 @@ public class iGameApp
 			int achiStar = CAchievementManager.GetInstance().GetAchiStar(value.nID);
 			if (achiStar != 0)
 			{
-				Debug.Log(value.nID + " has " + achiStar + " stars");
+				//Debug.Log(value.nID + " has " + achiStar + " stars");
 				if (!value.IsGotReward(achiStar - 1))
 				{
 					return true;

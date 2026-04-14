@@ -44,7 +44,8 @@ public class CWeaponHoldy : CWeaponBase
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;
 			foreach (ParticleSystem particleSystem in arrParticleSystem)
 			{
-				particleSystem.enableEmission = false;
+				var emission = particleSystem.emission;
+				emission.enabled = false;
 			}
 		}
 	}
@@ -72,7 +73,8 @@ public class CWeaponHoldy : CWeaponBase
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;
 			foreach (ParticleSystem particleSystem in arrParticleSystem)
 			{
-				particleSystem.enableEmission = true;
+				var emission = particleSystem.emission;
+				emission.enabled = true;
 			}
 		}
 		m_fRadius = 0f;
@@ -97,7 +99,8 @@ public class CWeaponHoldy : CWeaponBase
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;
 			foreach (ParticleSystem particleSystem in arrParticleSystem)
 			{
-				particleSystem.enableEmission = false;
+				var emission = particleSystem.emission;
+				emission.enabled = false;
 			}
 		}
 	}

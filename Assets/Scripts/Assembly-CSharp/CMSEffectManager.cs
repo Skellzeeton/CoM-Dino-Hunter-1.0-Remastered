@@ -76,7 +76,8 @@ public class CMSEffectManager
 				ParticleSystem[] array = componentsInChildren;
 				foreach (ParticleSystem particleSystem in array)
 				{
-					particleSystem.enableEmission = false;
+					var emission = particleSystem.emission; 
+					emission.enabled = false;
 				}
 			}
 			Object.Destroy(effect, fDelay);

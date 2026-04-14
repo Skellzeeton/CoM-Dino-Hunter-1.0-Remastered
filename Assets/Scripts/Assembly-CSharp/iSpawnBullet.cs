@@ -66,7 +66,8 @@ public class iSpawnBullet : MonoBehaviour
 			ParticleSystem[] arrParicleSystem = m_arrParicleSystem;
 			foreach (ParticleSystem particleSystem in arrParicleSystem)
 			{
-				particleSystem.enableEmission = false;
+				var emission = particleSystem.emission; 
+				emission.enabled = false;
 			}
 		}
 		m_bEmission = false;
@@ -91,7 +92,8 @@ public class iSpawnBullet : MonoBehaviour
 				ParticleSystem[] arrParicleSystem = m_arrParicleSystem;
 				foreach (ParticleSystem particleSystem in arrParicleSystem)
 				{
-					particleSystem.enableEmission = true;
+					var emission = particleSystem.emission; 
+					emission.enabled = true;
 				}
 			}
 		}

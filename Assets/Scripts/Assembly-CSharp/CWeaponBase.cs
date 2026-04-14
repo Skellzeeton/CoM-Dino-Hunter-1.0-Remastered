@@ -138,7 +138,7 @@ public class CWeaponBase
 		{
 			if (player != null && player.Property != null)
 			{
-				Debug.Log(player.Property.GetValue(kProEnum.All_Capacity));
+				//Debug.Log(player.Property.GetValue(kProEnum.All_Capacity));
 				m_nBulletNumMax = (int)((float)m_pWeaponLvlInfo.nCapacity * (1f + player.Property.GetValue(kProEnum.All_Capacity) / 100f));
 			}
 			else

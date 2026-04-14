@@ -980,6 +980,7 @@ public class iGameSceneBase
 				}
 				dataCenter.Save();
 				m_GameState.isCheckUnLock = true;
+				CAchievementManager.GetInstance().AddAchievement(11);
 				if (CurGameLevelInfo != null && CurGameLevelInfo.ltRewardMaterial != null)
 				{
 					int num = 0;

@@ -19,5 +19,9 @@ namespace gyAchievementSystem
 		public const int StealItem = 7;
 
 		public const int DefenceWave = 8;
+
+		public const int WinGameMain = 11;
+		
+		public const int GainMaterialCount = 14;
 	}
 }

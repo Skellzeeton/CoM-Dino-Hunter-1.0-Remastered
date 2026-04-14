@@ -47,7 +47,8 @@ public class iDisappear : MonoBehaviour
 				ParticleSystem[] array = arrParticleSystem;
 				foreach (ParticleSystem particleSystem in array)
 				{
-					particleSystem.enableEmission = false;
+					var emission = particleSystem.emission; 
+					emission.enabled = false;
 				}
 			}
 			break;

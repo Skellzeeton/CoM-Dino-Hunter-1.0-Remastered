@@ -490,7 +490,7 @@ public class Scene_MainMenu : MonoBehaviour
 			RaycastHit hitInfo2;
 			if (Physics.Raycast(ray2, out hitInfo2))
 			{
-				Debug.Log("you hit: " + hitInfo2.transform.name);
+				//Debug.Log("you hit: " + hitInfo2.transform.name);
 				if (hitInfo2.transform == go_camp)
 				{
 					next_scene = "Scene_Equip";

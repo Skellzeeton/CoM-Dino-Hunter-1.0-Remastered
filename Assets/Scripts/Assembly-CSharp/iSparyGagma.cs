@@ -28,7 +28,8 @@ public class iSparyGagma : MonoBehaviour
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;
 			foreach (ParticleSystem particleSystem in arrParticleSystem)
 			{
-				particleSystem.enableEmission = false;
+				var emission = particleSystem.emission; 
+				emission.enabled = false;
 			}
 		}
 		m_bActive = false;
@@ -75,7 +76,8 @@ public class iSparyGagma : MonoBehaviour
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;
 			foreach (ParticleSystem particleSystem in arrParticleSystem)
 			{
-				particleSystem.enableEmission = true;
+				var emission = particleSystem.emission; 
+				emission.enabled = true;
 			}
 		}
 		m_bActive = true;
@@ -94,7 +96,8 @@ public class iSparyGagma : MonoBehaviour
 			ParticleSystem[] arrParticleSystem = m_arrParticleSystem;
 			foreach (ParticleSystem particleSystem in arrParticleSystem)
 			{
-				particleSystem.enableEmission = false;
+				var emission = particleSystem.emission; 
+				emission.enabled = false;
 			}
 		}
 		m_bActive = false;

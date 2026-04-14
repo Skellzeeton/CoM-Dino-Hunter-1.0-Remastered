@@ -276,7 +276,7 @@ public class PrefabManager
 
 	public static void PreLoad()
 	{
-		Debug.Log("PreLoadGameEffect");
+		//Debug.Log("PreLoadGameEffect");
 		AddPool(302, 5);
 		AddPool(251, 10);
 		AddPool(252, 10);

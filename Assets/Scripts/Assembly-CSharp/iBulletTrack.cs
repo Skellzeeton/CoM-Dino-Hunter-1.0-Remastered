@@ -92,7 +92,8 @@ public class iBulletTrack : MonoBehaviour
 			ParticleSystem[] arrParicleSystem = m_arrParicleSystem;
 			foreach (ParticleSystem particleSystem in arrParicleSystem)
 			{
-				particleSystem.enableEmission = bEmit;
+				var emission = particleSystem.emission; 
+				emission.enabled = bEmit;
 			}
 		}
 	}

@@ -187,7 +187,7 @@ public class TAudioManager : MonoBehaviour
 		{
 			Object.Destroy(s_instance.gameObject);
 		}
-		AudioListener audioListener = Object.FindObjectOfType(typeof(AudioListener)) as AudioListener;
+		AudioListener audioListener = Object.FindAnyObjectByType(typeof(AudioListener)) as AudioListener;
 		if (!audioListener)
 		{
 			GameObject gameObject = new GameObject("AudioListener", typeof(AudioListener));
