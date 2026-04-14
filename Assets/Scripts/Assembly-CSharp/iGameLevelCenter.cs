@@ -147,6 +147,14 @@ public class iGameLevelCenter
 			{
 				gameLevelInfo.m_bLimitMelee = bool.Parse(value);
 			}
+			if (MyUtils.GetAttribute(childNode, "issidelevel", ref value))
+			{
+				gameLevelInfo.bIsSideLevel = bool.Parse(value);
+			}
+			else
+			{
+				gameLevelInfo.bIsSideLevel = true;
+			}
 			foreach (XmlNode childNode2 in childNode.ChildNodes)
 			{
 				if (childNode2.Name == "MonsterNumLimit")

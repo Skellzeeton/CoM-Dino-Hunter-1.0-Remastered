@@ -1,225 +1,133 @@
 using GUPS.AntiCheat.Protected;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Xml;
+using UnityEngine;
 using gyAchievementSystem;
 
 public class iDataCenter
 {
 	protected string m_sVersion = "1.0.0";
 
+	private const string SAVE_FILE = "gamedata.xml";
+	private const string BACKUP_FILE = "gamedata.xml.bak";
+	private const string TEMP_FILE = "gamedata.xml.tmp";
+
 	protected ProtectedInt32 m_nGold;
-
 	protected ProtectedInt32 m_nCrystal;
-
 	protected ProtectedInt32 m_nStashLevel;
-
 	protected int m_nCrystalTotalGain;
-
 	protected int m_nCrystalTotalConsume;
-
 	protected Dictionary<int, ProtectedInt32> m_dictMaterials;
-
 	protected Dictionary<int, int> m_dictWeapon;
-
 	protected Dictionary<int, int> m_dictEquipStone;
-
 	protected Dictionary<int, int> m_dictPassiveSkill;
-
 	protected Dictionary<int, CCharSaveInfo> m_dictCharSaveInfo;
-
 	protected List<CLevelSaveInfo> m_ltLevelSaveInfo;
-
 	protected bool m_bMusic;
-
 	protected bool m_bSound;
-
 	protected bool m_bAutoAim;
-
 	protected int m_nUnLockSignType;
-
 	protected int m_nUnLockSignID;
-
 	protected int m_nSceneProccess;
-
 	protected bool m_bTutorial;
-
 	protected bool m_bTutorialVillage;
-
 	protected bool m_bEvaluate;
-
 	protected int m_nEnterAppCount;
-
 	protected Dictionary<int, int> m_dictWeaponSign;
-
 	protected Dictionary<int, int> m_dictEquipStoneSign;
-
 	protected Dictionary<int, int> m_dictSkillSign;
-
 	protected Dictionary<int, int> m_dictCharacterSign;
-
 	protected int m_nCurCharID;
-
 	protected int[] m_arrSelectWeapon;
-
 	protected Dictionary<int, int[]> m_dictSelectPassiveSkill;
-
 	protected int m_nCurEquipStone;
-
 	protected ProtectedInt32 m_nLatestLevel;
-
 	protected bool m_bUnLockLevel;
-
 	protected List<int> m_ltLevelList;
-
 	protected bool m_bFirstTimePlay;
 
 	public bool isFirstTimePlay
 	{
-		get
-		{
-			return m_bFirstTimePlay;
-		}
+		get { return m_bFirstTimePlay; }
 	}
 
 	public bool isTutorial
 	{
-		get
-		{
-			return m_bTutorial;
-		}
-		set
-		{
-			m_bTutorial = value;
-		}
+		get { return m_bTutorial; }
+		set { m_bTutorial = value; }
 	}
 
 	public bool isTutorialVillage
 	{
-		get
-		{
-			return m_bTutorialVillage;
-		}
-		set
-		{
-			m_bTutorialVillage = value;
-		}
+		get { return m_bTutorialVillage; }
+		set { m_bTutorialVillage = value; }
 	}
 
 	public bool MusicSwitch
 	{
-		get
-		{
-			return m_bMusic;
-		}
-		set
-		{
-			m_bMusic = value;
-		}
+		get { return m_bMusic; }
+		set { m_bMusic = value; }
 	}
 
 	public bool SoundSwitch
 	{
-		get
-		{
-			return m_bSound;
-		}
-		set
-		{
-			m_bSound = value;
-		}
+		get { return m_bSound; }
+		set { m_bSound = value; }
 	}
 
 	public bool AutoAimSwitch
 	{
-		get
-		{
-			return m_bAutoAim;
-		}
-		set
-		{
-			m_bAutoAim = value;
-		}
+		get { return m_bAutoAim; }
+		set { m_bAutoAim = value; }
 	}
 
 	public ProtectedInt32 Gold
 	{
-		get
-		{
-			return m_nGold;
-		}
+		get { return m_nGold; }
 	}
 
 	public ProtectedInt32 Crystal
 	{
-		get
-		{
-			return m_nCrystal;
-		}
+		get { return m_nCrystal; }
 	}
 
 	public int CurCharID
 	{
-		get
-		{
-			return m_nCurCharID;
-		}
-		set
-		{
-			m_nCurCharID = value;
-		}
+		get { return m_nCurCharID; }
+		set { m_nCurCharID = value; }
 	}
 
 	public int CurEquipStone
 	{
-		get
-		{
-			return m_nCurEquipStone;
-		}
-		set
-		{
-			m_nCurEquipStone = value;
-		}
+		get { return m_nCurEquipStone; }
+		set { m_nCurEquipStone = value; }
 	}
 
 	public ProtectedInt32 LatestLevel
 	{
-		get
-		{
-			return m_nLatestLevel;
-		}
-		set
-		{
-			m_nLatestLevel = value;
-		}
+		get { return m_nLatestLevel; }
+		set { m_nLatestLevel = value; }
 	}
 
 	public int SceneProccess
 	{
-		get
-		{
-			return m_nSceneProccess;
-		}
+		get { return m_nSceneProccess; }
 	}
 
 	public ProtectedInt32 StashLevel
 	{
-		get
-		{
-			return m_nStashLevel;
-		}
-		set
-		{
-            m_nStashLevel = value;
-		}
+		get { return m_nStashLevel; }
+		set { m_nStashLevel = value; }
 	}
 
 	public ProtectedInt32 StashCount
 	{
 		get
 		{
-            ProtectedInt32 num = 0;
+			ProtectedInt32 num = 0;
 			foreach (ProtectedInt32 value in m_dictMaterials.Values)
 			{
 				num += value;
@@ -245,7 +153,7 @@ public class iDataCenter
 	{
 		get
 		{
-            ProtectedInt32 num = 0;
+			ProtectedInt32 num = 0;
 			foreach (CCharSaveInfo value in m_dictCharSaveInfo.Values)
 			{
 				if (num == 0 || num < value.nLevel)
@@ -259,50 +167,26 @@ public class iDataCenter
 
 	public bool isEvaluate
 	{
-		get
-		{
-			return m_bEvaluate;
-		}
-		set
-		{
-			m_bEvaluate = value;
-		}
+		get { return m_bEvaluate; }
+		set { m_bEvaluate = value; }
 	}
 
 	public int EnterAppCount
 	{
-		get
-		{
-			return m_nEnterAppCount;
-		}
-		set
-		{
-			m_nEnterAppCount = value;
-		}
+		get { return m_nEnterAppCount; }
+		set { m_nEnterAppCount = value; }
 	}
 
 	public int UnLockSignType
 	{
-		get
-		{
-			return m_nUnLockSignType;
-		}
-		set
-		{
-			m_nUnLockSignType = value;
-		}
+		get { return m_nUnLockSignType; }
+		set { m_nUnLockSignType = value; }
 	}
 
 	public int UnLockSignID
 	{
-		get
-		{
-			return m_nUnLockSignID;
-		}
-		set
-		{
-			m_nUnLockSignID = value;
-		}
+		get { return m_nUnLockSignID; }
+		set { m_nUnLockSignID = value; }
 	}
 
 	public iDataCenter()
@@ -342,10 +226,283 @@ public class iDataCenter
 		m_nEnterAppCount = 0;
 	}
 
+	private string GetSavePath(string fileName)
+	{
+		return System.IO.Path.Combine(Application.persistentDataPath, fileName);
+	}
+
+	private bool TryReadEncryptedFile(string path, ref string decryptedContent)
+	{
+		decryptedContent = string.Empty;
+
+		if (!File.Exists(path))
+		{
+			return false;
+		}
+
+		try
+		{
+			string encrypted = File.ReadAllText(path);
+			if (string.IsNullOrEmpty(encrypted))
+			{
+				return false;
+			}
+
+			decryptedContent = XXTEAUtils.Decrypt(encrypted, iGameApp.GetInstance().GetKey());
+			return !string.IsNullOrEmpty(decryptedContent);
+		}
+		catch
+		{
+			return false;
+		}
+	}
+
+	private bool TryLoadXmlDocument(string path, out XmlDocument doc)
+	{
+		doc = null;
+
+		string xmlText = string.Empty;
+		if (!TryReadEncryptedFile(path, ref xmlText))
+		{
+			return false;
+		}
+
+		try
+		{
+			XmlDocument xmlDocument = new XmlDocument();
+			xmlDocument.LoadXml(xmlText);
+			doc = xmlDocument;
+			return true;
+		}
+		catch
+		{
+			doc = null;
+			return false;
+		}
+	}
+
+	private bool HasChild(XmlNode root, string childName)
+	{
+		if (root == null)
+		{
+			return false;
+		}
+
+		foreach (XmlNode node in root.ChildNodes)
+		{
+			if (node != null && node.Name == childName)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private int CountExpectedSections(XmlNode root)
+	{
+		if (root == null)
+		{
+			return 0;
+		}
+
+		int count = 0;
+		string[] expected =
+		{
+			"passedlevel",
+			"character",
+			"weapon",
+			"skill",
+			"equipstone",
+			"materials",
+			"unlocksign",
+			"achievementdata"
+		};
+
+		for (int i = 0; i < expected.Length; i++)
+		{
+			if (HasChild(root, expected[i]))
+			{
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+	private bool IsValidGameDataDocument(XmlDocument doc)
+	{
+		if (doc == null || doc.DocumentElement == null)
+		{
+			return false;
+		}
+
+		XmlNode root = doc.DocumentElement;
+		if (root.Name != "gamedata")
+		{
+			return false;
+		}
+		int coreCount = 0;
+		string[] coreSections =
+		{
+			"character",
+			"weapon",
+			"skill",
+			"equipstone",
+			"materials",
+			"unlocksign"
+		};
+
+		for (int i = 0; i < coreSections.Length; i++)
+		{
+			if (HasChild(root, coreSections[i]))
+			{
+				coreCount++;
+			}
+		}
+
+		return coreCount >= 4;
+	}
+
+	private bool IsSeverelyDifferent(XmlDocument currentDoc, XmlDocument backupDoc)
+	{
+		if (!IsValidGameDataDocument(currentDoc) || !IsValidGameDataDocument(backupDoc))
+		{
+			return false;
+		}
+
+		XmlNode currentRoot = currentDoc.DocumentElement;
+		XmlNode backupRoot = backupDoc.DocumentElement;
+
+		if (currentRoot == null || backupRoot == null)
+		{
+			return false;
+		}
+
+		if (currentRoot.Name != backupRoot.Name)
+		{
+			return true;
+		}
+		int currentSections = CountExpectedSections(currentRoot);
+		int backupSections = CountExpectedSections(backupRoot);
+		int diff = Math.Abs(currentSections - backupSections);
+		if (diff >= 4)
+		{
+			return true;
+		}
+		if (currentSections < 4 && backupSections >= 4)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	private void RestoreBackupToCurrent()
+	{
+		string currentPath = GetSavePath(SAVE_FILE);
+		string backupPath = GetSavePath(BACKUP_FILE);
+
+		if (!File.Exists(backupPath))
+		{
+			return;
+		}
+
+		try
+		{
+			string backupEncrypted = File.ReadAllText(backupPath);
+			if (string.IsNullOrEmpty(backupEncrypted))
+			{
+				return;
+			}
+
+			File.WriteAllText(currentPath, backupEncrypted);
+		}
+		catch
+		{
+		}
+	}
+
+	private void SaveEncryptedAtomic(string xmlText)
+	{
+		string currentPath = GetSavePath(SAVE_FILE);
+		string backupPath = GetSavePath(BACKUP_FILE);
+		string tempPath = GetSavePath(TEMP_FILE);
+
+		string encrypted = XXTEAUtils.Encrypt(xmlText, iGameApp.GetInstance().GetKey());
+
+		try
+		{
+			File.WriteAllText(tempPath, encrypted);
+		}
+		catch
+		{
+			return;
+		}
+
+		XmlDocument currentDoc;
+		bool currentValid = TryLoadXmlDocument(currentPath, out currentDoc) && IsValidGameDataDocument(currentDoc);
+
+		try
+		{
+			if (currentValid && File.Exists(currentPath))
+			{
+				File.Replace(tempPath, currentPath, backupPath, true);
+			}
+			else
+			{
+				if (File.Exists(currentPath))
+				{
+					File.Delete(currentPath);
+				}
+				File.Move(tempPath, currentPath);
+			}
+		}
+		catch
+		{
+			try
+			{
+				if (File.Exists(currentPath))
+				{
+					File.Delete(currentPath);
+				}
+				File.Move(tempPath, currentPath);
+			}
+			catch
+			{
+			}
+		}
+	}
+
 	public bool Load()
 	{
-		string content = string.Empty;
-		if (!Utils.FileGetString("gamedata.xml", ref content))
+		XmlDocument currentDoc;
+		XmlDocument backupDoc;
+		bool currentOk = TryLoadXmlDocument(GetSavePath(SAVE_FILE), out currentDoc) && IsValidGameDataDocument(currentDoc);
+		bool backupOk = TryLoadXmlDocument(GetSavePath(BACKUP_FILE), out backupDoc) && IsValidGameDataDocument(backupDoc);
+
+		XmlDocument chosenDoc = null;
+
+		if (currentOk && backupOk)
+		{
+			if (IsSeverelyDifferent(currentDoc, backupDoc))
+			{
+				chosenDoc = backupDoc;
+				RestoreBackupToCurrent();
+			}
+			else
+			{
+				chosenDoc = currentDoc;
+			}
+		}
+		else if (currentOk)
+		{
+			chosenDoc = currentDoc;
+		}
+		else if (backupOk)
+		{
+			chosenDoc = backupDoc;
+			RestoreBackupToCurrent();
+		}
+		else
 		{
 			m_bFirstTimePlay = true;
 			SetCharacter(1, 1, 0);
@@ -354,16 +511,15 @@ public class iDataCenter
 			Save();
 			return false;
 		}
-		content = XXTEAUtils.Decrypt(content, iGameApp.GetInstance().GetKey());
-		XmlDocument xmlDocument = new XmlDocument();
-		xmlDocument.LoadXml(content);
+
 		string value = string.Empty;
 		string text = string.Empty;
-		XmlNode documentElement = xmlDocument.DocumentElement;
+		XmlNode documentElement = chosenDoc.DocumentElement;
 		if (MyUtils.GetAttribute(documentElement, "version", ref value))
 		{
 			text = value;
 		}
+
 		if (text == "1.0.0")
 		{
 			Load_1_0(documentElement);
@@ -372,6 +528,7 @@ public class iDataCenter
 		{
 			Load_1_0(documentElement);
 		}
+
 		return true;
 	}
 
@@ -380,9 +537,11 @@ public class iDataCenter
 		XmlDocument xmlDocument = new XmlDocument();
 		XmlNode newChild = xmlDocument.CreateXmlDeclaration("1.0", "UTF-8", "no");
 		xmlDocument.AppendChild(newChild);
+
 		string empty = string.Empty;
 		XmlElement xmlElement = xmlDocument.CreateElement("gamedata");
 		xmlDocument.AppendChild(xmlElement);
+
 		xmlElement.SetAttribute("version", m_sVersion);
 		xmlElement.SetAttribute("gold", m_nGold.ToString());
 		xmlElement.SetAttribute("crystal", m_nCrystal.ToString());
@@ -398,6 +557,7 @@ public class iDataCenter
 		xmlElement.SetAttribute("isTutorialVillage", m_bTutorialVillage.ToString());
 		xmlElement.SetAttribute("isEvaluate", m_bEvaluate.ToString());
 		xmlElement.SetAttribute("enterappcount", m_nEnterAppCount.ToString());
+
 		XmlElement xmlElement2 = xmlDocument.CreateElement("passedlevel");
 		xmlElement.AppendChild(xmlElement2);
 		foreach (CLevelSaveInfo item in m_ltLevelSaveInfo)
@@ -407,6 +567,7 @@ public class iDataCenter
 			xmlElement3.SetAttribute("id", item.nID.ToString());
 			xmlElement3.SetAttribute("isignorecg", item.isIgnoreCG.ToString());
 		}
+
 		XmlElement xmlElement4 = xmlDocument.CreateElement("character");
 		xmlElement.AppendChild(xmlElement4);
 		xmlElement4.SetAttribute("select", m_nCurCharID.ToString());
@@ -418,6 +579,7 @@ public class iDataCenter
 			xmlElement5.SetAttribute("level", value2.nLevel.ToString());
 			xmlElement5.SetAttribute("exp", value2.nExp.ToString());
 		}
+
 		XmlElement xmlElement6 = xmlDocument.CreateElement("weapon");
 		xmlElement.AppendChild(xmlElement6);
 		empty = string.Empty;
@@ -435,6 +597,7 @@ public class iDataCenter
 			xmlElement7.SetAttribute("id", item2.Key.ToString());
 			xmlElement7.SetAttribute("level", item2.Value.ToString());
 		}
+
 		XmlElement xmlElement8 = xmlDocument.CreateElement("skill");
 		xmlElement.AppendChild(xmlElement8);
 		foreach (KeyValuePair<int, int[]> item3 in m_dictSelectPassiveSkill)
@@ -458,6 +621,7 @@ public class iDataCenter
 			xmlElement10.SetAttribute("id", item4.Key.ToString());
 			xmlElement10.SetAttribute("level", item4.Value.ToString());
 		}
+
 		XmlElement xmlElement11 = xmlDocument.CreateElement("equipstone");
 		xmlElement.AppendChild(xmlElement11);
 		xmlElement11.SetAttribute("select", m_nCurEquipStone.ToString());
@@ -468,6 +632,7 @@ public class iDataCenter
 			xmlElement12.SetAttribute("id", item5.Key.ToString());
 			xmlElement12.SetAttribute("level", item5.Value.ToString());
 		}
+
 		XmlElement xmlElement13 = xmlDocument.CreateElement("materials");
 		xmlElement.AppendChild(xmlElement13);
 		foreach (KeyValuePair<int, ProtectedInt32> dictMaterial in m_dictMaterials)
@@ -480,6 +645,7 @@ public class iDataCenter
 				xmlElement14.SetAttribute("count", dictMaterial.Value.ToString());
 			}
 		}
+
 		XmlElement xmlElement15 = xmlDocument.CreateElement("unlocksign");
 		xmlElement.AppendChild(xmlElement15);
 		xmlElement15.SetAttribute("unlocksigntype", m_nUnLockSignType.ToString());
@@ -512,24 +678,25 @@ public class iDataCenter
 			xmlElement19.SetAttribute("id", item9.Key.ToString());
 			xmlElement19.SetAttribute("sign", item9.Value.ToString());
 		}
-		gyAchievementSystem.CAchievementCenter achievementCenter = gyAchievementSystem.CAchievementManager.GetInstance().GetAchievementCenter();
+		CAchievementCenter achievementCenter = CAchievementManager.GetInstance().GetAchievementCenter();
 		if (achievementCenter != null)
 		{
 			achievementCenter.SaveData(xmlDocument, xmlElement);
 		}
+
 		StringWriter stringWriter = new StringWriter();
 		xmlDocument.Save(stringWriter);
-		string content = XXTEAUtils.Encrypt(stringWriter.ToString(), iGameApp.GetInstance().GetKey());
-		Utils.FileSaveString("gamedata.xml", content);
+		SaveEncryptedAtomic(stringWriter.ToString());
 	}
 
 	protected void Load_1_0(XmlNode root)
 	{
 		string value = string.Empty;
+
 		if (MyUtils.GetAttribute(root, "gold", ref value))
 		{
-            m_nGold = int.Parse(value);
-        }
+			m_nGold = int.Parse(value);
+		}
 		if (MyUtils.GetAttribute(root, "crystal", ref value))
 		{
 			m_nCrystal = int.Parse(value);
@@ -582,6 +749,7 @@ public class iDataCenter
 		{
 			m_nEnterAppCount = int.Parse(value);
 		}
+
 		foreach (XmlNode item in root)
 		{
 			if (item.Name == "passedlevel")
@@ -602,9 +770,7 @@ public class iDataCenter
 			}
 			else if (item.Name == "achievementdata")
 			{
-				gyAchievementSystem.CAchievementCenter achievementCenter =
-					gyAchievementSystem.CAchievementManager.GetInstance().GetAchievementCenter();
-
+				CAchievementCenter achievementCenter = CAchievementManager.GetInstance().GetAchievementCenter();
 				if (achievementCenter != null)
 				{
 					achievementCenter.LoadData(item);
@@ -815,7 +981,7 @@ public class iDataCenter
 			}
 		}
 	}
-
+	
 	public List<int> GetLevelList()
 	{
 		return m_ltLevelList;

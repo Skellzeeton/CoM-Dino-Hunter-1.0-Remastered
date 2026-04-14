@@ -42,10 +42,14 @@ public class kMobType
 <root>
 	<achievement id="1" type="5" name="The Dinosaur Hunter" desc="Kill {0:d} of any Dinosaur Type." step1="500,2,3" step2="2500,2,10" step3="10000,2,25" />
 	<achievement id="2" type="1" name="A Newborn Hunter" desc="Get a character to level {0:d}." step1="5,2,3" step2="15,2,10" step3="30,2,25" />
-	<achievement id="3" type="2" name="History Maker" desc="Complete {0:d}% of stages" step1="20,2,3" step2="50,2,10" step3="100,2,25" />
-	<achievement id="6" type="11" name="Stage Completionist" desc="Complete {0:d} Stages" step1="25,2,3" step2="100,2,10" step3="250,2,25" />
-	<achievement id="9" type="3" name="Great Learner" desc="Master {0:d} passive skills." step1="4,2,3" step2="20,2,10" step3="36,2,25" />
-	<achievement id="10" type="4" name="Man at Arms" desc="Own {0:d} weapons." step1="5,2,3" step2="12,2,10" step3="28,2,25" />
+	<achievement id="3" type="2" name="History Maker" desc="Complete {0:d}% of stages" step1="10,2,3" step2="50,2,10" step3="100,2,25" />
+	<achievement id="4" type="11" name="Stage Completionist" desc="Complete {0:d} stages" step1="25,2,3" step2="100,2,10" step3="250,2,25" />
+	<achievement id="5" type="12" name="Sidelevel Completionist" desc="Complete {0:d} side levels" step1="25,2,3" step2="100,2,10" step3="250,2,25" />
+	<achievement id="6" type="3" name="Great Learner" desc="Master {0:d} passive skills." step1="4,2,3" step2="20,2,10" step3="36,2,25" />
+	<achievement id="7" type="9" name="Fully Trained" desc="Upgrade {0:d} passive skills." step1="12,2,3" step2="44,2,10" step3="144,2,25" />
+	<achievement id="8" type="4" name="Man at Arms" desc="Own {0:d} weapons." step1="5,2,3" step2="12,2,10" step3="28,2,25" />
+	<achievement id="9" type="10" name="Overprepared" desc="Upgrade {0:d} weapons." step1="16,2,3" step2="40,2,10" step3="112,2,25" />
+	<achievement id="10" type="13" name="Crystal Spender" desc="Make {0:d} purchases in crystals." step1="3,2,3" step2="10,2,10" step3="25,2,25" />
 	<achievement id="11" type="14" name="Material Hoarder" desc="Collect {0:d} Materials." step1="100,2,3" step2="500,2,10" step3="1250,2,25" />
 	<achievement id="12" type="6" param="2,2" name="T Rex Slayer" desc="Kill {0:d} T Rexs." step1="10,2,3" step2="50,2,10" step3="100,2,25" />
 	<achievement id="13" type="6" param="2,4" name="Killosaurus Rex Slayer" desc="Kill {0:d} Killosaurus Rexs." step1="10,2,3" step2="50,2,10" step3="100,2,25" />

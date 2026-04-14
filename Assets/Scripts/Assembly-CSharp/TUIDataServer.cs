@@ -1326,6 +1326,7 @@ public class TUIDataServer
 								return;
 							}
 							dataCenter3.AddCrystal(-stashCapacity.nPrice);
+							CAchievementManager.GetInstance().AddAchievement(13);
 							dataCenter3.StashLevel++;
 							dataCenter3.Save();
 							success = true;
@@ -1801,11 +1802,13 @@ public class TUIDataServer
 									return;
 								}
 								dataCenter5.AddCrystal(-skillInfo5.nPurchasePrice);
+								CAchievementManager.GetInstance().AddAchievement(13);
 								dataCenter5.SetPassiveSkill(skillInfo3.nID, skillInfo5.nLevel);
 								dataCenter5.Save();
 								flag3 = true;
 								/*iGameApp.GetInstance().Flurry_UpgradeSkill(skillInfo3.nID);
 								CFlurryManager.GetInstance().ConsumeCrystal(CFlurryManager.kConsumeType.Skill);*/
+								CAchievementManager.GetInstance().AddAchievement(9);
 							}
 							else
 							{
@@ -1821,6 +1824,7 @@ public class TUIDataServer
 								flag3 = true;
 								/*iGameApp.GetInstance().Flurry_UpgradeSkill(skillInfo3.nID);
 								CFlurryManager.GetInstance().ConsumeGold(CFlurryManager.kConsumeType.Skill);*/
+								CAchievementManager.GetInstance().AddAchievement(9);
 							}
 							if (flag3)
 							{
@@ -2548,10 +2552,12 @@ public class TUIDataServer
 						else
 						{
 							//iGameApp.GetInstance().Flurry_UpgradeWeapon(wParam2);
+							CAchievementManager.GetInstance().AddAchievement(10);
 						}
 						if (cLevelUpWeapon.isCrystalTrade)
 						{
 							//CFlurryManager.GetInstance().ConsumeCrystal(CFlurryManager.kConsumeType.Weapon);
+							CAchievementManager.GetInstance().AddAchievement(13);
 						}
 						else
 						{

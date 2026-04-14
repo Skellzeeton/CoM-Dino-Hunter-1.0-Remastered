@@ -65,6 +65,8 @@ public class GameLevelInfo
 	public int m_nProccess;
 	
 	public bool m_bLimitMelee;
+	
+	public bool bIsSideLevel = true;
 
 	public GameLevelInfo()
 	{

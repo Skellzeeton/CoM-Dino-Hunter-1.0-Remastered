@@ -1758,6 +1758,7 @@ public class iGameUIBase : MonoBehaviour
 		{
 			dataCenter.StashLevel++;
 			dataCenter.AddCrystal(-stashCapacity.nPrice);
+			CAchievementManager.GetInstance().AddAchievement(13);
 			dataCenter.Save();
 			if (m_UIManager != null && m_UIManager.mPanelMaterial != null)
 			{

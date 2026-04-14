@@ -47,6 +47,26 @@ public class CCharUser : CCharPlayer
 			return iCameraTrail2.transform.forward;
 		}
 	}
+	
+	public float CurSkillCDCount
+	{
+		get { return m_fSkillCDcount; }
+	}
+
+	public float CurSkillCDRemain
+	{
+		get { return Mathf.Max(0f, m_fSkillCD - m_fSkillCDcount); }
+	}
+
+	public float CurSkillCDFill
+	{
+		get
+		{
+			if (m_fSkillCD <= 0f)
+				return 0f;
+			return Mathf.Clamp01(m_fSkillCDcount / m_fSkillCD);
+		}
+	}
 
 	public float CurSkillCD
 	{

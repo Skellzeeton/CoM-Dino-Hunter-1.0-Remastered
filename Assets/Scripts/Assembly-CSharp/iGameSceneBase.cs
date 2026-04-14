@@ -980,7 +980,17 @@ public class iGameSceneBase
 				}
 				dataCenter.Save();
 				m_GameState.isCheckUnLock = true;
-				CAchievementManager.GetInstance().AddAchievement(11);
+				if (CurGameLevelInfo != null)
+				{
+					if (CurGameLevelInfo.bIsSideLevel)
+					{
+						CAchievementManager.GetInstance().AddAchievement(12);
+					}
+					else
+					{
+						CAchievementManager.GetInstance().AddAchievement(11);
+					}
+				}
 				if (CurGameLevelInfo != null && CurGameLevelInfo.ltRewardMaterial != null)
 				{
 					int num = 0;

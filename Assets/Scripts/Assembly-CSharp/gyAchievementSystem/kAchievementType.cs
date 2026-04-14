@@ -20,7 +20,15 @@ namespace gyAchievementSystem
 
 		public const int DefenceWave = 8;
 
+		public const int UpgradeSkillCount = 9;
+
+		public const int UpgredeWeaponCount = 10;
+		
 		public const int WinGameMain = 11;
+		
+		public const int WinGameSide = 12;
+
+		public const int ConsumeCrystal = 13;
 		
 		public const int GainMaterialCount = 14;
 	}
