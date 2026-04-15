@@ -56,6 +56,22 @@ public class iGameApp
 		PrefabManager.Initialize();
 		m_GameData = new iGameData();
 		m_GameData.Load();
+		iDataCenter dataCenter = m_GameData.GetDataCenter();
+		if (dataCenter != null)
+		{
+			TAudioManager audio = TAudioManager.instance;
+			if (audio != null)
+			{
+				audio.ApplySettings(dataCenter.MusicSwitch, dataCenter.SoundSwitch, dataCenter.AmbienceSwitch);
+				audio.onPersistSettings = (music, sound, ambience) =>
+				{
+					dataCenter.MusicSwitch = music;
+					dataCenter.SoundSwitch = sound;
+					dataCenter.AmbienceSwitch = ambience;
+					dataCenter.Save();
+				};
+			}
+		}
 		m_GameState = new iGameState();
 		m_GameState.Initialize();
 		CUISound.GetInstance().PreloadAlwaysSounds();

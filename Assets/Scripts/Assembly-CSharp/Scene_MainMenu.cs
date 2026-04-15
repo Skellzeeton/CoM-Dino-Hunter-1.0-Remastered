@@ -90,6 +90,8 @@ public class Scene_MainMenu : MonoBehaviour
 	private bool sfx_open_now = true;
 
 	private bool music_open_now = true;
+	
+	private bool ambience_open_now = true;
 
 	private void Awake()
 	{
@@ -107,8 +109,21 @@ public class Scene_MainMenu : MonoBehaviour
 			img_arrow_right.GetComponent<Animation>().wrapMode = WrapMode.Loop;
 			img_arrow_right.GetComponent<Animation>().Play();
 		}
-		CUISound.GetInstance().Play("Amb_MapMenu");
 		CUISound.GetInstance().Play("Amb_torch");
+		iDataCenter dataCenter = iGameApp.GetInstance().m_GameData.GetDataCenter();
+		if (dataCenter != null)
+		{
+			ambience_open_now = dataCenter.AmbienceSwitch;
+
+			if (ambience_open_now)
+			{
+				CUISound.GetInstance().Play("Amb_MapMenu");
+			}
+			else
+			{
+				CUISound.GetInstance().Stop("Amb_MapMenu");
+			}
+		}
 	}
 
 	private void Start()
@@ -183,9 +198,11 @@ public class Scene_MainMenu : MonoBehaviour
 			{
 				bool music_open = m_event.GetEventInfo().option_info.music_open;
 				bool sfx_open = m_event.GetEventInfo().option_info.sfx_open;
-				popup_option.SetOption(music_open, sfx_open);
+				bool ambience_open = m_event.GetEventInfo().option_info.ambience_open;
+				popup_option.SetOption(music_open, sfx_open, ambience_open);
 				sfx_open_now = sfx_open;
 				music_open_now = music_open;
+				ambience_open_now = ambience_open;
 			}
 			else
 			{
@@ -352,6 +369,33 @@ public class Scene_MainMenu : MonoBehaviour
 			{
 				popup_option.SetSFXNow();
 				sfx_open_now = popup_option.GetSFXNow();
+			}
+			else
+			{
+				popup_option.RestoreOption();
+			}
+		}
+		else if (m_event.GetEventName() == "TUIEvent_ChangeAmb")
+		{
+			if (m_event.GetControlSuccess())
+			{
+				popup_option.SetAmbNow();
+				ambience_open_now = popup_option.GetAmbNow();
+
+				iDataCenter dataCenter = iGameApp.GetInstance().m_GameData.GetDataCenter();
+				if (dataCenter != null)
+				{
+					dataCenter.AmbienceSwitch = ambience_open_now;
+				}
+
+				if (ambience_open_now)
+				{
+					CUISound.GetInstance().Play("Amb_MapMenu");
+				}
+				else
+				{
+					CUISound.GetInstance().Stop("Amb_MapMenu");
+				}
 			}
 			else
 			{
@@ -627,6 +671,14 @@ public class Scene_MainMenu : MonoBehaviour
 		if (event_type == 1 || event_type == 2)
 		{
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMainMenu("TUIEvent_ChangeSFX"));
+		}
+	}
+	
+	public void TUIEvent_BtnAmb(TUIControl control, int event_type, float wparam, float lparam, object data)
+	{
+		if (event_type == 1 || event_type == 2)
+		{
+			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMainMenu("TUIEvent_ChangeAmb"));
 		}
 	}
 

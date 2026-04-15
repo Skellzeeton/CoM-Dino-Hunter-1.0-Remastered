@@ -1,26 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1019424302562948}
-  m_IsPrefabParent: 1
-  m_IsExploded: 0
 --- !u!1 &1019424302562948
 GameObject:
-  serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
-  - 4: {fileID: 4767833683206514}
-  - 114: {fileID: 114568126053937907}
+  - component: {fileID: 4767833683206514}
+  - component: {fileID: 114568126053937907}
   m_Layer: 0
   m_Name: GameUI_PauseDialog
   m_TagString: Untagged
@@ -31,24 +20,30 @@ GameObject:
 --- !u!4 &4767833683206514
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019424302562948}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114568126053937907
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019424302562948}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
-  m_Name:
+  m_Name: 
+  m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 3173f4cb114abfd459da34b0d54b2652, type: 2}
   sprites:
   - name: guanbi
@@ -64,6 +59,7 @@ MonoBehaviour:
       y: 954
       width: 64
       height: 70
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -81,6 +77,7 @@ MonoBehaviour:
       y: 745
       width: 204
       height: 76
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -98,6 +95,7 @@ MonoBehaviour:
       y: 874
       width: 137
       height: 102
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -115,6 +113,7 @@ MonoBehaviour:
       y: 838
       width: 2
       height: 2
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -132,6 +131,7 @@ MonoBehaviour:
       y: 732
       width: 84
       height: 89
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
       y: 894
       width: 63
       height: 59
+    rotated: 0
     paddingLeft: 0.14285715
     paddingRight: 0.1904762
     paddingTop: 0.20338982
@@ -166,6 +167,7 @@ MonoBehaviour:
       y: 687
       width: 48
       height: 57
+    rotated: 0
     paddingLeft: 0.3125
     paddingRight: 0.4375
     paddingTop: 0.2631579
@@ -183,6 +185,7 @@ MonoBehaviour:
       y: 507
       width: 84
       height: 89
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -200,6 +203,7 @@ MonoBehaviour:
       y: 507
       width: 84
       height: 89
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -217,6 +221,7 @@ MonoBehaviour:
       y: 687
       width: 54
       height: 57
+    rotated: 0
     paddingLeft: 0.2777778
     paddingRight: 0.2777778
     paddingTop: 0.19298245
@@ -234,6 +239,7 @@ MonoBehaviour:
       y: 822
       width: 251
       height: 202
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -251,6 +257,7 @@ MonoBehaviour:
       y: 501
       width: 127
       height: 95
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -268,6 +275,7 @@ MonoBehaviour:
       y: 616
       width: 39
       height: 35
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -285,6 +293,7 @@ MonoBehaviour:
       y: 674
       width: 191
       height: 147
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -302,6 +311,7 @@ MonoBehaviour:
       y: 831
       width: 58
       height: 62
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -319,6 +329,7 @@ MonoBehaviour:
       y: 535
       width: 52
       height: 50
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -336,6 +347,7 @@ MonoBehaviour:
       y: 597
       width: 204
       height: 76
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -353,10 +365,47 @@ MonoBehaviour:
       y: 607
       width: 221
       height: 66
+    rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: shengyin_green
+    outer:
+      serializedVersion: 2
+      x: 9
+      y: 517
+      width: 63
+      height: 59
+    inner:
+      serializedVersion: 2
+      x: 9
+      y: 517
+      width: 63
+      height: 59
+    rotated: 0
+    paddingLeft: 0.1428571
+    paddingRight: 0.1904762
+    paddingTop: 0.2033898
+    paddingBottom: 0.3220339
+  - name: shengyin_greenoff
+    outer:
+      serializedVersion: 2
+      x: 370
+      y: 512
+      width: 84
+      height: 89
+    inner:
+      serializedVersion: 2
+      x: 370
+      y: 512
+      width: 84
+      height: 89
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0.01123596
   mCoordinates: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}

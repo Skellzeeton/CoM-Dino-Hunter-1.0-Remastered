@@ -734,7 +734,20 @@ public class iGameSceneBase
 			}
 		}
 		CSoundScene.GetInstance().PlayBGM(m_curGameLevelInfo.sBGM);
-		CSoundScene.GetInstance().PlayAmbienceBGM(m_curGameLevelInfo.sBGMAmbience);
+		if (dataCenter != null)
+		{
+			CSoundScene.GetInstance().PlayBGM(m_curGameLevelInfo.sBGM);
+			if (dataCenter.AmbienceSwitch)
+			{
+				CSoundScene.GetInstance().PlayAmbienceBGM(
+					m_curGameLevelInfo.sBGMAmbience
+				);
+			}
+			else
+			{
+				CSoundScene.GetInstance().StopAmbienceBGM();
+			}
+		}
 		m_CameraTrail.Initialize(m_User, !flag);
 		m_CameraTrail.SetRotateLimit(-10f, 60f, 0f, 0f);
 		m_CameraTrail.Active = true;

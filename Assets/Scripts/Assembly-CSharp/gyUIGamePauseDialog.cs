@@ -5,6 +5,8 @@ public class gyUIGamePauseDialog : MonoBehaviour
 	public gyUISwitch mMusicSwitch;
 
 	public gyUISwitch mSoundSwitch;
+	
+	public gyUISwitch mAmbSwitch;
 
 	public UILabel mTaskDesc;
 

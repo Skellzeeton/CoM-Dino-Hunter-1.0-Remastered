@@ -142,6 +142,7 @@ public class TUIDataServer
 					tUIGameInfo2.option_info = new TUIOptionInfo();
 					tUIGameInfo2.option_info.music_open = dataCenter2.MusicSwitch;
 					tUIGameInfo2.option_info.sfx_open = dataCenter2.SoundSwitch;
+					tUIGameInfo2.option_info.ambience_open = dataCenter2.AmbienceSwitch;
 					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), tUIGameInfo2));
 				}
 			}
@@ -229,6 +230,21 @@ public class TUIDataServer
 					dataCenter4.SoundSwitch = !dataCenter4.SoundSwitch;
 					dataCenter4.Save();
 					TAudioManager.instance.isSoundOn = dataCenter4.SoundSwitch;
+					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), true));
+				}
+			}
+		}
+		else if (m_event.GetEventName() == "TUIEvent_ChangeAmb")
+		{
+			iGameData gameData4 = iGameApp.GetInstance().m_GameData;
+			if (gameData4 != null)
+			{
+				iDataCenter dataCenter4 = gameData4.GetDataCenter();
+				if (dataCenter4 != null)
+				{
+					dataCenter4.AmbienceSwitch = !dataCenter4.AmbienceSwitch;
+					dataCenter4.Save();
+					TAudioManager.instance.isAmbienceOn = dataCenter4.AmbienceSwitch;
 					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), true));
 				}
 			}

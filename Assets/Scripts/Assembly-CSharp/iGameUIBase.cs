@@ -608,6 +608,10 @@ public class iGameUIBase : MonoBehaviour
 				{
 					m_UIManager.mGamePauseDialog.mSoundSwitch.Switch(dataCenter.SoundSwitch);
 				}
+				if (m_UIManager.mGamePauseDialog.mAmbSwitch != null)
+				{
+					m_UIManager.mGamePauseDialog.mAmbSwitch.Switch(dataCenter.AmbienceSwitch);
+				}
 			}
 			if (m_GameScene.CurGameLevelInfo != null && m_UIManager.mGamePauseDialog.mTaskDesc != null)
 			{
@@ -983,6 +987,8 @@ public class iGameUIBase : MonoBehaviour
 			gyUIEventRegister2.RegisterOnClick(Event_Pause_MusicSwitch);
 			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mSoundSwitch.gameObject);
 			gyUIEventRegister2.RegisterOnClick(Event_Pause_SoundSwitch);
+			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mAmbSwitch.gameObject);
+			gyUIEventRegister2.RegisterOnClick(Event_Pause_AmbSwitch);
 			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mbtnClose);
 			gyUIEventRegister2.RegisterOnClick(Event_Pause_Close);
 			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mbtnContinue);
@@ -1056,6 +1062,8 @@ public class iGameUIBase : MonoBehaviour
 			gyUIEventRegister2.RegisterOnClick(Event_Pause_MusicSwitch);
 			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mSoundSwitch.gameObject);
 			gyUIEventRegister2.RegisterOnClick(Event_Pause_SoundSwitch);
+			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mAmbSwitch.gameObject);
+			gyUIEventRegister2.RegisterOnClick(Event_Pause_AmbSwitch);
 			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mbtnClose);
 			gyUIEventRegister2.RegisterOnClick(Event_Pause_Close);
 			gyUIEventRegister2 = GetEventRegister(m_UIManager.mGamePauseDialog.mbtnContinue);
@@ -1124,6 +1132,34 @@ public class iGameUIBase : MonoBehaviour
 		}
 	}
 
+	protected void Event_Pause_AmbSwitch()
+	{
+		iDataCenter dataCenter = m_GameData.GetDataCenter();
+		if (dataCenter != null)
+		{
+			dataCenter.AmbienceSwitch = !dataCenter.AmbienceSwitch;
+			TAudioManager.instance.isAmbienceOn = dataCenter.AmbienceSwitch;
+			if (dataCenter.AmbienceSwitch)
+			{
+				if (m_GameScene != null && m_GameScene.CurGameLevelInfo != null
+				                        && !string.IsNullOrEmpty(m_GameScene.CurGameLevelInfo.sBGMAmbience))
+				{
+					CSoundScene.GetInstance().PlayAmbienceBGM(m_GameScene.CurGameLevelInfo.sBGMAmbience);
+				}
+			}
+			else
+			{
+				CSoundScene.GetInstance().StopAmbienceBGM();
+			}
+			dataCenter.Save();
+			if (m_UIManager != null && m_UIManager.mGamePauseDialog != null
+			                        && m_UIManager.mGamePauseDialog.mAmbSwitch != null)
+			{
+				m_UIManager.mGamePauseDialog.mAmbSwitch.Switch(dataCenter.AmbienceSwitch);
+			}
+		}
+	}
+	
 	protected void Event_Pause_AutoAimSwitch()
 	{
 	}

@@ -28,6 +28,7 @@ public class iDataCenter
 	protected List<CLevelSaveInfo> m_ltLevelSaveInfo;
 	protected bool m_bMusic;
 	protected bool m_bSound;
+	protected bool m_bAmbience;
 	protected bool m_bAutoAim;
 	protected int m_nUnLockSignType;
 	protected int m_nUnLockSignID;
@@ -76,6 +77,12 @@ public class iDataCenter
 	{
 		get { return m_bSound; }
 		set { m_bSound = value; }
+	}
+	
+	public bool AmbienceSwitch
+	{
+		get { return m_bAmbience; }
+		set { m_bAmbience = value; }
 	}
 
 	public bool AutoAimSwitch
@@ -193,6 +200,7 @@ public class iDataCenter
 	{
 		m_bMusic = true;
 		m_bSound = true;
+		m_bAmbience = true;
 		m_bAutoAim = true;
 		m_nGold = new ProtectedInt32();
 		m_nCrystal = new ProtectedInt32();
@@ -553,6 +561,7 @@ public class iDataCenter
 		xmlElement.SetAttribute("crystaltotalconsume", m_nCrystalTotalConsume.ToString());
 		xmlElement.SetAttribute("isMusic", m_bMusic.ToString());
 		xmlElement.SetAttribute("isSound", m_bSound.ToString());
+		xmlElement.SetAttribute("isAmbience", m_bAmbience.ToString());
 		xmlElement.SetAttribute("isTutorial", m_bTutorial.ToString());
 		xmlElement.SetAttribute("isTutorialVillage", m_bTutorialVillage.ToString());
 		xmlElement.SetAttribute("isEvaluate", m_bEvaluate.ToString());
@@ -732,6 +741,10 @@ public class iDataCenter
 		if (MyUtils.GetAttribute(root, "isSound", ref value))
 		{
 			m_bSound = bool.Parse(value);
+		}
+		if (MyUtils.GetAttribute(root, "isAmbience", ref value))
+		{
+			m_bAmbience = bool.Parse(value);
 		}
 		if (MyUtils.GetAttribute(root, "isTutorial", ref value))
 		{
