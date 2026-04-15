@@ -143,6 +143,7 @@ public class TUIDataServer
 					tUIGameInfo2.option_info.music_open = dataCenter2.MusicSwitch;
 					tUIGameInfo2.option_info.sfx_open = dataCenter2.SoundSwitch;
 					tUIGameInfo2.option_info.ambience_open = dataCenter2.AmbienceSwitch;
+					tUIGameInfo2.option_info.start_cutscene_replay = dataCenter2.StartCutsceneReplay;
 					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), tUIGameInfo2));
 				}
 			}
@@ -245,6 +246,20 @@ public class TUIDataServer
 					dataCenter4.AmbienceSwitch = !dataCenter4.AmbienceSwitch;
 					dataCenter4.Save();
 					TAudioManager.instance.isAmbienceOn = dataCenter4.AmbienceSwitch;
+					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), true));
+				}
+			}
+		}
+		else if (m_event.GetEventName() == "TUIEvent_ChangeStartCutsceneReplay")
+		{
+			iGameData gameData8 = iGameApp.GetInstance().m_GameData;
+			if (gameData8 != null)
+			{
+				iDataCenter dataCenter8 = gameData8.GetDataCenter();
+				if (dataCenter8 != null)
+				{
+					dataCenter8.StartCutsceneReplay = !dataCenter8.StartCutsceneReplay;
+					dataCenter8.Save();
 					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), true));
 				}
 			}

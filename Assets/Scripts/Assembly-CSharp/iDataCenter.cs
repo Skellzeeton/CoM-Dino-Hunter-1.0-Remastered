@@ -30,6 +30,7 @@ public class iDataCenter
 	protected bool m_bSound;
 	protected bool m_bAmbience;
 	protected bool m_bAutoAim;
+	protected bool m_bStartCutsceneReplay;
 	protected int m_nUnLockSignType;
 	protected int m_nUnLockSignID;
 	protected int m_nSceneProccess;
@@ -89,6 +90,12 @@ public class iDataCenter
 	{
 		get { return m_bAutoAim; }
 		set { m_bAutoAim = value; }
+	}
+	
+	public bool StartCutsceneReplay
+	{
+		get { return m_bStartCutsceneReplay; }
+		set { m_bStartCutsceneReplay = value; }
 	}
 
 	public ProtectedInt32 Gold
@@ -202,6 +209,7 @@ public class iDataCenter
 		m_bSound = true;
 		m_bAmbience = true;
 		m_bAutoAim = true;
+		m_bStartCutsceneReplay = false;
 		m_nGold = new ProtectedInt32();
 		m_nCrystal = new ProtectedInt32();
 		m_nStashLevel = new ProtectedInt32();
@@ -562,6 +570,7 @@ public class iDataCenter
 		xmlElement.SetAttribute("isMusic", m_bMusic.ToString());
 		xmlElement.SetAttribute("isSound", m_bSound.ToString());
 		xmlElement.SetAttribute("isAmbience", m_bAmbience.ToString());
+		xmlElement.SetAttribute("isStartCutsceneReplay", m_bStartCutsceneReplay.ToString());
 		xmlElement.SetAttribute("isTutorial", m_bTutorial.ToString());
 		xmlElement.SetAttribute("isTutorialVillage", m_bTutorialVillage.ToString());
 		xmlElement.SetAttribute("isEvaluate", m_bEvaluate.ToString());
@@ -745,6 +754,10 @@ public class iDataCenter
 		if (MyUtils.GetAttribute(root, "isAmbience", ref value))
 		{
 			m_bAmbience = bool.Parse(value);
+		}
+		if (MyUtils.GetAttribute(root, "isStartCutsceneReplay", ref value))
+		{
+			m_bStartCutsceneReplay = bool.Parse(value);
 		}
 		if (MyUtils.GetAttribute(root, "isTutorial", ref value))
 		{

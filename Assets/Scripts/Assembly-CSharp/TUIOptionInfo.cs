@@ -5,4 +5,6 @@ public class TUIOptionInfo
 	public bool sfx_open = true;
 	
 	public bool ambience_open = true;
+	
+	public bool start_cutscene_replay;
 }

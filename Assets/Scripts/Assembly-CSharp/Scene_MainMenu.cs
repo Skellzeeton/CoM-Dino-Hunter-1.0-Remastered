@@ -114,7 +114,6 @@ public class Scene_MainMenu : MonoBehaviour
 		if (dataCenter != null)
 		{
 			ambience_open_now = dataCenter.AmbienceSwitch;
-
 			if (ambience_open_now)
 			{
 				CUISound.GetInstance().Play("Amb_MapMenu");
@@ -199,14 +198,11 @@ public class Scene_MainMenu : MonoBehaviour
 				bool music_open = m_event.GetEventInfo().option_info.music_open;
 				bool sfx_open = m_event.GetEventInfo().option_info.sfx_open;
 				bool ambience_open = m_event.GetEventInfo().option_info.ambience_open;
-				popup_option.SetOption(music_open, sfx_open, ambience_open);
+				bool start_cutscene_replay = m_event.GetEventInfo().option_info.start_cutscene_replay;
+				popup_option.SetOption(music_open, sfx_open, ambience_open, start_cutscene_replay);
 				sfx_open_now = sfx_open;
 				music_open_now = music_open;
 				ambience_open_now = ambience_open;
-			}
-			else
-			{
-				Debug.Log("error!");
 			}
 		}
 		else if (m_event.GetEventName() == "TUIEvent_AcheviementInfo")
@@ -395,6 +391,26 @@ public class Scene_MainMenu : MonoBehaviour
 				else
 				{
 					CUISound.GetInstance().Stop("Amb_MapMenu");
+				}
+			}
+			else if (m_event.GetEventName() == "TUIEvent_ChangeStartCutsceneReplay")
+			{
+				if (m_event.GetControlSuccess())
+				{
+					popup_option.SetStartCutsceneReplayNow();
+
+					iDataCenter dataCenter = iGameApp.GetInstance().m_GameData.GetDataCenter();
+					if (dataCenter != null)
+					{
+						dataCenter.StartCutsceneReplay = popup_option.GetStartCutsceneReplayNow();
+						dataCenter.Save();
+					}
+
+					global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName(), true));
+				}
+				else
+				{
+					popup_option.RestoreOption();
 				}
 			}
 			else
@@ -679,6 +695,14 @@ public class Scene_MainMenu : MonoBehaviour
 		if (event_type == 1 || event_type == 2)
 		{
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMainMenu("TUIEvent_ChangeAmb"));
+		}
+	}
+	
+	public void TUIEvent_BtnStartCutsceneReplay(TUIControl control, int event_type, float wparam, float lparam, object data)
+	{
+		if (event_type == 1 || event_type == 2)
+		{
+			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneMainMenu("TUIEvent_ChangeStartCutsceneReplay"));
 		}
 	}
 

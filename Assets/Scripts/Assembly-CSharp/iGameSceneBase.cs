@@ -582,9 +582,14 @@ public class iGameSceneBase
 		{
 			return;
 		}
-		if (!dataCenter.IsLevelIgnoreCG(m_curGameLevelInfo.nID))
+		bool ignoreCG = dataCenter.IsLevelIgnoreCG(m_curGameLevelInfo.nID);
+		if (dataCenter.StartCutsceneReplay || !ignoreCG)
 		{
-			dataCenter.SetLevelIgnoreCG(m_curGameLevelInfo.nID, true);
+			if (!ignoreCG)
+			{
+				dataCenter.SetLevelIgnoreCG(m_curGameLevelInfo.nID, true);
+			}
+
 			if (!m_bCG)
 			{
 				m_bCG = true;
@@ -593,6 +598,7 @@ public class iGameSceneBase
 				cCGInfo.sCGContent = m_curGameLevelInfo.sCutSceneContent;
 				cCGInfo.sCGAmbience = m_curGameLevelInfo.sCutSceneAmbience;
 				cCGInfo.sCGBGM = string.Empty;
+
 				if (CCameraRoam.GetInstance().Start(Camera.main, cCGInfo, StartCG, FinishCG))
 				{
 					m_Status = kGameStatus.CutScene;
