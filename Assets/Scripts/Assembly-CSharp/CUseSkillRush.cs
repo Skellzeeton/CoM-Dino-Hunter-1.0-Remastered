@@ -68,25 +68,25 @@ public class CUseSkillRush : CUseSkill
 			{
 				if (m_pSkillInfoLevel.nAnim == 4)
 				{
-					charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.3f, m_fSpeed * mobInfo.fMoveSpeedRate, 0f);
+					charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.35f, m_fSpeed * mobInfo.fMoveSpeedRate, 0f);
 				}
 				else if (m_pSkillInfoLevel.nAnim == 2504)
 				{
-					charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.3f, m_fSpeed * mobInfo.fRushSpeedRate, 0f);
+					charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.35f, m_fSpeed * mobInfo.fRushSpeedRate, 0f);
 				}
 				else
 				{
-					charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.3f, 1f, 0f);
+					charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.35f, 1f, 0f);
 				}
 			}
 			else
 			{
-				charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.3f, 1f, 0f);
+				charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.35f, 1f, 0f);
 			}
 		}
 		else
 		{
-			charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.3f, 1f, 0f);
+			charbase.CrossAnim((kAnimEnum)m_pSkillInfoLevel.nAnim, WrapMode.Loop, 0.35f, 1f, 0f);
 		}
 		charbase.Dir3D = vector2;
 		//Debug.Log(charbase.UID + " start rush state");

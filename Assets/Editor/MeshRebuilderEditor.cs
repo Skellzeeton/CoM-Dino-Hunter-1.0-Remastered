@@ -19,19 +19,14 @@ public class MeshRebuilderEditor : EditorWindow
     private void OnGUI()
     {
         GUILayout.Label("Rebuild Legacy Mesh", EditorStyles.boldLabel);
-
         sourceMesh = (Mesh)EditorGUILayout.ObjectField("Source Mesh", sourceMesh, typeof(Mesh), false);
         overwriteOriginal = EditorGUILayout.Toggle("Replace Original Mesh", overwriteOriginal);
-
         EditorGUILayout.Space();
         GUILayout.Label("Rebuild Options", EditorStyles.boldLabel);
-
         rebuildNormals = EditorGUILayout.Toggle("Rebuild Normals", rebuildNormals);
         removeTangents = EditorGUILayout.Toggle("Remove Tangents", removeTangents);
         makeUnreadable = EditorGUILayout.Toggle("Make Mesh Unreadable", makeUnreadable);
-
         EditorGUILayout.Space();
-
         if (GUILayout.Button("Rebuild Mesh"))
         {
             Object[] targets = Selection.GetFiltered(typeof(Mesh), SelectionMode.Assets);
@@ -53,7 +48,6 @@ public class MeshRebuilderEditor : EditorWindow
         string assetPath = AssetDatabase.GetAssetPath(mesh);
         if (string.IsNullOrEmpty(assetPath)) return;
         Mesh newMesh = new Mesh();
-        newMesh.name = mesh.name + "_Rebuilt";
         newMesh.Clear();
         if (mesh.vertices != null && mesh.vertexCount > 0)
             newMesh.vertices = mesh.vertices;
@@ -83,27 +77,33 @@ public class MeshRebuilderEditor : EditorWindow
             newMesh.UploadMeshData(true);
         if (overwriteOriginal)
         {
-            string tempPath = assetPath.Replace(".asset", "_temp.asset");
-            AssetDatabase.CreateAsset(newMesh, tempPath);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-            AssetDatabase.DeleteAsset(assetPath);
-            File.Move(tempPath, assetPath);
-            AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.ForceUpdate);
-            Debug.Log("Mesh overwritten: " + assetPath);
+            string originalFileName = System.IO.Path.GetFileNameWithoutExtension(assetPath);
+            newMesh.name = originalFileName;
+            if (AssetDatabase.DeleteAsset(assetPath))
+            {
+                AssetDatabase.CreateAsset(newMesh, assetPath);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+                AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.ForceUpdate);
+                //Debug.Log("Mesh overwritten and renamed to: " + originalFileName + "  (" + assetPath + ")");
+            }
+            else
+            {
+                Debug.LogError("Failed to delete original asset at: " + assetPath);
+            }
         }
         else
         {
             int lastSlash = assetPath.LastIndexOf('/');
             string folder = (lastSlash >= 0) ? assetPath.Substring(0, lastSlash) : "Assets";
-            string newPath = folder + "/" + newMesh.name + ".asset";
-
-            AssetDatabase.CreateAsset(newMesh, newPath);
+            string baseFileName = System.IO.Path.GetFileNameWithoutExtension(assetPath) + "_Rebuilt";
+            string newPath = folder + "/" + baseFileName + ".asset";
+            string uniquePath = AssetDatabase.GenerateUniqueAssetPath(newPath);
+            newMesh.name = System.IO.Path.GetFileNameWithoutExtension(uniquePath);
+            AssetDatabase.CreateAsset(newMesh, uniquePath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-
-            Debug.Log("Mesh saved to: " + newPath);
+            Debug.Log("Mesh saved to: " + uniquePath + " (internal name: " + newMesh.name + ")");
         }
     }
 }
-

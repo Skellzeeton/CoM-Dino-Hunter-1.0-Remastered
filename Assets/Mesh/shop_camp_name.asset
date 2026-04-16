@@ -3,10 +3,11 @@
 --- !u!43 &4300000
 Mesh:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: shop_camp_name
-  serializedVersion: 8
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -26,21 +27,27 @@ Mesh:
   m_BindPose: []
   m_BoneNameHashes: 
   m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 0
   m_KeepVertices: 1
   m_KeepIndices: 1
   m_IndexFormat: 0
   m_IndexBuffer: 000001000200000003000100
-  m_Skin: []
   m_VertexData:
-    m_CurrentChannels: 137
+    serializedVersion: 3
     m_VertexCount: 4
     m_Channels:
     - stream: 0
       offset: 0
       format: 0
       dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
@@ -66,11 +73,31 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
-      offset: 20
+      offset: 0
       format: 0
-      dimension: 4
-    m_DataSize: 144
-    _typelessdata: 4c0ae83f75448cb935ad5abfab0a9d3b4618943e000080bf62be1a39dbfa4434000080bf4f0ae8bf8b408c3935ad5a3f3a78fb3efc23f93e000080bf62be1a39e4b62d34000080bf4f0ae8bf8b408c392cad5abf3a78fb3e4618943e000080bfc3c31a3976de1e34000080bf4c0ae83f75448cb929ad5a3fab0a9d3bfc23f93e000080bfc3c31a3948d35334000080bf
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 80
+    _typelessdata: 4c0ae83f75448cb935ad5abfab0a9d3b4618943e4f0ae8bf8b408c3935ad5a3f3a78fb3efc23f93e4f0ae8bf8b408c392cad5abf3a78fb3e4618943e4c0ae83f75448cb929ad5a3fab0a9d3bfc23f93e
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -127,6 +154,14 @@ Mesh:
     m_Center: {x: -0.00000017881393, y: -0.000000014581019, z: 0}
     m_Extent: {x: 1.8128145, y: 0.00026752427, z: 0.8542054}
   m_MeshUsageFlags: 0
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 0
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 

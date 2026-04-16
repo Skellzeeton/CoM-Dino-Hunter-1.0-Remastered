@@ -187,7 +187,7 @@ public class iSpawnBullet : MonoBehaviour
 					hitinfo.v3HitPos = position;
 					m_GameLogic.CaculateFunc(cCharBase, component2, m_arrFunc, m_arrValueX, m_arrValueY, ref hitinfo);
 					m_HitTargets.Add(component2.UID);
-					if (component2.isDead)
+					if (component2.isDead && (component2.IsMob() || component2.IsBoss()))
 					{
 						int fatalEff = component2.IsBoss() ? EFF_FATAL_BOSS : EFF_FATAL_MOB;
 						m_GameScene.AddEffect(component2.GetBone(1).position, Vector3.forward, 4.25f, fatalEff);
@@ -308,10 +308,10 @@ public class iSpawnBullet : MonoBehaviour
 				hitinfo2.v3HitDir = m_Transform.position - item.Pos;
 				hitinfo2.v3HitPos = item.GetBone(1).position;
 				m_GameLogic.CaculateFunc(cCharBase, item, m_arrFunc, m_arrValueX, m_arrValueY, ref hitinfo2);
-				if (item.isDead)
+				if (item.isDead && (item.IsMob() || item.IsBoss()))
 				{
 					int fatalEff = item.IsBoss() ? EFF_FATAL_BOSS : EFF_FATAL_MOB;
-					m_GameScene.AddEffect(item.GetBone(1).position, Vector3.forward, 4f, fatalEff);
+					m_GameScene.AddEffect(item.GetBone(1).position, Vector3.forward, 4.25f, fatalEff);
 					CCharMob cCharMob2 = item as CCharMob;
 					CCharUser cCharUser2 = cCharBase as CCharUser;
 					if (cCharUser2 != null && cCharMob2 != null)

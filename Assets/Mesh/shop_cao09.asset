@@ -3,10 +3,11 @@
 --- !u!43 &4300000
 Mesh:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: shop_cao09
-  serializedVersion: 8
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -16,8 +17,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 4
     localAABB:
-      m_Center: {x: 0, y: -0.0000004768372, z: 0}
-      m_Extent: {x: 0.8753223, y: 2.062209, z: 0.8188049}
+      m_Center: {x: 0, y: -0.00000047683716, z: 0}
+      m_Extent: {x: 0.87532234, y: 2.0622087, z: 0.8188049}
   m_Shapes:
     vertices: []
     shapes: []
@@ -26,15 +27,17 @@ Mesh:
   m_BindPose: []
   m_BoneNameHashes: 
   m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 0
   m_KeepVertices: 1
   m_KeepIndices: 1
   m_IndexFormat: 0
   m_IndexBuffer: 000001000200000003000100
-  m_Skin: []
   m_VertexData:
-    m_CurrentChannels: 155
+    serializedVersion: 3
     m_VertexCount: 4
     m_Channels:
     - stream: 0
@@ -45,6 +48,10 @@ Mesh:
       offset: 12
       format: 0
       dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
@@ -66,11 +73,31 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
-      offset: 40
+      offset: 0
       format: 0
-      dimension: 4
-    m_DataSize: 224
-    _typelessdata: 2015603f6cfa0340339d51bfaca66b3fb10bc8bed0af1d3891f6f43b691f883a8fcc4d3ff5107a3fb20bc8beada66bbfc1d571ae000080bf201560bf54fa03c0339d513faca66b3fb10bc8bed0af1d381aa5013f5bdd003ea7a3493f9506793fb20bc8beada66bbf8121732e000080bf201360bf3cfb03c0339d51bfaea66b3fb20bc8bed1af1d381aa5013f691f883aa7a3493ff5107a3fb10bc8beada66bbfcfd0dc2e000080bf4011603f38fb0340339d513faca66b3fb10bc8bed0af1d3891f6f43b5bdd003e8fcc4d3f9506793fb20bc8beada66bbfef95daae000080bf
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 160
+    _typelessdata: 2015603f6cfa0340339d51bfaca66b3fb10bc8bed0af1d3891f6f43b691f883a8fcc4d3ff5107a3f201560bf54fa03c0339d513faca66b3fb10bc8bed0af1d381aa5013f5bdd003ea7a3493f9506793f201360bf3cfb03c0339d51bfaea66b3fb20bc8bed1af1d381aa5013f691f883aa7a3493ff5107a3f4011603f38fb0340339d513faca66b3fb10bc8bed0af1d3891f6f43b5bdd003e8fcc4d3f9506793f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -124,9 +151,17 @@ Mesh:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: 0, y: -0.0000004768372, z: 0}
-    m_Extent: {x: 0.8753223, y: 2.062209, z: 0.8188049}
+    m_Center: {x: 0, y: -0.00000047683716, z: 0}
+    m_Extent: {x: 0.87532234, y: 2.0622087, z: 0.8188049}
   m_MeshUsageFlags: 0
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 1
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 

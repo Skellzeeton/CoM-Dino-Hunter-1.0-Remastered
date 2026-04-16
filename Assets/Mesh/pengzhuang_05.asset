@@ -3,11 +3,10 @@
 --- !u!43 &4300000
 Mesh:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: pengzhuang_05
-  serializedVersion: 11
+  serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -27,17 +26,15 @@ Mesh:
   m_BindPose: []
   m_BoneNameHashes: 
   m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 0
   m_KeepVertices: 1
   m_KeepIndices: 1
   m_IndexFormat: 0
-  m_IndexBuffer: 030001000400030004000500050004000000050000000200
+  m_IndexBuffer: 000001000200000003000100020001000400020004000500
+  m_Skin: []
   m_VertexData:
-    serializedVersion: 3
+    m_CurrentChannels: 1
     m_VertexCount: 6
     m_Channels:
     - stream: 0
@@ -57,10 +54,6 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
-      offset: 12
-      format: 0
-      dimension: 2
-    - stream: 0
       offset: 0
       format: 0
       dimension: 0
@@ -76,28 +69,8 @@ Mesh:
       offset: 0
       format: 0
       dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 120
-    _typelessdata: 806e653fe0933ec05693a8c00000000000000000806e65bfe0933e405693a8c00000803f00000000806e653fe0933ec05693a840000000000000803f806e65bfe0933e405693a8400000803f0000803f80380b3f78ef09405693a8c00000003f0000000000390b3f78ef09405693a8400000003f0000803f
+    m_DataSize: 72
+    _typelessdata: 806e653fe0933ec05693a8c000390b3f78ef09405693a84080380b3f78ef09405693a8c0806e653fe0933ec05693a840806e65bfe0933e405693a840806e65bfe0933e405693a8c0
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -154,14 +127,6 @@ Mesh:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.89621735, y: 2.9777756, z: 5.2679853}
   m_MeshUsageFlags: 0
-  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
+  m_MeshOptimized: 0
