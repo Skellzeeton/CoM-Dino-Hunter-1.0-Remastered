@@ -57,6 +57,18 @@
 		<!-- BOSS -->
 		<skill id="10008" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="5,50" skillmode="4" skillmodevalue="0,-3" />
 		
+		<!-- Outraged pterodactyl -->
+		<skill id="10009" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,70" skillmode="3" skillmodevalue="1" />
+		<!-- 0.5s[0-4] -->
+		<skill id="10010" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,11" skillmode="3" skillmodevalue="0.25" />
+		<!-- BOSS 135%-->
+		<skill id="10011" lvl="1" type="0" action="1000" rangetype="1" rangetypevalue="0,11,60,0" skillmode="1" skillmodevalue="0.5" func="5" valuex="135" valuey="0"/>
+		<!--  150% -->
+		<skill id="10012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="0,8" skillmode="4" skillmodevalue="1,1" func="5,4" valuex="150,12" valuey="0,2" />
+		<!-- 2s[10-60] -->
+		<skill id="10013" lvl="1" type="0" action="10001" rangetype="0" rangetypevalue="10,90" skillmode="3" skillmodevalue="3" />
+		<!--  100%-->
+		<skill id="10014" lvl="1" type="0" action="10003" rangetype="0" rangetypevalue="0,8" skillmode="4" skillmodevalue="0.95,1" func="5,4" valuex="100,0" valuey="0,2"/>
 		
 		
 		<!-- *********************************** start by 20000************************************************************************* -->
@@ -193,6 +205,8 @@
 		<skill id="40011" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,176,3,30,0,0,1" func="5" valuex="75" valuey="0"/>
 		<!--  100%-->
 		<skill id="40012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,6,30,0,0,1" func="5" valuex="100" valuey="0"/>
+		<!--  Outraged dilophosaurus boss -->
+		<skill id="40013" lvl="1" type="0" action="10006" rangetype="1" rangetypevalue="0,11,0,0" skillmode="1" skillmodevalue="0.8" func="5,4,11" valuex="50,5,2" valuey="0,5,0"/>
 		
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!-- 0.1s[0-3] -->
@@ -303,9 +317,19 @@
 		<!-- BOSS -->
 		<combo id="10003" skilllist="10006,10007" coldown="3" freezetime="2"/> 
 		<!-- BOSS -->
-		<combo id="10004" skilllist="10004,10008,10007" coldown="5"/> 
-		
-		
+		<combo id="10004" skilllist="10004,10008,10007" coldown="5"/>
+
+		<!-- Outraged pterodactyl -->
+		<combo id="10005" skilllist="10002,10003,10009,10012" coldown="9" freezetime="0"/>
+		<!-- -->
+		<combo id="10006" skilllist="10010,10011" coldown="2" freezetime="0"/>
+		<!-- -->
+		<combo id="10007" skilllist="10002,10012" coldown="11" freezetime="0"/>
+		<!--  -->
+		<combo id="10008" skilllist="10013,10014" coldown="14" freezetime="0"/>
+		<!--  -->
+		<combo id="10009" skilllist="10013,10014,10014" coldown="39" freezetime="5"/>
+
 		<!-- *********************************** start by 20000************************************************************************* -->
 		<!--  -->
 		<combo id="20000" skilllist="20000,20001" coldown="4" freezetime="2"/> 
@@ -381,6 +405,13 @@
 		<combo id="40008" skilllist="40000,40011" coldown="4" freezetime="4"/>
 		<!--  -->
 		<combo id="40009" skilllist="40000,40012" coldown="4" freezetime="2"/>
+
+		<!-- Outragded dilophosaurus boss -->
+		<combo id="40010" skilllist="40000,40013" coldown="3" freezetime="1"/>
+		<!--  -->
+		<combo id="40011" skilllist="40000,40012" coldown="3" freezetime="1"/>
+		<!--  ->-> -->
+		<combo id="40012" skilllist="40000,40005,40004,40006" coldown="4" freezetime="0"/>
 
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!-- boss triceratops melee -->

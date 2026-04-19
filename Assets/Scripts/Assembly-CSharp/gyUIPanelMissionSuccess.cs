@@ -10,11 +10,9 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
     public GameObject mStatisticsContext1;
     public GameObject mStatisticsContext2;
     public GameObject mStatisticsContext3;
-
     public gyUIHopNumber mContext1;
     public gyUIHopNumber mContext2;
     public gyUIHopNumber mContext3;
-
     protected bool m_bShow;
     protected int m_nStep;
     protected float m_fStepCount;
@@ -29,9 +27,7 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
     {
         if (!m_bShow)
             return;
-
         float deltaTime = Time.deltaTime;
-
         switch (m_nStep)
         {
             case 0:
@@ -40,17 +36,14 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                 {
                     mLightAnim.SetActiveRecursively(true);
                     mTitleText.SetActiveRecursively(true);
-
                     TweenPosition tween = TweenPosition.Begin(mTitleText, 0.5f, Vector3.zero);
                     tween.from = new Vector3(3f, 260f, 0f);
-                    tween.to = new Vector3(3f, 79f, 0f);
+                    tween.to = new Vector3(3f, 97f, 0f);
                     tween.method = UITweener.Method.BounceIn;
-
                     m_nStep = 1;
                     m_fStepCount = 0.2f;
                 }
                 break;
-
             case 1:
                 m_fStepCount -= deltaTime;
                 if (m_fStepCount <= 0f)
@@ -66,7 +59,6 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                     m_fStepCount = 0.2f;
                 }
                 break;
-
             case 2:
                 m_fStepCount -= deltaTime;
                 if (m_fStepCount <= 0f)
@@ -76,7 +68,6 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                     m_fStepCount = 0.2f;
                 }
                 break;
-
             case 3:
                 m_fStepCount -= deltaTime;
                 if (m_fStepCount <= 0f)
@@ -86,7 +77,6 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                     m_fStepCount = 0.5f;
                 }
                 break;
-
             case 4:
                 m_fStepCount -= deltaTime;
                 if (m_fStepCount <= 0f)
@@ -96,7 +86,6 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                     m_fStepCount = 0.5f;
                 }
                 break;
-
             case 5:
                 m_fStepCount -= deltaTime;
                 if (m_fStepCount <= 0f)
@@ -113,8 +102,6 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
     {
         m_bShow = bShow;
         gameObject.SetActiveRecursively(bShow);
-
-        // Reset all UI pieces
         mLightBase.SetActiveRecursively(false);
         mLightAnim.SetActiveRecursively(false);
         mTitleText.SetActiveRecursively(false);
@@ -123,23 +110,16 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
         mStatisticsContext1.SetActiveRecursively(false);
         mStatisticsContext2.SetActiveRecursively(false);
         mStatisticsContext3.SetActiveRecursively(false);
-
-        // Move panel offscreen when hidden (legacy behavior)
         transform.localPosition = bShow
             ? new Vector3(0f, 0f, transform.localPosition.z)
             : new Vector3(10000f, 10000f, transform.localPosition.z);
-
         if (!bShow)
             return;
-
-        // Start intro animation
         mLightBase.SetActiveRecursively(true);
-
         TweenScale tween = TweenScale.Begin(mLightBase, 0.5f, Vector3.one);
         tween.from = Vector3.zero;
         tween.to = Vector3.one;
         tween.method = UITweener.Method.EaseIn;
-
         m_nStep = 0;
         m_fStepCount = 0.5f;
     }
@@ -166,13 +146,10 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
     {
         if (mContext1 == null || !mContext1.gameObject.activeSelf || !mContext1.isHop)
             return false;
-
         if (mContext2 == null || !mContext2.gameObject.activeSelf || !mContext2.isHop)
             return false;
-
         if (mContext3 == null || !mContext3.gameObject.activeSelf || !mContext3.isHop)
             return false;
-
         return true;
     }
 

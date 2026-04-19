@@ -19,6 +19,8 @@ public class PrefabPath
 	public const int model_pterodactyl2 = 22;
 
 	public const int model_pterodactyl3 = 23;
+	
+	public const int model_pterodactyl_elite = 24;
 
 	public const int model_velociraptor1 = 31;
 
@@ -34,6 +36,8 @@ public class PrefabPath
 
 	public const int model_dilophosaurus3 = 43;
 
+	public const int model_dilophosaurus_elite = 44;
+	
 	public const int model_triceratops1 = 51;
 
 	public const int model_triceratops2 = 52;

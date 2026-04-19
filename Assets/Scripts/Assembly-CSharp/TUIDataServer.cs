@@ -3623,17 +3623,6 @@ public class TUIDataServer
 			}
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMap(m_event.GetEventName(), true));
 		}
-		else if (m_event.GetEventName() == "TUIEvent_EnterRoleBuy")
-		{
-			int wParam4 = m_event.GetWParam();
-			iGameState gameState6 = iGameApp.GetInstance().m_GameState;
-			if (gameState6 != null)
-			{
-				gameState6.m_nLinkCharacter = wParam4;
-				gameState6.m_lstScene4Recommand = TUISceneType.Scene_Map;
-			}
-			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMap(m_event.GetEventName(), true));
-		}
 		else if (m_event.GetEventName() == "TUIEvent_EnterEquip")
 		{
 			iGameState gameState7 = iGameApp.GetInstance().m_GameState;
@@ -3664,6 +3653,42 @@ public class TUIDataServer
 		else if (m_event.GetEventName() == "TUIEvent_EnterVilliage")
 		{
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMap(m_event.GetEventName(), true));
+		}
+		else if (m_event.GetEventName() == "TUIEvent_RoleChange")
+		{
+			bool success = false;
+			TUIGameInfo tUIGameInfo = new TUIGameInfo();
+			tUIGameInfo.player_info = new TUIPlayerInfo();
+			iGameData gameData = iGameApp.GetInstance().m_GameData;
+			if (gameData != null)
+			{
+				iDataCenter dataCenter = gameData.GetDataCenter();
+				if (dataCenter != null)
+				{
+					int wParam = m_event.GetWParam();
+					CCharSaveInfo character = dataCenter.GetCharacter(wParam);
+					if (character != null && character.nLevel >= 1)
+					{
+						CCharacterInfoLevel characterInfo = gameData.GetCharacterInfo(character.nID, character.nLevel);
+						if (characterInfo != null)
+						{
+							dataCenter.CurCharID = wParam;
+							dataCenter.Save();
+							success = true;
+							tUIGameInfo.player_info.avatar_id   = character.nID;
+							tUIGameInfo.player_info.level       = character.nLevel;
+							tUIGameInfo.player_info.level_exp   = characterInfo.nExp;
+							tUIGameInfo.player_info.exp         = character.nExp;
+							tUIGameInfo.player_info.gold        = dataCenter.Gold;
+							tUIGameInfo.player_info.crystal     = dataCenter.Crystal;
+						}
+					}
+				}
+			}
+			global::EventCenter.EventCenter.Instance.Publish(
+				this,
+				new TUIEvent.BackEvent_SceneMap(m_event.GetEventName(), tUIGameInfo, success)
+			);
 		}
 	}
 

@@ -932,11 +932,11 @@ public class iGameSceneBase
 		{
 			m_Status = kGameStatus.GameOver_Revive;
 			m_StatusStep = 0;
-			m_StatusTime = 10f;
+			m_StatusTime = 4f;
 			m_StatusTimeCount = 0f;
 			CSoundScene.GetInstance().StopBGM();
 			CSoundScene.GetInstance().StopAmbienceBGM();
-			m_GameUI.ShowRevive(true);
+			m_GameUI.ShowRevive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }

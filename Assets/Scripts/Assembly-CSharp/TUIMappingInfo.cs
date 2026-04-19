@@ -94,7 +94,7 @@ public class TUIMappingInfo
 		stash_dictionary[30053] = "bawanglong_BOSS_beijia3";
 		stash_dictionary[30054] = "shuangguanlong_BOSS_guan3";
 		stash_dictionary[30055] = "shuangguanlong_putong_guan3";
-		stash_dictionary[30056] = "sanjiaolong_BOSS_touke3";
+		stash_dictionary[30056] = "shuangguanlong_bianyi_guan3";
 		stash_dictionary[30057] = "yilong_BOSS_yimo3";
 		stash_dictionary[30058] = "yilong_putong_yimo3";
 		stash_dictionary[30059] = "yilong_bianyi_yimo3";
@@ -117,6 +117,9 @@ public class TUIMappingInfo
 		stash_dictionary[30076] = "shuangguanlong_gongyou_longpi2";
 		stash_dictionary[30077] = "shuangguanlong_gongyou_longpi4";
 		stash_dictionary[30078] = "bingchuan_gongyou_bingjiejin3";
+		stash_dictionary[30079] = "bawanglong_BOSS_ya2";
+		stash_dictionary[30080] = "yilong_BOSS_yizhua2";
+		stash_dictionary[30081] = "shuangguanlong_BOSS_duzhi2";
 		stash_dictionary[80001] = "crystal1";
 		skill_dictionary = new Dictionary<int, string>();
 		skill_dictionary[2] = "chongfeng";
@@ -260,7 +263,7 @@ public class TUIMappingInfo
 		map_dictionary[5022] = "p5";
 		map_dictionary[5023] = "p3";
 		map_dictionary[5024] = "p6";
-		map_dictionary[5025] = "p1";
+		map_dictionary[5025] = "p2";
 		map_dictionary[5026] = "p7";
 		map_dictionary[5027] = "p6";
 		map_dictionary[5028] = "p7";

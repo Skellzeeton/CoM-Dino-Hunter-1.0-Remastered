@@ -21,7 +21,7 @@ public class CMobInfoLevel
     public float fMoveSpeedRate = 1f;
     public float fRushSpeedRate = 1f;
     public bool isWaitRot;
-    public int nGoldRate;
+    public float fGoldRate;
     public int nGold;
     public int nExp;
     public int nDropGroup;

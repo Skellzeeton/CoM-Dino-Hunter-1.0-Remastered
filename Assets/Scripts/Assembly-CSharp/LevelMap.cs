@@ -532,6 +532,7 @@ public class LevelMap : MonoBehaviour
 				if (i == m_id - 1)
 				{
 					sign_list[i].gameObject.SetActiveRecursively(true);
+					LevelPointBottom.DisableAllChosen();
 					m_move_pos.x = sign_list[i].position.x - m_pos.x;
 					LevelMapSign component = sign_list[i].GetComponent<LevelMapSign>();
 					if (component != null)

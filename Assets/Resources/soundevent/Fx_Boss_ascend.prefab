@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4760528886685849}
   - component: {fileID: 82009066046915919}
   - component: {fileID: 114665205182037909}
-  - component: {fileID: 1206520696692086729}
   m_Layer: 0
   m_Name: Fx_Boss_ascend
   m_TagString: Untagged
@@ -144,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 8844348ac88c02a6c969ae97c20f1b98, type: 3}
   probability: []
@@ -157,17 +157,3 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
---- !u!114 &1206520696692086729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253074368205699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCount: 3
-  deltaTime: 0.2

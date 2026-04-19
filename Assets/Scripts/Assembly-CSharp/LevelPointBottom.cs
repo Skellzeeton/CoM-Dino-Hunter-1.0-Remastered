@@ -34,6 +34,11 @@ public class LevelPointBottom : MonoBehaviour
 			base.transform.localScale = normal_scale + new Vector3(num, num, 0f);
 		}
 	}
+	
+	public bool IsChosen()
+	{
+		return be_choose;
+	}
 
 	public void OpenChoose(bool m_bool)
 	{
@@ -57,6 +62,19 @@ public class LevelPointBottom : MonoBehaviour
 		be_choose = false;
 		base.transform.localScale = normal_scale;
 		m_time = 0f;
+	}
+	
+	public static void DisableAllChosen()
+	{
+		LevelPointBottom[] all = GameObject.FindObjectsOfType<LevelPointBottom>();
+    
+		foreach (LevelPointBottom bottom in all)
+		{
+			if (bottom != null && bottom.IsChosen())
+			{
+				bottom.Hide();
+			}
+		}
 	}
 
 	public void Hide()

@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 1102869035601409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: -36.970673, y: 2.2650595, z: -29.267384}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -553,6 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4372549539315469}
+  - component: {fileID: 7850135100402912238}
   m_Layer: 26
   m_Name: Bone10
   m_TagString: Untagged
@@ -577,6 +578,27 @@ Transform:
   - {fileID: 4832318320091695}
   m_Father: {fileID: 4310868961371450}
   m_LocalEulerAnglesHint: {x: -57.673447, y: 56.86321, z: -92.3724}
+--- !u!65 &7850135100402912238
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127486041415989}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 0.75, z: 0.1}
+  m_Center: {x: -0.35, y: 0.3, z: 0}
 --- !u!1 &1149069219995398
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4760563165675882}
+  - component: {fileID: 2091828095419796205}
   m_Layer: 26
   m_Name: Bone09
   m_TagString: Untagged
@@ -702,6 +725,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4270496482161980}
   m_LocalEulerAnglesHint: {x: 5.691762, y: 19.183453, z: 102.8923}
+--- !u!65 &2091828095419796205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220338858261375}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.825, y: 1.75, z: 0.1}
+  m_Center: {x: -0.3, y: 0.15, z: 0}
 --- !u!1 &1222623126404153
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +855,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useAuidoEvent: 1
-  alwaysPreload: 0
 --- !u!114 &114091354739127614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,6 +1192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4807627458153767}
+  - component: {fileID: 1343264658931217932}
   m_Layer: 26
   m_Name: Bone14
   m_TagString: Untagged
@@ -1171,6 +1215,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4541993317663461}
   m_LocalEulerAnglesHint: {x: -5.0546913, y: 2.1844273, z: -41.51187}
+--- !u!65 &1343264658931217932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518434906211705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.825, y: 1.75, z: 0.1}
+  m_Center: {x: -0.3, y: -0.15, z: 0}
 --- !u!1 &1523064509555121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4910971694863395}
+  - component: {fileID: 2599368116002264670}
   m_Layer: 26
   m_Name: Bone05
   m_TagString: Untagged
@@ -1791,3 +1857,24 @@ Transform:
   - {fileID: 4733942895103705}
   m_Father: {fileID: 4310868961371450}
   m_LocalEulerAnglesHint: {x: -63.413918, y: 145.74564, z: -101.86273}
+--- !u!65 &2599368116002264670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935837553690947}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 0.75, z: 0.1}
+  m_Center: {x: -0.35, y: -0.3, z: 0}

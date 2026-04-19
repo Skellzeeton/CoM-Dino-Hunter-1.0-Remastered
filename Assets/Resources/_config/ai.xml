@@ -53,8 +53,11 @@
 	 <!-- BOSSAI -->
 		<ai id="60201" skill="40009" skillrate="100" behavior="3" />		
 			<!-- BOSS -->
-		<ai id="60301" skill="40009,40003,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
-		
+		<ai id="60301" skill="40009,40003,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
+		<!-- BOSS -->
+		<ai id="60401" skill="40011,40010,40002,40007" skillrate="40,20,20,20" behavior="1" />
+		<ai id="60402" skill="40011,40010,40002,40004,40007" skillrate="20,20,20,20,20" behavior="1" skillpassive="20051" effectlist="1500"/>
+		<ai id="60403" skill="40011,40012,40005,40007" skillrate="30,20,20,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>
 		
 		
 		<!-- ************************************************************************************************************ -->
@@ -89,7 +92,7 @@
 		<ai id="100201" skill="10001" skillrate="100" behavior="2" />	
 	
 	<!--  -->
-		<ai id="110101" skill="10000" skillrate="100" behavior="1" />	
+		<ai id="110101" skill="10000,10001" skillrate="100" behavior="1" />	
 	<!--  -->
 		<ai id="110201" skill="10001" skillrate="100" behavior="2" />	
 	
@@ -101,7 +104,10 @@
 		<ai id="120201" skill="10001,10002,10003" skillrate="40,30,30" behavior="1" skillpassive="20052" effectlist="1500,1501"/>	
 		<!-- BOSS -->
 		<ai id="120301" skill="10001,10002" skillrate="50,50" behavior="2" skillpassive="20053" effectlist="1500,1501"/>
-	
+		<!-- OUTRAGE BOSS -->
+		<ai id="120401" skill="10005,10006" skillrate="60,40" behavior="1" />
+		<ai id="120402" skill="10006,10008" skillrate="70,30" behavior="1" skillpassive="20053" effectlist="1500"/>
+		<ai id="120403" skill="10006,10008,10005,10009" skillrate="40,30,20,10" behavior="1" skillpassive="20052"  effectlist="1500,1501"/>
 	
 	
 	
@@ -187,10 +193,14 @@
 				<!-- BOSS -->
 			<aimanager id="602" ai="60201" />		
 					<!-- BOSS -->
-			<aimanager id="603" ai="60301" />			
-	
-	
-	<!-- ***********************************AImanager************************************************************************* -->		
+			<aimanager id="603" ai="60301" />
+		<!-- OUTRAGED BOSS -->
+		<aimanager id="604" ai="60401">
+			<trigger type="2" oprate="4" value="70" ai="60402" priority="1" />
+			<trigger type="2" oprate="4" value="35" ai="60403" priority="2" />
+		</aimanager>
+
+		<!-- ***********************************AImanager************************************************************************* -->		
 		<!--  -->
 			<aimanager id="701" ai="70101" />		
 				<!--  -->
@@ -232,10 +242,18 @@
 				<!-- BOSS -->
 			<aimanager id="1202" ai="120201" />		
 					<!-- BOSS -->
-			<aimanager id="1203" ai="120301" />		
-		
-		
-		
+		<aimanager id="1203" ai="120301">
+			<trigger type="2" oprate="4" value="70" ai="120302" priority="1" />
+			<trigger type="2" oprate="4" value="35" ai="120303" priority="2" />
+		</aimanager>
+		<!-- BOSS -->
+		<aimanager id="1204" ai="120401">
+		<trigger type="2" oprate="4" value="70" ai="120402" priority="1" />
+		<trigger type="2" oprate="4" value="35" ai="120403" priority="2" />
+		</aimanager>
+
+
+
 		<!-- ***********************************AImanager************************************************************************* -->
 		<!-- BOSS -->
 			<aimanager id="1301" ai="130101">	

@@ -307,7 +307,7 @@ public class CCharMob : CCharBase
 					}
 				}
 			}
-			if (UnityEngine.Random.Range(0, 101) <= m_curMobInfoLevel.nGoldRate)
+			if (UnityEngine.Random.value <= (m_curMobInfoLevel.fGoldRate / 100f))
 			{
 				GameObject poolObject = PrefabManager.GetPoolObject(302, 0f);
 				if (poolObject != null)

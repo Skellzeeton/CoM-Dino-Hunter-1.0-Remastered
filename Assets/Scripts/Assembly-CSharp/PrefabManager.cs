@@ -64,6 +64,7 @@ public class PrefabManager
 		m_dictData.Add(21, "Artist/Model/Character/model_pterodactyl1");
 		m_dictData.Add(22, "Artist/Model/Character/model_pterodactyl2");
 		m_dictData.Add(23, "Artist/Model/Character/model_pterodactyl3");
+		m_dictData.Add(24, "Artist/Model/Character/model_pterodactyl_elite");
 		m_dictData.Add(31, "Artist/Model/Character/model_velociraptor1");
 		m_dictData.Add(32, "Artist/Model/Character/model_velociraptor2");
 		m_dictData.Add(33, "Artist/Model/Character/model_velociraptor3");
@@ -71,6 +72,7 @@ public class PrefabManager
 		m_dictData.Add(41, "Artist/Model/Character/model_dilophosaurus1");
 		m_dictData.Add(42, "Artist/Model/Character/model_dilophosaurus2");
 		m_dictData.Add(43, "Artist/Model/Character/model_dilophosaurus3");
+		m_dictData.Add(44, "Artist/Model/Character/model_dilophosaurus_elite");
 		m_dictData.Add(51, "Artist/Model/Character/model_triceratops1");
 		m_dictData.Add(52, "Artist/Model/Character/model_triceratops2");
 		m_dictData.Add(53, "Artist/Model/Character/model_triceratops3");

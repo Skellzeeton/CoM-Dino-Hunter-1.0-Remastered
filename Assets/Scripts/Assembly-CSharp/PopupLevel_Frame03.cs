@@ -77,6 +77,8 @@ public class PopupLevel_Frame03 : MonoBehaviour
 
 	public void SetRecommend(TUIRecommendRoleInfo m_recommend_role, TUIRecommendWeaponInfo m_recommend_weapon)
 	{
+		recommend.SetRecommendNone();
+
 		if (m_recommend_role != null)
 		{
 			recommend.SetRecommendRole(m_recommend_role);
@@ -86,7 +88,7 @@ public class PopupLevel_Frame03 : MonoBehaviour
 			recommend.SetRecommendWeapon(m_recommend_weapon);
 		}
 		else
-		{
+		{	
 			recommend.SetRecommendNone();
 		}
 	}

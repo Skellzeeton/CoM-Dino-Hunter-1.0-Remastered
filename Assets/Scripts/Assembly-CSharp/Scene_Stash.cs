@@ -461,18 +461,6 @@ public class Scene_Stash : MonoBehaviour
 		{
 			CUISound.GetInstance().Play("UI_Button");
 		}
-		if (control.transform.parent == null || control.transform.parent.parent == null)
-		{
-			Debug.Log("error!");
-			return;
-		}
-		int wparam2 = 0;
-		PopupGoldToCrystal component = control.transform.parent.parent.GetComponent<PopupGoldToCrystal>();
-		if (component != null)
-		{
-			wparam2 = component.GetGoldExchangeCount();
-		}
-		global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneStash("TUIEvent_GoldToCrystal", wparam2));
 		popup_stash.HidePopupGoldToCrystal();
 	}
 

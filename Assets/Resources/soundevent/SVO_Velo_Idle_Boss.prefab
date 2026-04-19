@@ -46,8 +46,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
+  m_Volume: 0.35
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -152,12 +152,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 308b6aa1bdbe0394f8008825d91d97d7, type: 3}
   probability:
   - 0.3
   volumOffset: 0.1
-  pitchOffset: 0.1
+  pitchOffset: 0.05
   loopMode: 0
   cutoff: 0
   delayTime: 0

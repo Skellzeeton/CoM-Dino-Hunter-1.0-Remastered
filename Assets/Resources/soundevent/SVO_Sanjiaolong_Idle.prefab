@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4778460680821516}
   - component: {fileID: 82680561591972316}
   - component: {fileID: 114233609473868560}
+  - component: {fileID: 5931847224156889150}
   m_Layer: 0
   m_Name: SVO_Sanjiaolong_Idle
   m_TagString: Untagged
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 16b5d51ae9401da4fb03f174f15986c5, type: 3}
   - {fileID: 8300000, guid: 72355c4bc0713fd47b9f09a3a5c9d0c7, type: 3}
@@ -168,3 +170,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &5931847224156889150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629448189744303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 3
+  deltaTime: 0.6

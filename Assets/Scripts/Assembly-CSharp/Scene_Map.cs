@@ -134,11 +134,13 @@ public class Scene_Map : MonoBehaviour
 			{
 				return;
 			}
+
 			if (m_event.GetEventInfo().map_info == null || top_bar == null)
 			{
 				Debug.Log("error!");
 				return;
 			}
+
 			level_map.SetMapEnterInfo(m_event.GetEventInfo().map_info);
 			MapEnterType map_enter_type = m_event.GetEventInfo().map_info.map_enter_type;
 			if (map_enter_type == MapEnterType.SearchGoods)
@@ -148,8 +150,10 @@ public class Scene_Map : MonoBehaviour
 				{
 					btn_villiage.gameObject.SetActiveRecursively(false);
 				}
+
 				return;
 			}
+
 			top_bar.SetBtnBackShow(false);
 			if (btn_villiage != null)
 			{
@@ -163,6 +167,7 @@ public class Scene_Map : MonoBehaviour
 			{
 				return;
 			}
+
 			TUIMapInfo map_info = m_event.GetEventInfo().map_info;
 			if (map_info != null)
 			{
@@ -195,6 +200,7 @@ public class Scene_Map : MonoBehaviour
 				{
 					next_scene = "Scene_MainMenu";
 				}
+
 				if (!is_fade_out)
 				{
 					is_fade_out = true;
@@ -215,6 +221,7 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_MainMenu");
 				return;
 			}
+
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -226,6 +233,7 @@ public class Scene_Map : MonoBehaviour
 				//DoSceneChange(m_event.GetWparam(), "Scene_IAP");
 				return;
 			}
+
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -237,6 +245,7 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_Gold");
 				return;
 			}
+
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -248,6 +257,7 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_Equip");
 				return;
 			}
+
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -259,17 +269,7 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_Forge");
 				return;
 			}
-			m_fade_in_time = 0f;
-			do_fade_in = false;
-			m_fade.FadeIn();
-		}
-		else if (m_event.GetEventName() == "TUIEvent_EnterRoleBuy")
-		{
-			if (m_event.GetControlSuccess())
-			{
-				DoSceneChange(m_event.GetWparam(), "Scene_Tavern");
-				return;
-			}
+
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -281,9 +281,32 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_MainMenu");
 				return;
 			}
+
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
+		}
+		else if (m_event.GetEventName() == "TUIEvent_RoleChange")
+		{
+			if (m_event.GetControlSuccess())
+			{
+				if (m_event.GetEventInfo() != null && m_event.GetEventInfo().GetPlayerInfo() != null)
+				{
+					TUIPlayerInfo pi = m_event.GetEventInfo().player_info;
+					top_bar.SetAllValue(pi.level, pi.exp, pi.level_exp, pi.gold, pi.crystal, pi.avatar_id);
+				}
+				else
+				{
+					global::EventCenter.EventCenter.Instance.Publish(
+						this,
+						new TUIEvent.SendEvent_SceneMap("TUIEvent_TopBar")
+					);
+				}
+				if (popup_level_map != null)
+				{
+					popup_level_map.RefreshRecommend();
+				}
+			}
 		}
 	}
 
@@ -409,9 +432,7 @@ public class Scene_Map : MonoBehaviour
 		case PopupLevel_Recommend.RecommendBtnState.RoleEquip:
 		{
 			if (sfx_open_now)
-			{
 				CUISound.GetInstance().Play("UI_Use");
-			}
 			TUIRecommendRoleInfo recommendRoleInfo = component.GetRecommendRoleInfo();
 			if (recommendRoleInfo == null)
 			{
@@ -421,11 +442,7 @@ public class Scene_Map : MonoBehaviour
 			int id = recommendRoleInfo.id;
 			global::EventCenter.EventCenter.Instance.Publish(
 				this,
-				new TUIEvent.SendEvent_SceneTavern("TUIEvent_RoleChange", id)
-			);
-			global::EventCenter.EventCenter.Instance.Publish(
-				this,
-				new TUIEvent.SendEvent_SceneMap("TUIEvent_TopBar")
+				new TUIEvent.SendEvent_SceneMap("TUIEvent_RoleChange", id)
 			);
 			popup_level_map.Hide();
 			return;

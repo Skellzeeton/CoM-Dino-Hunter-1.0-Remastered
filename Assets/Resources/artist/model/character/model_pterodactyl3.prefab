@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4365371888937368}
+  - component: {fileID: 6814607046567587924}
   m_Layer: 26
   m_Name: Bone14
   m_TagString: Untagged
@@ -62,6 +63,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4130723281257013}
   m_LocalEulerAnglesHint: {x: 2.304186, y: 1.9590554, z: -99.9203}
+--- !u!65 &6814607046567587924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085492169232697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 1.5, z: 0.1}
+  m_Center: {x: -0.25, y: -0.25, z: 0}
 --- !u!1 &1187413016615386
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066180382113429}
+  - component: {fileID: 2010789580865321365}
   m_Layer: 26
   m_Name: Bone05
   m_TagString: Untagged
@@ -153,6 +176,27 @@ Transform:
   - {fileID: 4334373191867616}
   m_Father: {fileID: 4502494746650549}
   m_LocalEulerAnglesHint: {x: -78.31549, y: -54.546074, z: 125.723274}
+--- !u!65 &2010789580865321365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243034258981990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 0.8, z: 0.1}
+  m_Center: {x: -0.25, y: -0.25, z: 0}
 --- !u!1 &1297495423247125
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4332855565299343}
+  - component: {fileID: 1135101585432229492}
   m_Layer: 26
   m_Name: Bone09
   m_TagString: Untagged
@@ -377,6 +422,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4207895425759266}
   m_LocalEulerAnglesHint: {x: -2.3041904, y: 1.9590484, z: 99.9203}
+--- !u!65 &1135101585432229492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427045690051125}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 1.5, z: 0.1}
+  m_Center: {x: -0.25, y: 0.25, z: 0}
 --- !u!1 &1494395962081229
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +753,7 @@ Transform:
   m_GameObject: {fileID: 1699980911718780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: -30.254112, y: 1.5613098, z: -29.405005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -982,6 +1048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4127095280066572}
+  - component: {fileID: 3485997140143929442}
   m_Layer: 26
   m_Name: Bone10
   m_TagString: Untagged
@@ -1006,6 +1073,27 @@ Transform:
   - {fileID: 4130253018618979}
   m_Father: {fileID: 4502494746650549}
   m_LocalEulerAnglesHint: {x: -74.80328, y: -136.39644, z: 71.134476}
+--- !u!65 &3485997140143929442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833711950258751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 0.8, z: 0.1}
+  m_Center: {x: -0.25, y: 0.25, z: 0}
 --- !u!1 &1866614840555033
 GameObject:
   m_ObjectHideFlags: 0

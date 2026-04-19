@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4310554633864997}
   - component: {fileID: 82669628104952002}
   - component: {fileID: 114517760150505025}
+  - component: {fileID: -7350558397633219086}
   m_Layer: 0
   m_Name: SVO_Velo_Attack
   m_TagString: Untagged
@@ -46,7 +47,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
+  alwaysPreload: 0
   audioClips:
   - {fileID: 8300000, guid: 610894765fd69744e81bc37b3b93d685, type: 3}
   - {fileID: 8300000, guid: 074058fd73e12b9448b1794de7d9958e, type: 3}
@@ -168,3 +170,17 @@ MonoBehaviour:
   maxIntervalTime: 0
   intervalRangeMin: 0
   intervalRangeMax: 0
+--- !u!114 &-7350558397633219086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360320702327284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 2
+  deltaTime: 0.5

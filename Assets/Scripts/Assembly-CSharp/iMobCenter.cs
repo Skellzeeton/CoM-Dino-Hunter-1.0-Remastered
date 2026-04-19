@@ -172,7 +172,7 @@ public class iMobCenter
 			}
 			if (MyUtils.GetAttribute(childNode, "goldrate", ref value))
 			{
-				cMobInfoLevel.nGoldRate = int.Parse(value);
+				cMobInfoLevel.fGoldRate = ServerX.ParseFloat(value);
 			}
 			if (MyUtils.GetAttribute(childNode, "gold", ref value))
 			{
