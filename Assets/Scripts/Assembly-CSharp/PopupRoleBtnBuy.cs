@@ -39,16 +39,8 @@ public class PopupRoleBtnBuy : MonoBehaviour
 
 	public void SetStateUnlock()
 	{
-		if (btn_state == PopupRoleBuyState.State_Disable)
-		{
-			base.gameObject.SetActiveRecursively(true);
-			base.gameObject.GetComponent<TUIButtonClick>().Show();
-		}
-		btn_state = PopupRoleBuyState.State_Unlock;
-		label_normal.Text = "UNLOCK";
-		label_press.Text = "UNLOCK";
-		img_normal.texture = string.Empty;
-		img_press.texture = string.Empty;
+		base.gameObject.SetActiveRecursively(false);
+		btn_state = PopupRoleBuyState.State_Disable;
 	}
 
 	public void SetStateBuy()

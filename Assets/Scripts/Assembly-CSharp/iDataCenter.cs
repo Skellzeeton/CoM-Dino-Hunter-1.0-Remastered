@@ -522,6 +522,7 @@ public class iDataCenter
 		{
 			m_bFirstTimePlay = true;
 			SetCharacter(1, 1, 0);
+			SetCharacter(6, 1, 0);
 			SetWeaponLevel(1, 1);
 			SetWeaponLevel(2, 1);
 			Save();

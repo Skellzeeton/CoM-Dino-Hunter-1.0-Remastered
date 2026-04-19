@@ -48,6 +48,11 @@ public class PopupRole : MonoBehaviour
 	{
 		CheckScrollChoose();
 	}
+	
+	private bool IsMainStageLocked(int unlockLevel)
+	{
+		return unlockLevel >= 1006 && unlockLevel < 1024;
+	}
 
 	public void SetTopBarInfo(TUIPlayerInfo m_player_info)
 	{
@@ -111,7 +116,16 @@ public class PopupRole : MonoBehaviour
 		if (!m_info.unlock)
 		{
 			label_introduce_unlock.Text = m_info.introduce_unlock;
-			btn_buy.SetStateUnlock();
+			int requiredLevel = item_choose.GetRoleInfo().unlock_price.price; 
+			bool isMainLocked = IsMainStageLocked(requiredLevel);
+			if (isMainLocked)
+			{
+				btn_buy.SetStateDisable();
+			}
+			else
+			{
+				btn_buy.SetStateUnlock();
+			}
 		}
 		else if (!m_info.do_buy)
 		{
