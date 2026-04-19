@@ -1,6 +1,8 @@
 ## CoM Dino Hunter Legacy Remastered
 <img width="857" height="562" alt="Screenshot from 2026-04-19 04-21-41" src="https://github.com/user-attachments/assets/3e35cf23-30d5-47f7-a95f-8d82b5a598d8" />
-*credit goes to Nick for the 1.0 revival which i used to make this mod.*
+
+- *credit goes to Nick for the 1.0 revival which i used to make this mod.*
+
 ### A mod for the 1.0 version of Call of Mini Dino Hunter, this mod aims to make the experience much more enjoyable and significantly more polished for everyone, below are the changes:
 
 ##
