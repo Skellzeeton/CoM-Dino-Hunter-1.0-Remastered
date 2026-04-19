@@ -52,6 +52,8 @@
 
 - **Improved the main menu**
 
+- **Fixed some spelling errors**
+
 - **Added a lot of new audio and added some of the unused sounds**
 
 - **Made the audio a lot quieter overall for your own safety. It is no longer at a dangerous volume anymore**
@@ -75,7 +77,8 @@
 - **Skill: CTRL/Middle Click**
 - **Increase Sensitivity: O**
 - **Decrease Sensitivity: I**
-*These may be changed in a future update.*
+
+*These may be changed in a future update. I'll update this if i do change them.*
 ##
 
 ### Installation Instructions:
