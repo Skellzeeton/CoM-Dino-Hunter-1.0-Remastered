@@ -4,8 +4,8 @@ public class CControlIphone : CControlBase
 {
     protected float m_fSlashSpeed;
     protected Vector2 m_v2Slash;
-    private const float kMobileYawMaxSpeed = 280f;
-    private const float kMobilePitchMaxSpeed = 70f;
+    private const float kMobileYawMaxSpeed = 300f;
+    private const float kMobilePitchMaxSpeed = 75f;
 
     public CControlIphone()
     {

@@ -6,8 +6,8 @@ public class CSlipAssistant
     public float m_fCurFramePitch;
     protected float m_fLstPointTime;
     protected float m_fCurPointTime;
-    private const float kMaxYawSpeed = 280f;
-    private const float kMaxPitchSpeed = 70f;
+    private const float kMaxYawSpeed = 300f;
+    private const float kMaxPitchSpeed = 75f;
 
     public void Tap()
     {

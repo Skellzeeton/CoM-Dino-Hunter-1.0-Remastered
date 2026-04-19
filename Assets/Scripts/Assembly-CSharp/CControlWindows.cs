@@ -7,7 +7,7 @@ public class CControlWindows : CControlBase
 	private float m_sensitivityPercent = 1.0f;
 	private bool m_mouseLocked = true;
 
-	private const float kBaseYawSpeed = 245f;
+	private const float kBaseYawSpeed = 280f;
 	private const float kBasePitchSpeed = 135f;
 	private const float kSensitivityStep = 0.125f;
 	private const float kSensitivityMin = 0.25f;

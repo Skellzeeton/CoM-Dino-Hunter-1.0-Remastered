@@ -331,10 +331,8 @@ public class iGameSceneBase
 		{
 #if UNITY_EDITOR
             m_Input = new CControlWindows();
-
 #elif UNITY_STANDALONE
 			m_Input = new CControlWindows();
-
 #elif UNITY_IOS || UNITY_ANDROID
 			m_Input = new CControlIphone();
 #endif
