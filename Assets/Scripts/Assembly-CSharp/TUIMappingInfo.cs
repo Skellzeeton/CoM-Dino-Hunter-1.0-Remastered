@@ -120,6 +120,11 @@ public class TUIMappingInfo
 		stash_dictionary[30079] = "bawanglong_BOSS_ya2";
 		stash_dictionary[30080] = "yilong_BOSS_yizhua2";
 		stash_dictionary[30081] = "shuangguanlong_BOSS_duzhi2";
+		stash_dictionary[100001] = "duihuanquan_1";
+		stash_dictionary[100002] = "duihuanquan_2";
+		stash_dictionary[100003] = "duihuanquan_3";
+		stash_dictionary[100004] = "duihuanquan_4";
+		stash_dictionary[100005] = "duihuanquan_5";
 		stash_dictionary[80001] = "crystal1";
 		skill_dictionary = new Dictionary<int, string>();
 		skill_dictionary[2] = "chongfeng";
@@ -236,7 +241,7 @@ public class TUIMappingInfo
 		map_dictionary[1019] = "p7";
 		map_dictionary[1020] = "p2";
 		map_dictionary[1021] = "p5";
-		map_dictionary[1022] = "p7";
+		map_dictionary[1022] = "p9";
 		map_dictionary[1023] = "p7";
 		map_dictionary[1024] = "p3";
 		map_dictionary[5001] = "p6";

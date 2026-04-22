@@ -489,12 +489,12 @@ public class TUIDataServer
 		}
 		else if (m_event.GetEventName() == "TUIEvent_OpenSupportURL")
 		{
-			Application.OpenURL("https://discord.gg/gv7Ebnmg7u");
+			Application.OpenURL("https://discord.gg/YjBe4vqMHx");
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName()));
 		}
 		else if (m_event.GetEventName() == "TUIEvent_OpenReviewURL")
 		{
-			Application.OpenURL(iMacroDefine.AddressForItunes);
+			Application.OpenURL("https://discord.gg/YjBe4vqMHx");
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMainMenu(m_event.GetEventName()));
 		}
 	}
