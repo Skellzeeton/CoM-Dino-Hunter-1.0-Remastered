@@ -346,19 +346,26 @@ public class iGameState
 			num = iMacroDefine.GainMaterialFromGameMax;
 			num2 = num + iMacroDefine.GainMaterialFromTaskMax;
 		}
+		bool added = false;
 		for (int i = num; i < num2 && i >= 0 && i < m_arrGainMaterialInGame.Length; i++)
 		{
 			if (m_arrGainMaterialInGame[i].nItemID == -1)
 			{
 				m_arrGainMaterialInGame[i].nItemID = nID;
 				m_arrGainMaterialInGame[i].nItemCount = nCount;
+				added = true;
 				break;
 			}
 			if (m_arrGainMaterialInGame[i].nItemID == nID)
 			{
 				m_arrGainMaterialInGame[i].nItemCount += nCount;
+				added = true;
 				break;
 			}
+		}
+		if (!added)
+		{
+			Debug.LogWarning($"AddMaterial failed: pool full for {(isInGame ? "in-game" : "task")} materials. ID={nID}, Count={nCount}");
 		}
 	}
 

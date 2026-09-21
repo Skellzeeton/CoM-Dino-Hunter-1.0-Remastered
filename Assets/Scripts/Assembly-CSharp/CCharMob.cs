@@ -83,7 +83,6 @@ public class CCharMob : CCharBase
 
 	protected CDropGroupInfo m_tmpDropGroupInfo;
 
-	[SerializeField]
 	public int MobType { get; set; }
 
 	public kMobBehaviour MobBehaviourMode

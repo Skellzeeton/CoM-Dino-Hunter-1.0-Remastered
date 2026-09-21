@@ -137,7 +137,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4916560879172978}
-  - component: {fileID: 137878188224151091}
+  - component: {fileID: 8302500892168572939}
+  - component: {fileID: 6365960051144822304}
   m_Layer: 0
   m_Name: Dummy01
   m_TagString: Untagged
@@ -162,8 +163,16 @@ Transform:
   - {fileID: 4750564946832327}
   m_Father: {fileID: 4541713010007565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &137878188224151091
-SkinnedMeshRenderer:
+--- !u!33 &8302500892168572939
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994851923494042}
+  m_Mesh: {fileID: 4300000, guid: 70a38cbb725cc9f4c986cad8cdf020a4, type: 2}
+--- !u!23 &6365960051144822304
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -177,11 +186,13 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
+  m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -203,19 +214,9 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 70a38cbb725cc9f4c986cad8cdf020a4, type: 2}
-  m_Bones:
-  - {fileID: 4916560879172978}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: 0.00085298717, y: -0.25239086, z: 0.00065252185}
-    m_Extent: {x: 0.06923745, y: 0.7440768, z: 0.1664829}
-  m_DirtyAABB: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}

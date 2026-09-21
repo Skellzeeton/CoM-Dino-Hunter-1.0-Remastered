@@ -463,7 +463,8 @@ public class iGameUIBase : MonoBehaviour
 		{
 			return;
 		}
-		for (int i = 0; i < iMacroDefine.GainMaterialFromGameMax; i++)
+		int materialCount = m_GameState.GetGainMaterialCount();
+		for (int i = 0; i < materialCount; i++)
 		{
 			CMaterialInfo gainMaterial = m_GameState.GetGainMaterial(i);
 			if (gainMaterial == null || gainMaterial.nItemID == -1)
@@ -490,6 +491,7 @@ public class iGameUIBase : MonoBehaviour
 			m_UIManager.mPanelMaterial.SetStashMax(dataCenter.StashCountMax);
 		}
 	}
+
 
 	public void ShowLevelUp(bool bShow)
 	{

@@ -35,9 +35,9 @@ public class iMacroDefine
 
 	public static float SlipRateHeight = 0.01f;
 
-	public static int GainMaterialFromGameMax = 8;
+	public static int GainMaterialFromGameMax = 10;
 
-	public static int GainMaterialFromTaskMax = 2;
+	public static int GainMaterialFromTaskMax = 3;
 
 	public static int SecondsOneDay = 86400;
 

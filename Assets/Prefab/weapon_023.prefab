@@ -104,7 +104,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4928311484797190}
-  - component: {fileID: 137557408430787841}
+  - component: {fileID: 4453830365365774425}
+  - component: {fileID: 7893824208535097905}
+  - component: {fileID: 8354505390138373999}
   m_Layer: 0
   m_Name: Dummy01
   m_TagString: Untagged
@@ -129,8 +131,16 @@ Transform:
   - {fileID: 4904088771194185}
   m_Father: {fileID: 4326733132445851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &137557408430787841
-SkinnedMeshRenderer:
+--- !u!33 &4453830365365774425
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695649399137275}
+  m_Mesh: {fileID: 4300000, guid: f4f1833513aa3944ba73dac6e2bc8400, type: 2}
+--- !u!23 &7893824208535097905
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -144,11 +154,13 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
+  m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -170,22 +182,28 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: f4f1833513aa3944ba73dac6e2bc8400, type: 2}
-  m_Bones:
-  - {fileID: 4928311484797190}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -0.000000059604645, y: -0.11124706, z: 0.13205457}
-    m_Extent: {x: 0.18742439, y: 0.6734623, z: 0.32969955}
-  m_DirtyAABB: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8354505390138373999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695649399137275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70e459bf0467c244970daf0086a7d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::iMaterialAlphaSpark
+  sTexName: _SkinColor
+  colorSrc: {r: 1, g: 1, b: 1, a: 1}
+  colorDst: {r: 0, g: 0, b: 0, a: 0}
+  fSpeed: 0.5
 --- !u!1 &1865196390184182
 GameObject:
   m_ObjectHideFlags: 0

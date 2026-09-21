@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4752518591956896}
-  - component: {fileID: 137529820128724935}
+  - component: {fileID: 7473703652256447910}
+  - component: {fileID: 2215961514617279391}
   m_Layer: 0
   m_Name: Dummy01
   m_TagString: Untagged
@@ -33,8 +34,16 @@ Transform:
   - {fileID: 4129350987879563}
   m_Father: {fileID: 4587872663069309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &137529820128724935
-SkinnedMeshRenderer:
+--- !u!33 &7473703652256447910
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174705391236577}
+  m_Mesh: {fileID: 4300000, guid: 1e14b4924f0052145b1a80a62dc98cd4, type: 2}
+--- !u!23 &2215961514617279391
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -48,11 +57,13 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
+  m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,22 +85,12 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 1e14b4924f0052145b1a80a62dc98cd4, type: 2}
-  m_Bones:
-  - {fileID: 4752518591956896}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: 0.003939919, y: 0.029370844, z: 0.28523326}
-    m_Extent: {x: 0.1452902, y: 0.5518241, z: 0.9820348}
-  m_DirtyAABB: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1372908331584200
 GameObject:
   m_ObjectHideFlags: 0
