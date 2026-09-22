@@ -979,6 +979,7 @@ public class iGameSceneBase
 					m_GameState.m_nLevelRewardGold = (int)((float)m_GameState.m_nLevelRewardGold * (1f + value / 100f));
 				}
 				dataCenter.AddGold(m_GameState.m_nLevelRewardGold + m_GameState.GainGoldInGame);
+				dataCenter.AddCrystal(m_GameState.GainCrystalInGame);
 				value = m_User.Property.GetValue(kProEnum.Char_IncreaseExp);
 				if (value > 0f)
 				{
@@ -1918,6 +1919,57 @@ public class iGameSceneBase
 		m_ltItem.Add(gameObject2);
 	}
 
+	public void AddCrystal(int nCrystal, Vector3 v3Pos, Vector3 v3Dir, float fScaleRate,
+			int nGroundEffectPrefab = -1)
+	{
+		GameObject prefab = PrefabManager.Get(252);
+		if (prefab == null)
+		{
+			Debug.LogWarning("Crystal prefab (252) not registered in PrefabManager.");
+			return;
+		}
+		GameObject go = (GameObject)Object.Instantiate(prefab);
+		if (go == null)
+			return;
+		go.transform.position = v3Pos;
+		go.transform.forward  = v3Dir;
+		go.transform.localScale *= fScaleRate;
+		iItem component = go.GetComponent<iItem>();
+		if (component != null)
+		{
+			component.Initialize(50001);
+			component.UID = -1;
+			component.AddForce(v3Dir);
+			component.UpdateFunc(0, 103, nCrystal, 0);
+			if (component.isHasScreenTip)
+			{
+				component.m_ScreenTip = m_GameUI.CreateScreenTip(m_User.gameObject, go);
+				component.m_ScreenTip.SetIcon("dan");
+			}
+		}
+		if (nGroundEffectPrefab > 0)
+		{
+			iItemDynamic dynItem = go.GetComponent<iItemDynamic>();
+			if (dynItem != null)
+			{
+				GameObject fxPrefab = PrefabManager.Get(nGroundEffectPrefab);
+				if (fxPrefab != null)
+				{
+					GameObject fx = (GameObject)Object.Instantiate(fxPrefab);
+					if (fx != null)
+					{
+						fx.transform.parent        = go.transform;
+						fx.transform.localPosition = Vector3.zero;
+						fx.transform.localRotation = Quaternion.identity;
+						fx.SetActiveRecursively(false);
+						dynItem.m_GroundEffect = fx;
+					}
+				}
+			}
+		}
+		m_ltItem.Add(go);
+	}
+
 	public List<GameObject> GetSceneItemList()
 	{
 		return m_ltItem;
@@ -2205,6 +2257,14 @@ public class iGameSceneBase
 			WorldToScreenPointNGUI(v3Pos, ref v3Pos);
 			m_GameUI.AddGoldUI(fValue, v3Pos);
 		}
+	}
+
+	public void AddCrystalText(float fValue, Vector3 v3Pos)
+	{
+    if (m_GameUI == null)
+        return;
+    WorldToScreenPointNGUI(v3Pos, ref v3Pos);
+    m_GameUI.AddCrystalUI(fValue, v3Pos);
 	}
 
 	public void AddMaterial(Vector3 v3Pos, string sIcon, int nCount)

@@ -4,10 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(gyUIPoolObject))]
 public class iGoldEmitter : MonoBehaviour
 {
-    protected int[]   m_arrGoldValue = new int[]   { 1, 3, 5, 10, 25, 50, 75, 100, 150, 250 };
-    protected float[] m_arrGoldSize  = new float[] { 0.5f, 0.75f, 1f, 2f, 2.5f, 3f, 3.5f, 4f, 4.5f, 5f };
+    protected int[]   m_arrGoldValue = new int[]   { 1, 3, 5, 10, 15, 25, 50, 75, 100, 150, 250 };
+    protected float[] m_arrGoldSize  = new float[] { 0.5f, 0.75f, 1f, 1.5f, 2f, 2.5f, 3f, 3.5f, 4f, 4.5f, 5f };
+
     private const int LARGE_GOLD_GROUND_EFFECT = 1304;
+
     protected int         m_nGold;
+    protected bool        m_bCrystal;
     protected List<int>   m_ltGoldEmitter;
     protected float       m_fInterval  = 0.2f;
     protected float       m_fTimeCount;
@@ -36,10 +39,11 @@ public class iGoldEmitter : MonoBehaviour
         m_ltGoldEmitter.RemoveAt(0);
     }
 
-    public void Initialize(int nGold)
+    public void Initialize(int nGold, bool iscrystal = false)
     {
         base.gameObject.SetActiveRecursively(true);
-        m_nGold = nGold;
+        m_nGold      = nGold;
+        m_bCrystal   = iscrystal;
         m_ltGoldEmitter.Clear();
         int num = m_arrGoldValue.Length - 1;
         while (nGold > 0)
@@ -67,19 +71,33 @@ public class iGoldEmitter : MonoBehaviour
         for (num = 0; num < m_arrGoldValue.Length && nGold > m_arrGoldValue[num]; num++) { }
         if (num < 0 || num >= m_arrGoldSize.Length)
             return;
+
         iGameSceneBase gameScene = iGameApp.GetInstance().m_GameScene;
         if (gameScene == null)
             return;
+
         Vector3 onUnitSphere = Random.onUnitSphere;
         onUnitSphere.y = 1f;
-        int groundEffectPrefab = (m_arrGoldSize[num] >= 2.5f || m_arrGoldValue[num] >= 25)
+
+        if (m_bCrystal)
+        {
+            gameScene.AddCrystal(
+                    nGold,
+                    base.transform.position,
+                    onUnitSphere * Random.Range(300f, 500f),
+                    m_arrGoldSize[num]);
+        }
+        else
+        {
+            int groundEffectPrefab = (m_arrGoldSize[num] >= 2.5f || m_arrGoldValue[num] >= 25)
             ? LARGE_GOLD_GROUND_EFFECT
             : -1;
-        gameScene.AddGold(
-            nGold,
-            base.transform.position,
-            onUnitSphere * Random.Range(300f, 500f),
-            m_arrGoldSize[num],
-            groundEffectPrefab);
+            gameScene.AddGold(
+                    nGold,
+                    base.transform.position,
+                    onUnitSphere * Random.Range(300f, 500f),
+                    m_arrGoldSize[num],
+                    groundEffectPrefab);
+        }
     }
 }

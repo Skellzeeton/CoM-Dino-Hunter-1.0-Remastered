@@ -10,9 +10,11 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
     public GameObject mStatisticsContext1;
     public GameObject mStatisticsContext2;
     public GameObject mStatisticsContext3;
+    public GameObject mStatisticsContext4;
     public gyUIHopNumber mContext1;
     public gyUIHopNumber mContext2;
     public gyUIHopNumber mContext3;
+    public gyUIHopNumber mContext4;
     protected bool m_bShow;
     protected int m_nStep;
     protected float m_fStepCount;
@@ -49,12 +51,10 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                 if (m_fStepCount <= 0f)
                 {
                     mTitleIcon.SetActiveRecursively(true);
-
                     TweenPosition tween = TweenPosition.Begin(mTitleIcon, 0.5f, Vector3.zero);
                     tween.from = new Vector3(-120f, 260f, 0f);
                     tween.to = new Vector3(-120f, 83f, 0f);
                     tween.method = UITweener.Method.EaseIn;
-
                     m_nStep = 2;
                     m_fStepCount = 0.2f;
                 }
@@ -95,6 +95,15 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
                     m_fStepCount = 0.5f;
                 }
                 break;
+            case 6:
+                m_fStepCount -= deltaTime;
+                if (m_fStepCount <= 0f)
+                {
+                    mStatisticsContext4.SetActiveRecursively(true);
+                    m_nStep = 7;
+                    m_fStepCount = 0.5f;
+                }
+                break;
         }
     }
 
@@ -110,6 +119,7 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
         mStatisticsContext1.SetActiveRecursively(false);
         mStatisticsContext2.SetActiveRecursively(false);
         mStatisticsContext3.SetActiveRecursively(false);
+        mStatisticsContext4.SetActiveRecursively(false);
         transform.localPosition = bShow
             ? new Vector3(0f, 0f, transform.localPosition.z)
             : new Vector3(10000f, 10000f, transform.localPosition.z);
@@ -142,6 +152,12 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
             mContext3.Go(0f, nValue, Mathf.Clamp01(nValue / 300f) * 5f);
     }
 
+    public void SetGainCrystal(int nValue)
+    {
+        if (mContext4 != null)
+            mContext4.Go(0f, nValue, Mathf.Clamp01(nValue / 300f) * 5f);
+    }
+
     public bool IsContextHop()
     {
         if (mContext1 == null || !mContext1.gameObject.activeSelf || !mContext1.isHop)
@@ -149,6 +165,8 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
         if (mContext2 == null || !mContext2.gameObject.activeSelf || !mContext2.isHop)
             return false;
         if (mContext3 == null || !mContext3.gameObject.activeSelf || !mContext3.isHop)
+            return false;
+        if (mContext4 == null || !mContext4.gameObject.activeSelf || !mContext4.isHop)
             return false;
         return true;
     }
@@ -158,5 +176,6 @@ public class gyUIPanelMissionSuccess : MonoBehaviour
         if (mContext1 != null) mContext1.Stop();
         if (mContext2 != null) mContext2.Stop();
         if (mContext3 != null) mContext3.Stop();
+        if (mContext4 != null) mContext4.Stop();
     }
 }

@@ -36,9 +36,9 @@ public abstract class UIWidget : MonoBehaviour
 	}
 
 	// Cached and saved values
-	[HideInInspector][SerializeField] Color mColor = Color.white;
-	[HideInInspector][SerializeField] Pivot mPivot = Pivot.Center;
-	[HideInInspector][SerializeField] int mDepth = 0;
+	[SerializeField] Color mColor = Color.white;
+	[SerializeField] Pivot mPivot = Pivot.Center;
+	[SerializeField] int mDepth = 0;
 
 	protected GameObject mGo;
 	protected Transform mTrans;

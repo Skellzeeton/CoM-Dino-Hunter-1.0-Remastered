@@ -253,6 +253,16 @@ public class iGameLogic
 				}
 				break;
 			}
+			case 103:
+			{
+				CCharUser cCharUser2 = target as CCharUser;
+				if (cCharUser2 != null)
+				{
+					m_GameState.AddCrystal(num2);
+					m_GameScene.AddCrystalText(num2, cCharUser2.GetBone(1).position);
+				}
+				break;
+			}
 			case 102:
 			{
 				CCharUser cCharUser = target as CCharUser;

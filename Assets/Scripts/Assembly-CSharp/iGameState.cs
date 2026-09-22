@@ -91,6 +91,8 @@ public class iGameState
 
 	protected int m_nGainGoldInGame;
 
+	protected int m_nGainCrystalInGame;
+
 	protected CMaterialInfo[] m_arrGainMaterialInGame;
 
 	protected string m_sUserName;
@@ -197,6 +199,18 @@ public class iGameState
 		}
 	}
 
+	public int GainCrystalInGame
+	{
+		get
+		{
+			return m_nGainCrystalInGame;
+		}
+		set
+		{
+			m_nGainCrystalInGame = value;
+		}
+	}
+
 	public Vector3 GetScreenCenterV3()
 	{
 		return new Vector3(Screen.width / 2, Screen.height / 2, 0f);
@@ -223,6 +237,7 @@ public class iGameState
 	{
 		m_fGameTime = 0f;
 		m_nGainGoldInGame = 0;
+		m_nGainCrystalInGame = 0;
 		m_nLevelRewardGold = 0;
 		m_nLevelRewardExp = 0;
 		CMaterialInfo[] arrGainMaterialInGame = m_arrGainMaterialInGame;
@@ -330,6 +345,11 @@ public class iGameState
 	public void AddGold(int nGold)
 	{
 		m_nGainGoldInGame += nGold;
+	}
+
+	public void AddCrystal(int nCrystal)
+	{
+		m_nGainCrystalInGame += nCrystal;
 	}
 
 	public void AddMaterial(int nID, int nCount, bool isInGame = true)

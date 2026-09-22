@@ -27,6 +27,8 @@ public class iGameUIBase : MonoBehaviour
 
 	protected CPoolManage m_NGUIGoldTip;
 
+	protected CPoolManage m_NGUICrystalTip;
+
 	protected CPoolManage m_NGUIMaterialTip;
 
 	protected CPoolManage m_NGUITextTip;
@@ -121,6 +123,8 @@ public class iGameUIBase : MonoBehaviour
 		m_NGUIScreenTip.Initialize("Artist/GameUI/NGUIScreenTip", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUIGoldTip = new CPoolManage();
 		m_NGUIGoldTip.Initialize("Artist/GameUI/NGUIGoldTip", mPreLoadNode, m_UIManager.mParent, 1);
+		m_NGUICrystalTip = new CPoolManage();
+		m_NGUICrystalTip.Initialize("Artist/GameUI/NGUICrystalTip", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUIMaterialTip = new CPoolManage();
 		m_NGUIMaterialTip.Initialize("Artist/GameUI/NGUIMaterialTip", mPreLoadNode, m_UIManager.mParent, 1);
 		m_NGUITextTip = new CPoolManage();
@@ -263,6 +267,20 @@ public class iGameUIBase : MonoBehaviour
 				component.Go(v3Pos);
 			}
 		}
+	}
+
+	public void AddCrystalUI(float fValue, Vector3 v3Pos)
+	{
+    GameObject gameObject = m_NGUICrystalTip.Get();
+    if (gameObject == null)
+        return;
+    gyUILabelDmg component = gameObject.GetComponent<gyUILabelDmg>();
+    if (component == null)
+        return;
+    gameObject.transform.parent = m_UIManager.mParent;
+    component.SetLabel(fValue.ToString());
+    component.SetColor(new Color(0f, 0.65f, 0.9f));
+    component.Go(v3Pos);
 	}
 
 	public void AddMaterialUI(Vector3 v3Pos, string sIcon, int nCount)
@@ -409,6 +427,7 @@ public class iGameUIBase : MonoBehaviour
 				m_UIManager.mPanelMissionComplete.SetGainExp(m_GameState.m_nLevelRewardExp);
 				m_UIManager.mPanelMissionComplete.SetGainGold(m_GameState.m_nLevelRewardGold);
 				m_UIManager.mPanelMissionComplete.SetGainGoldEarned(m_GameState.GainGoldInGame);
+				m_UIManager.mPanelMissionComplete.SetGainCrystal(m_GameState.GainCrystalInGame);
 			}
 		}
 	}

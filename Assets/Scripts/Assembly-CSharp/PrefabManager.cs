@@ -119,7 +119,8 @@ public class PrefabManager
 		m_dictData.Add(178, "Artist/Model/Spawn/spawn_rock_small");
 		m_dictData.Add(250, "Artist/Model/Items/Egg");
 		m_dictData.Add(251, "Artist/Model/Items/Gold");
-		m_dictData.Add(252, "Artist/Model/Items/Material");
+		m_dictData.Add(252, "Artist/Model/Items/Crystal");
+		m_dictData.Add(253, "Artist/Model/Items/Material");
 		m_dictData.Add(300, "Artist/Model/BackPack/BackPackFly");
 		m_dictData.Add(301, "Artist/Model/BackPack/BackBag");
 		m_dictData.Add(302, "Artist/Model/Items/GoldEmitter");
@@ -281,7 +282,8 @@ public class PrefabManager
 		//Debug.Log("PreLoadGameEffect");
 		AddPool(302, 5);
 		AddPool(251, 10);
-		AddPool(252, 10);
+		AddPool(252, 5);
+		AddPool(253, 10);
 		AddPool(1301, 10);
 		AddPool(1351);
 	}
