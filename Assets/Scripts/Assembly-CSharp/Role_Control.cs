@@ -633,7 +633,7 @@ public class Role_Control : MonoBehaviour
 			result = ((!isattack) ? "rocket_ground_idle" : "rocket_ground_attack01");
 			break;
 		case WeaponType.ViolenceGun:
-			result = ((!isattack) ? "shootgun_ground_idle" : "shootgun_ground_attack01");
+			result = ((!isattack) ? "autorifle_ground_idle" : "shootgun_ground_attack01");
 			break;
 		}
 		return result;

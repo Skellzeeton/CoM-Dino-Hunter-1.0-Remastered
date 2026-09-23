@@ -2755,15 +2755,15 @@ MonoBehaviour:
     e00: 249.5
     e01: 0
     e02: 0
-    e03: -6691.156
+    e03: -0
     e10: 0
     e11: 249.5
     e12: 0
-    e13: -72.29512
+    e13: -2495000
     e20: 0
     e21: 0
     e22: 249.5
-    e23: 5980.7124
+    e23: -0
     e30: 0
     e31: 0
     e32: 0
@@ -4354,7 +4354,7 @@ Transform:
   m_GameObject: {fileID: 2190751237221878202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 439.99997, y: -249.5, z: 0}
+  m_LocalPosition: {x: 439.5, y: -249.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5662,7 +5662,7 @@ Transform:
   m_GameObject: {fileID: 2637501496004234894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -439.99997, y: 249.5, z: 0}
+  m_LocalPosition: {x: -439.5, y: 249.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6307,7 +6307,7 @@ Transform:
   m_GameObject: {fileID: 2829287115402413135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -439.99997, y: -249.5, z: 0}
+  m_LocalPosition: {x: -439.5, y: -249.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6495,6 +6495,7 @@ GameObject:
   - component: {fileID: 6929206467686232078}
   - component: {fileID: 5222827932176770569}
   - component: {fileID: 1082090829609471118}
+  - component: {fileID: 5608598742602218025}
   m_Layer: 8
   m_Name: btnCancel
   m_TagString: Untagged
@@ -6567,6 +6568,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d007d2914d0e65ae706ce7bf8c9f9bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5608598742602218025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906588618117701348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 5209768080613942617}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &2958061188783978570
 GameObject:
   m_ObjectHideFlags: 0
@@ -7431,6 +7449,7 @@ GameObject:
   - component: {fileID: 6996978511540271406}
   - component: {fileID: 542468726003104134}
   - component: {fileID: 1194072184754394662}
+  - component: {fileID: 919853714270112111}
   m_Layer: 8
   m_Name: btnCancel
   m_TagString: Untagged
@@ -7517,6 +7536,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLabel: {fileID: 176048256461145244}
+--- !u!114 &919853714270112111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289394490812838694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 7399402136738414608}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &3309400524012034077
 GameObject:
   m_ObjectHideFlags: 0
@@ -8019,7 +8055,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.97226, y: 0.31445312, z: 0}
-  m_LocalScale: {x: 15, y: 17, z: 1}
+  m_LocalScale: {x: 14, y: 17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5094837768672106843}
@@ -10210,7 +10246,7 @@ Transform:
   m_GameObject: {fileID: 4357515528793646259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -249.5, z: 0}
+  m_LocalPosition: {x: 0.49998146, y: -249.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10952,6 +10988,7 @@ GameObject:
   - component: {fileID: 3202464113941733724}
   - component: {fileID: 1379222749850212793}
   - component: {fileID: 3540439618406865002}
+  - component: {fileID: 8988770265488862348}
   m_Layer: 8
   m_Name: btnContinue
   m_TagString: Untagged
@@ -11013,6 +11050,23 @@ MonoBehaviour:
   hover: {x: 1.1, y: 1.1, z: 1.1}
   pressed: {x: 0.9, y: 0.9, z: 0.9}
   duration: 0.1
+--- !u!114 &8988770265488862348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636416843128111910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 2822942649641563759}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &4650652843974379397
 GameObject:
   m_ObjectHideFlags: 0
@@ -11156,6 +11210,7 @@ GameObject:
   - component: {fileID: 35424841092416067}
   - component: {fileID: 8493004769513031554}
   - component: {fileID: 7224640340527634701}
+  - component: {fileID: 548626757456200006}
   m_Layer: 8
   m_Name: btnVillage
   m_TagString: Untagged
@@ -11217,6 +11272,23 @@ MonoBehaviour:
   hover: {x: 1.1, y: 1.1, z: 1.1}
   pressed: {x: 0.9, y: 0.9, z: 0.9}
   duration: 0.1
+--- !u!114 &548626757456200006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748809877200463926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 4318011647201493407}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &4756591821339301174
 GameObject:
   m_ObjectHideFlags: 0
@@ -12639,7 +12711,7 @@ Transform:
   m_GameObject: {fileID: 5204213186317357001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 249.5, z: 0}
+  m_LocalPosition: {x: 0.49998146, y: 249.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12732,6 +12804,7 @@ GameObject:
   - component: {fileID: 4362001745237650271}
   - component: {fileID: 8178939826301469781}
   - component: {fileID: 5946646149562482422}
+  - component: {fileID: 9049385290860337340}
   m_Layer: 8
   m_Name: btnClose
   m_TagString: Untagged
@@ -12792,6 +12865,23 @@ MonoBehaviour:
   hover: {x: 1.1, y: 1.1, z: 1.1}
   pressed: {x: 0.9, y: 0.9, z: 0.9}
   duration: 0.1
+--- !u!114 &9049385290860337340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5213474178173858774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 8004498368205446464}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &5225064966887942214
 GameObject:
   m_ObjectHideFlags: 0
@@ -14428,7 +14518,7 @@ Transform:
   m_GameObject: {fileID: 5668679600974246512}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 439.99997, y: 249.5, z: 0}
+  m_LocalPosition: {x: 439.5, y: 249.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16643,6 +16733,7 @@ GameObject:
   - component: {fileID: 1139926935066171151}
   - component: {fileID: 5911054976430298535}
   - component: {fileID: 6094064491137007215}
+  - component: {fileID: 8782434373882134772}
   m_Layer: 8
   m_Name: btnOK
   m_TagString: Untagged
@@ -16730,6 +16821,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLabel: {fileID: 8467877000294663487}
+--- !u!114 &8782434373882134772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812846486294832883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 6943310830544566824}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &6848050559070822376
 GameObject:
   m_ObjectHideFlags: 0
@@ -19314,7 +19422,7 @@ Transform:
   m_GameObject: {fileID: 8243082557309784447}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5000048, z: 0}
+  m_LocalPosition: {x: 0.49998146, y: 0.4873047, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19619,6 +19727,7 @@ GameObject:
   - component: {fileID: 8037464262626699394}
   - component: {fileID: 8623394355932225955}
   - component: {fileID: 8725272523465419865}
+  - component: {fileID: 5009467895047396126}
   m_Layer: 8
   m_Name: ReviveButton
   m_TagString: Untagged
@@ -19710,6 +19819,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d007d2914d0e65ae706ce7bf8c9f9bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5009467895047396126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480859814366831626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 8755891191810197131}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &8512605954344469122
 GameObject:
   m_ObjectHideFlags: 0
@@ -20770,6 +20896,7 @@ GameObject:
   - component: {fileID: 4941052061204929784}
   - component: {fileID: 583011367516724690}
   - component: {fileID: 2394657842202325853}
+  - component: {fileID: 83857562965205323}
   m_Layer: 8
   m_Name: btnOK
   m_TagString: Untagged
@@ -20856,6 +20983,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLabel: {fileID: 8833564072014808575}
+--- !u!114 &83857562965205323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9021375528950487621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f301dc58c583f4f10f83432f5d383b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  tweenTarget: {fileID: 655875443707332609}
+  hover: {r: 0.6, g: 1, b: 0.2, a: 1}
+  pressed: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &9022347333092107406
 GameObject:
   m_ObjectHideFlags: 0

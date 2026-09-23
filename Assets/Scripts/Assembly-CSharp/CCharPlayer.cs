@@ -522,27 +522,27 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Rush, "crossbow_air_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Death, "crossbow_ground_death_fly"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Victory, "crossbow_ground_victory"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_VictoryIdle, "crossbow_ground_victoryidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_VictoryIdle, "autorifle_ground_victoryidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Fail, "crossbow_ground_fail"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_FailIdle, "crossbow_ground_failidle"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Idle, "shootgun_air_idle"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Forward, "shootgun_air_move_forward"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Back, "shootgun_air_move_backward"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Left, "shootgun_air_move_left"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Right, "shootgun_air_move_right"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Idle, "autorifle_air_idle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Forward, "autorifle_air_move_forward"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Back, "autorifle_air_move_backward"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Left, "autorifle_air_move_left"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Right, "autorifle_air_move_right"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack, "shootgun_air_attack01_idle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Forward, "shootgun_air_attack01_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Back, "shootgun_air_attack01_backward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Left, "shootgun_air_attack01_left"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Right, "shootgun_air_attack01_right"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Hurt, "shootgun_ground_damage"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Front, "shootgun_air_damage_flyfront"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Behind, "shootgun_air_damage_flyback"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Skill, "shootgun_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "shootgun_air_move_forward"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Death, "shootgun_ground_death_fly"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Victory, "shootgun_ground_victory"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_VictoryIdle, "shootgun_ground_victoryidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Hurt, "autorifle_ground_damage"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Front, "autorifle_air_damage_flyfront"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Behind, "autorifle_air_damage_flyback"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Skill, "autorifle_ground_useskill"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "autorifle_air_move_forward"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Death, "autorifle_ground_death_fly"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Victory, "autorifle_ground_victory"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_VictoryIdle, "autorifle_ground_victoryidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Fail, "shootgun_ground_fail"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_FailIdle, "shootgun_ground_failidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Idle, "autorifle_air_idle"));
@@ -582,7 +582,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Rush, "holdgun_air_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Death, "holdgun_ground_death_fly"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Victory, "holdgun_ground_victory"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_VictoryIdle, "holdgun_ground_victoryidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_VictoryIdle, "autorifle_ground_victoryidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Fail, "holdgun_ground_fail"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_FailIdle, "holdgun_ground_failidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Idle, "rocket_air_idle"));
@@ -651,8 +651,8 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_VictoryIdle, "crossbow_ground_victoryidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Fail, "crossbow_ground_fail"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_FailIdle, "crossbow_ground_failidle"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Idle, "shootgun_ground_idle"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Forward, "shootgun_ground_move_forward"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Idle, "autorifle_ground_idle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Forward, "autorifle_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Back, "shootgun_ground_move_backward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack, "shootgun_ground_attack01_ingame"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Attack_Forward, "shootgun_ground_attack01_ingame"));
@@ -663,13 +663,13 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Front, "shootgun_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Behind, "shootgun_ground_damage_flyback"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Skill, "shootgun_ground_useskill"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "shootgun_ground_move_forward"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Death, "shootgun_ground_death"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Stun, "shootgun_ground_stun"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Victory, "shootgun_ground_victory"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_VictoryIdle, "shootgun_ground_victoryidle"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Fail, "shootgun_ground_fail"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_FailIdle, "shootgun_ground_failidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "autorifle_ground_move_forward"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Death, "autorifle_ground_death"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Stun, "holdgun_ground_stun"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Victory, "autorifle_ground_victory"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_VictoryIdle, "autorifle_ground_victoryidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Fail, "autorifle_ground_fail"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_FailIdle, "autorifle_ground_failidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Idle, "autorifle_ground_idle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Forward, "autorifle_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.AutoRifle_Back, "autorifle_ground_move_backward"));
@@ -705,9 +705,9 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Death, "holdgun_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Stun, "holdgun_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Victory, "holdgun_ground_victory"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_VictoryIdle, "holdgun_ground_victoryidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_VictoryIdle, "autorifle_ground_victoryidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_Fail, "holdgun_ground_fail"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_FailIdle, "holdgun_ground_failidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.HoldGun_FailIdle, "autorifle_ground_failidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Idle, "rocket_ground_idle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Forward, "rocket_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Rocket_Back, "rocket_ground_move_backward"));
@@ -777,6 +777,10 @@ public class CCharPlayer : CCharBase
 		if (m_curWeaponLvlInfo != null)
 		{
 			TranslateAnim(m_curWeaponLvlInfo.nActionType, m_curAnim, ref type);
+		}
+		if (time == 0f && m_AnimManager != null && m_AnimManager.IsAnimPlaying(type))
+		{
+			time = -1f;
 		}
 		return base.CrossAnim(type, mode, fadespeed, speed, time);
 	}
