@@ -49,19 +49,22 @@ public class doShowTimeTask : Task
 		if (m_fTimeCount > 0.8f && !cCharMob.m_bShowTime)
 		{
 			cCharMob.m_bShowTime = true;
-			Transform bone = cCharMob.GetBone(6);
-			if (bone != null)
+			if (!cCharMob.IsWorldMonsterMob())
 			{
-				int prefabID = cCharMob.IsBoss() ? 1351 : 1352;
-				Object @object = PrefabManager.Get(prefabID);
-				if (@object != null)
+				Transform bone = cCharMob.GetBone(6);
+				if (bone != null)
 				{
-					m_ShowTime = (GameObject)Object.Instantiate(@object);
-					if (m_ShowTime != null)
+					int prefabID = cCharMob.IsBoss() ? 1351 : 1352;
+					Object @object = PrefabManager.Get(prefabID);
+					if (@object != null)
 					{
-						m_ShowTime.transform.parent = bone;
-						m_ShowTime.transform.localPosition = Vector3.zero;
-						m_ShowTime.transform.localRotation = Quaternion.identity;
+						m_ShowTime = (GameObject)Object.Instantiate(@object);
+						if (m_ShowTime != null)
+						{
+							m_ShowTime.transform.parent = bone;
+							m_ShowTime.transform.localPosition = Vector3.zero;
+							m_ShowTime.transform.localRotation = Quaternion.identity;
+						}
 					}
 				}
 			}

@@ -5,6 +5,8 @@ public class CProMob : CProBase
 	public CProMob()
 	{
 		RegisterPro(kProEnum.FreezeTimeMinuseRate);
+		RegisterPro(kProEnum.Mob_Gold_Carry);
+		RegisterPro(kProEnum.Mob_Crystal_Carry);
 	}
 
 	public override void Initialize(int nID, int nLevel)

@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class CStartPointManager
 {
+	public class CClosePoint
+	{
+		public float fDis;
+
+		public CStartPoint point;
+
+		public CClosePoint(float dis, CStartPoint point)
+		{
+			fDis = dis;
+			this.point = point;
+		}
+	}
+
 	protected int m_nID;
 
 	protected Color m_Color;
 
 	protected Dictionary<int, CStartPoint> m_dictStartPoint;
+
+	protected List<CClosePoint> m_ltClosePoint;
 
 	public int ID
 	{
@@ -37,6 +52,7 @@ public class CStartPointManager
 	public CStartPointManager()
 	{
 		m_dictStartPoint = new Dictionary<int, CStartPoint>();
+		m_ltClosePoint = new List<CClosePoint>();
 	}
 
 	public CStartPoint GetRandom()
@@ -51,6 +67,74 @@ public class CStartPointManager
 			}
 		}
 		return null;
+	}
+
+	public CStartPoint GetRandomClosePoint(Vector3 v3Pos, int nCount = 3, float closest = 10f)
+	{
+		if (m_dictStartPoint.Count <= nCount)
+		{
+			return GetRandom();
+		}
+		m_ltClosePoint.Clear();
+		foreach (CStartPoint value in m_dictStartPoint.Values)
+		{
+			bool flag = false;
+			float num = Vector3.Distance(v3Pos, value.v3Pos);
+			if (num <= closest)
+			{
+				continue;
+			}
+			for (int i = 0; i < m_ltClosePoint.Count; i++)
+			{
+				if (m_ltClosePoint[i].fDis == 0f || num < m_ltClosePoint[i].fDis)
+				{
+					m_ltClosePoint.Insert(i, new CClosePoint(num, value));
+					flag = true;
+					break;
+				}
+			}
+			if (!flag)
+			{
+				m_ltClosePoint.Add(new CClosePoint(num, value));
+			}
+		}
+		if (m_ltClosePoint.Count < 1)
+		{
+			return GetRandom();
+		}
+		if (m_ltClosePoint.Count <= nCount)
+		{
+			return m_ltClosePoint[Random.Range(0, m_ltClosePoint.Count)].point;
+		}
+		return m_ltClosePoint[Random.Range(0, nCount)].point;
+	}
+
+	public CStartPoint GetRandomFarestPoint(Vector3 v3Pos, int nCount = 3)
+	{
+		if (m_dictStartPoint.Count <= nCount)
+		{
+			return GetRandom();
+		}
+		m_ltClosePoint.Clear();
+		foreach (CStartPoint value in m_dictStartPoint.Values)
+		{
+			bool flag = false;
+			float num = Vector3.Distance(v3Pos, value.v3Pos);
+			for (int i = 0; i < m_ltClosePoint.Count; i++)
+			{
+				if (m_ltClosePoint[i].fDis == 0f || num > m_ltClosePoint[i].fDis)
+				{
+					m_ltClosePoint.Insert(i, new CClosePoint(num, value));
+					flag = true;
+					break;
+				}
+			}
+			if (!flag)
+			{
+				m_ltClosePoint.Add(new CClosePoint(num, value));
+			}
+		}
+		return m_ltClosePoint[Random.Range(0, nCount)].point;
 	}
 
 	public bool IsInside2D(Vector3 v3Pos)
@@ -169,11 +253,11 @@ public class CStartPointManager
 		{
 			return;
 		}
-        m_Color.r = ServerX.ParseFloat(array[0]);
-        m_Color.g = ServerX.ParseFloat(array[1]);
-        m_Color.b = ServerX.ParseFloat(array[2]);
-        m_Color.a = ServerX.ParseFloat(array[3]);
-        foreach (XmlNode childNode in documentElement.ChildNodes)
+		m_Color.r = ServerX.ParseFloat(array[0]);
+		m_Color.g = ServerX.ParseFloat(array[1]);
+		m_Color.b = ServerX.ParseFloat(array[2]);
+		m_Color.a = ServerX.ParseFloat(array[3]);
+		foreach (XmlNode childNode in documentElement.ChildNodes)
 		{
 			if (childNode.Name != "Point")
 			{
@@ -186,25 +270,25 @@ public class CStartPointManager
 			}
 			int nID = int.Parse(empty);
 			CStartPoint cStartPoint = new CStartPoint();
-            empty = childNode.Attributes["pos"].Value;
-            if (empty.Length > 0)
-            {
-                array = empty.Split(',');
-                if (array.Length >= 2)
-                {
-                    cStartPoint.v3Pos = new Vector3(ServerX.ParseFloat(array[0]), ServerX.ParseFloat(array[1]), ServerX.ParseFloat(array[2]));
-                }
-            }
-            empty = childNode.Attributes["size"].Value;
-            if (empty.Length > 0)
-            {
-                array = empty.Split(',');
-                if (array.Length >= 2)
-                {
-                    cStartPoint.v3Size = new Vector3(ServerX.ParseFloat(array[0]), ServerX.ParseFloat(array[1]), ServerX.ParseFloat(array[2]));
-                }
-            }
-            Set(nID, cStartPoint);
+			empty = childNode.Attributes["pos"].Value;
+			if (empty.Length > 0)
+			{
+				array = empty.Split(',');
+				if (array.Length >= 2)
+				{
+					cStartPoint.v3Pos = new Vector3(ServerX.ParseFloat(array[0]), ServerX.ParseFloat(array[1]), ServerX.ParseFloat(array[2]));
+				}
+			}
+			empty = childNode.Attributes["size"].Value;
+			if (empty.Length > 0)
+			{
+				array = empty.Split(',');
+				if (array.Length >= 2)
+				{
+					cStartPoint.v3Size = new Vector3(ServerX.ParseFloat(array[0]), ServerX.ParseFloat(array[1]), ServerX.ParseFloat(array[2]));
+				}
+			}
+			Set(nID, cStartPoint);
 		}
 	}
 }

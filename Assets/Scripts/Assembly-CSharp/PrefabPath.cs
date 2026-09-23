@@ -30,6 +30,10 @@ public class PrefabPath
 	
 	public const int model_velociraptor4 = 34;
 
+	public const int model_velociraptor5 = 35;
+
+	public const int model_velociraptor6 = 36;
+
 	public const int model_dilophosaurus1 = 41;
 
 	public const int model_dilophosaurus2 = 42;
@@ -325,6 +329,8 @@ public class PrefabPath
 	public const int venom_purple_hit = 1918;
 
 	public const int venom_purple_hit_ground = 1919;
+
+	public const int attention = 1950;
 
 	public const int GameTaskUITimeLimit = 2000;
 

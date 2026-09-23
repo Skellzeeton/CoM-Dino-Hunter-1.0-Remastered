@@ -50,6 +50,8 @@ public class iDataCenter
 	protected bool m_bUnLockLevel;
 	protected List<int> m_ltLevelList;
 	protected bool m_bFirstTimePlay;
+	protected Dictionary<int, int> m_dictWorldMonsterKill;
+	protected string m_sLastWorldMonsterResetDay = string.Empty;
 
 	public bool isFirstTimePlay
 	{
@@ -203,6 +205,12 @@ public class iDataCenter
 		set { m_nUnLockSignID = value; }
 	}
 
+	public int GetWorldMonsterKill(int nMobID)
+	{
+		if (!m_dictWorldMonsterKill.ContainsKey(nMobID)) return 0;
+		return m_dictWorldMonsterKill[nMobID];
+	}
+
 	public iDataCenter()
 	{
 		m_bMusic = true;
@@ -223,6 +231,7 @@ public class iDataCenter
 		m_dictEquipStoneSign = new Dictionary<int, int>();
 		m_dictSkillSign = new Dictionary<int, int>();
 		m_dictCharacterSign = new Dictionary<int, int>();
+		m_dictWorldMonsterKill = new Dictionary<int, int>();
 		m_nCurCharID = 1;
 		m_arrSelectWeapon = new int[3] { 2, 1, -1 };
 		m_dictSelectPassiveSkill = new Dictionary<int, int[]>();
@@ -554,11 +563,9 @@ public class iDataCenter
 		XmlDocument xmlDocument = new XmlDocument();
 		XmlNode newChild = xmlDocument.CreateXmlDeclaration("1.0", "UTF-8", "no");
 		xmlDocument.AppendChild(newChild);
-
 		string empty = string.Empty;
 		XmlElement xmlElement = xmlDocument.CreateElement("gamedata");
 		xmlDocument.AppendChild(xmlElement);
-
 		xmlElement.SetAttribute("version", m_sVersion);
 		xmlElement.SetAttribute("gold", m_nGold.ToString());
 		xmlElement.SetAttribute("crystal", m_nCrystal.ToString());
@@ -576,7 +583,7 @@ public class iDataCenter
 		xmlElement.SetAttribute("isTutorialVillage", m_bTutorialVillage.ToString());
 		xmlElement.SetAttribute("isEvaluate", m_bEvaluate.ToString());
 		xmlElement.SetAttribute("enterappcount", m_nEnterAppCount.ToString());
-
+		xmlElement.SetAttribute("worldmonsterresetday", m_sLastWorldMonsterResetDay ?? string.Empty);
 		XmlElement xmlElement2 = xmlDocument.CreateElement("passedlevel");
 		xmlElement.AppendChild(xmlElement2);
 		foreach (CLevelSaveInfo item in m_ltLevelSaveInfo)
@@ -586,7 +593,6 @@ public class iDataCenter
 			xmlElement3.SetAttribute("id", item.nID.ToString());
 			xmlElement3.SetAttribute("isignorecg", item.isIgnoreCG.ToString());
 		}
-
 		XmlElement xmlElement4 = xmlDocument.CreateElement("character");
 		xmlElement.AppendChild(xmlElement4);
 		xmlElement4.SetAttribute("select", m_nCurCharID.ToString());
@@ -598,7 +604,6 @@ public class iDataCenter
 			xmlElement5.SetAttribute("level", value2.nLevel.ToString());
 			xmlElement5.SetAttribute("exp", value2.nExp.ToString());
 		}
-
 		XmlElement xmlElement6 = xmlDocument.CreateElement("weapon");
 		xmlElement.AppendChild(xmlElement6);
 		empty = string.Empty;
@@ -616,7 +621,6 @@ public class iDataCenter
 			xmlElement7.SetAttribute("id", item2.Key.ToString());
 			xmlElement7.SetAttribute("level", item2.Value.ToString());
 		}
-
 		XmlElement xmlElement8 = xmlDocument.CreateElement("skill");
 		xmlElement.AppendChild(xmlElement8);
 		foreach (KeyValuePair<int, int[]> item3 in m_dictSelectPassiveSkill)
@@ -640,7 +644,6 @@ public class iDataCenter
 			xmlElement10.SetAttribute("id", item4.Key.ToString());
 			xmlElement10.SetAttribute("level", item4.Value.ToString());
 		}
-
 		XmlElement xmlElement11 = xmlDocument.CreateElement("equipstone");
 		xmlElement.AppendChild(xmlElement11);
 		xmlElement11.SetAttribute("select", m_nCurEquipStone.ToString());
@@ -651,7 +654,6 @@ public class iDataCenter
 			xmlElement12.SetAttribute("id", item5.Key.ToString());
 			xmlElement12.SetAttribute("level", item5.Value.ToString());
 		}
-
 		XmlElement xmlElement13 = xmlDocument.CreateElement("materials");
 		xmlElement.AppendChild(xmlElement13);
 		foreach (KeyValuePair<int, ProtectedInt32> dictMaterial in m_dictMaterials)
@@ -664,7 +666,6 @@ public class iDataCenter
 				xmlElement14.SetAttribute("count", dictMaterial.Value.ToString());
 			}
 		}
-
 		XmlElement xmlElement15 = xmlDocument.CreateElement("unlocksign");
 		xmlElement.AppendChild(xmlElement15);
 		xmlElement15.SetAttribute("unlocksigntype", m_nUnLockSignType.ToString());
@@ -697,12 +698,23 @@ public class iDataCenter
 			xmlElement19.SetAttribute("id", item9.Key.ToString());
 			xmlElement19.SetAttribute("sign", item9.Value.ToString());
 		}
+		XmlElement xmlElementWM = xmlDocument.CreateElement("worldmonsterkill");
+		xmlElement.AppendChild(xmlElementWM);
+		foreach (KeyValuePair<int, int> kvp in m_dictWorldMonsterKill)
+		{
+			if (kvp.Value > 0)
+			{
+				XmlElement node = xmlDocument.CreateElement("node");
+				xmlElementWM.AppendChild(node);
+				node.SetAttribute("id", kvp.Key.ToString());
+				node.SetAttribute("count", kvp.Value.ToString());
+			}
+		}
 		CAchievementCenter achievementCenter = CAchievementManager.GetInstance().GetAchievementCenter();
 		if (achievementCenter != null)
 		{
 			achievementCenter.SaveData(xmlDocument, xmlElement);
 		}
-
 		StringWriter stringWriter = new StringWriter();
 		xmlDocument.Save(stringWriter);
 		SaveEncryptedAtomic(stringWriter.ToString());
@@ -776,7 +788,10 @@ public class iDataCenter
 		{
 			m_nEnterAppCount = int.Parse(value);
 		}
-
+		if (MyUtils.GetAttribute(root, "worldmonsterresetday", ref value))
+		{
+			m_sLastWorldMonsterResetDay = value;
+		}
 		foreach (XmlNode item in root)
 		{
 			if (item.Name == "passedlevel")
@@ -1490,5 +1505,26 @@ public class iDataCenter
 			}
 		}
 		return false;
+	}
+
+	public void SetWorldMonsterKill(int nMobID, int nNum)
+	{
+		if (!m_dictWorldMonsterKill.ContainsKey(nMobID))
+			m_dictWorldMonsterKill.Add(nMobID, nNum);
+		else
+			m_dictWorldMonsterKill[nMobID] = nNum;
+	}
+
+	public void AddWorldMonsterKill(int nMobID, int nNum)
+	{
+		SetWorldMonsterKill(nMobID, GetWorldMonsterKill(nMobID) + nNum);
+	}
+
+	public void RefreshWorldMonsterDaily()
+	{
+		string today = DateTime.UtcNow.ToString("yyyy-MM-dd");
+		if (m_sLastWorldMonsterResetDay == today) return;
+		m_dictWorldMonsterKill.Clear();
+		m_sLastWorldMonsterResetDay = today;
 	}
 }

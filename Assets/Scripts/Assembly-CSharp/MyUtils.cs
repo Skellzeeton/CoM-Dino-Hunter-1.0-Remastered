@@ -353,4 +353,18 @@ public class MyUtils
 		}
 		return num;
 	}
+
+	public static int formula_goldendragon(int nPlayerLevel)
+	{
+		if (nPlayerLevel < 4)  return 18  + (nPlayerLevel - 1) * 1;
+		if (nPlayerLevel < 8)  return 40 + (nPlayerLevel - 4) * 1;
+		if (nPlayerLevel < 16) return 70 + (nPlayerLevel - 8) * 1;
+		if (nPlayerLevel < 23) return 135 + (nPlayerLevel - 16) * 1;
+		return 226 + (nPlayerLevel - 23) * 4;
+	}
+
+	public static int formula_crystaldragon(int nPlayerLevel)
+	{
+		return 1 + Mathf.FloorToInt((float)(nPlayerLevel - 1) / 6f);
+	}
 }

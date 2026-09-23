@@ -83,6 +83,16 @@ public class CCharMob : CCharBase
 
 	protected CDropGroupInfo m_tmpDropGroupInfo;
 
+	protected int m_nCarryGoldCur;
+
+	protected int m_nCarryGoldMax;
+
+	protected int m_nCarryCrystalCur;
+
+	protected int m_nCarryCrystalMax;
+
+	protected int m_nCrystalDropAmount;
+
 	public int MobType { get; set; }
 
 	public kMobBehaviour MobBehaviourMode
@@ -225,6 +235,15 @@ public class CCharMob : CCharBase
 		return !base.isDead;
 	}
 
+	public bool IsWorldMonsterMob()
+	{
+		if (m_GameScene == null)
+		{
+			return false;
+		}
+		return m_GameScene.IsWorldMonster(base.ID);
+	}
+
 	public virtual bool AddHardiness(float fDamage, string sBoneName = "")
 	{
 		m_fHardinessCur += fDamage;
@@ -264,8 +283,7 @@ public class CCharMob : CCharBase
 			int dropItemCount = m_curMobInfoLevel.GetDropItemCount();
 			if (dropItemCount > 0)
 			{
-				for (int i = 0; i < dropItemCount; i++)
-				{
+				for (int i = 0; i < dropItemCount; i++) {
 					int dropItem = m_tmpDropGroupInfo.GetDropItem();
 					if (dropItem > 0)
 					{
@@ -276,22 +294,8 @@ public class CCharMob : CCharBase
 					}
 				}
 			}
-			int crystalDropCount = m_curMobInfoLevel.GetCrystalDropCount();
-			if (crystalDropCount > 0)
-			{
-				CUISound.GetInstance().Play("UI_Crystal_appear");
-				for (int ci = 0; ci < crystalDropCount; ci++)
-				{
-					Vector3 onUnitSphere = UnityEngine.Random.onUnitSphere;
-					onUnitSphere.y = 1f;
-					m_GameScene.AddCrystal(
-							1,
-							GetBone(0).position,
-							onUnitSphere * UnityEngine.Random.Range(300f, 500f),
-							1f);
-				}
-			}
-			if (UnityEngine.Random.value <= (m_curMobInfoLevel.fGoldRate / 100f))
+			if (m_nCarryGoldMax < 1 && m_nCarryCrystalMax < 1 &&
+			UnityEngine.Random.value <= (m_curMobInfoLevel.fGoldRate / 100f))
 			{
 				GameObject poolObject = PrefabManager.GetPoolObject(302, 0f);
 				if (poolObject != null)
@@ -301,6 +305,51 @@ public class CCharMob : CCharBase
 					{
 						component.Initialize(m_curMobInfoLevel.nGold);
 						component.transform.position = GetBone(0).position;
+					}
+				}
+			}
+			if (m_nCarryCrystalMax < 1 && m_curMobInfoLevel.nCrystal > 0)
+			{
+				int crystalDropCount = m_curMobInfoLevel.GetCrystalDropCount();
+				if (crystalDropCount > 0)
+				{
+					CUISound.GetInstance().Play("UI_Crystal_appear");
+					for (int ci = 0; ci < crystalDropCount; ci++) {
+						Vector3 onUnitSphere = UnityEngine.Random.onUnitSphere;
+						onUnitSphere.y = 1f;
+						m_GameScene.AddCrystal(
+								1,
+								GetBone(0).position,
+								onUnitSphere * UnityEngine.Random.Range(300f, 500f),
+								1f);
+					}
+				}
+			}
+			if (m_nCarryGoldMax > 0 && m_nCarryGoldCur > 0)
+			{
+				GameObject carryGoldPool = PrefabManager.GetPoolObject(302, 0f);
+				if (carryGoldPool != null)
+				{
+					iGoldEmitter carryGoldEmitter = carryGoldPool.GetComponent<iGoldEmitter>();
+					if (carryGoldEmitter != null)
+					{
+						carryGoldEmitter.Initialize(m_nCarryGoldCur);
+						carryGoldEmitter.transform.parent = GetBone(0);
+						carryGoldEmitter.transform.localPosition = Vector3.zero;
+					}
+				}
+			}
+			if (m_nCarryCrystalMax > 0 && m_nCarryCrystalCur > 0)
+			{
+				GameObject carryCrystalPool = PrefabManager.GetPoolObject(302, 0f);
+				if (carryCrystalPool != null)
+				{
+					iGoldEmitter carryCrystalEmitter = carryCrystalPool.GetComponent<iGoldEmitter>();
+					if (carryCrystalEmitter != null)
+					{
+						carryCrystalEmitter.Initialize(m_nCarryCrystalCur, true);
+						carryCrystalEmitter.transform.parent = GetBone(0);
+						carryCrystalEmitter.transform.localPosition = Vector3.zero;
 					}
 				}
 			}
@@ -333,6 +382,11 @@ public class CCharMob : CCharBase
 					}
 				}
 			}
+		}
+		if (m_GameScene.IsWorldMonster(base.ID))
+		{
+			iDataCenter dc = m_GameData.GetDataCenter();
+			if (dc != null) dc.AddWorldMonsterKill(base.ID, 1);
 		}
 		if (m_GameScene.m_TaskManager != null)
 		{
@@ -457,11 +511,34 @@ public class CCharMob : CCharBase
 			OnDead(kDeadMode2);
 			CGameNetSender.GetInstance().MonsterDead(base.UID, kDeadMode2);
 		}
-		else if (IsCanBeatHardniess() && AddHardiness(fDmg, sBodyPart))
+		else
 		{
-			m_bHurting = true;
-			ResetAI();
-			CGameNetSender.GetInstance().MonsterHurt(base.UID, m_HurtAnim);
+			if (IsCanBeatHardniess() && AddHardiness(fDmg, sBodyPart))
+			{
+				m_bHurting = true;
+				ResetAI();
+				CGameNetSender.GetInstance().MonsterHurt(base.UID, m_HurtAnim);
+			}
+			if (m_nCarryGoldMax > 0 && m_nCarryGoldCur > 0)
+			{
+				int nChunk = Mathf.FloorToInt((float)m_nCarryGoldMax * 0.5f * fDmg / m_fHPMax);
+				if (nChunk < 1)
+					nChunk = 1;
+				if (nChunk > m_nCarryGoldCur)
+					nChunk = m_nCarryGoldCur;
+				m_nCarryGoldCur -= nChunk;
+				GameObject poolObject = PrefabManager.GetPoolObject(302, 0f);
+				if (poolObject != null)
+				{
+					iGoldEmitter component = poolObject.GetComponent<iGoldEmitter>();
+					if (component != null)
+					{
+						component.Initialize(nChunk);
+						component.transform.parent        = GetBone(0);
+						component.transform.localPosition = Vector3.zero;
+					}
+				}
+			}
 		}
 		return true;
 	}
@@ -527,6 +604,16 @@ public class CCharMob : CCharBase
 		m_Property.UpdateSkill(this);
 		m_fHPMax = m_Property.GetValue(kProEnum.HPMax);
 		m_fHP = m_fHPMax;
+		CCharUser user = m_GameScene.GetUser();
+		m_nCarryGoldMax = (int)m_Property.GetValue(kProEnum.Mob_Gold_Carry);
+		if (m_nCarryGoldMax == 1 && user != null)
+			m_nCarryGoldMax = MyUtils.formula_goldendragon(user.Level);
+		m_nCarryGoldCur = m_nCarryGoldMax;
+		m_nCrystalDropAmount = m_curMobInfoLevel.nCrystal;
+		m_nCarryCrystalMax = (int)m_Property.GetValue(kProEnum.Mob_Crystal_Carry);
+		if (m_nCarryCrystalMax == 1 && user != null)
+			m_nCarryCrystalMax = MyUtils.formula_crystaldragon(user.Level);
+		m_nCarryCrystalCur = m_nCarryCrystalMax;
 		InitHardiness(base.ID, base.Level);
 		iGameUIBase gameUI = m_GameScene.GetGameUI();
 		if (gameUI != null)

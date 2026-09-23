@@ -2,6 +2,7 @@ public class CCharMobVelociraptor : CCharMob
 {
 	public override void InitAnimData()
 	{
+		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_ShowTime, "Appearance"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Idle, "idle"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.MoveForward, "run"));
 		m_AnimData.Add(new CAnimInfo(kAnimEnum.Mob_Attack, "attack01"));

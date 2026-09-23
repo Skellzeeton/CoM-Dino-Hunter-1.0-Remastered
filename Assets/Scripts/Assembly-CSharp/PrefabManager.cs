@@ -69,6 +69,8 @@ public class PrefabManager
 		m_dictData.Add(32, "Artist/Model/Character/model_velociraptor2");
 		m_dictData.Add(33, "Artist/Model/Character/model_velociraptor3");
 		m_dictData.Add(34, "Artist/Model/Character/model_velociraptor4");
+		m_dictData.Add(35, "Artist/Model/Character/model_velociraptor5");
+		m_dictData.Add(36, "Artist/Model/Character/model_velociraptor6");
 		m_dictData.Add(41, "Artist/Model/Character/model_dilophosaurus1");
 		m_dictData.Add(42, "Artist/Model/Character/model_dilophosaurus2");
 		m_dictData.Add(43, "Artist/Model/Character/model_dilophosaurus3");
@@ -212,6 +214,7 @@ public class PrefabManager
 		m_dictData.Add(1917, "Artist/Effect/Skill/venom_purple/venom01_purple_fire_pfb");
 		m_dictData.Add(1918, "Artist/Effect/Skill/venom_purple/venom04_purple_hitbody_pfb");
 		m_dictData.Add(1919, "Artist/Effect/Skill/venom_purple/venom03_purple_hit_pfb");
+		m_dictData.Add(1950, "Artist/Effectcustom/Attention");
 		m_dictData.Add(2000, "Artist/GameUI/Task/NGUITaskTimeLimit");
 		m_dictData.Add(2001, "Artist/GameUI/Task/NGUITaskHunter");
 		m_dictData.Add(2002, "Artist/GameUI/Task/NGUITaskHunterList");

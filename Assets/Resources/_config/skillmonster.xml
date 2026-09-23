@@ -302,8 +302,27 @@
 		<skill id="60017" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,90" skillmode="5" skillmodevalue="0.7,178,1,75,0,2,18" func="5,6" valuex="75,6" valuey="0"/>
 		<!-- Large rock spam -->
 		<skill id="60018" lvl="1" type="0" action="10002" rangetype="1" rangetypevalue="0,90" skillmode="5" skillmodevalue="0.7,170,1,50,0,2,4" func="5,6,11" valuex="150,6,2" valuey="0"/>
-	
-	
+
+		<!-- ***********************************�ƽ��� start by 90000************************************************************************* -->
+		<!-- ����Ŀ��0.5s[����0-4] -->
+		<skill id="90000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,5" skillmode="3" skillmodevalue="0.5" />
+		<!-- ��ͨ˺ҧ 100%�˺�-->
+		<skill id="90001" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,5" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+
+
+		<!-- �ƽ���Я������ valuey=1��ʾ��������ֵ�ֳ�����ʽ����-->
+		<skill id="90003" lvl="1" type="1"   func="1" valuex="4001" valuey="1"/>
+
+
+		<!-- ***********************************ˮ���� start by 100000************************************************************************* -->
+		<!-- ����Ŀ��0.5s[����0-4] -->
+		<skill id="100000" lvl="1" type="0" action="1" rangetype="0" rangetypevalue="0,5" skillmode="3" skillmodevalue="0.5" />
+		<!-- ��ͨ˺ҧ 100%�˺�-->
+		<skill id="100001" lvl="1" type="0" action="1000" rangetype="0" rangetypevalue="0,5" skillmode="1" skillmodevalue="0.5" func="5" valuex="100" valuey="0"/>
+
+		<!-- ˮ����Я������  valuey=1��ʾ��������ֵ�ֳ�����ʽ����-->
+		<skill id="100003" lvl="1" type="1"   func="1" valuex="4002" valuey="1"/>
+
 	</skillinfo>
 
 	<comboinfo>	
@@ -467,5 +486,13 @@
 		<combo id="60011" skilllist="60006,60017" coldown="9" freezetime="2"/>
 
 		<combo id="60012" skilllist="60006,60018" coldown="18" freezetime="2"/>
+
+		<!-- ***********************************�ƽ����������� start by 90000************************************************************************* -->
+		<!-- ��ͨ˺ҧ -->
+		<combo id="90000" skilllist="90000,90001" coldown="4" freezetime="2"/>
+
+		<!-- ***********************************ˮ������������ start by 100000************************************************************************* -->
+		<!-- ��ͨ˺ҧ -->
+		<combo id="100000" skilllist="100000,100001" coldown="4" freezetime="2"/>
 	</comboinfo>
 </root>

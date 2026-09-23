@@ -16,6 +16,7 @@ public class iBehaviorCenter
 		CreateBehavior1();
 		CreateBehavior2();
 		CreateBehavior3();
+		CreateBehavior4();
 		CreateBehavior100();
 		CreateBehavior101();
 	}
@@ -233,6 +234,65 @@ public class iBehaviorCenter
 		compositeNode_Selector3.AddChild(compositeNode_Sequence8);
 		compositeNode_Selector3.AddChild(conditionNode_MaintainTimeNode);
 		m_dictBehavior.Add(3, compositeNode_Selector3);
+	}
+
+	protected void CreateBehavior4()
+	{
+		// Dead
+		CompositeNode_Sequence deadSeq = new CompositeNode_Sequence();
+		deadSeq.AddChild(new lgHasDeadNode());
+		deadSeq.AddChild(new doDeadNode());
+
+		// Beat back
+		CompositeNode_Sequence beatSeq = new CompositeNode_Sequence();
+		beatSeq.AddChild(new lgHasBeatBackNode());
+		beatSeq.AddChild(new doBeatBackNode());
+
+		// Hurt
+		CompositeNode_Sequence hurtSeq = new CompositeNode_Sequence();
+		hurtSeq.AddChild(new lgHasHurtNode());
+		hurtSeq.AddChild(new doHurtNode());
+
+		// Stun
+		CompositeNode_Sequence stunSeq = new CompositeNode_Sequence();
+		stunSeq.AddChild(new lgHasStunNode());
+		stunSeq.AddChild(new doStunNode());
+
+		// Freeze
+		CompositeNode_Sequence freezeSeq = new CompositeNode_Sequence();
+		freezeSeq.AddChild(new lgIsFreezeNode());
+		freezeSeq.AddChild(new doFreezeNode());
+
+		// Idle maintenance
+		ConditionNode_MaintainTimeNode idleSeq = new ConditionNode_MaintainTimeNode(2f);
+		idleSeq.AddChild(new doIdleNode(2f));
+
+		// Show-time (same as other behaviors — briefly stands still on spawn if flagged)
+		CompositeNode_Sequence showTimeSeq = new CompositeNode_Sequence();
+		showTimeSeq.AddChild(new lgHasShowTimeNode());
+		showTimeSeq.AddChild(new doShowTimeNode());
+
+		// Flee sequence: select farest spawn point → move to it → despawn
+		CompositeNode_Selector pickFarest = new CompositeNode_Selector();
+		pickFarest.AddChild(new lgHasFarestStartPointNode());
+		pickFarest.AddChild(new doSelectFarestPointNode());
+
+		CompositeNode_Sequence fleeSeq = new CompositeNode_Sequence();
+		fleeSeq.AddChild(pickFarest);
+		fleeSeq.AddChild(new doMoveToNode());
+		fleeSeq.AddChild(new doDisappearNode());
+
+		CompositeNode_Selector root = new CompositeNode_Selector();
+		root.AddChild(deadSeq);
+		root.AddChild(beatSeq);
+		root.AddChild(hurtSeq);
+		root.AddChild(stunSeq);
+		root.AddChild(showTimeSeq);
+		root.AddChild(freezeSeq);
+		root.AddChild(fleeSeq);
+		root.AddChild(idleSeq);
+
+		m_dictBehavior.Add(4, root);
 	}
 
 	protected void CreateBehavior100()

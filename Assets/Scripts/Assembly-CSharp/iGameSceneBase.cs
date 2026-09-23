@@ -47,6 +47,12 @@ public class iGameSceneBase
 		public gyUIScreenTip screentip;
 	}
 
+	protected class CWorldMonster
+	{
+		public int nMobID;
+		public float fRefreshTime;
+	}
+
 	protected enum kAssistAimState
 	{
 		None = 0,
@@ -123,6 +129,9 @@ public class iGameSceneBase
 	protected UnityEngine.AI.NavMeshPath m_NavPath;
 
 	protected List<MonsterNumInfo> m_ltMonsterNumInfo;
+
+	protected Dictionary<int, gyUIScreenTip> m_dictWorldMonsterScreenTips;
+	protected List<CWorldMonster> m_ltRefreshWorldMonster;
 
 	protected CStartPointManager m_curBPManager;
 
@@ -349,6 +358,10 @@ public class iGameSceneBase
 		{
 			m_NavPath = new UnityEngine.AI.NavMeshPath();
 		}
+		if (m_dictWorldMonsterScreenTips == null)
+			m_dictWorldMonsterScreenTips = new Dictionary<int, gyUIScreenTip>();
+		if (m_ltRefreshWorldMonster == null)
+			m_ltRefreshWorldMonster = new List<CWorldMonster>();
 	}
 
 	public void InitializeGameLevel(int nLevel)
@@ -534,6 +547,15 @@ public class iGameSceneBase
 			value.Destroy();
 		}
 		m_MobMap.Clear();
+		if (m_dictWorldMonsterScreenTips != null)
+		{
+			foreach (gyUIScreenTip tip in m_dictWorldMonsterScreenTips.Values)
+			{
+				if (tip != null && tip.gameObject != null)
+					Object.Destroy(tip.gameObject);
+			}
+			m_dictWorldMonsterScreenTips.Clear();
+		}
 	}
 
 	public virtual void ClearPlayer()
@@ -762,6 +784,34 @@ public class iGameSceneBase
 			InitTask(m_nCurTaskID);
 			m_TaskManager.Start();
 			m_MGManager.Start();
+		}
+		m_ltRefreshWorldMonster.Clear();
+		dataCenter.RefreshWorldMonsterDaily();
+		int spawnPointCount = 0;
+		if (m_curSPManagerGround != null)
+		{
+			Dictionary<int, CStartPoint> spData = m_curSPManagerGround.GetData();
+			if (spData != null) spawnPointCount = spData.Count;
+		}
+		if (!m_bIsSkyScene && spawnPointCount >= 2)
+		{
+			CTaskInfo worldTaskInfo = m_GameData.GetTaskInfo(m_nCurTaskID);
+			bool excludeTask = (worldTaskInfo != null && worldTaskInfo.nType == 7);
+			if (!excludeTask)
+			{
+				List<CWorldDailyConfig.CWorldMonsterEntry> entries = CWorldDailyConfig.GetInstance().GetEntries();
+				foreach (var entry in entries)
+				{
+					if (dataCenter.GetWorldMonsterKill(entry.nMobID) >= entry.nDailyMax) continue;
+					if (worldTaskInfo != null && entry.ltTaskTypeLimit.Count > 0 &&
+					entry.ltTaskTypeLimit.Contains(worldTaskInfo.nType)) continue;
+
+					CWorldMonster wm = new CWorldMonster();
+					wm.nMobID = entry.nMobID;
+					wm.fRefreshTime = -1f;
+					m_ltRefreshWorldMonster.Add(wm);
+				}
+			}
 		}
 		m_Status = kGameStatus.GameBegin;
 		m_StatusTime = 1f;
@@ -1345,9 +1395,62 @@ public class iGameSceneBase
 		{
 			m_EventManager.Update(deltaTime);
 		}
-		if (m_TaskManager == null)
+		if (m_TaskManager != null)
 		{
-			return;
+			if (m_ltRefreshWorldMonster.Count > 0 && m_Status == kGameStatus.Gameing)
+			{
+				foreach (CWorldMonster wm in m_ltRefreshWorldMonster)
+				{
+					if (wm.fRefreshTime >= 0f) continue;
+					int framesPerSecond = Mathf.Max(1, Mathf.RoundToInt(1f / Mathf.Max(0.0001f, Time.deltaTime)));
+					if (Time.frameCount % framesPerSecond != 0) continue;
+					CWorldDailyConfig.CWorldMonsterEntry entry = CWorldDailyConfig.GetInstance().FindEntry(wm.nMobID);
+					if (entry == null) continue;
+					iDataCenter dataCenter = m_GameData.GetDataCenter();
+					if (dataCenter == null) continue;
+					if (dataCenter.GetWorldMonsterKill(wm.nMobID) >= entry.nDailyMax) continue;
+					int roll = UnityEngine.Random.Range(0, 100000000);
+					if ((float)roll > entry.fRate * 1000000f) continue;
+					wm.fRefreshTime = 0f;
+					Vector3 spawnPos = Vector3.zero;
+					Vector3 spawnDir = Vector3.forward;
+					if (m_User != null)
+					{
+						spawnPos = m_User.Pos + new Vector3(8f, 0f, 8f);
+						if (m_curSPManagerGround != null)
+						{
+							CStartPoint sp = m_curSPManagerGround.GetRandom();
+							if (sp != null)
+							{
+								spawnPos = sp.GetRandom();
+								spawnDir = (m_User.Pos - spawnPos).normalized;
+							}
+						}
+					}
+					int uID = MyUtils.GetUID();
+					CCharMob mob = AddMob(wm.nMobID, m_User != null ? m_User.Level : 1, uID, spawnPos, spawnDir);
+					if (mob != null)
+					{
+						mob.m_bShowTime = false;
+
+						if (entry.nSpawnEffectID > 0)
+							AddEffect(mob.GetBone(0).position, Vector3.forward, 2f, entry.nSpawnEffectID);
+
+						CMobInfoLevel mobInfo = mob.GetMobInfo();
+						if (mobInfo != null && !string.IsNullOrEmpty(mobInfo.sIcon) &&
+						m_GameUI != null && m_User != null)
+						{
+							gyUIScreenTip tip = m_GameUI.CreateScreenTip(m_User.gameObject, mob.gameObject);
+							if (tip != null)
+							{
+								tip.SetIcon(mobInfo.sIcon);
+								m_dictWorldMonsterScreenTips[mob.UID] = tip;
+							}
+						}
+					}
+					break;
+				}
+			}
 		}
 		m_TaskManager.Update(deltaTime);
 		if (m_TaskManager.isAllCompleted || m_TaskManager.isFailed)
@@ -1644,15 +1747,19 @@ public class iGameSceneBase
 
 	public void RemoveMob(CCharMob charmob)
 	{
-		if (!(charmob == null))
+		if (charmob == null) return;
+		if (m_dictWorldMonsterScreenTips != null &&
+		m_dictWorldMonsterScreenTips.ContainsKey(charmob.UID))
 		{
-			m_MobMap.Remove(charmob.UID);
-			charmob.Destroy();
-			if (m_MGManager != null)
-			{
-				m_MGManager.NotifyMobDied();
-			}
+			gyUIScreenTip tip = m_dictWorldMonsterScreenTips[charmob.UID];
+			if (tip != null && tip.gameObject != null)
+				Object.Destroy(tip.gameObject);
+			m_dictWorldMonsterScreenTips.Remove(charmob.UID);
 		}
+		m_MobMap.Remove(charmob.UID);
+		charmob.Destroy();
+		if (m_MGManager != null)
+			m_MGManager.NotifyMobDied();
 	}
 
 	public void RemoveMob(int nUID)
@@ -2196,6 +2303,14 @@ public class iGameSceneBase
 				break;
 			}
 		}
+		return false;
+	}
+
+	public bool IsWorldMonster(int nMobID)
+	{
+		if (m_ltRefreshWorldMonster == null) return false;
+		for (int i = 0; i < m_ltRefreshWorldMonster.Count; i++)
+			if (m_ltRefreshWorldMonster[i].nMobID == nMobID) return true;
 		return false;
 	}
 	

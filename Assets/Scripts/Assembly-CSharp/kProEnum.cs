@@ -86,5 +86,7 @@ public enum kProEnum
 	Char_RecoverLife = 3002,
 	Char_MSEquip_Off = 3003,
 	Char_IncreaseGold = 3004,
-	Char_IncreaseExp = 3005
+	Char_IncreaseExp = 3005,
+	Mob_Gold_Carry = 4001,
+	Mob_Crystal_Carry = 4002
 }
