@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::iMaterialAlphaSpark
   sTexName: _SkinColor
-  colorSrc: {r: 1, g: 1, b: 1, a: 1}
-  colorDst: {r: 0, g: 0, b: 0, a: 0}
+  colorSrc: {r: 0, g: 0, b: 0, a: 0}
+  colorDst: {r: 1, g: 1, b: 1, a: 1}
   fSpeed: 0.5
 --- !u!1 &1027939020613217
 GameObject:
@@ -197,7 +197,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.007023, y: 3.2277083, z: -43.34912}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4182702612522842}

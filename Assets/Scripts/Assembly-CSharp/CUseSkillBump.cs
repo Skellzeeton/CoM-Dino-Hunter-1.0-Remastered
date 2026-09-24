@@ -21,6 +21,8 @@ public class CUseSkillBump : CUseSkill
 
 	protected iRushEffect m_RushEffect;
 
+	private const float BumpCollisionSkin = 0.02f;
+
 	public override kUseSkillStatus OnEnter(CCharBase charbase)
 	{
 		charbase.m_bBumping = true;
@@ -34,7 +36,10 @@ public class CUseSkillBump : CUseSkill
 		RaycastHit hitInfo;
 		if (Physics.Raycast(ray, out hitInfo, m_fBumpDis, -1879048192))
 		{
-			m_fBumpDis = Vector3.Distance(ray.origin, hitInfo.point) - 2f;
+			m_fBumpDis = Mathf.Max(
+					0f,
+					Vector3.Distance(ray.origin, hitInfo.point) - 2f
+			);
 			m_v3Dst = charbase.Pos + charbase.Dir2D * m_fBumpDis;
 		}
 		m_fSpeed = m_fBumpDis / m_fBumpTime;
@@ -152,7 +157,13 @@ public class CUseSkillBump : CUseSkill
 		if (m_fBumpTimeCount < m_fBumpTime)
 		{
 			m_fBumpTimeCount += deltaTime;
-			charbase.Pos = Vector3.Lerp(m_v3Src, m_v3Dst, m_fBumpTimeCount / m_fBumpTime);
+			float t = Mathf.Clamp01(m_fBumpTimeCount / m_fBumpTime);
+			Vector3 nextPos = Vector3.Lerp(m_v3Src, m_v3Dst, t);
+			if (charbase.IsPlayer() || charbase.IsUser())
+			{
+				nextPos = ClampBumpPositionForPlayer(charbase, nextPos);
+			}
+			charbase.Pos = nextPos;
 			if (m_fBumpTimeCount >= m_fBumpTime)
 			{
 				if (m_RushEffect != null)
@@ -163,6 +174,55 @@ public class CUseSkillBump : CUseSkill
 			}
 		}
 		return kUseSkillStatus.Executing;
+	}
+
+	private Vector3 ClampBumpPositionForPlayer(CCharBase charbase, Vector3 desiredPos)
+	{
+		Vector3 currentPos = charbase.Pos;
+		Vector3 delta = desiredPos - currentPos;
+		delta.y = 0f;
+		float dist = delta.magnitude;
+		if (dist < 0.0001f)
+			return desiredPos;
+		Vector3 dir = delta / dist;
+		float radius = GetBumpRadius(charbase);
+		Vector3 origin = charbase.GetBone(1).position;
+		RaycastHit hit;
+		int mask = -1879048192;
+		if (Physics.SphereCast(
+				origin,
+				radius,
+				dir,
+				out hit,
+				dist,
+				mask,
+				QueryTriggerInteraction.Ignore))
+		{
+			float allowedDistance = Mathf.Max(0f, hit.distance - BumpCollisionSkin);
+			return currentPos + dir * allowedDistance;
+		}
+		return desiredPos;
+	}
+
+	private float GetBumpRadius(CCharBase charbase)
+	{
+		if (charbase.Entity == null)
+			return 0.5f;
+		CharacterController cc = charbase.Entity.GetComponent<CharacterController>();
+		if (cc != null)
+			return Mathf.Max(0.05f, cc.radius);
+		CapsuleCollider capsule = charbase.Entity.GetComponent<CapsuleCollider>();
+		if (capsule != null)
+			return Mathf.Max(0.05f, capsule.radius);
+		Collider col = charbase.Entity.GetComponent<Collider>();
+		if (col != null)
+		{
+			return Mathf.Max(
+					0.05f,
+					Mathf.Max(col.bounds.extents.x, col.bounds.extents.z)
+			);
+		}
+		return 0.5f;
 	}
 
 	protected override void SkillEffect(CCharBase actor, CCharBase target = null)

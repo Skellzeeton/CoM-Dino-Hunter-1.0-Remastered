@@ -648,7 +648,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Death, "crossbow_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Stun, "crossbow_ground_stun"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Victory, "crossbow_ground_victory"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_VictoryIdle, "crossbow_ground_victoryidle"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_VictoryIdle, "autorifle_ground_victoryidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_Fail, "crossbow_ground_fail"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.Crossbow_FailIdle, "crossbow_ground_failidle"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Idle, "autorifle_ground_idle"));
