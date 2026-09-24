@@ -71,7 +71,7 @@ useaudio
 		<!-- BUFF 1 8  -->
 		<skill id="1" lvl="1" type="0" icon="kuangbao" targetlimit="3" action="14"  skillmode="1" skillmodevalue="0.3" func="3" valuex="101" valuey="9" name="Kill Shot" desc="Increases weapon damage by 40% for 9 seconds."/>
     <!--   +  -->
-		<skill id="2" lvl="1" type="0" icon="chongfeng" action="15" useaudio="Skill_Rush" rangetype="1" rangetypevalue="0,3,0,0" skillmode="6" skillmodevalue="25,0.35,0.05" func="4" valuex="2" valuey="100000" name="Bolt" desc="Dash forward to dodge attacks and to stun and knock back dinos in your path. "/>
+		<skill id="2" lvl="1" type="0" icon="chongfeng" action="15" useaudio="Skill_Rush" rangetype="1" rangetypevalue="0,3,0,0" skillmode="6" skillmodevalue="25,0.35,0.05" func="4,2" valuex="2,85" valuey="100000" name="Bolt" desc="Dash forward to dodge attacks and to stun, damage, and knock back dinos in your path.\nDeals 85 bonus damage for every character level."/>
     <!-- 30% -->
 		<skill id="3" lvl="1" type="0" icon="zhiliao" targetlimit="3" action="14" rangetype="0" rangetypevalue="" skillmode="1" skillmodevalue="0.3" func="3,9" valuex="104,35" valuey="1" name="Heal" desc="Restore your HP by 35%."/>
 		<!-- BUFF 103 6 -->
@@ -321,10 +321,10 @@ useaudio
 	
 	
 		<!--  -->
-	<skill id="5002" lvl="1" type="1"   func="1" valuex="702"  valuey="2" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="250" levelupdesc="Increases cannon fire rate.\n+{color:1eff0000}2%{color} fire rate" desc="Increases cannon fire rate.\n+{color:1eff0000}2%{color} fire rate" iscrystalunlock="true" unlockprice="10"/>	
-	<skill id="5002" lvl="2" type="1"   func="1" valuex="702"  valuey="4" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="400" levelupdesc="Next Level:\n+4% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}4%{color} fire rate"/>	
-	<skill id="5002" lvl="3" type="1"   func="1" valuex="702"  valuey="6" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16" purchaseprice="1500" levelupdesc="Next Level:\n+6% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}6%{color} fire rate"/>		
-	<skill id="5002" lvl="4" type="1"   func="1" valuex="702"  valuey="8" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="2500" levelupdesc="Next Level:\n+8% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}8%{color} fire rate"/>	
+	<skill id="5002" lvl="1" type="1"   func="1" valuex="702"  valuey="2" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="250" levelupdesc="Increases cannon fire rate.\n+{color:1eff0000}2%{color} fire rate" desc="Increases cannon fire rate.\n+{color:1eff0000}2%{color} fire rate" iscrystalunlock="true" unlockprice="10"/>
+	<skill id="5002" lvl="2" type="1"   func="1" valuex="702"  valuey="4" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="400" levelupdesc="Next Level:\n+4% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}4%{color} fire rate"/>
+	<skill id="5002" lvl="3" type="1"   func="1" valuex="702"  valuey="6" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16" purchaseprice="1500" levelupdesc="Next Level:\n+6% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}6%{color} fire rate"/>
+	<skill id="5002" lvl="4" type="1"   func="1" valuex="702"  valuey="8" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="2500" levelupdesc="Next Level:\n+8% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}8%{color} fire rate"/>
 	<skill id="5002" lvl="5" type="1"   func="1" valuex="702"  valuey="10" name="Faster Boom" icon="passiveskill_5002" unlocklevel="16"  purchaseprice="4750" levelupdesc="Next Level:\n+10% fire rate ({color:1eff0000}+2%{color}) " desc="Increases cannon fire rate.\n+{color:1eff0000}10%{color} fire rate"/>
 	
 		

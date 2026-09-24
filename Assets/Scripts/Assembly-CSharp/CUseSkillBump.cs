@@ -23,6 +23,10 @@ public class CUseSkillBump : CUseSkill
 
 	private const float BumpCollisionSkin = 0.02f;
 
+	private CSkillInfoLevel m_pScaledSkillInfoLevel;
+
+	private readonly HashSet<int> m_hitTargets = new HashSet<int>();
+
 	public override kUseSkillStatus OnEnter(CCharBase charbase)
 	{
 		charbase.m_bBumping = true;
@@ -109,6 +113,8 @@ public class CUseSkillBump : CUseSkill
 			}
 		}
 		//Debug.Log(charbase.UID + " start bump state");
+		m_hitTargets.Clear();
+		m_pScaledSkillInfoLevel = BuildLevelScaledSkillInfo(charbase);
 		if (m_pSkillInfoLevel.sUseAudio.Length > 0)
 		{
 			charbase.PlayAudio(m_pSkillInfoLevel.sUseAudio);
@@ -227,91 +233,137 @@ public class CUseSkillBump : CUseSkill
 
 	protected override void SkillEffect(CCharBase actor, CCharBase target = null)
 	{
+		CSkillInfoLevel skillInfo = m_pScaledSkillInfoLevel ?? m_pSkillInfoLevel;
 		switch (m_pSkillInfoLevel.nRangeType)
 		{
-		case 0:
-		{
-			if (target == null || target.isDead || !m_GameLogic.IsSkillCanUse(actor, target, m_pSkillInfoLevel))
+			case 0:
 			{
-				break;
-			}
-			Vector3 bloodPos2 = m_Target.GetBloodPos(actor.GetBone(1).position, target.Pos - actor.Pos);
-			iGameLogic.HitInfo hitinfo2 = new iGameLogic.HitInfo();
-			hitinfo2.v3HitDir = (m_Target.Pos - actor.Pos).normalized;
-			hitinfo2.v3HitPos = bloodPos2;
-			m_GameLogic.Skill(m_pSkillInfoLevel, actor, target, ref hitinfo2);
-			if (m_GameScene.IsRoomMaster())
-			{
-				if (target.IsMonster())
-				{
-					CGameNetSender.GetInstance().BattleDamageMob(target.UID, m_GameLogic.ltDamageInfo);
-				}
-				else if (target.IsUser())
-				{
-					CGameNetSender.GetInstance().BattleDamagePlayer(m_GameLogic.ltDamageInfo);
-				}
-			}
-			m_Target.PlayAudio(kAudioEnum.HitBody);
-			break;
-		}
-		case 1:
-		{
-			int num = 0;
-			int nValue = 0;
-			m_pSkillInfoLevel.GetSkillRangeValue(3, ref nValue);
-			List<CCharBase> unitList = m_GameScene.GetUnitList();
-			for (int i = 0; i < unitList.Count; i++)
-			{
-				target = unitList[i];
-				if (actor.IsAlly(target))
-				{
-					continue;
-				}
-				if (nValue > 0 && num >= nValue)
-				{
+				if (target == null || target.isDead || !m_GameLogic.IsSkillCanUse(actor, target, m_pSkillInfoLevel))
 					break;
-				}
-				if (target.isDead || !m_GameLogic.IsSkillCanUse(actor, target, m_pSkillInfoLevel))
-				{
-					continue;
-				}
-				Vector3 bloodPos = target.GetBloodPos(actor.GetBone(1).position, target.Pos - actor.Pos);
-				iGameLogic.HitInfo hitinfo = new iGameLogic.HitInfo();
-				hitinfo.v3HitDir = (target.Pos - actor.Pos).normalized;
-				hitinfo.v3HitPos = bloodPos;
-				m_GameLogic.Skill(m_pSkillInfoLevel, actor, target, ref hitinfo);
-				if (target.isDead)
-				{
-					CCharMob cCharMob = target as CCharMob;
-					if (cCharMob != null)
-					{
-						cCharMob.m_fDeadDistance = 10f;
-						if (Vector3.Dot(hitinfo.v3HitDir, actor.Dir2D) > 0f)
-						{
-							cCharMob.m_v3DeadDirection = hitinfo.v3HitDir;
-						}
-						else
-						{
-							cCharMob.m_v3DeadDirection = hitinfo.v3HitDir + actor.Dir2D;
-						}
-						cCharMob.OnDead(kDeadMode.HitFly);
-					}
-				}
+				if (m_hitTargets.Contains(target.UID))
+					break;
+				Vector3 bloodPos2 = target.GetBloodPos(actor.GetBone(1).position, target.Pos - actor.Pos);
+				iGameLogic.HitInfo hitinfo2 = new iGameLogic.HitInfo();
+				hitinfo2.v3HitDir = (target.Pos - actor.Pos).normalized;
+				hitinfo2.v3HitPos = bloodPos2;
+				hitinfo2.weaponinfolevel = BuildBumpWeaponInfo(actor);
+				hitinfo2.isPlayerSkill = true;
+				m_GameLogic.Skill(skillInfo, actor, target, ref hitinfo2);
+				m_hitTargets.Add(target.UID);
+				GrantExpOnKill(actor, target, hitinfo2.v3HitPos);
 				if (m_GameScene.IsRoomMaster())
 				{
 					if (target.IsMonster())
-					{
 						CGameNetSender.GetInstance().BattleDamageMob(target.UID, m_GameLogic.ltDamageInfo);
-					}
 					else if (target.IsUser())
-					{
 						CGameNetSender.GetInstance().BattleDamagePlayer(m_GameLogic.ltDamageInfo);
-					}
 				}
 				target.PlayAudio(kAudioEnum.HitBody);
+				break;
 			}
-			break;
+			case 1:
+			{
+				int num = 0;
+				int nValue = 0;
+				m_pSkillInfoLevel.GetSkillRangeValue(3, ref nValue);
+				List<CCharBase> unitList = m_GameScene.GetUnitList();
+				for (int i = 0; i < unitList.Count; i++)
+				{
+					target = unitList[i];
+					if (actor.IsAlly(target))
+						continue;
+					if (nValue > 0 && num >= nValue)
+						break;
+					if (target.isDead || !m_GameLogic.IsSkillCanUse(actor, target, m_pSkillInfoLevel))
+						continue;
+					if (m_hitTargets.Contains(target.UID))
+						continue;
+					Vector3 bloodPos = target.GetBloodPos(actor.GetBone(1).position, target.Pos - actor.Pos);
+					iGameLogic.HitInfo hitinfo = new iGameLogic.HitInfo();
+					hitinfo.v3HitDir = (target.Pos - actor.Pos).normalized;
+					hitinfo.v3HitPos = bloodPos;
+					hitinfo.weaponinfolevel = BuildBumpWeaponInfo(actor);
+					hitinfo.isPlayerSkill = true;
+					m_GameLogic.Skill(skillInfo, actor, target, ref hitinfo);
+					m_hitTargets.Add(target.UID);
+					GrantExpOnKill(actor, target, hitinfo.v3HitPos);
+					if (m_GameScene.IsRoomMaster())
+					{
+						if (target.IsMonster())
+							CGameNetSender.GetInstance().BattleDamageMob(target.UID, m_GameLogic.ltDamageInfo);
+						else if (target.IsUser())
+							CGameNetSender.GetInstance().BattleDamagePlayer(m_GameLogic.ltDamageInfo);
+					}
+					target.PlayAudio(kAudioEnum.HitBody);
+					num++;
+				}
+				break;
+			}
 		}
+	}
+
+	private void GrantExpOnKill(CCharBase actor, CCharBase target, Vector3 hitPos)
+	{
+		if (target == null || !target.isDead)
+			return;
+		CCharMob mob = target as CCharMob;
+		if (mob == null)
+			return;
+		CMobInfoLevel mobInfo = mob.GetMobInfo();
+		if (mobInfo == null)
+			return;
+		CCharPlayer player = actor as CCharPlayer;
+		if (player == null)
+			return;
+		int nExp = mobInfo.nExp;
+		float expBonus = player.Property.GetValue(kProEnum.Char_IncreaseExp);
+		if (expBonus > 0f)
+			nExp = (int)((float)nExp * (1f + expBonus / 100f));
+		player.AddExp(nExp);
+		m_GameScene.AddExpText(nExp, hitPos);
+	}
+
+	private CSkillInfoLevel BuildLevelScaledSkillInfo(CCharBase actor)
+	{
+		CCharPlayer player = actor as CCharPlayer;
+		if (player == null)
+			return m_pSkillInfoLevel;
+		int level = player.Level;
+		if (level <= 1)
+			return m_pSkillInfoLevel;
+		var cloneMethod = typeof(object).GetMethod(
+				"MemberwiseClone",
+				System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+		if (cloneMethod == null)
+			return m_pSkillInfoLevel;
+		CSkillInfoLevel clone = cloneMethod.Invoke(m_pSkillInfoLevel, null) as CSkillInfoLevel;
+		if (clone == null)
+			return m_pSkillInfoLevel;
+		if (m_pSkillInfoLevel.arrFunc != null)
+			clone.arrFunc = (int[])m_pSkillInfoLevel.arrFunc.Clone();
+		if (m_pSkillInfoLevel.arrValueX != null)
+			clone.arrValueX = (int[])m_pSkillInfoLevel.arrValueX.Clone();
+		if (m_pSkillInfoLevel.arrValueY != null)
+			clone.arrValueY = (int[])m_pSkillInfoLevel.arrValueY.Clone();
+		if (clone.arrFunc == null || clone.arrValueX == null)
+			return clone;
+		int count = Mathf.Min(clone.arrFunc.Length, clone.arrValueX.Length);
+		for (int i = 0; i < count; i++)
+		{
+			if (clone.arrFunc[i] == 2)
+			{
+				clone.arrValueX[i] = clone.arrValueX[i] * level;
+			}
 		}
+		return clone;
+	}
+
+	private CWeaponInfoLevel BuildBumpWeaponInfo(CCharBase actor)
+	{
+		CWeaponInfoLevel info = new CWeaponInfoLevel();
+		info.nAttackMode = 4;
+		info.fCritical    = -100000f;
+		info.fCriticalDmg = 0f;
+		return info;
 	}
 }
