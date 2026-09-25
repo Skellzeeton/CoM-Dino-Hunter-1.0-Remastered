@@ -444,16 +444,28 @@ public class Scene_Forge : MonoBehaviour
 	{
 		if (event_type == 3)
 		{
+			GoodsNeedItemBuy component = control.GetComponent<GoodsNeedItemBuy>();
+			if (component == null)
+			{
+				Debug.Log("error! no GoodsNeedItemBuy");
+				return;
+			}
+			if (!component.CanBuy())
+			{
+				return;
+			}
 			if (sfx_open_now)
 			{
 				CUISound.GetInstance().Play("UI_Button");
 			}
-			GoodsNeedItemBuy component = control.GetComponent<GoodsNeedItemBuy>();
 			int goodsID = component.GetGoodsID();
 			int goodsQuality = (int)component.GetGoodsQuality();
 			int goodsLackCount = component.GetGoodsLackCount();
 			popup_weapon.SetGoodsNeedItemBuy(component);
-			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.SendEvent_SceneForge("TUIEvent_WeaponGoodsBuy", goodsID, goodsQuality, goodsLackCount));
+			global::EventCenter.EventCenter.Instance.Publish(
+					this,
+					new TUIEvent.SendEvent_SceneForge("TUIEvent_WeaponGoodsBuy", goodsID, goodsQuality, goodsLackCount)
+			);
 		}
 	}
 

@@ -26,7 +26,7 @@ public class CItemInfoLevel
 
 	public int nTakenBuff;
 
-	public bool isCrystalPurchase;
+	public bool isCrystalPurchase = true;
 
 	public int nPurchasePrice;
 

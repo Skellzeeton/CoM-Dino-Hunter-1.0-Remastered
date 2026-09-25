@@ -32,6 +32,55 @@ public class TUIDataServer
 		global::EventCenter.EventCenter.Instance.Register<TUIEvent.SendEvent_SceneGold>(TUIEvent_BackInfo_SceneGold);
 	}
 
+	private bool IsMaterialUnlockedForPurchase(iGameData gameData, int materialID)
+	{
+		if (gameData == null)
+		{
+			return true;
+		}
+		iDataCenter dataCenter = gameData.GetDataCenter();
+		if (dataCenter == null)
+		{
+			return true;
+		}
+		iGameLevelCenter levelCenter = gameData.GetGameLevelCenter();
+		if (levelCenter == null)
+		{
+			return true;
+		}
+		Dictionary<int, GameLevelInfo> levels = levelCenter.GetData();
+		if (levels == null)
+		{
+			return true;
+		}
+		int firstDropLevelID = int.MaxValue;
+		foreach (GameLevelInfo level in levels.Values)
+		{
+			if (level == null || level.ltRewardMaterial == null)
+			{
+				continue;
+			}
+			foreach (CRewardMaterial reward in level.ltRewardMaterial)
+			{
+				if (reward == null || reward.nID != materialID)
+				{
+					continue;
+				}
+				if (level.nID < firstDropLevelID)
+				{
+					firstDropLevelID = level.nID;
+				}
+
+				break;
+			}
+		}
+		if (firstDropLevelID == int.MaxValue)
+		{
+			return true;
+		}
+		return dataCenter.IsLevelPassed(firstDropLevelID);
+	}
+
 	private void TUIEvent_BackInfo_SceneMain(object sender, TUIEvent.SendEvent_SceneMain m_event)
 	{
 		if (m_event.GetEventName() == "TUIEvent_EnterInfo")
@@ -2462,6 +2511,14 @@ public class TUIDataServer
 					int rparam = m_event.GetRparam();
 					int lparam = m_event.GetLparam();
 					Debug.Log(rparam);
+					if (!IsMaterialUnlockedForPurchase(gameData3, wParam))
+					{
+						global::EventCenter.EventCenter.Instance.Publish(
+								this,
+								new TUIEvent.BackEvent_SceneForge(m_event.GetEventName(), false)
+						);
+						return;
+					}
 					CItemInfoLevel itemInfo3 = gameData3.GetItemInfo(wParam, 1);
 					if (itemInfo3 != null && itemInfo3.nType == 3)
 					{
@@ -2470,10 +2527,19 @@ public class TUIDataServer
 							int num16 = itemInfo3.nPurchasePrice * rparam;
 							if (dataCenter3.Crystal < num16)
 							{
-								global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneForge(m_event.GetEventName(), false, BackEventFalseType.NoCrystalEnough, num16 - dataCenter3.Crystal));
+								global::EventCenter.EventCenter.Instance.Publish(
+										this,
+										new TUIEvent.BackEvent_SceneForge(
+												m_event.GetEventName(),
+												false,
+												BackEventFalseType.NoCrystalEnough,
+												num16 - dataCenter3.Crystal
+										)
+								);
 								return;
 							}
 							dataCenter3.AddCrystal(-num16);
+							CAchievementManager.GetInstance().AddAchievement(13);
 							dataCenter3.AddMaterialNum(wParam, rparam);
 							dataCenter3.Save();
 							flag3 = true;
@@ -2645,6 +2711,7 @@ public class TUIDataServer
 						if (cLevelUpEquip.isCrystalTrade)
 						{
 							//CFlurryManager.GetInstance().ConsumeCrystal(CFlurryManager.kConsumeType.Stone);
+							CAchievementManager.GetInstance().AddAchievement(13);
 						}
 						else
 						{
