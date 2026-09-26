@@ -254,6 +254,16 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="10" recommandlevel="4"/>	
 	</gamelevel>
 
+	<gamelevel id="1025" BGM="BGM_Map03" BGM_ambience="Amb_Map05_Underground" scenename="SceneLava" bp_cfg="30101" gamewave="10024001,10024002,10024003,10024004,10024005,10024006,10024007,10024008" task="1024"  sp_cfg_ground="30111" exp="1750"  gold="720" desc="Hunt Outraged Killosaurus Rex X 2&#xA;Hunt T Rex X 1" name="24.Triumphant Return" issidelevel="false" proccess="1">
+		<MonsterNumLimit>
+			<limit type="1" maxnumber="28" />
+		</MonsterNumLimit>
+		<RewardMaterial material="30081" countlist="2" countratelist="100" />
+		<RewardMaterial material="30073" countlist="2" countratelist="100" />
+		<RewardMaterial material="100005" countlist="1" countratelist="100" />
+		<recommand recommandtype="1" recommandid="10" recommandlevel="4"/>
+	</gamelevel>
+
 
 
 
