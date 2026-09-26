@@ -136,7 +136,17 @@ public class PrefabPath
 
 	public const int item_crystal = 252;
 
-	public const int item_material_common = 253;
+	public const int item_material_1 = 253;
+
+	public const int item_material_2 = 254;
+
+	public const int item_material_3 = 255;
+
+	public const int item_material_4 = 256;
+
+	public const int item_material_5 = 257;
+
+	public const int item_material_6 = 258;
 
 	public const int back_jetpack = 300;
 

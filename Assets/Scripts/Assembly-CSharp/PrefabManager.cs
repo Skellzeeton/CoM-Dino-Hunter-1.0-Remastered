@@ -122,7 +122,12 @@ public class PrefabManager
 		m_dictData.Add(250, "Artist/Model/Items/Egg");
 		m_dictData.Add(251, "Artist/Model/Items/Gold");
 		m_dictData.Add(252, "Artist/Model/Items/Crystal");
-		m_dictData.Add(253, "Artist/Model/Items/Material");
+		m_dictData.Add(253, "Artist/Model/Items/Material_1");
+		m_dictData.Add(254, "Artist/Model/Items/Material_2");
+		m_dictData.Add(255, "Artist/Model/Items/Material_3");
+		m_dictData.Add(256, "Artist/Model/Items/Material_4");
+		m_dictData.Add(257, "Artist/Model/Items/Material_5");
+		m_dictData.Add(258, "Artist/Model/Items/Material_6");
 		m_dictData.Add(300, "Artist/Model/BackPack/BackPackFly");
 		m_dictData.Add(301, "Artist/Model/BackPack/BackBag");
 		m_dictData.Add(302, "Artist/Model/Items/GoldEmitter");
