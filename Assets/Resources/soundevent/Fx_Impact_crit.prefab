@@ -47,7 +47,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.175
+  m_Volume: 0.125
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 78158ab2ad10b5d56a7674e2129198a3, type: 3}
   probability: []
-  volumOffset: 0.05
+  volumOffset: 0.025
   pitchOffset: 0.05
   loopMode: 0
   cutoff: 0
