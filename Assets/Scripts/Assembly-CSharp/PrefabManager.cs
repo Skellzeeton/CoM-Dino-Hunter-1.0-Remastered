@@ -220,6 +220,7 @@ public class PrefabManager
 		m_dictData.Add(1918, "Artist/Effect/Skill/venom_purple/venom04_purple_hitbody_pfb");
 		m_dictData.Add(1919, "Artist/Effect/Skill/venom_purple/venom03_purple_hit_pfb");
 		m_dictData.Add(1950, "Artist/Effectcustom/Attention");
+		m_dictData.Add(1954, "Artist/Effectcustom/Attention_Blue");
 		m_dictData.Add(2000, "Artist/GameUI/Task/NGUITaskTimeLimit");
 		m_dictData.Add(2001, "Artist/GameUI/Task/NGUITaskHunter");
 		m_dictData.Add(2002, "Artist/GameUI/Task/NGUITaskHunterList");

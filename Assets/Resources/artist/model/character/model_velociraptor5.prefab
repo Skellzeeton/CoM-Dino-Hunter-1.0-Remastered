@@ -665,6 +665,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bBoss: 0
+  soundOverrides:
+  - originalName: SVO_Voice_Velo_Death
+    overrideName: SVO_Voice_Velo_Death_Small
+  - originalName: SVO_Voice_dino_hurt
+    overrideName: SVO_Voice_dino_hurt_small
+  - originalName: Ani_Footstep_Dino02
+    overrideName: Ani_Footstep_Dino_Currency
 --- !u!111 &111683071999907512
 Animation:
   m_ObjectHideFlags: 0

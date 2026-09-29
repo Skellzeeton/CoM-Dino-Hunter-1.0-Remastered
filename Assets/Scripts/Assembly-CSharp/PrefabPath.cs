@@ -342,6 +342,8 @@ public class PrefabPath
 
 	public const int attention = 1950;
 
+	public const int attention_blue = 1954;
+
 	public const int GameTaskUITimeLimit = 2000;
 
 	public const int GameTaskUIHunter = 2001;

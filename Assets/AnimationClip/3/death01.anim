@@ -6679,7 +6679,7 @@ AnimationClip:
       m_RotationOrder: 4
     path: Bip01/Bip01 Pelvis/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01 R Toe0/Bip01
       R Toe01
-  m_ScaleCurves:
+  m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -225675,7 +225675,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.15
-    functionName: PlayAudio
+    functionName: PlayAudioByMobType
     data: SVO_Voice_Velo_Death
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
