@@ -132,11 +132,13 @@ public class TUIMappingInfo
 		skill_dictionary[5] = "huti";
 		skill_dictionary[1] = "kuangbao";
 		skill_dictionary[3] = "zhiliao";
+		skill_dictionary[6] = "alternate";
 		skill_dictionary[99002] = "chongfeng2";
 		skill_dictionary[99004] = "dunxing2";
 		skill_dictionary[99005] = "huti2";
 		skill_dictionary[99001] = "kuangbao2";
 		skill_dictionary[99003] = "zhiliao2";
+		skill_dictionary[99006] = "alternate2";
 		skill_dictionary[1001] = "passiveskill_1001";
 		skill_dictionary[1002] = "passiveskill_1002";
 		skill_dictionary[1003] = "passiveskill_1003";
@@ -179,6 +181,12 @@ public class TUIMappingInfo
 		skill_dictionary[5007] = "passiveskill_5007";
 		skill_dictionary[5008] = "passiveskill_5008";
 		skill_dictionary[5009] = "passiveskill_5009";
+		skill_dictionary[6001] = "passiveskill_6001";
+		skill_dictionary[6002] = "passiveskill_6002";
+		skill_dictionary[6003] = "passiveskill_6003";
+		skill_dictionary[6004] = "passiveskill_6004";
+		skill_dictionary[6005] = "passiveskill_6005";
+		skill_dictionary[6006] = "passiveskill_6006";
 		weapon_dictionary = new Dictionary<int, string>();
 		weapon_dictionary[1] = "Weapon001";
 		weapon_dictionary[2] = "Weapon002";

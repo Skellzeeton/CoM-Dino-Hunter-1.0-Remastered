@@ -45,6 +45,7 @@ public enum kProEnum
 	Crossbow_Critical = 305,
 	Crossbow_CriticalDmg = 306,
 	Crossbow_Protect = 307,
+	Crossbow_Capacity = 308,
 	Split4 = 400,
 	AutoRifle_Dmg = 401,
 	AutoRifle_Dmg_Rate = 402,

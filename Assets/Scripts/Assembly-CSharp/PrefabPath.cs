@@ -258,6 +258,10 @@ public class PrefabPath
 
 	public const int buff_power_hold = 1203;
 
+	public const int buff_power_alternate_add = 1207;
+
+	public const int buff_power_alternate_hold = 1208;
+
 	public const int buff_def_add = 1204;
 
 	public const int buff_def_hold = 1205;

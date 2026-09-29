@@ -50,6 +50,7 @@ public class CProPlayer : CProBase
 		RegisterPro(kProEnum.Crossbow_Critical);
 		RegisterPro(kProEnum.Crossbow_CriticalDmg);
 		RegisterPro(kProEnum.Crossbow_Protect);
+		RegisterPro(kProEnum.Crossbow_Capacity);
 		RegisterPro(kProEnum.AutoRifle_Dmg);
 		RegisterPro(kProEnum.AutoRifle_Dmg_Rate);
 		RegisterPro(kProEnum.AutoRifle_Speed);

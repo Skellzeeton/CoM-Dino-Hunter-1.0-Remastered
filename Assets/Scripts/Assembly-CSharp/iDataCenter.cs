@@ -251,6 +251,56 @@ public class iDataCenter
 		m_nEnterAppCount = 0;
 	}
 
+	public void RetroactiveUnlockSkills()
+	{
+		try
+		{
+			iGameApp app = iGameApp.GetInstance();
+			if (app == null || app.m_GameData == null)
+			{
+				return;
+			}
+			foreach (KeyValuePair<int, CCharSaveInfo> kvp in m_dictCharSaveInfo)
+			{
+				CCharSaveInfo charSave = kvp.Value;
+				if (charSave == null)
+				{
+					continue;
+				}
+				if (charSave.nLevel == -1)
+				{
+					continue;
+				}
+				CCharacterInfo characterInfo = app.m_GameData.GetCharacterInfo(kvp.Key);
+				if (characterInfo == null || characterInfo.ltCharacterPassiveSkill == null)
+				{
+					continue;
+				}
+				foreach (int skillID in characterInfo.ltCharacterPassiveSkill)
+				{
+					CSkillInfo skillInfo = app.m_GameData.GetSkillInfo(skillID);
+					if (skillInfo == null)
+					{
+						continue;
+					}
+					int existingLevel = 0;
+					if (GetPassiveSkill(skillID, ref existingLevel))
+					{
+						continue;
+					}
+					if (charSave.nLevel >= skillInfo.nUnlockLevel)
+					{
+						SetSkillSign(skillID, 1);
+						UnlockPassiveSkill(skillID);
+					}
+				}
+			}
+		}
+		catch
+		{
+		}
+	}
+
 	private string GetSavePath(string fileName)
 	{
 		return System.IO.Path.Combine(Application.persistentDataPath, fileName);
@@ -503,9 +553,7 @@ public class iDataCenter
 		XmlDocument backupDoc;
 		bool currentOk = TryLoadXmlDocument(GetSavePath(SAVE_FILE), out currentDoc) && IsValidGameDataDocument(currentDoc);
 		bool backupOk = TryLoadXmlDocument(GetSavePath(BACKUP_FILE), out backupDoc) && IsValidGameDataDocument(backupDoc);
-
 		XmlDocument chosenDoc = null;
-
 		if (currentOk && backupOk)
 		{
 			if (IsSeverelyDifferent(currentDoc, backupDoc))
@@ -537,7 +585,6 @@ public class iDataCenter
 			Save();
 			return false;
 		}
-
 		string value = string.Empty;
 		string text = string.Empty;
 		XmlNode documentElement = chosenDoc.DocumentElement;
@@ -545,7 +592,6 @@ public class iDataCenter
 		{
 			text = value;
 		}
-
 		if (text == "1.0.0")
 		{
 			Load_1_0(documentElement);
@@ -554,7 +600,7 @@ public class iDataCenter
 		{
 			Load_1_0(documentElement);
 		}
-
+		RetroactiveUnlockSkills();
 		return true;
 	}
 

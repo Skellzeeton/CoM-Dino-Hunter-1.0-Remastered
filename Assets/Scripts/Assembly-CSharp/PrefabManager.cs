@@ -179,6 +179,8 @@ public class PrefabManager
 		m_dictData.Add(1200, "Artist/Effect/Skill/HP_UP/HP_up_start");
 		m_dictData.Add(1202, "Artist/Effect/Skill/power_up/power_up_start");
 		m_dictData.Add(1203, "Artist/Effect/Skill/power_up/power_up_keep");
+		m_dictData.Add(1207, "Artist/Effect/Skill/power_up/power_up_alternate_start");
+		m_dictData.Add(1208, "Artist/Effect/Skill/power_up/power_up_alternate_keep");
 		m_dictData.Add(1204, "Artist/Effect/Skill/Defense_UP/Defense_up_start");
 		m_dictData.Add(1205, "Artist/Effect/Skill/Defense_UP/Defense_up_keep");
 		m_dictData.Add(1206, "Artist/Effect/Skill/stealth/stealth_pfb");

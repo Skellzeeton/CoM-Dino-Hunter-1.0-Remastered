@@ -138,8 +138,16 @@ public class CWeaponBase
 		{
 			if (player != null && player.Property != null)
 			{
-				//Debug.Log(player.Property.GetValue(kProEnum.All_Capacity));
-				m_nBulletNumMax = (int)((float)m_pWeaponLvlInfo.nCapacity * (1f + player.Property.GetValue(kProEnum.All_Capacity) / 100f));
+				if (m_pWeaponLvlInfo.nType == 0)
+				{
+					//Debug.Log(player.Property.GetValue(kProEnum.Crossbow_Capacity));
+					m_nBulletNumMax = (int)((float)m_pWeaponLvlInfo.nCapacity * (1f + player.Property.GetValue(kProEnum.Crossbow_Capacity) / 100f));
+				}
+				else
+				{
+					//Debug.Log(player.Property.GetValue(kProEnum.All_Capacity));
+					m_nBulletNumMax = (int)((float)m_pWeaponLvlInfo.nCapacity * (1f + player.Property.GetValue(kProEnum.All_Capacity) / 100f));
+				}
 			}
 			else
 			{

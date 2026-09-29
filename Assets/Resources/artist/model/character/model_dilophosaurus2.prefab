@@ -337,8 +337,8 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: aa7f067706f81214e9fd9a0e8e36851e, type: 2}
-  - {fileID: 7400000, guid: ecf0bdfbb027b8510ae8be87aeadb00d, type: 2}
-  - {fileID: 7400000, guid: 7e55e79b823a6ea0691614e037446c23, type: 2}
+  - {fileID: 7400000, guid: c6165740a3b156b4bbe8a66560fd62cf, type: 2}
+  - {fileID: 7400000, guid: a42d996fda8b14f4c9831d86edfd4bd3, type: 2}
   - {fileID: 7400000, guid: 29ebe6ea4347c8c4fb410f53b1664e86, type: 2}
   - {fileID: 7400000, guid: e160ae88d6efd5741acd0c463165de36, type: 2}
   - {fileID: 7400000, guid: f74d44b1546642740bc06c0413cc0d01, type: 2}
@@ -382,6 +382,11 @@ MonoBehaviour:
   m_Node: {fileID: 4799345807293390}
   m_fTime: 2
   m_Effect: {fileID: 0}
+  effectPairs:
+  - OriginalID: 1910
+    OverrideID: 1917
+  - OriginalID: 1907
+    OverrideID: 1917
 --- !u!114 &114240098126985862
 MonoBehaviour:
   m_ObjectHideFlags: 0
