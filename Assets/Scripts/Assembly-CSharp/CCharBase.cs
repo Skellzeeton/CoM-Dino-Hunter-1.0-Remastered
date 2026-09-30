@@ -138,6 +138,8 @@ public class CCharBase : MonoBehaviour
 
 	protected float m_fStealthAlphaDst;
 
+	protected MaterialPropertyBlock m_PropertyBlock;
+
 	protected CFixPos m_FixPos;
 
 	protected List<int> m_ltMeleeAttaker;
@@ -381,6 +383,7 @@ public class CCharBase : MonoBehaviour
 		m_GameScene = iGameApp.GetInstance().m_GameScene;
 		m_GameState = iGameApp.GetInstance().m_GameState;
 		m_GameData = iGameApp.GetInstance().m_GameData;
+		m_PropertyBlock = new MaterialPropertyBlock();
 		m_nType = kCharType.None;
 		m_AnimManager = new CAnimPlay();
 		m_AnimData = new CAnimData();
@@ -519,14 +522,18 @@ public class CCharBase : MonoBehaviour
 		}
 		for (int i = 0; i < m_ModelRenderer.Length; i++)
 		{
-			if (!(m_ModelRenderer[i] == null) && !(m_ModelRenderer[i] is ParticleSystemRenderer))
+			if (m_ModelRenderer[i] == null || m_ModelRenderer[i] is ParticleSystemRenderer)
 			{
-				m_ModelRenderer[i].material.SetColor("_Color", color);
+				continue;
 			}
+			var renderer = m_ModelRenderer[i];
+			renderer.GetPropertyBlock(m_PropertyBlock);
+			m_PropertyBlock.SetColor("_Color", color);
+			renderer.SetPropertyBlock(m_PropertyBlock);
 		}
 	}
 
-	public void SetAlpha(float fAlpha)
+	public virtual void SetAlpha(float fAlpha)
 	{
 		if (m_ModelRenderer == null)
 		{
@@ -534,12 +541,20 @@ public class CCharBase : MonoBehaviour
 		}
 		for (int i = 0; i < m_ModelRenderer.Length; i++)
 		{
-			if (!(m_ModelRenderer[i] == null) && !(m_ModelRenderer[i] is ParticleSystemRenderer))
+			if (m_ModelRenderer[i] == null || m_ModelRenderer[i] is ParticleSystemRenderer)
 			{
-				Color color = m_ModelRenderer[i].material.GetColor("_Color");
-				color.a = Mathf.Clamp01(fAlpha);
-				m_ModelRenderer[i].material.SetColor("_Color", color);
+				continue;
 			}
+			var renderer = m_ModelRenderer[i];
+			renderer.GetPropertyBlock(m_PropertyBlock);
+			Color color = m_PropertyBlock.GetColor("_Color");
+			if (color == default(Color))
+			{
+				color = renderer.sharedMaterial.GetColor("_Color");
+			}
+			color.a = Mathf.Clamp01(fAlpha);
+			m_PropertyBlock.SetColor("_Color", color);
+			renderer.SetPropertyBlock(m_PropertyBlock);
 		}
 	}
 

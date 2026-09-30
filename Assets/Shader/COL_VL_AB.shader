@@ -7,10 +7,13 @@ Shader "Triniti/Character/COL_VL_AB"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" }
+
         Pass
         {
             Tags { "LightMode"="ForwardBase" }
+            Blend SrcAlpha OneMinusSrcAlpha
+            ZWrite On
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -44,20 +47,23 @@ Shader "Triniti/Character/COL_VL_AB"
             }
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed3 albedo = tex2D(_MainTex, i.uv_MainTex).rgb * _Color.rgb;
+                fixed4 tex = tex2D(_MainTex, i.uv_MainTex);
+                fixed3 albedo = tex.rgb * _Color.rgb;
+                fixed alpha = tex.a * _Color.a;
                 UNITY_APPLY_FOG(i.fogCoord, albedo);
-                return fixed4(albedo, 1);
+                return fixed4(albedo, alpha);
             }
             ENDCG
         }
+
         Pass
         {
             Tags { "LightMode"="ForwardAdd" }
             Blend One One
+            ZWrite Off
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma target 3.5
             #pragma multi_compile_fog
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
@@ -89,7 +95,8 @@ Shader "Triniti/Character/COL_VL_AB"
             }
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed3 albedo = tex2D(_MainTex, i.uv_MainTex).rgb * _Color.rgb;
+                fixed4 tex = tex2D(_MainTex, i.uv_MainTex);
+                fixed3 albedo = tex.rgb * _Color.rgb;
                 float3 normal = normalize(i.worldNormal);
                 float3 lightDir = normalize(_WorldSpaceLightPos0.xyz - i.worldPos);
                 float distance = length(_WorldSpaceLightPos0.xyz - i.worldPos);

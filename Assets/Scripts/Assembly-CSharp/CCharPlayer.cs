@@ -116,6 +116,8 @@ public class CCharPlayer : CCharBase
 
 	protected iCharacterModel m_CharacterModelInterface;
 
+	protected Dictionary<string, GameObject> m_WeaponCache = new Dictionary<string, GameObject>();
+
 	public bool m_bFinalPath;
 
 	public List<Vector3> m_ltNetPath;
@@ -1413,19 +1415,39 @@ public class CCharPlayer : CCharBase
 		{
 			m_bNeedControlBody = true;
 		}
-		GameObject gameObject = PrefabManager.Get(weaponInfo.nModel);
-		if (gameObject == null)
+		string key = nWeaponID + "_" + nWeaponLevel;
+		if (m_WeaponCache.ContainsKey(key))
 		{
-			return;
+			m_Weapon = m_WeaponCache[key];
+			if (m_Weapon != null)
+			{
+				m_Weapon.SetActive(true);
+				m_Weapon.transform.parent = m_HandBone;
+				m_Weapon.transform.localPosition = Vector3.zero;
+				m_Weapon.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+			}
+			else
+			{
+				m_WeaponCache.Remove(key);
+			}
 		}
-		m_Weapon = (GameObject)Object.Instantiate(gameObject);
 		if (m_Weapon == null)
 		{
-			return;
+			GameObject gameObject = PrefabManager.Get(weaponInfo.nModel);
+			if (gameObject == null)
+			{
+				return;
+			}
+			m_Weapon = (GameObject)Object.Instantiate(gameObject);
+			if (m_Weapon == null)
+			{
+				return;
+			}
+			m_Weapon.transform.parent = m_HandBone;
+			m_Weapon.transform.localPosition = Vector3.zero;
+			m_Weapon.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+			m_WeaponCache[key] = m_Weapon;
 		}
-		m_Weapon.transform.parent = m_HandBone;
-		m_Weapon.transform.localPosition = Vector3.zero;
-		m_Weapon.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
 		Transform transform = m_Weapon.transform.Find("Dummy01/texiao");
 		if (transform == null)
 		{
@@ -1460,24 +1482,24 @@ public class CCharPlayer : CCharBase
 		{
 			switch (weaponInfo.nAttackMode)
 			{
-			case 1:
-				m_curWeapon = new CWeaponMelee();
-				break;
-			case 2:
-				m_curWeapon = new CWeaponShoot();
-				break;
-			case 3:
-				m_curWeapon = new CWeaponSpawn();
-				break;
-			case 4:
-				m_curWeapon = new CWeaponSpawnWithHead();
-				break;
-			case 5:
-				m_curWeapon = new CWeaponHoldy();
-				break;
-			case 6:
-				m_curWeapon = new CWeaponShotgun();
-				break;
+				case 1:
+					m_curWeapon = new CWeaponMelee();
+					break;
+				case 2:
+					m_curWeapon = new CWeaponShoot();
+					break;
+				case 3:
+					m_curWeapon = new CWeaponSpawn();
+					break;
+				case 4:
+					m_curWeapon = new CWeaponSpawnWithHead();
+					break;
+				case 5:
+					m_curWeapon = new CWeaponHoldy();
+					break;
+				case 6:
+					m_curWeapon = new CWeaponShotgun();
+					break;
 			}
 			if (m_curWeapon != null)
 			{
@@ -1494,6 +1516,14 @@ public class CCharPlayer : CCharBase
 		m_Property.SetValueBase(kProEnum.Damage, weaponInfo.fDamage);
 		m_bUpdateProBuff = true;
 		m_bUpdateProSkill = true;
+		if (m_bStealth)
+		{
+			SetAlpha(m_fStealthAlphaCur);
+		}
+		else
+		{
+			SetAlpha(1f);
+		}
 	}
 
 	public void UnEquipWeapon()
@@ -1504,11 +1534,34 @@ public class CCharPlayer : CCharBase
 		}
 		if (m_Weapon != null)
 		{
+			CleanupWeaponEffects(m_Weapon);
 			m_nCurWeaponID = -1;
-			Object.Destroy(m_Weapon);
+			m_Weapon.SetActive(false);
 			m_Weapon = null;
 		}
 		m_ModelRenderer = m_ModelTransform.GetComponentsInChildren<Renderer>();
+	}
+
+	private void CleanupWeaponEffects(GameObject weapon)
+	{
+		if (weapon == null) return;
+		var poolObjects = weapon.GetComponentsInChildren<gyUIPoolObject>(true);
+		foreach (var po in poolObjects)
+		{
+			if (po != null && !po.isFree)
+			{
+				po.TakeBack(0f);
+			}
+		}
+		var particles = weapon.GetComponentsInChildren<ParticleSystem>(true);
+		foreach (var ps in particles)
+		{
+			if (ps == null) continue;
+			var emission = ps.emission;
+			emission.enabled = false;
+			ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+			ps.Clear(true);
+		}
 	}
 
 	public void UpdateMoveAnim(Vector3 v3MoveDir, Vector3 v3ShootDir)
@@ -1718,6 +1771,28 @@ public class CCharPlayer : CCharBase
 		m_BackPackAnimData.Add(new CAnimInfo(kAnimEnum.BackPack_Right, "right"));
 		m_BackPackAnimManager.Initialize(m_BackPack, m_BackPackAnimData);
 		m_BackPackAnimManager.CrossFade(kAnimEnum.BackPack_Idle, WrapMode.Loop, 0.3f, 1f, 0f);
+	}
+
+	public override void SetAlpha(float fAlpha)
+	{
+		base.SetAlpha(fAlpha);
+		if (m_Weapon != null && m_Weapon.activeSelf)
+		{
+			var renderers = m_Weapon.GetComponentsInChildren<Renderer>();
+			foreach (var renderer in renderers)
+			{
+				if (renderer == null || renderer is ParticleSystemRenderer) continue;
+				renderer.GetPropertyBlock(m_PropertyBlock);
+				Color color = m_PropertyBlock.GetColor("_Color");
+				if (color == default(Color))
+				{
+					color = renderer.sharedMaterial.GetColor("_Color");
+				}
+				color.a = Mathf.Clamp01(fAlpha);
+				m_PropertyBlock.SetColor("_Color", color);
+				renderer.SetPropertyBlock(m_PropertyBlock);
+			}
+		}
 	}
 
 	public override void AddHP(float fHP)

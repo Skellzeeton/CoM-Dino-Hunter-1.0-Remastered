@@ -2,7 +2,7 @@ Shader "GGYY/Model/2COL_2TEX_AB+"
 {
     Properties
     {
-        _MainColor ("Main Color", Color) = (1,1,1,1)
+        _Color ("Main Color", Color) = (1,1,1,1)
         _MainTex ("MainTex(RGB)", 2D) = "" {}
         _SkinColor ("Skin Color", Color) = (1,1,1,1)
         _SkinTex ("SkinTex(RGB)", 2D) = "" {}
@@ -20,7 +20,7 @@ Shader "GGYY/Model/2COL_2TEX_AB+"
             #pragma multi_compile_fog
             #include "UnityCG.cginc"
             sampler2D _MainTex, _SkinTex;
-            fixed4 _MainColor, _SkinColor;
+            fixed4 _Color, _SkinColor;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -42,7 +42,7 @@ Shader "GGYY/Model/2COL_2TEX_AB+"
             }
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed4 color1 = tex2D(_MainTex, i.texcoord0) * _MainColor;
+                fixed4 color1 = tex2D(_MainTex, i.texcoord0) * _Color;
                 fixed4 color2 = tex2D(_SkinTex, i.texcoord0) * _SkinColor;
                 fixed4 combined = (color1 * color2 * 4.0 * color1.a * color2.a) + color1;
                 combined = saturate(combined);
@@ -62,7 +62,7 @@ Shader "GGYY/Model/2COL_2TEX_AB+"
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
             sampler2D _MainTex, _SkinTex;
-            fixed4 _MainColor, _SkinColor;
+            fixed4 _Color, _SkinColor;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -89,7 +89,7 @@ Shader "GGYY/Model/2COL_2TEX_AB+"
             }
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed4 color1 = tex2D(_MainTex, i.texcoord0) * _MainColor;
+                fixed4 color1 = tex2D(_MainTex, i.texcoord0) * _Color;
                 fixed4 color2 = tex2D(_SkinTex, i.texcoord0) * _SkinColor;
                 fixed4 baseColor = (color1 * color2 * 4.0 * color1.a * color2.a) + color1;
                 fixed3 albedo = saturate(baseColor).rgb;

@@ -75,7 +75,7 @@ useaudio
     <!-- 30% -->
 		<skill id="3" lvl="1" type="0" icon="zhiliao" targetlimit="3" action="14" rangetype="0" rangetypevalue="" skillmode="1" skillmodevalue="0.3" func="3,9" valuex="104,35" valuey="1" name="Heal" desc="Restore your HP by 35%."/>
 		<!-- BUFF 103 6 -->
-	  <skill id="4" lvl="1" type="0" icon="dunxing" targetlimit="3" action="14" skillmode="1" skillmodevalue="0.3" func="10,3" valuex="6,103" valuey="6,6" name="Vanish" desc="Temporarily become invisible for 6 seconds."/>
+	  <skill id="4" lvl="1" type="0" icon="dunxing" targetlimit="3" action="14" skillmode="1" skillmodevalue="0.3" func="10,3,3" valuex="9,11,103" valuey="9,9,9" name="Vanish" desc="Temporarily become invisible for 9 seconds, and increases your speed by 15%."/>
 			<!-- BUFF 104 10 -->
 			<skill id="5" lvl="1" type="0" icon="huti" targetlimit="3" action="14" rangetype="0" rangetypevalue="" skillmode="1" skillmodevalue="0.3" func="3" valuex="102" valuey="10" name="Come at Me" desc="Temporarily increase your defense by 45% for 10 seconds."/>
 		<!-- CRIT BUFF -->

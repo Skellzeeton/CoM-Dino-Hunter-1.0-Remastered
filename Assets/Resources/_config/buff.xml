@@ -32,6 +32,8 @@ audioeffdel		buff
 	<buff id="9" slot="1" priority="1" effhold="" effadd="1200,3" func="1" valuex="5" valuey="65586"/>
 	<!-- BUFF -->
 	<buff id="10" slot="2" priority="1" effhold="1205,3" effadd="1200,3" func="1" valuex="11" valuey="1"/>
+
+	<buff id="11" slot="1" priority="1" func="1" valuex="2" valuey="65551"/>
 	
 	
 <!-- *********************************** start by 101************************************************************************* -->
@@ -40,7 +42,7 @@ audioeffdel		buff
 	<!-- 50% -->
 	<buff id="102" slot="1" priority="1" effhold="1205,3" effadd="1204,3" func="1" valuex="5" valuey="45" audioeffadd="Skill_Defense_up"/>
 	<!-- BUFF -->
-	<buff id="103" slot="1" priority="1" effhold="" effadd="1206,3" audioeffadd="Skill_Stealth_on" audioeffdel="Skill_Stealth_off"/>
+	<buff id="103" slot="1" priority="1" effhold="1209,3" effadd="1206,3" audioeffadd="Skill_Stealth_on" audioeffdel="Skill_Stealth_off"/>
 	<!-- BUFF -->
 	<buff id="104" slot="1" priority="1" effhold="" effadd="1200,3" audioeffadd="Skill_Hp_up"/>
 	<!-- BUFF -->

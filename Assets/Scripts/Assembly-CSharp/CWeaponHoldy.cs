@@ -39,10 +39,26 @@ public class CWeaponHoldy : CWeaponBase
         SetParticleEmission(false);
     }
 
+    protected override void OnUnEquip(CCharPlayer player)
+    {
+        if (player != null && m_pWeaponLvlInfo != null)
+        {
+            player.StopAudio(m_pWeaponLvlInfo.sAudioFire);
+        }
+        if (m_FireEffect != null)
+        {
+            ClearParticlesImmediate();
+            UnityEngine.Object.Destroy(m_FireEffect);
+            m_FireEffect = null;
+            m_arrParticleSystem = null;
+        }
+    }
+
     protected override void OnDestroy()
     {
         if (m_FireEffect != null)
         {
+            ClearParticlesImmediate();
             UnityEngine.Object.Destroy(m_FireEffect);
             m_FireEffect = null;
         }
@@ -97,8 +113,21 @@ public class CWeaponHoldy : CWeaponBase
             emission.enabled = enabled;
             if (enabled)
                 ps.Play(true);
-            else
-                ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+    }
+
+    private void ClearParticlesImmediate()
+    {
+        if (m_arrParticleSystem == null)
+            return;
+        foreach (ParticleSystem ps in m_arrParticleSystem)
+        {
+            if (ps == null)
+                continue;
+            var emission = ps.emission;
+            emission.enabled = false;
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            ps.Clear(true);
         }
     }
 

@@ -268,7 +268,7 @@ public class PrefabPath
 
 	public const int buff_stealth_add = 1206;
 
-	public const int buff_stealth_hold = 1207;
+	public const int buff_stealth_hold = 1209;
 
 	public const int player_levelup = 1300;
 
