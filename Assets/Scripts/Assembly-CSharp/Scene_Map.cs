@@ -245,7 +245,6 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_Gold");
 				return;
 			}
-
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -257,7 +256,6 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_Equip");
 				return;
 			}
-
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -269,7 +267,17 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_Forge");
 				return;
 			}
-
+			m_fade_in_time = 0f;
+			do_fade_in = false;
+			m_fade.FadeIn();
+		}
+		else if (m_event.GetEventName() == "TUIEvent_EnterRoleBuy")
+		{
+			if (m_event.GetControlSuccess())
+			{
+				DoSceneChange(m_event.GetWparam(), "Scene_Tavern");
+				return;
+			}
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();
@@ -281,7 +289,6 @@ public class Scene_Map : MonoBehaviour
 				DoSceneChange(m_event.GetWparam(), "Scene_MainMenu");
 				return;
 			}
-
 			m_fade_in_time = 0f;
 			do_fade_in = false;
 			m_fade.FadeIn();

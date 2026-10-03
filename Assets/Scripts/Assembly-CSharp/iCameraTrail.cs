@@ -42,6 +42,21 @@ public class iCameraTrail : iCamera
     
     private float currentCharacterYaw = 0f;
 
+    [Header("Lightning System")]
+    [SerializeField]
+    private GameObject m_LightningFilterObject;
+
+    private MaterialPropertyBlock m_LightningMPB;
+    private Renderer m_LightningRenderer;
+    private int m_LightningColorID = 0;
+    private Color m_LightningBaseColor = Color.white;
+    private bool m_LightningColorInitialized = false;
+
+    public GameObject LightningFilterObject
+    {
+        get { return m_LightningFilterObject; }
+    }
+
     public new void Awake()
     {
         base.Awake();
@@ -252,6 +267,50 @@ public class iCameraTrail : iCamera
         currentCharacterYaw = Mathf.MoveTowardsAngle(currentCharacterYaw, desiredCharacterYaw, characterRotationSpeed * dt);
         Quaternion charRot = Quaternion.Euler(0f, currentCharacterYaw, 0f);
         m_Target.transform.rotation = charRot;
+    }
+
+    public bool HasLightningFilter()
+    {
+        if (m_LightningFilterObject == null) return false;
+        Transform t = m_LightningFilterObject.transform;
+        return t == transform || t.IsChildOf(transform);
+    }
+
+    public void SetLightningFilterActive(bool active)
+    {
+        if (m_LightningFilterObject == null) return;
+        if (m_LightningFilterObject.activeSelf != active)
+            m_LightningFilterObject.SetActive(active);
+    }
+
+    public void SetLightningFilterAlpha(float alpha)
+    {
+        if (m_LightningFilterObject == null) return;
+        if (m_LightningRenderer == null)
+        {
+            m_LightningRenderer = m_LightningFilterObject.GetComponent<Renderer>();
+            if (m_LightningRenderer == null)
+                m_LightningRenderer = m_LightningFilterObject.GetComponentInChildren<Renderer>();
+            if (m_LightningRenderer == null) return;
+        }
+        if (m_LightningMPB == null)
+            m_LightningMPB = new MaterialPropertyBlock();
+        if (!m_LightningColorInitialized)
+        {
+            Material sharedMat = m_LightningRenderer.sharedMaterial;
+            if (sharedMat == null) return;
+            if (sharedMat.HasProperty("_Color"))
+                m_LightningColorID = Shader.PropertyToID("_Color");
+            else
+                return;
+            m_LightningBaseColor = sharedMat.GetColor(m_LightningColorID);
+            m_LightningColorInitialized = true;
+        }
+        Color c = m_LightningBaseColor;
+        c.a = alpha;
+        m_LightningRenderer.GetPropertyBlock(m_LightningMPB);
+        m_LightningMPB.SetColor(m_LightningColorID, c);
+        m_LightningRenderer.SetPropertyBlock(m_LightningMPB);
     }
 
     public void Yaw(float angle)

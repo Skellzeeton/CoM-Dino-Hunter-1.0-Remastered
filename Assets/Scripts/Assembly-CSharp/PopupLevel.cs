@@ -20,14 +20,6 @@ public class PopupLevel : MonoBehaviour
 
 	private TUILevelInfo level_info;
 
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
-
 	public TUILevelInfo GetLevelInfo()
 	{
 		return level_info;

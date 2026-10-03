@@ -24,14 +24,6 @@ public class PopupRoleBtnBuy : MonoBehaviour
 
 	private PopupRoleBuyState btn_state;
 
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
-
 	public PopupRoleBuyState GetState()
 	{
 		return btn_state;
@@ -56,7 +48,7 @@ public class PopupRoleBtnBuy : MonoBehaviour
 		img_normal.texture = string.Empty;
 		img_press.texture = string.Empty;
 	}
-	
+
 	public void SetStateUse()
 	{
 		if (btn_state == PopupRoleBuyState.State_Disable)
@@ -64,12 +56,9 @@ public class PopupRoleBtnBuy : MonoBehaviour
 			base.gameObject.SetActiveRecursively(true);
 			base.gameObject.GetComponent<TUIButtonClick>().Show();
 		}
-
 		btn_state = PopupRoleBuyState.State_Use;
-
 		label_normal.Text = "EQUIP";
 		label_press.Text = "EQUIP";
-
 		img_normal.texture = string.Empty;
 		img_press.texture = string.Empty;
 	}

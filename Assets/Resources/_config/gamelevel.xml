@@ -76,14 +76,14 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="4" recommandlevel="2"/>
 	</gamelevel>
 	
-	<gamelevel id="1005" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai02" bp_cfg="60101" gamewave="1005001,1005002,1005003,1005004" task="1005" sp_cfg_ground="60111" exp="78"  gold="84" desc="Hunt Megaraptor X 1" name="5.The Shadow In The Forest" issidelevel="false" proccess="1">
+	<gamelevel id="1005" BGM_ambience="Amb_Raining01" scenename="Yulin_shaguai02_rainy" bp_cfg="60101" gamewave="1005001,1005002,1005003,1005004" task="1005" sp_cfg_ground="60111" exp="78"  gold="84" desc="Hunt Megaraptor X 1" name="5.A Glare In A Puddle" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="32" />
 		</MonsterNumLimit>
 		<RewardMaterial material="30014" countlist="2" countratelist="100" />
 		<recommand recommandtype="1" recommandid="1" recommandlevel="3"/>
 	</gamelevel>
-			<gamelevel id="1006" cutscene_ambience="Amb_Snowfield_Show" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" bp_cfg="200101" gamewave="1006001,1006002,1006003,1006004" task="1006"  sp_cfg_ground="200111" cutscene="xuedi_open" exp="300"  gold="184" desc="Hunt Spine King X 1" name="6.Fight or Frozen to Death" issidelevel="false" proccess="1">
+			<gamelevel id="1006" cutscene_ambience="Amb_Snowfield_Show" scenename="SceneSnow_Night" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" bp_cfg="200101" gamewave="1006001,1006002,1006003,1006004" task="1006"  sp_cfg_ground="200111" cutscene="xuedi_open" exp="300"  gold="184" desc="Hunt Spine King X 1" name="6.Fight or Freeze to Death" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="10" />
 		</MonsterNumLimit>
@@ -92,7 +92,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="4" recommandlevel="3"/>
 	</gamelevel>
 	
-		<gamelevel id="1007" cutscene_ambience="Amb_Glacier_Show" cutscene="bingchuan01_open" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce" bp_cfg="220101" gamewave="1007001,1007002,1007003,1007004" task="1007"  sp_cfg_ground="220111" exp="192"  gold="100" desc="Hunt Killosaurus Rex X 1" name="7.The Freezing Night Sky" issidelevel="false" proccess="1">
+		<gamelevel id="1007" cutscene_ambience="Amb_Glacier_Show" cutscene="bingchuan01_open" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce_Dusk" bp_cfg="220101" gamewave="1007001,1007002,1007003,1007004" task="1007"  sp_cfg_ground="220111" exp="192"  gold="100" desc="Hunt Killosaurus Rex X 1" name="7.The Breeze of Glacial Winds" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="10" />
 		</MonsterNumLimit>
@@ -117,7 +117,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="21" recommandlevel="1"/>
 	</gamelevel>
 	
-		<gamelevel id="1010" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" bp_cfg="20101" gamewave="10010001,10010002,10010003,10010004,10010005" task="1010"  sp_cfg_ground="20111" exp="462"  gold="150" desc="Hunt Megaraptor X 2" name="10.Lightening Flashes" issidelevel="false" proccess="1">
+		<gamelevel id="1010" BGM_ambience="Amb_Raining02" scenename="SceneForest_Rainy" bp_cfg="20101" gamewave="10010001,10010002,10010003,10010004,10010005" task="1010"  sp_cfg_ground="20111" exp="462"  gold="150" desc="Hunt Megaraptor X 2" name="10.Lightning Flashes" issidelevel="false" proccess="1">
     		<MonsterNumLimit>
     			<limit type="1" maxnumber="16" />
     		</MonsterNumLimit>
@@ -125,7 +125,7 @@ icon="" proccess=""
     		<recommand recommandtype="1" recommandid="21" recommandlevel="2"/>
     	</gamelevel>
 	
-	<gamelevel id="1011" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10011001,10011002,10011003,10011004,10011005,10011006" task="1011"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="400"  gold="168" desc="Hunt Terrordactyl X 2" name="11.Two Ancient Birds" issidelevel="false" proccess="1">
+	<gamelevel id="1011" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge_Dusk" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10011001,10011002,10011003,10011004,10011005,10011006" task="1011"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="400"  gold="168" desc="Hunt Terrordactyl X 2" name="11.The Cry of Terror" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="10" />
 		</MonsterNumLimit>
@@ -134,7 +134,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="21" recommandlevel="2"/>
 	</gamelevel>
 		
-		<gamelevel id="1012" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004,10012005" task="1012" sp_cfg_ground="200111"  exp="684"  gold="240" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" issidelevel="false" proccess="1">
+		<gamelevel id="1012" scenename="SceneSnow_Night" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" bp_cfg="200101" gamewave="10012001,10012002,10012003,10012004,10012005" task="1012" sp_cfg_ground="200111"  exp="684"  gold="240" desc="Hunt Triterrortops X 2" name="12.Unstoppable Charge" issidelevel="false" proccess="1">
     		<MonsterNumLimit>
     			<limit type="1" maxnumber="20" />
     		</MonsterNumLimit>
@@ -143,7 +143,7 @@ icon="" proccess=""
 			<RewardMaterial material="100002" countlist="1" countratelist="100" />
     	</gamelevel>
 		
-		<gamelevel id="1013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" bp_cfg="70101" gamewave="10013001,10013002,10013003,10013004,10013005,10013006" task="1013" sp_cfg_ground="70111" exp="528"  gold="192" desc="Hunt Killosaurus Rex X 2" name="13.Chase the Poison Killosaurus!" issidelevel="false" proccess="1">
+		<gamelevel id="1013" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03_dusk" bp_cfg="70101" gamewave="10013001,10013002,10013003,10013004,10013005,10013006" task="1013" sp_cfg_ground="70111" exp="528"  gold="192" desc="Hunt Killosaurus Rex X 2" name="13.The Killosaurus's Call" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -168,7 +168,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="15" recommandlevel="1"/>
 	</gamelevel>
 	
-		 <gamelevel id="1016" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava2" bp_cfg="40101" gamewave="10016001,10016002,10016003,10016004,10016005,10016006,10016007" task="1016"  sp_cfg_ground="40111" exp="832"  gold="260" desc="Hunt Triterrortops X 1&#xA;Hunt Outraged T Rex X 1" name="16.Last Stand" issidelevel="false" proccess="1">
+		 <gamelevel id="1016" BGM="BGM_Map03" BGM_ambience="Amb_Map03_Volcano" scenename="SceneLava2" bp_cfg="40101" gamewave="10016001,10016002,10016003,10016004,10016005,10016006,10016007" task="1016"  sp_cfg_ground="40111" exp="832"  gold="260" desc="Hunt Triterrortops X 1&#xA;Hunt Outraged T Rex X 1" name="16.The Scorching Abyss" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="12" />
 		</MonsterNumLimit>
@@ -179,7 +179,7 @@ icon="" proccess=""
 	</gamelevel>
 	
 	
-			<gamelevel id="1017" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai01" bp_cfg="50101" gamewave="10017001,10017002,10017003,10017004,10017005" task="1017"  sp_cfg_ground="50111" exp="918"  gold="290" desc="Hunt Killosaurus Rex X 1&#xA;Hunt Spine King X 1" name="17.Overwhelming Power" issidelevel="false" proccess="1">
+			<gamelevel id="1017" BGM="BGM_Map01" BGM_ambience="Amb_Raining01" scenename="Yulin_shaguai01_rainy" bp_cfg="50101" gamewave="10017001,10017002,10017003,10017004,10017005" task="1017"  sp_cfg_ground="50111" exp="918"  gold="290" desc="Hunt Killosaurus Rex X 1&#xA;Hunt Spine King X 1" name="17.Overwhelming Power" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="12" />
 		</MonsterNumLimit>
@@ -199,7 +199,7 @@ icon="" proccess=""
 	</gamelevel>
 	
 	
-			<gamelevel id="1019" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai04" bp_cfg="80101" gamewave="10019001,10019002,10019003,10019004,10019005,10019006,10019007" task="1019"  sp_cfg_ground="80111" exp="1102"  gold="320" desc="Hunt Megaraptor X 1&#xA;Hunt Triterrortops X 1" name="19.Fight Your Way out" issidelevel="false" proccess="1">
+			<gamelevel id="1019" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai04_dusk" bp_cfg="80101" gamewave="10019001,10019002,10019003,10019004,10019005,10019006,10019007" task="1019"  sp_cfg_ground="80111" exp="1102"  gold="320" desc="Hunt Megaraptor X 1&#xA;Hunt Triterrortops X 1" name="19.Fight Your Way out" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -207,7 +207,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="19" recommandlevel="1"/>
 	</gamelevel>
 	
-	<gamelevel id="1020" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10020001,10020002,10020003,10020004,10020005,10020006,10020007" task="1020"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="1200"  gold="400" desc="Hunt Outraged Terrordactyl X 1&#xA;Hunt Terrordactyl X 1" name="20.The Wind with Fangs" issidelevel="false" proccess="1">
+	<gamelevel id="1020" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="10020001,10020002,10020003,10020004,10020005,10020006,10020007" task="1020"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="1200"  gold="400" desc="Hunt Outraged Terrordactyl X 1&#xA;Hunt Terrordactyl X 1" name="20.The Raging Terror" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="14" />
 		</MonsterNumLimit>
@@ -227,7 +227,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="1022" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" bp_cfg="20101" gamewave="10022001,10022002,10022003,10022004,10022005,10022006,10022007" task="1022"  sp_cfg_ground="20111" exp="1518"  gold="450" desc="Hunt Outraged T Rex X 1&#xA;Hunt Megaraptor X 1" name="22.An Unprecedented Challenge" issidelevel="false" proccess="1">
+	<gamelevel id="1022" BGM="BGM_Map01" BGM_ambience="Amb_Raining02" scenename="SceneForest_Rainy" bp_cfg="20101" gamewave="10022001,10022002,10022003,10022004,10022005,10022006,10022007" task="1022"  sp_cfg_ground="20111" exp="1518"  gold="450" desc="Hunt Outraged T Rex X 1&#xA;Hunt Megaraptor X 1" name="22.An Unprecedented Challenge" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="14" />
 		</MonsterNumLimit>
@@ -235,7 +235,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="10" recommandlevel="2"/>
 	</gamelevel>	
 
-			<gamelevel id="1023" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai03" bp_cfg="70101" gamewave="10023001,10023002,10023003,10023004,10023005,10023006,10023007" task="1023"  sp_cfg_ground="70111" exp="1632"  gold="490" desc="Hunt Triterrortops X 1&#xA;Hunt Spine King X 1" name="23.The Path to Glory" issidelevel="false" proccess="1">
+			<gamelevel id="1023" BGM="BGM_Map01" BGM_ambience="Amb_Raining01" scenename="Yulin_shaguai03_rainy" bp_cfg="70101" gamewave="10023001,10023002,10023003,10023004,10023005,10023006,10023007" task="1023"  sp_cfg_ground="70111" exp="1632"  gold="490" desc="Hunt Triterrortops X 1&#xA;Hunt Spine King X 1" name="23.The Path to Glory" issidelevel="false" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="28" />
 		</MonsterNumLimit>
@@ -270,7 +270,7 @@ icon="" proccess=""
 <!-- *********************************** start by 5001************************************************************************* -->
 
 
-	<gamelevel id="5001" cutscene_ambience="Amb_Rainforest_Show" cutscene="toudan01_jiaoxue" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan01" bp_cfg="150101" gamewave="5001001,5001002" task="5001"  tpbegin_cfg="150301" tpend_cfg="150401" sp_cfg_ground="150111" exp="22"  gold="40" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5001" cutscene_ambience="Amb_Rainforest_Show" cutscene="toudan01_jiaoxue" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_toudan01" bp_cfg="150101" gamewave="5001001,5001002" task="5001"  tpbegin_cfg="150301" tpend_cfg="150401" sp_cfg_ground="150111" exp="22"  gold="40" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -279,7 +279,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="4" recommandlevel="1"/>	
 	</gamelevel>
 	
-	<gamelevel id="5002" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei01" bp_cfg="90101" gamewave="5002001,5002002,5002003" task="5002"  tpend_cfg="90401" sp_cfg_ground="90111" exp="22"  gold="80" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1" >
+	<gamelevel id="5002" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shouwei01" bp_cfg="90101" gamewave="5002001,5002002,5002003" task="5002"  tpend_cfg="90401" sp_cfg_ground="90111" exp="22"  gold="80" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1" >
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -290,7 +290,7 @@ icon="" proccess=""
 	</gamelevel>
 	
 	
-	<gamelevel id="5003"  BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest" nav_plane="225" bp_cfg="20101" gamewave="5003001,5003002,5003003" task="5003" sp_cfg_ground="20111" exp="48"  gold="100" desc="Survive 2:30" name="Survival" proccess="1">
+	<gamelevel id="5003"  BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="SceneForest_Dusk" nav_plane="225" bp_cfg="20101" gamewave="5003001,5003002,5003003" task="5003" sp_cfg_ground="20111" exp="48"  gold="100" desc="Survive 2:30" name="Survival" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="30" />
 		</MonsterNumLimit>
@@ -307,7 +307,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="1" recommandlevel="2"/>
 	</gamelevel>
 
-	<gamelevel id="5005" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan02" bp_cfg="160101" gamewave="5005001,5005002" task="5005"  tpbegin_cfg="160301" tpend_cfg="160401" sp_cfg_ground="160111" exp="78"  gold="120" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5005" BGM="BGM_Map01" BGM_ambience="Amb_Rainforest_Night01" scenename="Yulin_toudan02_night" bp_cfg="160101" gamewave="5005001,5005002" task="5005"  tpbegin_cfg="160301" tpend_cfg="160401" sp_cfg_ground="160111" exp="78"  gold="120" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -315,7 +315,7 @@ icon="" proccess=""
 			<recommand recommandtype="2" recommandid="4" recommandlevel="1" islimit="true" />
 	</gamelevel>
 
-	<gamelevel id="5006" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley"  scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5006001,5006002" task="5006"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="112"  gold="130" desc="Kill all dinos&#xA;Melee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
+	<gamelevel id="5006" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge_Night" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5006001,5006002" task="5006"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="112"  gold="130" desc="Kill all dinos&#xA;Melee weapons only" name="Melee Mayhem" proccess="1" limitmelee="true">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="30" />
 		</MonsterNumLimit>
@@ -324,7 +324,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5007" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei02" bp_cfg="100101" gamewave="5007001,5007002,5007003" task="5002"  tpend_cfg="100401" sp_cfg_ground="100111" exp="112"  gold="140" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5007" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shouwei02_dusk" bp_cfg="100101" gamewave="5007001,5007002,5007003" task="5002"  tpend_cfg="100401" sp_cfg_ground="100111" exp="112"  gold="140" desc="Hold out 3 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -333,7 +333,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5008" BGM="BGM_Timed" BGM_ambience="Amb_Map04_Snowfield"  scenename="SceneIce" nav_plane="225" bp_cfg="220101" gamewave="5008001,5008002,5008003,5008004,5008005,5008006" task="5008"  sp_cfg_sky="220201" sp_cfg_ground="220111" hp_cfg_def="220501" exp="150"  gold="140" desc="Kill all dinos in under 3:45" name="Short on Time" proccess="1">
+	<gamelevel id="5008" BGM="BGM_Timed" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce_Day" nav_plane="225" bp_cfg="220101" gamewave="5008001,5008002,5008003,5008004,5008005,5008006" task="5008"  sp_cfg_sky="220201" sp_cfg_ground="220111" hp_cfg_def="220501" exp="150"  gold="140" desc="Kill all dinos in under 3:45" name="Short on Time" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="320" />
 		</MonsterNumLimit>
@@ -352,7 +352,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5010" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei03" bp_cfg="110101" gamewave="5010001,5010002,5010003,5010004" task="5010"  tpend_cfg="110401" sp_cfg_ground="110111" exp="238"  gold="180" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5010" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shouwei03" bp_cfg="110101" gamewave="5010001,5010002,5010003,5010004" task="5010"  tpend_cfg="110401" sp_cfg_ground="110111" exp="238"  gold="180" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -362,7 +362,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5011" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan03" bp_cfg="170101" gamewave="5011001,5011002" task="5005" tpbegin_cfg="170301" tpend_cfg="170401" sp_cfg_ground="170111" exp="288"  gold="180" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5011" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_toudan03" bp_cfg="170101" gamewave="5011001,5011002" task="5005" tpbegin_cfg="170301" tpend_cfg="170401" sp_cfg_ground="170111" exp="288"  gold="180" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -371,7 +371,7 @@ icon="" proccess=""
 				<recommand recommandtype="1" recommandid="6" recommandlevel="1"/>
 	</gamelevel>
 	
-		 <gamelevel id="5012" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce" bp_cfg="220101" gamewave="5012001,5012002,5012003" task="5012"  sp_cfg_ground="220111" exp="288"  gold="200" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
+		 <gamelevel id="5012" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" scenename="SceneIce_Dusk" bp_cfg="220101" gamewave="5012001,5012002,5012003" task="5012"  sp_cfg_ground="220111" exp="288"  gold="200" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="15" />
 		</MonsterNumLimit>
@@ -380,7 +380,7 @@ icon="" proccess=""
 			 <recommand recommandtype="1" recommandid="16" recommandlevel="1"/>
 	</gamelevel>	
 
-	<gamelevel id="5013" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei04" bp_cfg="120101" gamewave="5013001,5013002,5013003,5013004" task="5013"  tpend_cfg="120401" sp_cfg_ground="120111" exp="342"  gold="200" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5013" BGM="BGM_Wavedefense" BGM_ambience="Amb_Raining02" scenename="Yulin_shouwei04_night_rainy" bp_cfg="120101" gamewave="5013001,5013002,5013003,5013004" task="5013"  tpend_cfg="120401" sp_cfg_ground="120111" exp="342"  gold="200" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -398,7 +398,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5015" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5015001,5015002,5015003" task="5015" sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="400"  gold="220" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
+	<gamelevel id="5015" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge_Dusk" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5015001,5015002,5015003" task="5015" sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="400"  gold="220" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="15" />
 		</MonsterNumLimit>
@@ -407,7 +407,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5016" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei05" bp_cfg="130101" gamewave="5016001,5016002,5016003,5016004" task="5016"  tpend_cfg="130401" sp_cfg_ground="130111" exp="462"  gold="240" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5016" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shouwei05_dusk" bp_cfg="130101" gamewave="5016001,5016002,5016003,5016004" task="5016"  tpend_cfg="130401" sp_cfg_ground="130111" exp="462"  gold="240" desc="Hold out 4 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
@@ -424,7 +424,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="16" recommandlevel="2"/>
 	</gamelevel>	
 
-	<gamelevel id="5018" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan04" bp_cfg="180101" gamewave="5018001,5018002" task="5018"  tpbegin_cfg="180301" tpend_cfg="180401" sp_cfg_ground="180111" exp="528"  gold="260" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5018" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_toudan04" bp_cfg="180101" gamewave="5018001,5018002" task="5018"  tpbegin_cfg="180301" tpend_cfg="180401" sp_cfg_ground="180111" exp="528"  gold="260" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -434,7 +434,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5019" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei06" bp_cfg="140101" gamewave="5019001,5019002,5019003,5019004,5019005" task="5019"  tpend_cfg="140401" sp_cfg_ground="140111" exp="598"  gold="260" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5019" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shouwei06" bp_cfg="140101" gamewave="5019001,5019002,5019003,5019004,5019005" task="5019"  tpend_cfg="140401" sp_cfg_ground="140111" exp="598"  gold="260" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
@@ -453,7 +453,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5021" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan05" bp_cfg="190101" gamewave="5021001,5021002" task="5021" tpbegin_cfg="190301" tpend_cfg="190401" sp_cfg_ground="190111" exp="672"  gold="320" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5021" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_toudan05_dusk" bp_cfg="190101" gamewave="5021001,5021002" task="5021" tpbegin_cfg="190301" tpend_cfg="190401" sp_cfg_ground="190111" exp="672"  gold="320" desc="Get dino egg x 1" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -462,7 +462,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5022" scenename="SceneSnow" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" bp_cfg="200101" gamewave="5022001,5022002,5022003" task="5022" sp_cfg_ground="200111"  exp="672"  gold="320" desc="Kill all dinos&#xA;Melee weapons only" name="Melee Mayham" proccess="1" limitmelee="true">
+	<gamelevel id="5022" scenename="SceneSnow_Night" BGM="BGM_Map02" BGM_ambience="Amb_Map04_Snowfield" bp_cfg="200101" gamewave="5022001,5022002,5022003" task="5022" sp_cfg_ground="200111"  exp="672"  gold="320" desc="Kill all dinos&#xA;Melee weapons only" name="Melee Mayhem" proccess="1" limitmelee="true">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="30" />
 		</MonsterNumLimit>
@@ -480,7 +480,7 @@ icon="" proccess=""
 		<recommand recommandtype="1" recommandid="13" recommandlevel="1" islimit="true" />
 	</gamelevel>
 
-	<gamelevel id="5024" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan06" bp_cfg="240101" gamewave="5024001,5024002,5024003,5024004" task="5024"  tpbegin_cfg="240301" tpend_cfg="240401" sp_cfg_ground="240111" exp="832"  gold="360" desc="Get dino egg x 2" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5024" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_toudan06_dusk" bp_cfg="240101" gamewave="5024001,5024002,5024003,5024004" task="5024"  tpbegin_cfg="240301" tpend_cfg="240401" sp_cfg_ground="240111" exp="832"  gold="360" desc="Get dino egg x 2" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -508,7 +508,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5027" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shaguai05" bp_cfg="250101" gamewave="5027001,5027002,5027003,5027004,5027005" task="5027" sp_cfg_ground="250111" exp="1008"  gold="480" desc="Hunt Frillosaurus X 10" name="Dino Hunting" proccess="1">
+	<gamelevel id="5027" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="Yulin_shaguai05" bp_cfg="250101" gamewave="5027001,5027002,5027003,5027004,5027005" task="5027" sp_cfg_ground="250111" exp="1008"  gold="480" desc="Hunt Frillosaurus X 10" name="Dino Hunting" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="320" />
 		</MonsterNumLimit>
@@ -526,7 +526,7 @@ icon="" proccess=""
 			<recommand recommandtype="1" recommandid="10" recommandlevel="2"/>
 	</gamelevel>
 
-	<gamelevel id="5029" BGM="BGM_Wavedefense" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_shouwei06" bp_cfg="140101" gamewave="5029001,5029002,5029003,5029004,5029005" task="5029"  tpend_cfg="140401" sp_cfg_ground="140111" exp="1102"  gold="560" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
+	<gamelevel id="5029" BGM="BGM_Wavedefense" BGM_ambience="Amb_Raining01" scenename="Yulin_shouwei06_rainy" bp_cfg="140101" gamewave="5029001,5029002,5029003,5029004,5029005" task="5029"  tpend_cfg="140401" sp_cfg_ground="140111" exp="1102"  gold="560" desc="Hold out 5 waves of dino" name="Ward off Dino Invasion" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" maxnumber="18" />
 		</MonsterNumLimit>
@@ -544,7 +544,7 @@ icon="" proccess=""
 	</gamelevel>
 
 
-	<gamelevel id="5031" BGM="BGM_Map01" BGM_ambience="Amb_Map01_Rainforest" scenename="yulin_toudan04" bp_cfg="180101" gamewave="5031001,5031002,5031003,5031004" task="5031"  tpbegin_cfg="180301" tpend_cfg="180401" sp_cfg_ground="180111" exp="1200"  gold="640" desc="Get dino egg x 2" name="Snatch Eggs" proccess="1">
+	<gamelevel id="5031" BGM="BGM_Map01" BGM_ambience="Amb_Raining02" scenename="Yulin_toudan04_night_rainy" bp_cfg="180101" gamewave="5031001,5031002,5031003,5031004" task="5031"  tpbegin_cfg="180301" tpend_cfg="180401" sp_cfg_ground="180111" exp="1200"  gold="640" desc="Get dino egg x 2" name="Snatch Eggs" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1" value="1" maxnumber="15" />
 		</MonsterNumLimit>
@@ -552,7 +552,7 @@ icon="" proccess=""
 			<recommand recommandtype="2" recommandid="2" recommandlevel="1"/>
 	</gamelevel>
 
-	<gamelevel id="5032" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5032001,5032002,5032003,5032004" task="5032"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="1200"  gold="680" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
+	<gamelevel id="5032" BGM="BGM_Map02" BGM_ambience="Amb_Map02_WindValley" scenename="SceneGorge_Night" isskyscene="true" nav_plane="225" bp_cfg="10101" gamewave="5032001,5032002,5032003,5032004" task="5032"  sp_cfg_sky="10201" sp_cfg_ground="10111" hp_cfg_def="10501" exp="1200"  gold="680" desc="Kill all dinos" name="Dino Slaughter" proccess="1">
 		<MonsterNumLimit>
 			<limit type="1"  maxnumber="18" />
 		</MonsterNumLimit>

@@ -14,7 +14,6 @@ SubShader {
    Bind "texcoord1", TexCoord1
   }
   Color [_Color]
-  Fog { Mode Off }
   SetTexture [_MainTex] { combine texture * primary double }
   SetTexture [_LightMap] { combine texture * previous }
  }

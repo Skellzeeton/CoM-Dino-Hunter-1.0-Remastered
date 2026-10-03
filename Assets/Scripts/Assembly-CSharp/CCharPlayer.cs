@@ -664,7 +664,7 @@ public class CCharPlayer : CCharBase
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Hurt, "shootgun_ground_damage"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Front, "shootgun_ground_damage_flyfront"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_BigHurt_Behind, "shootgun_ground_damage_flyback"));
-			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Skill, "shootgun_ground_useskill"));
+			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Skill, "autorifle_ground_useskill"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Rush, "autorifle_ground_move_forward"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Death, "autorifle_ground_death"));
 			m_AnimData.Add(new CAnimInfo(kAnimEnum.ShootGun_Stun, "holdgun_ground_stun"));

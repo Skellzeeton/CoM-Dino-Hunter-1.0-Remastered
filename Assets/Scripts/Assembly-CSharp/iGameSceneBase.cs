@@ -175,6 +175,30 @@ public class iGameSceneBase
 
 	protected iBuilding m_Building;
 
+	protected float m_fLightningTimer;
+
+	protected float m_fLightningActiveTimer;
+
+	protected float m_fThunderTimer;
+
+	protected bool  m_bLightningActive;
+
+	protected bool  m_bThunderPending;
+
+	protected float m_fLightningCurrentAlpha;
+
+	protected float m_fLightningStartAlpha;
+
+	protected const float LIGHTNING_INTERVAL_MIN = 15f;
+
+	protected const float LIGHTNING_INTERVAL_MAX = 60f;
+
+	protected const float LIGHTNING_FLASH_DURATION = 1f;
+
+	protected const float THUNDER_DELAY_MIN = 4f;
+
+	protected const float THUNDER_DELAY_MAX = 12f;
+
 	public GameLevelInfo CurGameLevelInfo
 	{
 		get
@@ -813,6 +837,7 @@ public class iGameSceneBase
 				}
 			}
 		}
+		InitLightning();
 		m_Status = kGameStatus.GameBegin;
 		m_StatusTime = 1f;
 		m_StatusTimeCount = 0f;
@@ -940,6 +965,7 @@ public class iGameSceneBase
 		m_CameraTrail.Active = false;
 		m_CameraReveal.Active = false;
 		m_CameraFocus.Active = false;
+		CancelLightning();
 		CSoundScene.GetInstance().StopBGM();
 		if (m_TaskManager.isAllCompleted)
 		{
@@ -999,6 +1025,7 @@ public class iGameSceneBase
 		m_CameraTrail.Active = false;
 		m_CameraFocus.Active = false;
 		m_CameraReveal.Active = false;
+		CancelLightning();
 		foreach (CCharMob value2 in m_MobMap.Values)
 		{
 			value2.SetActive(false);
@@ -1134,6 +1161,7 @@ public class iGameSceneBase
 		}
 		CSoundScene.GetInstance().PlayBGM(m_curGameLevelInfo.sBGM);
 		CSoundScene.GetInstance().PlayAmbienceBGM(m_curGameLevelInfo.sBGMAmbience);
+		InitLightning();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -1373,6 +1401,7 @@ public class iGameSceneBase
 
 	protected virtual void UpdateStatus_Gaming(float deltaTime)
 	{
+		UpdateLightning(deltaTime);
 		m_GameState.AddGameTime(deltaTime);
 		UpdateAssistAim(deltaTime);
 		List<CCharMob> list = new List<CCharMob>();
@@ -2575,6 +2604,97 @@ public class iGameSceneBase
 
 	protected void UpdateAssistAim(float deltaTime)
 	{
+	}
+
+	protected void InitLightning()
+	{
+		m_bLightningActive = false;
+		m_bThunderPending = false;
+		m_fLightningActiveTimer = 0f;
+		m_fThunderTimer = 0f;
+		m_fLightningCurrentAlpha = 0f;
+		m_fLightningStartAlpha = 0f;
+		m_fLightningTimer = UnityEngine.Random.Range(LIGHTNING_INTERVAL_MIN, LIGHTNING_INTERVAL_MAX);
+		if (m_CameraTrail != null)
+		{
+			m_CameraTrail.SetLightningFilterAlpha(0f);
+			m_CameraTrail.SetLightningFilterActive(false);
+		}
+	}
+
+	protected void CancelLightning()
+	{
+		m_bLightningActive = false;
+		m_bThunderPending = false;
+		m_fLightningCurrentAlpha = 0f;
+		m_fLightningStartAlpha = 0f;
+		m_fLightningActiveTimer = 0f;
+		m_fThunderTimer = 0f;
+		if (m_CameraTrail != null)
+		{
+			m_CameraTrail.SetLightningFilterAlpha(0f);
+			m_CameraTrail.SetLightningFilterActive(false);
+		}
+	}
+
+	protected void UpdateLightning(float deltaTime)
+	{
+		if (m_CameraTrail == null) return;
+		if (!m_CameraTrail.HasLightningFilter()) return;
+		if (m_bLightningActive)
+		{
+			m_fLightningActiveTimer -= deltaTime;
+			if (m_fLightningActiveTimer <= 0f)
+			{
+				m_bLightningActive = false;
+				m_fLightningCurrentAlpha = 0f;
+				m_CameraTrail.SetLightningFilterAlpha(0f);
+				m_CameraTrail.SetLightningFilterActive(false);
+			}
+			else
+			{
+				float t = m_fLightningActiveTimer / LIGHTNING_FLASH_DURATION;
+				m_fLightningCurrentAlpha = m_fLightningStartAlpha * t;
+				m_CameraTrail.SetLightningFilterAlpha(m_fLightningCurrentAlpha);
+			}
+		}
+		if (m_bThunderPending)
+		{
+			m_fThunderTimer -= deltaTime;
+			if (m_fThunderTimer <= 0f)
+			{
+				m_bThunderPending = false;
+				PlayThunder();
+			}
+		}
+		if (!m_bLightningActive)
+		{
+			m_fLightningTimer -= deltaTime;
+			if (m_fLightningTimer <= 0f)
+			{
+				TriggerLightning();
+				m_fLightningTimer = UnityEngine.Random.Range(LIGHTNING_INTERVAL_MIN, LIGHTNING_INTERVAL_MAX);
+			}
+		}
+	}
+
+	protected void TriggerLightning()
+	{
+		if (m_CameraTrail == null) return;
+		if (!m_CameraTrail.HasLightningFilter()) return;
+		m_bLightningActive = true;
+		m_fLightningActiveTimer = LIGHTNING_FLASH_DURATION;
+		m_fLightningStartAlpha = UnityEngine.Random.Range(0.35f, 0.8f);
+		m_fLightningCurrentAlpha = m_fLightningStartAlpha;
+		m_CameraTrail.SetLightningFilterActive(true);
+		m_CameraTrail.SetLightningFilterAlpha(m_fLightningCurrentAlpha);
+		m_bThunderPending = true;
+		m_fThunderTimer = UnityEngine.Random.Range(THUNDER_DELAY_MIN, THUNDER_DELAY_MAX);
+	}
+
+	protected void PlayThunder()
+	{
+		CUISound.GetInstance().Play("Amb_Thunder");
 	}
 
 	public void ShowItemScreenTip(bool bShow)

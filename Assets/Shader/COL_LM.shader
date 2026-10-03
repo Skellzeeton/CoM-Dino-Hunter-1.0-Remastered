@@ -16,7 +16,7 @@ Shader "Triniti/Scene/COL_LM"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma target 2.0
+            #pragma multi_compile_fog
             #include "UnityCG.cginc"
             sampler2D _MainTex;
             sampler2D _LightMap;
@@ -34,28 +34,27 @@ Shader "Triniti/Scene/COL_LM"
                 float4 pos : SV_POSITION;
                 float2 uv : TEXCOORD0;
                 float2 uv2 : TEXCOORD1;
+                UNITY_FOG_COORDS(2)
             };
             v2f vert (appdata v)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
-
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.uv2 = TRANSFORM_TEX(v.uv2, _LightMap);
-
+                UNITY_TRANSFER_FOG(o, o.pos);
                 return o;
             }
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 mainTex = tex2D(_MainTex, i.uv);
                 fixed4 lightMap = tex2D(_LightMap, i.uv2);
-
                 fixed3 albedo = mainTex.rgb * (_Color.rgb * 0.05);
                 fixed3 baked = lightMap.rgb * 20;
-
                 fixed3 finalColor = albedo * baked;
-
-                return fixed4(finalColor, lightMap.a * _Color.a);
+                fixed4 col = fixed4(finalColor, lightMap.a * _Color.a);
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
             }
             ENDCG
         }

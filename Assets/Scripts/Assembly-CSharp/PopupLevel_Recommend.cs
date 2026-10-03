@@ -78,14 +78,6 @@ public class PopupLevel_Recommend : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
-
 	public RecommendType GetRecommendType()
 	{
 		return recommend_type;

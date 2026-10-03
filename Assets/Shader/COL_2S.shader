@@ -4,9 +4,10 @@ Properties {
  _MainTex ("MainTex(RGB)", 2D) = "" {}
 }
 SubShader { 
- Tags { "QUEUE"="Geometry" }
+ Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
  Pass {
-  Tags { "QUEUE"="Geometry" }
+  Tags { "QUEUE"="Transparent" }
+  Blend SrcAlpha OneMinusSrcAlpha
   Color [_Color]
   Cull Off
   SetTexture [_MainTex] { combine texture * primary }

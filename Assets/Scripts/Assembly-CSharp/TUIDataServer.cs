@@ -3690,6 +3690,17 @@ public class TUIDataServer
 			}
 			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMap(m_event.GetEventName(), true));
 		}
+		else if (m_event.GetEventName() == "TUIEvent_EnterRoleBuy")
+		{
+			int wParam4 = m_event.GetWParam();
+			iGameState gameState6 = iGameApp.GetInstance().m_GameState;
+			if (gameState6 != null)
+			{
+				gameState6.m_nLinkCharacter = wParam4;
+				gameState6.m_lstScene4Recommand = TUISceneType.Scene_Map;
+			}
+			global::EventCenter.EventCenter.Instance.Publish(this, new TUIEvent.BackEvent_SceneMap(m_event.GetEventName(), true));
+		}
 		else if (m_event.GetEventName() == "TUIEvent_EnterEquip")
 		{
 			iGameState gameState7 = iGameApp.GetInstance().m_GameState;
