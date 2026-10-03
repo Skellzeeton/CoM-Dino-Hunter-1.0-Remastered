@@ -605,14 +605,24 @@ public class CCharMob : CCharBase
 		m_fHPMax = m_Property.GetValue(kProEnum.HPMax);
 		m_fHP = m_fHPMax;
 		CCharUser user = m_GameScene.GetUser();
+		int rewardLevel = user != null ? user.Level : base.Level;
+		iDataCenter dc = m_GameData != null ? m_GameData.GetDataCenter() : null;
+		if (dc != null)
+		{
+			int highestLevel = dc.HighestCharLevel;
+			if (highestLevel > rewardLevel)
+			{
+				rewardLevel = highestLevel;
+			}
+		}
 		m_nCarryGoldMax = (int)m_Property.GetValue(kProEnum.Mob_Gold_Carry);
 		if (m_nCarryGoldMax == 1 && user != null)
-			m_nCarryGoldMax = MyUtils.formula_goldendragon(user.Level);
+			m_nCarryGoldMax = MyUtils.formula_goldendragon(rewardLevel);
 		m_nCarryGoldCur = m_nCarryGoldMax;
 		m_nCrystalDropAmount = m_curMobInfoLevel.nCrystal;
 		m_nCarryCrystalMax = (int)m_Property.GetValue(kProEnum.Mob_Crystal_Carry);
 		if (m_nCarryCrystalMax == 1 && user != null)
-			m_nCarryCrystalMax = MyUtils.formula_crystaldragon(user.Level);
+			m_nCarryCrystalMax = MyUtils.formula_crystaldragon(rewardLevel);
 		m_nCarryCrystalCur = m_nCarryCrystalMax;
 		InitHardiness(base.ID, base.Level);
 		iGameUIBase gameUI = m_GameScene.GetGameUI();

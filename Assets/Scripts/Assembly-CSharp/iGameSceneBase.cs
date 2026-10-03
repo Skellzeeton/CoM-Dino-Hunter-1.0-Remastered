@@ -1457,7 +1457,16 @@ public class iGameSceneBase
 						}
 					}
 					int uID = MyUtils.GetUID();
-					CCharMob mob = AddMob(wm.nMobID, m_User != null ? m_User.Level : 1, uID, spawnPos, spawnDir);
+					int mobLevel = m_User != null ? m_User.Level : 1;
+					if (dataCenter != null)
+					{
+						int highestLevel = dataCenter.HighestCharLevel;
+						if (highestLevel > mobLevel)
+						{
+							mobLevel = highestLevel;
+						}
+					}
+					CCharMob mob = AddMob(wm.nMobID, mobLevel, uID, spawnPos, spawnDir);
 					if (mob != null)
 					{
 						mob.m_bShowTime = false;
