@@ -11,7 +11,10 @@ public class CWeaponHoldy : CWeaponBase
     protected float m_fEffectTimeCount;
     protected GameObject m_FireEffect;
     protected ParticleSystem[] m_arrParticleSystem;
-    
+    protected float m_fBurnPercent;
+    private Action<CCharMob, float> m_BurnTickAction;
+    private Action<CCharMob, float> m_BurnDisplayAction;
+
     protected override void OnEquip(CCharPlayer player)
     {
         if (player == null || m_pWeaponLvlInfo == null)
@@ -37,6 +40,7 @@ public class CWeaponHoldy : CWeaponBase
         }
         m_arrParticleSystem = m_FireEffect.GetComponentsInChildren<ParticleSystem>(true);
         SetParticleEmission(false);
+        m_fEffectTimeCount = 0f;
     }
 
     protected override void OnUnEquip(CCharPlayer player)
@@ -50,6 +54,8 @@ public class CWeaponHoldy : CWeaponBase
             ClearParticlesImmediate();
             UnityEngine.Object.Destroy(m_FireEffect);
             m_FireEffect = null;
+            m_BurnTickAction = null;
+            m_BurnDisplayAction = null;
             m_arrParticleSystem = null;
         }
     }
@@ -64,7 +70,7 @@ public class CWeaponHoldy : CWeaponBase
         }
         m_arrParticleSystem = null;
     }
-    
+
     protected override void OnFire(CCharPlayer player)
     {
         if (player == null || m_pWeaponLvlInfo == null)
@@ -81,7 +87,8 @@ public class CWeaponHoldy : CWeaponBase
         m_pWeaponLvlInfo.GetAtkModeValue(0, ref m_fRadius);
         m_pWeaponLvlInfo.GetAtkModeValue(1, ref m_fAngle);
         m_pWeaponLvlInfo.GetAtkModeValue(2, ref m_fEffectTime);
-        m_fEffectTimeCount = m_fEffectTime;
+        m_fBurnPercent = 0f;
+        m_pWeaponLvlInfo.GetAtkModeValue(3, ref m_fBurnPercent);
     }
 
     protected override void OnStop(CCharPlayer player)
@@ -137,6 +144,8 @@ public class CWeaponHoldy : CWeaponBase
             return;
         if (m_fFireIntervalCount < m_fFireInterval)
             m_fFireIntervalCount += deltaTime;
+        if (m_fEffectTimeCount > 0f)
+            m_fEffectTimeCount -= deltaTime;
         if (!m_bFire)
             return;
         if (!player.IsCanAttack())
@@ -144,10 +153,9 @@ public class CWeaponHoldy : CWeaponBase
             Stop(player);
             return;
         }
-        m_fEffectTimeCount += deltaTime;
-        if (m_fEffectTimeCount < m_fEffectTime)
+        if (m_fEffectTimeCount > 0f)
             return;
-        m_fEffectTimeCount = 0f;
+        m_fEffectTimeCount = m_fEffectTime;
         if (IsBulletEmpty)
         {
             player.PlayAudio("Weapon_nobullet_flamethrower");
@@ -214,6 +222,72 @@ public class CWeaponHoldy : CWeaponBase
         mob.OnHit(-damage, m_pWeaponLvlInfo, string.Empty);
         m_GameScene.AddDamageText(damage, hitpos, isCritical);
         m_GameScene.AddHitEffect(hitpos, Vector3.forward, 1115);
+
+        if (m_fBurnPercent > 0f && !mob.isDead)
+        {
+            if (m_BurnTickAction == null)
+            {
+                var burnScene = m_GameScene;
+                var burnWeaponInfo = m_pWeaponLvlInfo;
+                var burnPlayer = player;
+                m_BurnTickAction = (burnMob, burnDmg) =>
+                {
+                    if (burnMob == null || burnMob.isDead)
+                        return;
+                    bool wasAlive = !burnMob.isDead;
+                    burnMob.OnHit(-burnDmg, burnWeaponInfo, string.Empty);
+                    var burnLogic = burnScene.GetGameLogic();
+                    if (burnLogic != null)
+                    {
+                        burnLogic.ltDamageInfo.Add(burnDmg);
+                        CGameNetSender.GetInstance().BattleDamageMob(burnMob.UID, burnLogic.ltDamageInfo);
+                    }
+                    if (wasAlive && burnMob.isDead && burnPlayer != null)
+                    {
+                        if (burnMob.IsBoss())
+                        {
+                            burnScene.AddEffect(burnMob.GetBone(1).position, Vector3.forward, 4.25f, EFF_FATAL_BOSS);
+                        }
+                        CMobInfoLevel burnMobInfo = burnMob.GetMobInfo();
+                        if (burnMobInfo != null)
+                        {
+                            int exp = burnMobInfo.nExp;
+                            float bonus = burnPlayer.Property.GetValue(kProEnum.Char_IncreaseExp);
+                            if (bonus > 0f)
+                                exp = (int)(exp * (1f + bonus / 100f));
+                            burnPlayer.AddExp(exp);
+                            burnScene.AddExpText(exp, burnMob.Pos);
+                        }
+                    }
+                };
+            }
+            if (m_BurnDisplayAction == null)
+            {
+                var displayScene = m_GameScene;
+                var displayElementType = m_pWeaponLvlInfo.nElementType;
+                m_BurnDisplayAction = (displayMob, displayDmg) =>
+                {
+                    if (displayMob == null || displayMob.isDead)
+                        return;
+                    displayScene.AddDamageText(displayDmg, displayMob.Pos, false);
+                    displayMob.PlayAudio(kAudioEnum.HitBody);
+                    switch (displayElementType)
+                    {
+                        case 1:
+                            displayMob.PlayAudio("Fx_Impact_fire");
+                            break;
+                        case 2:
+                            displayMob.PlayAudio("Fx_Impact_electric");
+                            break;
+                        case 3:
+                            displayMob.PlayAudio("Fx_Impact_freeze");
+                            break;
+                    }
+                };
+            }
+            CWeaponBurnManager.Instance.ApplyBurn(mob, damage, m_fBurnPercent, m_BurnTickAction, m_BurnDisplayAction);
+        }
+
         iGameLogic.HitInfo hitinfo = new iGameLogic.HitInfo
         {
             v3HitDir = hitdir,
@@ -223,10 +297,10 @@ public class CWeaponHoldy : CWeaponBase
         if (m_GameLogic != null)
         {
             m_GameLogic.CaculateFunc(player, mob,
-                m_pWeaponLvlInfo.arrFunc,
-                m_pWeaponLvlInfo.arrValueX,
-                m_pWeaponLvlInfo.arrValueY,
-                ref hitinfo);
+                    m_pWeaponLvlInfo.arrFunc,
+                    m_pWeaponLvlInfo.arrValueX,
+                    m_pWeaponLvlInfo.arrValueY,
+                    ref hitinfo);
             m_GameLogic.ltDamageInfo.Add(damage);
             CGameNetSender.GetInstance().BattleDamageMob(mob.UID, m_GameLogic.ltDamageInfo);
         }

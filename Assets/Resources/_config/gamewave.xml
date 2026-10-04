@@ -23,11 +23,11 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 <!-- ***********************************1001********************************************************************* -->
 
 <gamewave id="1001001" trigger="0" triggervalue="4" delay="" interval="8" number="1" loop="-1"  >
-<mob id="1" level="1" spawnmode="1" startpoint="0" />
-<mob id="1" level="1" spawnmode="1" startpoint="0" />
-<mob id="1" level="1" spawnmode="1" startpoint="0" />
-<mob id="1" level="1" spawnmode="1" startpoint="0" />
-<mob id="1" level="1" spawnmode="1" startpoint="0" />
+<mob id="1" level="15" spawnmode="1" startpoint="0" />
+<mob id="1" level="15" spawnmode="1" startpoint="0" />
+<mob id="1" level="15" spawnmode="1" startpoint="0" />
+<mob id="1" level="15" spawnmode="1" startpoint="0" />
+<mob id="1" level="15" spawnmode="1" startpoint="0" />
 	</gamewave>
 	
 	
@@ -451,7 +451,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 <mob id="5" level="6" spawnmode="1" startpoint="0" />
 	</gamewave>	
 	
-		<gamewave id="1009004" trigger="0" triggervalue="130" delay="" interval="18" number="2" loop="0"  >
+		<gamewave id="1009004" trigger="0" triggervalue="130" delay="" interval="24" number="2" loop="0"  >
 <mob id="1" level="6" spawnmode="1" startpoint="0" />
 <mob id="1" level="6" spawnmode="1" startpoint="0" />
 <mob id="1" level="6" spawnmode="1" startpoint="0" />
@@ -490,7 +490,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 <mob id="3" level="8" spawnmode="1" startpoint="1" />
 	</gamewave>
 
-	<gamewave id="10010003" trigger="2" triggervalue="3,2,30102" delay="" interval="1" number="2" loop="-1"  >
+	<gamewave id="10010003" trigger="2" triggervalue="3,2,30102" delay="" interval="6" number="2" loop="-1"  >
 <mob id="2" level="7" spawnmode="1" startpoint="1" />
 <mob id="2" level="7" spawnmode="1" startpoint="1" />
 <mob id="4" level="7" spawnmode="1" startpoint="1" />
@@ -506,7 +506,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 <mob id="2" level="7" spawnmode="1" startpoint="1" />
 	</gamewave>	
 	
-		<gamewave id="10010004" trigger="2" triggervalue="3,2,30103" delay="" interval="1" number="2" loop="-1"  >
+		<gamewave id="10010004" trigger="2" triggervalue="3,2,30103" delay="" interval="12" number="2" loop="-1"  >
 <mob id="2" level="7" spawnmode="1" startpoint="1" />
 <mob id="2" level="7" spawnmode="1" startpoint="1" />
 <mob id="4" level="7" spawnmode="1" startpoint="1" />
@@ -3628,7 +3628,7 @@ trigger 			 0 1wave 2id 3() 4wave 5()
 
 
 	<gamewave id="5031002" trigger="5" triggervalue="40001,0" delay="" interval="5" number="2" loop="-1"  cutscene_BGM="BGM_Boss">
-<mob id="14" level="12" spawnmode="1" startpoint="0" />
+<mob id="14" level="11" spawnmode="1" startpoint="0" />
 <mob id="1" level="14" spawnmode="1" startpoint="0" />
 <mob id="2" level="14" spawnmode="1" startpoint="0" />
 <mob id="1" level="14" spawnmode="1" startpoint="0" />

@@ -207,6 +207,8 @@
 		<skill id="40012" lvl="1" type="0" action="10002" rangetype="0" rangetypevalue="5,16" skillmode="5" skillmodevalue="0.5,171,6,30,0,0,1" func="5" valuex="100" valuey="0"/>
 		<!--  Outraged dilophosaurus boss -->
 		<skill id="40013" lvl="1" type="0" action="10006" rangetype="1" rangetypevalue="0,11,0,0" skillmode="1" skillmodevalue="0.8" func="5,4,11" valuex="50,5,2" valuey="0,5,0"/>
+		<!--  Normal melee bite -->
+		<skill id="40014" lvl="1" type="0" action="10006" rangetype="0" rangetypevalue="0,2" skillmode="1" skillmodevalue="0.65" func="5" valuex="50" valuey="0"/>
 		
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!-- 0.1s[0-3] -->
@@ -431,6 +433,8 @@
 		<combo id="40011" skilllist="40000,40012" coldown="3" freezetime="1"/>
 		<!--  ->-> -->
 		<combo id="40012" skilllist="40000,40005,40004,40006" coldown="4" freezetime="0"/>
+		<!-- Melee bite -->
+		<combo id="40013" skilllist="40014" coldown="6" freezetime="2" usecount='0'/>
 
 		<!-- *********************************** start by 50000************************************************************************* -->
 		<!-- boss triceratops melee -->

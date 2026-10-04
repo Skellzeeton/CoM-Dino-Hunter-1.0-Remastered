@@ -366,6 +366,8 @@ SkinnedMeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -387,9 +389,11 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -1012,6 +1016,7 @@ Animation:
   - {fileID: 7400000, guid: baf0e490d9997b846bb9605a1d101c5f, type: 2}
   - {fileID: 7400000, guid: bbb77cbc8c4d1ba49b0b5ebe0f3303d7, type: 2}
   - {fileID: 7400000, guid: 832248aed43581b48b47ab2db8de134c, type: 2}
+  - {fileID: 7400000, guid: b7fbfe101e24ee81b8d1aa0252467e6e, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1047,6 +1052,7 @@ MonoBehaviour:
   m_Node: {fileID: 4532424974287769}
   m_fTime: 2
   m_Effect: {fileID: 0}
+  effectPairs: []
 --- !u!114 &114990324031190836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,6 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bBoss: 0
+  soundOverrides: []
 --- !u!1 &1634892826742800
 GameObject:
   m_ObjectHideFlags: 0

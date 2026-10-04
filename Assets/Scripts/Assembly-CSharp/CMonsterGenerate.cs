@@ -14,37 +14,25 @@ public class CMonsterGenerate
 	public int nNextWave = -1;
 
 	protected iGameSceneBase m_GameScene;
-
 	protected iGameData m_GameData;
-
 	protected GenerateState m_State;
-
 	protected WaveInfo m_curWaveInfo;
-
 	protected int m_nCurIndex;
-
 	protected int m_nSequence;
-
 	protected float m_fTimeCount;
 
 	public int WaveID
 	{
 		get
 		{
-			if (m_curWaveInfo == null)
-			{
-				return -1;
-			}
+			if (m_curWaveInfo == null) return -1;
 			return m_curWaveInfo.nID;
 		}
 	}
 
 	public GenerateState State
 	{
-		get
-		{
-			return m_State;
-		}
+		get { return m_State; }
 	}
 
 	public CMonsterGenerate()
@@ -82,39 +70,40 @@ public class CMonsterGenerate
 		}
 		switch (m_State)
 		{
-		case GenerateState.Delay:
-		{
-			m_fTimeCount += deltaTime;
-			if (m_fTimeCount < m_curWaveInfo.m_fDelayTime)
+			case GenerateState.Delay:
 			{
-				return;
-			}
-			m_State = GenerateState.Process;
-			m_fTimeCount = m_curWaveInfo.m_fInterval;
-			CTaskInfo taskInfo = m_GameData.GetTaskInfo(m_GameScene.m_nCurTaskID);
-			if (taskInfo != null && taskInfo.nType == 3)
-			{
-				CPathWalkerManager pathWalkerManager = m_GameScene.GetPathWalkerManager();
-				if (pathWalkerManager != null)
+				m_fTimeCount += deltaTime;
+				if (m_fTimeCount < m_curWaveInfo.m_fDelayTime)
 				{
-					pathWalkerManager.Stop(m_curWaveInfo.nID, 5f);
+					return;
 				}
-				iGameUIBase gameUI = m_GameScene.GetGameUI();
-				if (gameUI != null)
+				m_State = GenerateState.Process;
+				m_fTimeCount = m_curWaveInfo.m_fInterval;
+				CTaskInfo taskInfo = m_GameData.GetTaskInfo(m_GameScene.m_nCurTaskID);
+				if (taskInfo != null && taskInfo.nType == 3)
 				{
-					gameUI.ShowTip("G O !");
+					CPathWalkerManager pathWalkerManager = m_GameScene.GetPathWalkerManager();
+					if (pathWalkerManager != null)
+					{
+						pathWalkerManager.Stop(m_curWaveInfo.nID, 5f);
+					}
+					iGameUIBase gameUI = m_GameScene.GetGameUI();
+					if (gameUI != null)
+					{
+						string tip = HasBossInWave(m_curWaveInfo) ? "B O S S  I N C O M I N G !" : "G O !";
+						gameUI.ShowTip(tip);
+					}
 				}
+				break;
 			}
-			break;
-		}
-		case GenerateState.Process:
-			m_fTimeCount += deltaTime;
-			if (m_fTimeCount < m_curWaveInfo.m_fInterval)
-			{
-				return;
-			}
-			m_fTimeCount = 0f;
-			break;
+			case GenerateState.Process:
+				m_fTimeCount += deltaTime;
+				if (m_fTimeCount < m_curWaveInfo.m_fInterval)
+				{
+					return;
+				}
+				m_fTimeCount = 0f;
+				break;
 		}
 		for (int num = m_curWaveInfo.m_nNumAtOnce; num > 0; num--)
 		{
@@ -154,7 +143,26 @@ public class CMonsterGenerate
 			m_nCurIndex = 0;
 		}
 	}
-	
+
+	private bool HasBossInWave(WaveInfo waveInfo)
+	{
+		if (waveInfo == null) return false;
+		int mobCount = waveInfo.GetWaveMobCount();
+		for (int i = 0; i < mobCount; i++)
+		{
+			WaveMobInfo waveMobInfo = waveInfo.GetWaveMobInfo(i);
+			if (waveMobInfo == null) continue;
+			CMobInfoLevel mobInfo = m_GameData.GetMobInfo(waveMobInfo.nID, waveMobInfo.nLevel);
+			if (mobInfo == null) continue;
+			GameObject prefab = PrefabManager.Get(mobInfo.nModel);
+			if (prefab != null && prefab.GetComponent<CCharBoss>() != null)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public void OnMobDied()
 	{
 		if (m_State == GenerateState.Waiting && m_curWaveInfo != null && m_curWaveInfo.bForceWave)
