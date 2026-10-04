@@ -10,7 +10,7 @@ public class CWeaponBurnManager : MonoBehaviour
 
     private const float NormalSlowPerStack = 0.02f;
     private const float NormalMaxSlow = 0.35f;
-    private const float BossSlowPerStack = 0.0075f;
+    private const float BossSlowPerStack = 0.01f;
     private const float BossMaxSlow = 0.175f;
 
     private class BurnState
@@ -142,6 +142,20 @@ public class CWeaponBurnManager : MonoBehaviour
                 display.showText = showText;
             }
         }
+    }
+
+    public float GetMoveSpeedMultiplier(CCharMob mob)
+    {
+        if (mob == null || mob.isDead)
+            return 1f;
+        List<BurnState> burns;
+        if (!m_Burns.TryGetValue(mob, out burns) || burns.Count <= 0)
+            return 1f;
+        bool isBoss = mob.IsBoss();
+        float slowPerStack = isBoss ? BossSlowPerStack : NormalSlowPerStack;
+        float maxSlow = isBoss ? BossMaxSlow : NormalMaxSlow;
+        float slow = Mathf.Min(maxSlow, burns.Count * slowPerStack);
+        return 1f - slow;
     }
 
     private void RefreshBurnSlow(CCharMob mob)

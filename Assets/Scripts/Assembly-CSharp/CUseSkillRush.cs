@@ -36,6 +36,13 @@ public class CUseSkillRush : CUseSkill
 		{
 			m_fSpeed = magnitude / m_fTimePoint;
 		}
+		CCharMob rushMob = charbase as CCharMob;
+		if (rushMob != null)
+		{
+			float slowMult = CWeaponBurnManager.Instance.GetMoveSpeedMultiplier(rushMob);
+			if (slowMult > 0f && slowMult < 1f)
+				m_fSpeed *= slowMult;
+		}
 		m_v3Dst += vector2 * m_fExpandDis;
 		m_fTimePointCount = 0f;
 		CCharMob cCharMob = charbase as CCharMob;

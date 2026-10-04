@@ -33,6 +33,13 @@ public class CUseSkillBump : CUseSkill
 		m_pSkillInfoLevel.GetSkillModeValue(0, ref m_fBumpDis);
 		m_pSkillInfoLevel.GetSkillModeValue(1, ref m_fBumpTime);
 		m_pSkillInfoLevel.GetSkillModeValue(2, ref m_fBumpFuncTime);
+		CCharMob bumpMob = charbase as CCharMob;
+		if (bumpMob != null)
+		{
+			float slowMult = CWeaponBurnManager.Instance.GetMoveSpeedMultiplier(bumpMob);
+			if (slowMult > 0f && slowMult < 1f)
+				m_fBumpTime /= slowMult;
+		}
 		m_fBumpFuncTimeCount = 0f;
 		m_v3Src = charbase.Pos;
 		m_v3Dst = charbase.Pos + charbase.Dir2D * m_fBumpDis;
