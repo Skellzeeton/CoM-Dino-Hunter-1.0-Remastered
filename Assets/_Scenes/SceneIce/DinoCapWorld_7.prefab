@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7418643488361872410}
   - component: {fileID: 6268469796270932572}
   - component: {fileID: 2830860985601095630}
+  - component: {fileID: 5013873079701136602}
   m_Layer: 28
   m_Name: Level7_pengzhuang
   m_TagString: Untagged
@@ -112,6 +113,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7d2ca8c39b31fc14d8417905c47925e7, type: 2}
+--- !u!114 &5013873079701136602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118830671276050297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &200863306897843471
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +145,7 @@ GameObject:
   - component: {fileID: 8678897559620327237}
   - component: {fileID: 1362192034088604086}
   - component: {fileID: 7361648104427808461}
+  - component: {fileID: 4630104887872084748}
   m_Layer: 31
   m_Name: Level7_dimian_2
   m_TagString: Untagged
@@ -140,11 +162,11 @@ Transform:
   m_GameObject: {fileID: 200863306897843471}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -27.343166, y: -15.426096, z: 26.578848}
+  m_LocalPosition: {x: -10.940811, y: -9.261475, z: 5.6446533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8678897559620327237
 MeshFilter:
@@ -225,6 +247,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7aa1cf91a36a87a4eb58d005c4c19586, type: 2}
+--- !u!114 &4630104887872084748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200863306897843471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &302361918182306216
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +369,7 @@ GameObject:
   - component: {fileID: 1962675440196123843}
   - component: {fileID: 364957219986765327}
   - component: {fileID: 1355674299475298282}
+  - component: {fileID: 6814165871012500772}
   m_Layer: 31
   m_Name: Level7_gutou03
   m_TagString: Untagged
@@ -343,11 +386,11 @@ Transform:
   m_GameObject: {fileID: 528610729946542343}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -42.146763, y: -6.1646214, z: 20.278425}
+  m_LocalPosition: {x: -25.744408, y: 0, z: -0.65576935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1962675440196123843
 MeshFilter:
@@ -428,6 +471,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 78b9cba2ddb54674fa3d00f919b65b3f, type: 2}
+--- !u!114 &6814165871012500772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528610729946542343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &571789892246994922
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +616,7 @@ GameObject:
   - component: {fileID: 2883592754192896623}
   - component: {fileID: 107856180147167276}
   - component: {fileID: 6064705324877579292}
+  - component: {fileID: 6132197575550457033}
   m_Layer: 31
   m_Name: Level7_shitou03
   m_TagString: Untagged
@@ -569,11 +633,11 @@ Transform:
   m_GameObject: {fileID: 638449392510385956}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -26.356419, y: -6.1646214, z: 53.86969}
+  m_LocalPosition: {x: -9.954063, y: 0, z: 32.935493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2883592754192896623
 MeshFilter:
@@ -654,6 +718,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8631ff7affd3deb4f8803a0bdf42badc, type: 2}
+--- !u!114 &6132197575550457033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638449392510385956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &893375144406038739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1155,7 @@ GameObject:
   - component: {fileID: 8453706531483150234}
   - component: {fileID: 7691638144207830678}
   - component: {fileID: 2826087829075147682}
+  - component: {fileID: 8982975708325116180}
   m_Layer: 31
   m_Name: Level7_gutou05
   m_TagString: Untagged
@@ -1087,11 +1172,11 @@ Transform:
   m_GameObject: {fileID: 1704360147863135143}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -42.67687, y: -6.1646214, z: 24.937258}
+  m_LocalPosition: {x: -26.274513, y: 0, z: 4.003063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8453706531483150234
 MeshFilter:
@@ -1172,6 +1257,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 60726e20de475cd41aec5ad7d8741524, type: 2}
+--- !u!114 &8982975708325116180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704360147863135143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1863028091270377134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1289,7 @@ GameObject:
   - component: {fileID: 4058307442303173479}
   - component: {fileID: 4647133315657060572}
   - component: {fileID: 3453667021964118138}
+  - component: {fileID: 1119361092305884680}
   m_Layer: 31
   m_Name: Level7_shitou01
   m_TagString: Untagged
@@ -1200,11 +1306,11 @@ Transform:
   m_GameObject: {fileID: 1863028091270377134}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.527538, y: -6.1646214, z: 33.806385}
+  m_LocalPosition: {x: 6.874817, y: 0, z: 12.87219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4058307442303173479
 MeshFilter:
@@ -1285,6 +1391,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e8124ab048b35a0428ae5b2440099af0, type: 2}
+--- !u!114 &1119361092305884680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863028091270377134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2266907378835792909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1513,7 @@ GameObject:
   - component: {fileID: 5921796052312114877}
   - component: {fileID: 893485334839263859}
   - component: {fileID: 4216297583542607763}
+  - component: {fileID: 6829900835455979868}
   m_Layer: 31
   m_Name: Level7_shitou02
   m_TagString: Untagged
@@ -1403,11 +1530,11 @@ Transform:
   m_GameObject: {fileID: 2273470811562592053}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -36.79488, y: -6.1646214, z: -11.6028385}
+  m_LocalPosition: {x: -20.392525, y: 0, z: -32.537033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5921796052312114877
 MeshFilter:
@@ -1488,6 +1615,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 0cd26116924d7f34eb5c31c570dcb88b, type: 2}
+--- !u!114 &6829900835455979868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273470811562592053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2359252573388644005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1647,7 @@ GameObject:
   - component: {fileID: 8973660837667718526}
   - component: {fileID: 7010200074493493359}
   - component: {fileID: 5075407487597968062}
+  - component: {fileID: 1131332445765373239}
   m_Layer: 28
   m_Name: Level7_pengzhuang3
   m_TagString: Untagged
@@ -1600,6 +1748,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 62fb40911aa6d93498708ba5463a395a, type: 2}
+--- !u!114 &1131332445765373239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2359252573388644005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2651585277978482615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +2006,7 @@ GameObject:
   - component: {fileID: 7702199462844834075}
   - component: {fileID: 3857963042915490407}
   - component: {fileID: 1056164115810082205}
+  - component: {fileID: 8375030717538921767}
   m_Layer: 31
   m_Name: Level7_gutou01
   m_TagString: Untagged
@@ -1854,11 +2023,11 @@ Transform:
   m_GameObject: {fileID: 2901787642382411427}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -36.943073, y: -6.1646214, z: 22.43736}
+  m_LocalPosition: {x: -20.540718, y: 0, z: 1.5031662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7702199462844834075
 MeshFilter:
@@ -1940,6 +2109,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: dd8f663bdcc50634ebff82b850707fee, type: 2}
+--- !u!114 &8375030717538921767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901787642382411427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3125746476168746939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,18 +2159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4870118691516970759}
   - {fileID: 6055896207481858537}
-  - {fileID: 4406086033659590898}
-  - {fileID: 3300157386335250002}
-  - {fileID: 3600139852807980169}
-  - {fileID: 8557118630734516843}
-  - {fileID: 2577945357338926001}
-  - {fileID: 3887456576212033823}
-  - {fileID: 2611751050240453710}
-  - {fileID: 4067592493853966960}
-  - {fileID: 2511745908911618913}
-  - {fileID: 6909662349458872484}
   - {fileID: 8968251326765618662}
   - {fileID: 4718831781954381445}
   m_Father: {fileID: 1680237299620286392}
@@ -2425,6 +2603,7 @@ GameObject:
   - component: {fileID: 6081754739598628063}
   - component: {fileID: 6994855780078084998}
   - component: {fileID: 7781870989809505827}
+  - component: {fileID: 1325289106277631317}
   m_Layer: 31
   m_Name: Level7_gutou04
   m_TagString: Untagged
@@ -2441,11 +2620,11 @@ Transform:
   m_GameObject: {fileID: 4250945049020615841}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -42.9717, y: -6.1646214, z: 22.703753}
+  m_LocalPosition: {x: -26.569344, y: 0, z: 1.769558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6081754739598628063
 MeshFilter:
@@ -2526,6 +2705,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 79b9e1aa3a28ee442b729ac4cb49ebd8, type: 2}
+--- !u!114 &1325289106277631317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250945049020615841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &5340418731240909098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,6 +2850,7 @@ GameObject:
   - component: {fileID: 2383757629436543749}
   - component: {fileID: 9200898157817338884}
   - component: {fileID: 4673401307180374991}
+  - component: {fileID: 4877660838954879243}
   m_Layer: 31
   m_Name: Level7_gutou08
   m_TagString: Untagged
@@ -2667,11 +2867,11 @@ Transform:
   m_GameObject: {fileID: 5462786205440204904}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -41.102734, y: -6.1646214, z: 19.32421}
+  m_LocalPosition: {x: -24.700378, y: 0, z: -1.6099854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2383757629436543749
 MeshFilter:
@@ -2753,6 +2953,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e5903dd9f38d336468db9055f74b0de0, type: 2}
+--- !u!114 &4877660838954879243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5462786205440204904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &5736263704436978135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,6 +3110,17 @@ Transform:
   - {fileID: 2774372323695832270}
   - {fileID: 1031729438105387383}
   - {fileID: 7216163305278426840}
+  - {fileID: 4870118691516970759}
+  - {fileID: 4406086033659590898}
+  - {fileID: 3300157386335250002}
+  - {fileID: 3600139852807980169}
+  - {fileID: 8557118630734516843}
+  - {fileID: 2577945357338926001}
+  - {fileID: 3887456576212033823}
+  - {fileID: 2611751050240453710}
+  - {fileID: 4067592493853966960}
+  - {fileID: 2511745908911618913}
+  - {fileID: 6909662349458872484}
   - {fileID: 4731023320633237633}
   - {fileID: 2743810212493029691}
   - {fileID: 40451989493177478}
@@ -2917,17 +3148,17 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
   m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.03
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 535d48c8cff4710f69c6b8aa4653df00, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1fb2e4e0325fb504e8438e7e8d86cafc, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &6470373459130073459
 GameObject:
@@ -3144,6 +3375,7 @@ GameObject:
   - component: {fileID: 1013334465497784163}
   - component: {fileID: 8921730755582270374}
   - component: {fileID: 6522547061948165386}
+  - component: {fileID: 2882834196155121429}
   m_Layer: 31
   m_Name: Level7_gutou06
   m_TagString: Untagged
@@ -3160,11 +3392,11 @@ Transform:
   m_GameObject: {fileID: 6895050800097206213}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -35.61002, y: -6.1646214, z: 24.369078}
+  m_LocalPosition: {x: -19.207664, y: 0, z: 3.434883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1013334465497784163
 MeshFilter:
@@ -3245,6 +3477,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 66e3f529d06810241a34af0b1fa2c045, type: 2}
+--- !u!114 &2882834196155121429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895050800097206213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7141477760675540280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3786,7 @@ GameObject:
   - component: {fileID: 8989035502386017187}
   - component: {fileID: 1251457783023701448}
   - component: {fileID: 2846213124511740518}
+  - component: {fileID: 1603779709749083904}
   m_Layer: 28
   m_Name: Level7_pengzhuang2
   m_TagString: Untagged
@@ -3634,6 +3887,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b462fca61c8758843aa7cc1bd9f01870, type: 2}
+--- !u!114 &1603779709749083904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762483797905189268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &8771673605252624290
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,6 +3919,7 @@ GameObject:
   - component: {fileID: 6943684543296238171}
   - component: {fileID: 8524923433527453713}
   - component: {fileID: 2879795509125652558}
+  - component: {fileID: 5082883549555481664}
   m_Layer: 28
   m_Name: Level7_pengzhuang1
   m_TagString: Untagged
@@ -3746,6 +4020,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4cb0c9ff093be1a4ea98776a6e5963e7, type: 2}
+--- !u!114 &5082883549555481664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771673605252624290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &8845570312131823308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +4165,7 @@ GameObject:
   - component: {fileID: 6359529728204016414}
   - component: {fileID: 458964415467699639}
   - component: {fileID: 1215671191487474815}
+  - component: {fileID: 6096008003359800493}
   m_Layer: 31
   m_Name: Level7_bingchuan
   m_TagString: Untagged
@@ -3887,11 +4182,11 @@ Transform:
   m_GameObject: {fileID: 9058741090983121113}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -59.746677, y: -14.072451, z: 21.158758}
+  m_LocalPosition: {x: -43.344322, y: -7.9078293, z: 0.2245636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4731023320633237633}
+  m_Father: {fileID: 1680237299620286392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6359529728204016414
 MeshFilter:
@@ -3973,3 +4268,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 38769d3a12cd87840bb68b7e29700af9, type: 2}
+--- !u!114 &6096008003359800493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058741090983121113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff

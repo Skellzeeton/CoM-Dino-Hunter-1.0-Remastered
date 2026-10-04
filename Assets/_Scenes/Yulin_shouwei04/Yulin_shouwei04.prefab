@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 2856398853676097457}
   - component: {fileID: 244203458362981104}
   - component: {fileID: 6666073967184164098}
+  - component: {fileID: 666225056258706886}
   m_Layer: 28
   m_Name: Line_pengzhuang01
   m_TagString: Untagged
@@ -265,6 +266,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 192a87301a304ff419cec951a0498b08, type: 2}
+--- !u!114 &666225056258706886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702058348741634146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1066811380372886583
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +413,7 @@ GameObject:
   - component: {fileID: 8791853758271380098}
   - component: {fileID: 3156725548885658720}
   - component: {fileID: 1105345528756180036}
+  - component: {fileID: 1498212970966020643}
   m_Layer: 28
   m_Name: Line_pengzhuang02
   m_TagString: Untagged
@@ -492,6 +514,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: dee86f161dd73794396daf90369807e3, type: 2}
+--- !u!114 &1498212970966020643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073845068899773814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1133130449495279402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1305,7 @@ GameObject:
   - component: {fileID: 2259986347965120021}
   - component: {fileID: 7467322367225914398}
   - component: {fileID: 6256173115690445140}
+  - component: {fileID: 9099848387392828605}
   m_Layer: 28
   m_Name: Monsterhole_pengzhuang03
   m_TagString: Untagged
@@ -1363,6 +1406,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: db537504b3c3f7946b704e0bf5103d93, type: 2}
+--- !u!114 &9099848387392828605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888684028119154930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1888786965612239609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,23 +1937,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 2
+  m_CollectObjects: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294443031
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
   m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.05
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f75c4b0815332604c864fc16dc12cdec, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d2aba5d003fd987078dde9297b5ccba5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &2286161566120160694
 GameObject:
@@ -1937,6 +2000,7 @@ GameObject:
   - component: {fileID: 8256813704598087822}
   - component: {fileID: 6191700430423285081}
   - component: {fileID: 4978036114586658892}
+  - component: {fileID: 2242545394714934459}
   m_Layer: 28
   m_Name: Line_pengzhuang01
   m_TagString: Untagged
@@ -2037,6 +2101,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 192a87301a304ff419cec951a0498b08, type: 2}
+--- !u!114 &2242545394714934459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464385780057479421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2495127977094746717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2133,7 @@ GameObject:
   - component: {fileID: 635155492297125939}
   - component: {fileID: 2574918180951651769}
   - component: {fileID: 7005747707025087959}
+  - component: {fileID: 783010739282192280}
   m_Layer: 28
   m_Name: Home_pengzhuang03
   m_TagString: Untagged
@@ -2149,6 +2234,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1a289eb0de714704b839fe66d7cc0a25, type: 2}
+--- !u!114 &783010739282192280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495127977094746717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2512746805929388352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2266,7 @@ GameObject:
   - component: {fileID: 5898730135243062684}
   - component: {fileID: 2270806234340076631}
   - component: {fileID: 1514622780420320069}
+  - component: {fileID: 7282901678486132909}
   m_Layer: 28
   m_Name: Home_pengzhuang01
   m_TagString: Untagged
@@ -2261,6 +2367,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 93a24c079774cd34499f3280ecd16caf, type: 2}
+--- !u!114 &7282901678486132909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512746805929388352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3157043516554296126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2646,7 @@ GameObject:
   - component: {fileID: 6572017259958755641}
   - component: {fileID: 5790429882779237266}
   - component: {fileID: 6622352450162518555}
+  - component: {fileID: 8470820518480537743}
   m_Layer: 31
   m_Name: shuzhi01_01
   m_TagString: Untagged
@@ -2621,6 +2748,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c7e62f17c7f265a4e860322239ca6eb1, type: 2}
+--- !u!114 &8470820518480537743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217785468182234474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3285156106267207795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,6 +3123,7 @@ GameObject:
   - component: {fileID: 7211301075519103699}
   - component: {fileID: 5785605816268758859}
   - component: {fileID: 6361554588817852945}
+  - component: {fileID: 4273415400440677724}
   m_Layer: 29
   m_Name: Line_dimian01
   m_TagString: Untagged
@@ -3077,6 +3225,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d4777b9c448606040ab0a6b04798a432, type: 2}
+--- !u!114 &4273415400440677724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499624396730501805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3516101772907580464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,6 +3257,7 @@ GameObject:
   - component: {fileID: 8134903516113821445}
   - component: {fileID: 5916145860471195223}
   - component: {fileID: 8333480892596937662}
+  - component: {fileID: 781677607604566638}
   m_Layer: 28
   m_Name: Three_pengzhuang03
   m_TagString: Untagged
@@ -3189,6 +3358,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2dd7c8e1c0602e14cb609fe772b59c5e, type: 2}
+--- !u!114 &781677607604566638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516101772907580464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3588984195973256298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3390,7 @@ GameObject:
   - component: {fileID: 8375414435142688932}
   - component: {fileID: 7701915281395156078}
   - component: {fileID: 8843581818083358717}
+  - component: {fileID: 6307511773857869253}
   m_Layer: 28
   m_Name: Monsterhole_pengzhuang03
   m_TagString: Untagged
@@ -3301,6 +3491,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: db537504b3c3f7946b704e0bf5103d93, type: 2}
+--- !u!114 &6307511773857869253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588984195973256298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3596503954839098127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3523,7 @@ GameObject:
   - component: {fileID: 4809431944262437676}
   - component: {fileID: 5464049836029629343}
   - component: {fileID: 8204806191763067518}
+  - component: {fileID: 2664900319181837252}
   m_Layer: 29
   m_Name: Corner_dimian01
   m_TagString: Untagged
@@ -3414,6 +3625,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a356c6c42c4f7de45bbc86051bee5735, type: 2}
+--- !u!114 &2664900319181837252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596503954839098127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3623874766259402838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,6 +3657,7 @@ GameObject:
   - component: {fileID: 3893689237229502756}
   - component: {fileID: 5970410875709675021}
   - component: {fileID: 7995685385340065573}
+  - component: {fileID: 5514809907839353806}
   m_Layer: 29
   m_Name: Monsterhole_dimian01
   m_TagString: Untagged
@@ -3527,6 +3759,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 41265db1516f907428e0ffd8bd7d94a7, type: 2}
+--- !u!114 &5514809907839353806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623874766259402838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3672956328675113334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4038,6 +4290,7 @@ GameObject:
   - component: {fileID: 6013534249021300354}
   - component: {fileID: 3715130203278098400}
   - component: {fileID: 963416185750849933}
+  - component: {fileID: 6425019518939568126}
   m_Layer: 29
   m_Name: Three_dimian01
   m_TagString: Untagged
@@ -4139,6 +4392,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: bc5f14958ffc78442bfd86e06af60534, type: 2}
+--- !u!114 &6425019518939568126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933487991164103809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3967662091277624555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +5108,7 @@ GameObject:
   - component: {fileID: 6707196252627307225}
   - component: {fileID: 6824851245340128674}
   - component: {fileID: 3708305985017094224}
+  - component: {fileID: 3926682785565931494}
   m_Layer: 28
   m_Name: Three_pengzhuang02
   m_TagString: Untagged
@@ -4935,6 +5209,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 45ddc1747c240634b87b7f808e0f9c86, type: 2}
+--- !u!114 &3926682785565931494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552916680779568458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &4612532859014959986
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5398,7 @@ GameObject:
   - component: {fileID: 453833562438085692}
   - component: {fileID: 6761657228117569369}
   - component: {fileID: 8284124305550899460}
+  - component: {fileID: 2254558693895867557}
   m_Layer: 28
   m_Name: Corner_pengzhuang01
   m_TagString: Untagged
@@ -5204,6 +5499,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7c3b5552053f3b94eb5ed70faa68fccc, type: 2}
+--- !u!114 &2254558693895867557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966279566847768797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &5100487630869398692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,6 +5757,8 @@ GameObject:
   - component: {fileID: 4079043760262379691}
   - component: {fileID: 5149926657553285150}
   - component: {fileID: 1683392823357722042}
+  - component: {fileID: 700396998369769786}
+  - component: {fileID: 8775007441025639811}
   m_Layer: 31
   m_Name: Monsterhole_dong04
   m_TagString: Untagged
@@ -5543,6 +5860,47 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4ec3d374d01652f4d8e6cb23afabff16, type: 2}
+--- !u!114 &700396998369769786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133970798190468975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
+--- !u!65 &8775007441025639811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133970798190468975}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.158297, y: 10, z: 13.009472}
+  m_Center: {x: 2.2737368e-13, y: 0.0000038146973, z: 6.525797}
 --- !u!1 &5146253463806675281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,6 +5913,7 @@ GameObject:
   - component: {fileID: 5623680217473205069}
   - component: {fileID: 2760377933901200929}
   - component: {fileID: 37399126514437816}
+  - component: {fileID: 2551580698830805050}
   m_Layer: 28
   m_Name: Corner_pengzhuang02
   m_TagString: Untagged
@@ -5655,6 +6014,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 15c9d2066c3cf5f40a36b201e0c88572, type: 2}
+--- !u!114 &2551580698830805050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146253463806675281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &5670718450040369159
 GameObject:
   m_ObjectHideFlags: 0
@@ -5829,6 +6208,7 @@ GameObject:
   - component: {fileID: 7418619838986697793}
   - component: {fileID: 4850030471021679984}
   - component: {fileID: 646768306483886259}
+  - component: {fileID: 4063228452889273964}
   m_Layer: 28
   m_Name: Home_pengzhuang02
   m_TagString: Untagged
@@ -5929,6 +6309,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9fd289e7d71825d48b777c8be8d23269, type: 2}
+--- !u!114 &4063228452889273964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348716904871515299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6418143814861538286
 GameObject:
   m_ObjectHideFlags: 0
@@ -6285,6 +6685,7 @@ GameObject:
   - component: {fileID: 265834184534978129}
   - component: {fileID: 246690471952610227}
   - component: {fileID: 6805942424866702186}
+  - component: {fileID: 4150636058128024350}
   m_Layer: 28
   m_Name: Monsterhole_pengzhuang01
   m_TagString: Untagged
@@ -6385,6 +6786,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a6d23ea7700c0ec4e8e3b1c396c668ff, type: 2}
+--- !u!114 &4150636058128024350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787888528195548618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6847714801758012691
 GameObject:
   m_ObjectHideFlags: 0
@@ -6510,6 +6931,7 @@ GameObject:
   - component: {fileID: 5546132574401009952}
   - component: {fileID: 1403628429350102160}
   - component: {fileID: 6492306077802816384}
+  - component: {fileID: 5268693578009705837}
   m_Layer: 29
   m_Name: Line_dimian01
   m_TagString: Untagged
@@ -6611,6 +7033,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d4777b9c448606040ab0a6b04798a432, type: 2}
+--- !u!114 &5268693578009705837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903694388692005397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6909401195810285401
 GameObject:
   m_ObjectHideFlags: 0
@@ -6736,6 +7178,8 @@ GameObject:
   - component: {fileID: 4910471382683442209}
   - component: {fileID: 4056799294719855055}
   - component: {fileID: 1829042535225632551}
+  - component: {fileID: 1547863307283288149}
+  - component: {fileID: 4762590389968783023}
   m_Layer: 31
   m_Name: Monsterhole_dong04
   m_TagString: Untagged
@@ -6837,6 +7281,47 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4ec3d374d01652f4d8e6cb23afabff16, type: 2}
+--- !u!114 &1547863307283288149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925623390961616742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
+--- !u!65 &4762590389968783023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925623390961616742}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.1583, y: 10, z: 13.009481}
+  m_Center: {x: -0.000011444092, y: 0.000009888221, z: 6.5257897}
 --- !u!1 &7015458084415033116
 GameObject:
   m_ObjectHideFlags: 0
@@ -7415,6 +7900,7 @@ GameObject:
   - component: {fileID: 603135978178487604}
   - component: {fileID: 4244553066343331593}
   - component: {fileID: 808136997204606854}
+  - component: {fileID: 2493143437358314573}
   m_Layer: 28
   m_Name: Three_pengzhuang01
   m_TagString: Untagged
@@ -7515,6 +8001,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 469a537126ad98b4aaf65feb18412baa, type: 2}
+--- !u!114 &2493143437358314573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464823909592144615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7540641273772721402
 GameObject:
   m_ObjectHideFlags: 0
@@ -7527,6 +8033,7 @@ GameObject:
   - component: {fileID: 816155181116091860}
   - component: {fileID: 4593614379688924075}
   - component: {fileID: 3440399803498361610}
+  - component: {fileID: 4951533758600224189}
   m_Layer: 28
   m_Name: Monsterhole_pengzhuang01
   m_TagString: Untagged
@@ -7627,6 +8134,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a6d23ea7700c0ec4e8e3b1c396c668ff, type: 2}
+--- !u!114 &4951533758600224189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540641273772721402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7572149297825979489
 GameObject:
   m_ObjectHideFlags: 0
@@ -7980,6 +8507,7 @@ GameObject:
   - component: {fileID: 2679210087049870127}
   - component: {fileID: 2034919358653826032}
   - component: {fileID: 6477135082681710938}
+  - component: {fileID: 2376778627046516879}
   m_Layer: 29
   m_Name: Home_dimian01
   m_TagString: Untagged
@@ -8081,6 +8609,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8d9302c1ceee7d048b6c910626c638f3, type: 2}
+--- !u!114 &2376778627046516879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919203596635285221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7968245221485390856
 GameObject:
   m_ObjectHideFlags: 0
@@ -8360,6 +8908,7 @@ GameObject:
   - component: {fileID: 1372474536054668438}
   - component: {fileID: 5158679811928907576}
   - component: {fileID: 8605758091764622100}
+  - component: {fileID: 6206369236200606204}
   m_Layer: 29
   m_Name: Monsterhole_dimian01
   m_TagString: Untagged
@@ -8461,6 +9010,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 41265db1516f907428e0ffd8bd7d94a7, type: 2}
+--- !u!114 &6206369236200606204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202031581567292779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &8336128654586455655
 GameObject:
   m_ObjectHideFlags: 0
@@ -8473,6 +9042,7 @@ GameObject:
   - component: {fileID: 9122599263776398744}
   - component: {fileID: 5939127786452113157}
   - component: {fileID: 8238333554438057591}
+  - component: {fileID: 6954186043931839413}
   m_Layer: 28
   m_Name: Line_pengzhuang02
   m_TagString: Untagged
@@ -8573,6 +9143,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: dee86f161dd73794396daf90369807e3, type: 2}
+--- !u!114 &6954186043931839413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336128654586455655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &8339709351577949373
 GameObject:
   m_ObjectHideFlags: 0
