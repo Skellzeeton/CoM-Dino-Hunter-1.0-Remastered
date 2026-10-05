@@ -10,13 +10,7 @@ public class PopupSkillBtnRole : MonoBehaviour
 
 	private int id;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public int GetIndex()
 	{

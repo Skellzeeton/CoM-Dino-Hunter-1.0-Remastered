@@ -46,9 +46,6 @@ public class gyUIPanelMissionSuccessLevelUp : MonoBehaviour
 		mLabel2_4.gameObject.SetActive(false);
     }
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

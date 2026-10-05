@@ -17,7 +17,4 @@ public class iLevelNum : MonoBehaviour
 		}
 	}
 
-	private void Update()
-	{
-	}
 }

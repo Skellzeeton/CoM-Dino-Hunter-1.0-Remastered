@@ -18,9 +18,6 @@ public class UnlockBlink : MonoBehaviour
 
 	private string skill_path = "TUI/Skill/";
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

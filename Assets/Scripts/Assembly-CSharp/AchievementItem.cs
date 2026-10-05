@@ -25,13 +25,7 @@ public class AchievementItem : MonoBehaviour
 
 	private AchievementLevelType star_level;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void DoCreate(TUIOneAchievementInfo m_chievement_info, bool m_change_bg = false, GameObject m_go_invoke = null)
 	{

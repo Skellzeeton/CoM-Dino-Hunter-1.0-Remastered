@@ -26,9 +26,6 @@ public class PopupWeaponUpdate : MonoBehaviour
 		goods_need_item03.SetIndex(3);
 	}
 
-	private void Update()
-	{
-	}
 
 	public void ShowWeaponUpdate()
 	{

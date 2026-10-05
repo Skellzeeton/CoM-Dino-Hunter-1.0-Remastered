@@ -38,9 +38,6 @@ public class gyLifeBarHUD : MonoBehaviour
 		m_Target = null;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

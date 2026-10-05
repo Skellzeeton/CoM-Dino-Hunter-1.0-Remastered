@@ -139,7 +139,4 @@ public class TUIPage : TUIControlImpl
 		tUIActiveAnimation.callWhenFinished = "DoWhenAnimationEnd";
 	}
 
-	private void Update()
-	{
-	}
 }

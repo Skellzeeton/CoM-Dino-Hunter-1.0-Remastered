@@ -32,9 +32,6 @@ public class LevelStars : MonoBehaviour
 		star05.texture = texture_empty;
 	}
 
-	private void Update()
-	{
-	}
 
 	public void SetStars(int count, Vector3 m_position, int blink_index = 0)
 	{

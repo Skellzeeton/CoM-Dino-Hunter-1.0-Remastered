@@ -8,13 +8,7 @@ public class Btn_Search_Sell : MonoBehaviour
 
 	public TUILabel label_disable;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetStateNormal()
 	{

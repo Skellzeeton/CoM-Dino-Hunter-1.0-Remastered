@@ -61,9 +61,6 @@ public class iItem : MonoBehaviour
 		m_arrValueY = new int[3];
 	}
 
-	private void Start() { }
-	private void Update() { }
-	private void FixedUpdate() { }
 
 	private void OnTriggerEnter(Collider collider)
 	{

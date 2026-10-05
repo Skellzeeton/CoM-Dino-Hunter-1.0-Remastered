@@ -36,13 +36,7 @@ public class WeaponKindItem : MonoBehaviour
 		btn_select_list[6] = btn_select07;
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetSelectBtn(WeaponType m_type)
 	{

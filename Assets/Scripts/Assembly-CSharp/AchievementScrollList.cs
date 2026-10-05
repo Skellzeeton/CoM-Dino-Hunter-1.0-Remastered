@@ -11,13 +11,7 @@ public class AchievementScrollList : MonoBehaviour
 
 	private List<TUIOneAchievementInfo> achievement_list;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void DoCreate(TUIAchievementInfo m_info, GameObject m_go_invoke)
 	{

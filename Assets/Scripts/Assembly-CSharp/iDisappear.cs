@@ -22,9 +22,6 @@ public class iDisappear : MonoBehaviour
 		m_State = kState.Normal;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

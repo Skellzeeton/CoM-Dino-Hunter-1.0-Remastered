@@ -9,13 +9,7 @@ public class iClearMemory : MonoBehaviour
 		UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void ClearMemory()
 	{

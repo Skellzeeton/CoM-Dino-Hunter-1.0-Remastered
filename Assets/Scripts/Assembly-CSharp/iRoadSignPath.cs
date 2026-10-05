@@ -30,9 +30,6 @@ public class iRoadSignPath : MonoBehaviour
 		m_fDelayTime = 0f;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

@@ -28,13 +28,7 @@ public class gyUICellPanel : MonoBehaviour
 		m_arrCell = list.ToArray();
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void OnClickCell(int nIndex)
 	{

@@ -34,9 +34,6 @@ public class GoodsNeedItemBuy : MonoBehaviour
 		}
 	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(int m_price, int m_id, GoodsQualityType m_good_quality, int m_lack_count, UnitType m_gold_type)
 	{

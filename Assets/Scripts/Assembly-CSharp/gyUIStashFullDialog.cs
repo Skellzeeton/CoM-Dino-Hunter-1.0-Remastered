@@ -10,13 +10,7 @@ public class gyUIStashFullDialog : MonoBehaviour
 
 	public UILabel mContent;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show(bool bShow)
 	{

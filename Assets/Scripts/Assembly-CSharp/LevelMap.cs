@@ -19,17 +19,8 @@ public class LevelMap : MonoBehaviour
 
 	protected Camera m_Camera;
 
-	private void Awake()
-	{
-	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void MoveScreen(float wparam, float lparam)
 	{

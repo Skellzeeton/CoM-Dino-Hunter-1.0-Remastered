@@ -4,13 +4,7 @@ public class Popup_Credits : MonoBehaviour
 {
 	public GameObject go_popup;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show()
 	{

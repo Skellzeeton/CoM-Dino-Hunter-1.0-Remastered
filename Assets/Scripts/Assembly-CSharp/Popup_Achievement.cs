@@ -8,13 +8,7 @@ public class Popup_Achievement : MonoBehaviour
 
 	private TUIControl btn_take_achievement;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void DoCreate(TUIAchievementInfo m_info, GameObject m_go_invoke)
 	{

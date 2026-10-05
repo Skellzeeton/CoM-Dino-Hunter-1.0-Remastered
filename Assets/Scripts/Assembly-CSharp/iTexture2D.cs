@@ -48,9 +48,6 @@ public class iTexture2D : MonoBehaviour
 		base.transform.position += m_v3Offset;
 	}
 
-	public void Update()
-	{
-	}
 
 	public void Show(bool bShow)
 	{

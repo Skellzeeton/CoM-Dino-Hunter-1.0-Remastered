@@ -11,13 +11,7 @@ public class gyUISwitch : MonoBehaviour
 		Switch(false);
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Switch(bool on)
 	{

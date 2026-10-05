@@ -28,13 +28,7 @@ public class LabelInfo_Weapon : MonoBehaviour
 
 	public TUILabel label_introduce;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetWeaponInfo(int m_damage, float m_fire_rate, int m_blast_radius, int m_knockback, int m_ammo)
 	{

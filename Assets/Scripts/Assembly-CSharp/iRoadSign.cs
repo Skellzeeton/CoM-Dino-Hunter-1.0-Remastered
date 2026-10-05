@@ -37,9 +37,6 @@ public class iRoadSign : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

@@ -24,9 +24,6 @@ public class iCameraFocus : iCamera
 		mTransform = base.transform;
 	}
 
-	private new void Start()
-	{
-	}
 
 	private new void Update()
 	{

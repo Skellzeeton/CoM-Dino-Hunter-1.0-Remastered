@@ -25,13 +25,7 @@ public class TUIUnionButton : TUIControl
 	[SerializeField]
 	protected List<TUIButton> buttons;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public override bool HandleInput(TUIInput input)
 	{

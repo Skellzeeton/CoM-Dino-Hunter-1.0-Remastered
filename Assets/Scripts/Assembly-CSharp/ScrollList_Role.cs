@@ -11,9 +11,6 @@ public class ScrollList_Role : MonoBehaviour
 
 	private ScrollList_RoleItem item_choose;
 
-	private void Awake()
-	{
-	}
 
 	private void Start()
 	{

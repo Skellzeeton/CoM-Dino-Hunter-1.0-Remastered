@@ -29,9 +29,6 @@ public class PageFrame_Stash : MonoBehaviour
 		page_frame_ex = base.gameObject.GetComponent<TUIPageFrameEx>();
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

@@ -26,13 +26,7 @@ public class iGameCenter : MonoBehaviour
 		return m_Instance;
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public bool IsLogin()
 	{

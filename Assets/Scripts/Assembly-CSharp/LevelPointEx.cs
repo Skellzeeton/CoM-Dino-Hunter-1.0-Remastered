@@ -96,9 +96,6 @@ public class LevelPointEx : MonoBehaviour
 		SetDefaultIcon();
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

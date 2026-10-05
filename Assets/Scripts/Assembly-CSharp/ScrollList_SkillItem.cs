@@ -17,8 +17,6 @@ public class ScrollList_SkillItem : MonoBehaviour
     private string texture_new  = "new2";
     private NewMarkType new_mark_type;
 
-    private void Start()  { }
-    private void Update() { }
 
     public void DoChoose()
     {

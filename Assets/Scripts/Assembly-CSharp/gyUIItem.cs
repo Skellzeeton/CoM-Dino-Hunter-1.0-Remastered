@@ -13,13 +13,7 @@ public class gyUIItem : MonoBehaviour
 		mIcon.transform.localPosition -= new Vector3(0f, 0f, 0.1f);
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetIcon(UIAtlas atlas)
 	{

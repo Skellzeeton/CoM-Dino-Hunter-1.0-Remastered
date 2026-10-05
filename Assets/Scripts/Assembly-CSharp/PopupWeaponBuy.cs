@@ -23,9 +23,6 @@ public class PopupWeaponBuy : MonoBehaviour
 		SetStateCraft();
 	}
 
-	private void Update()
-	{
-	}
 
 	public PopupWeaponBuyState GetState()
 	{

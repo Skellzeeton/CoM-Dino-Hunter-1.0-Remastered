@@ -21,13 +21,7 @@ public class Sell_Stash : MonoBehaviour
 
 	private bool enable;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetParam(ProtectedInt32 m_count, TUIPriceInfo m_price_info)
 	{

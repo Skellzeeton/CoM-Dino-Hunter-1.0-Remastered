@@ -15,9 +15,6 @@ public class iBillBoard : MonoBehaviour
 		m_Transform = base.transform;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

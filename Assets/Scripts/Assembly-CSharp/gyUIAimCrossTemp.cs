@@ -22,13 +22,7 @@ public class gyUIAimCrossTemp : MonoBehaviour
 
 	protected float m_fRecoverSpeed;
 
-	private void Awake()
-	{
-	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

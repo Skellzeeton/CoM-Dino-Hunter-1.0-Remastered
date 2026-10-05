@@ -14,13 +14,7 @@ public class AchievementRewardText : MonoBehaviour
 
 	private string crystal_texture = "title_shuijing";
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show(int m_value01, UnitType m_type01)
 	{

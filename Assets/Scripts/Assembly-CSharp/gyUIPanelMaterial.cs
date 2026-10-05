@@ -48,9 +48,6 @@ public class gyUIPanelMaterial : gyUICellPanel
 		m_HUD.Show(false);
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

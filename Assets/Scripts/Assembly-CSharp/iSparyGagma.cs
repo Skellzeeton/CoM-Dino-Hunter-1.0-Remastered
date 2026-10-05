@@ -41,9 +41,6 @@ public class iSparyGagma : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

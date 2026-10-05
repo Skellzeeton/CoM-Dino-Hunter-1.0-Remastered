@@ -28,13 +28,7 @@ public class BtnItem_Item : MonoBehaviour
 
 	private NewMarkType new_mark_type;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(TUIPopupInfo m_popup_info, Popup_Show.PopupType popup_type = Popup_Show.PopupType.Roles, bool play_animation = false, bool m_use_customize = false)
 	{

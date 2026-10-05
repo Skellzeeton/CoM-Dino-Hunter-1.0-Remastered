@@ -23,9 +23,6 @@ public class gyUIMessageBox : MonoBehaviour
 
 	protected bool m_bShow;
 
-	private void Awake()
-	{
-	}
 
 	protected void ShowMessageBox(kMessageBoxType msgboxtype)
 	{

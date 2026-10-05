@@ -8,13 +8,7 @@ public class Page_Stash : MonoBehaviour
 	[SerializeField]
 	private int index;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetIndex(int id)
 	{

@@ -159,9 +159,6 @@ public class Role_Control : MonoBehaviour
 		ChangeWeapon(1);
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

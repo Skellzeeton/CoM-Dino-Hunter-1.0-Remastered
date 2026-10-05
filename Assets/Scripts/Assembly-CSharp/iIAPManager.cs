@@ -86,9 +86,6 @@ public class iIAPManager : MonoBehaviour
 		HttpClient.Instance().AddServer("IAPServer", "http://iap.trinitigame.com:7600/gameapi/GameCommon.do", -1f, "abcd@@##980[]L>.");
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

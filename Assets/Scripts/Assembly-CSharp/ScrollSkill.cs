@@ -10,9 +10,6 @@ public class ScrollSkill : MonoBehaviour
 
 	private ScrollList_SkillItem item_choose;
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

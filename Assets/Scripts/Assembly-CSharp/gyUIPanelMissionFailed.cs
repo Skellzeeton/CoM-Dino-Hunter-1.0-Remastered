@@ -10,13 +10,7 @@ public class gyUIPanelMissionFailed : MonoBehaviour
 		base.gameObject.SetActiveRecursively(false);
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show(bool bShow)
 	{

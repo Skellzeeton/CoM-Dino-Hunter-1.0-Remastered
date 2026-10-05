@@ -18,17 +18,8 @@ public class gyUIHUD : MonoBehaviour
 
 	public UILabel m_Label;
 
-	private void Awake()
-	{
-	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show(bool bShow)
 	{

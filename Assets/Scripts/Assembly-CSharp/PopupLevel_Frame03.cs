@@ -30,13 +30,7 @@ public class PopupLevel_Frame03 : MonoBehaviour
 		goods03_position = goods03.transform.position;
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetGoodsInfo(List<TUIGoodsInfo> m_goods_drop_list)
 	{

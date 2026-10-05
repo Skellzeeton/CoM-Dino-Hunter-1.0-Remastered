@@ -65,9 +65,6 @@ public class LevelPoint : MonoBehaviour
 		HideWayEx();
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

@@ -136,9 +136,6 @@ public class TUIPageEx : TUIControlImpl
 		PageFrame = frame;
 	}
 
-	public void Start()
-	{
-	}
 
 	private void OnAnimationEnd()
 	{

@@ -9,13 +9,7 @@ public class PopupWeaponSupplement : MonoBehaviour
 
 	public PopupWeaponSupplementGoods supplement_goods;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetSupplementInfo(TUISupplementInfo m_supplement_info)
 	{

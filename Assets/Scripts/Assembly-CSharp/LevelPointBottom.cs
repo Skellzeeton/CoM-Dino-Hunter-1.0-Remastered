@@ -21,9 +21,6 @@ public class LevelPointBottom : MonoBehaviour
 		normal_scale = base.transform.localScale;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

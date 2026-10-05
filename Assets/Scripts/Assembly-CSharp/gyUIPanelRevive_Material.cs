@@ -28,9 +28,6 @@ public class gyUIPanelRevive_Material : MonoBehaviour
 		base.gameObject.SetActiveRecursively(false);
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

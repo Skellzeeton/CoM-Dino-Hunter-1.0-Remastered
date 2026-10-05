@@ -40,9 +40,6 @@ public class PopupRole : MonoBehaviour
 
 	public PopupGoEquip popup_go_equip;
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

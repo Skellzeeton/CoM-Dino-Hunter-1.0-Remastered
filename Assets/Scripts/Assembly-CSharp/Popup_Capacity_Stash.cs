@@ -14,13 +14,7 @@ public class Popup_Capacity_Stash : MonoBehaviour
 
 	private int max_capacity;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetIntroduce(string introduce)
 	{

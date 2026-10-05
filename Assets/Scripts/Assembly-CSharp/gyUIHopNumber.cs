@@ -33,9 +33,6 @@ public class gyUIHopNumber : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

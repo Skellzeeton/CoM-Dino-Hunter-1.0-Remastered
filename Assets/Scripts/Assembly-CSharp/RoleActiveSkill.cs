@@ -7,13 +7,7 @@ public class RoleActiveSkill : MonoBehaviour
 
 	private List<TUIPopupInfo> active_skill_list;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(List<TUIPopupInfo> m_active_skill_list)
 	{

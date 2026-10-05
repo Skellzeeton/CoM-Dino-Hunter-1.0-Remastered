@@ -16,9 +16,6 @@ public class AchievementStars : MonoBehaviour
 		}
 	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(AchievementLevelType m_level)
 	{

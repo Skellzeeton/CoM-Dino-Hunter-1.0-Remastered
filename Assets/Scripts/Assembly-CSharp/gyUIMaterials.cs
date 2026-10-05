@@ -35,9 +35,6 @@ public class gyUIMaterials : MonoBehaviour
 		m_fStepCount = 0f;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

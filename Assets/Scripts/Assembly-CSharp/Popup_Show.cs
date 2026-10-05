@@ -80,9 +80,6 @@ public class Popup_Show : MonoBehaviour
 		select_list = new List<BtnSelect_Item>();
 	}
 
-	private void Update()
-	{
-	}
 
 	public void Show()
 	{

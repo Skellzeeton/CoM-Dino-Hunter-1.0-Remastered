@@ -14,13 +14,7 @@ public class PopupGoBuy : MonoBehaviour
 
 	protected GoBuyType go_buy_type;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show(GoBuyType m_go_buy_type)
 	{

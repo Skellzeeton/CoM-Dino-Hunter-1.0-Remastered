@@ -4,13 +4,7 @@ public class PopupLevel_Frame02 : MonoBehaviour
 {
 	public TUILabel label_introduce;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(string m_introduce)
 	{

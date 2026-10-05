@@ -23,13 +23,7 @@ public class ScrollList_RoleItem : MonoBehaviour
 
 	private string texture_new = "new2";
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void DoCreate(TUIRoleInfo m_info, Dictionary<int, NewMarkType> m_new_mark_list)
 	{

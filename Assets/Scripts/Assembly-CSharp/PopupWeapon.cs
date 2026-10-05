@@ -76,9 +76,6 @@ public class PopupWeapon : MonoBehaviour
 
 	public PopupTips popup_tips;
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

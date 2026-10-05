@@ -37,13 +37,7 @@ public class Top_Bar : MonoBehaviour
 		img_exp_normal_position = img_exp.transform.localPosition;
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetAllValue(int m_level, int m_exp, int m_level_exp, int m_gold, int m_crystal, int m_role_id)
 	{

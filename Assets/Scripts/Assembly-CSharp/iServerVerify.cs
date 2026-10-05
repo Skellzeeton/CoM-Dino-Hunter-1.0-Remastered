@@ -98,9 +98,6 @@ public class iServerVerify : MonoBehaviour
 		m_ServerInfo = new CServerInfo();
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

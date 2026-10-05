@@ -34,7 +34,4 @@ public class MainCpp : MonoBehaviour
 		g2.SetAI(compositeNode3);
 	}
 
-	private void Update()
-	{
-	}
 }

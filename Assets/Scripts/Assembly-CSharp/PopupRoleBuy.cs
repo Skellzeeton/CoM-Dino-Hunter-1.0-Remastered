@@ -14,13 +14,7 @@ public class PopupRoleBuy : MonoBehaviour
 
 	private string crystal_texture = "title_shuijing";
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(ScrollList_RoleItem m_item)
 	{

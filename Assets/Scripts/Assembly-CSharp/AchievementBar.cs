@@ -4,13 +4,7 @@ public class AchievementBar : MonoBehaviour
 {
 	public TUISlider slider;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Show(int m_value)
 	{

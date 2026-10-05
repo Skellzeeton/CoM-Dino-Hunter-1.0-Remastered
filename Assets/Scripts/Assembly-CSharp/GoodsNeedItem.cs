@@ -33,9 +33,6 @@ public class GoodsNeedItem : MonoBehaviour
 		m_local_position = base.gameObject.transform.localPosition;
 	}
 
-	private void Update()
-	{
-	}
 
 	public void ShowGoodsNeedItem(int m_goods_now_count, GoodsQualityType m_goods_need_quality, int m_goods_need_count, int m_price, int m_id, UnitType m_gold_type, string m_goods_name)
 	{

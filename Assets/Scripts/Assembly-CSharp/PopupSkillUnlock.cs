@@ -12,13 +12,7 @@ public class PopupSkillUnlock : MonoBehaviour
 
 	private string crystal_texture = "title_shuijing";
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(ScrollList_SkillItem m_item)
 	{

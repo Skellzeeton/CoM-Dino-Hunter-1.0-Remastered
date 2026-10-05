@@ -14,13 +14,7 @@ public class PopupSkillUpdateBuy : MonoBehaviour
 
 	private string texture_crystal = "title_shuijing";
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetBtnText(int m_price, UnitType m_type)
 	{

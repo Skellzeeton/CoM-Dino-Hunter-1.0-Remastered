@@ -24,13 +24,7 @@ public class PopupTips : MonoBehaviour
 
 	private float bg_width = 15f;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetInfo(string m_text, Vector3 m_pos, TipsPivot m_tip_pivot)
 	{

@@ -170,9 +170,6 @@ public class TUIScrollListCircle : TUIControlImpl
 		}
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

@@ -62,9 +62,6 @@ public class Track : MonoBehaviour
 
 	public Vector3 smoothposition = Vector3.zero;
 
-	private void Awake()
-	{
-	}
 
 	public static void MoveTrack(Transform trans, Path path, TrackType type, float time, float delaytime = 0f, bool smooth = false, TrackPathType trackpathtype = TrackPathType.Normal)
 	{

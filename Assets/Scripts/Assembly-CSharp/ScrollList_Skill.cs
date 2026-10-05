@@ -13,13 +13,7 @@ public class ScrollList_Skill : MonoBehaviour
 
 	private int id;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void AddItem(TUISkillListInfo m_skill_list_info, int m_index)
 	{

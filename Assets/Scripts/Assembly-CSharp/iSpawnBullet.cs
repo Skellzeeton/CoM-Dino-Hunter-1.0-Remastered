@@ -74,9 +74,6 @@ public class iSpawnBullet : MonoBehaviour
 		m_HitTargets = new HashSet<int>();
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

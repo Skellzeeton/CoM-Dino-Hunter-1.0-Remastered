@@ -16,8 +16,6 @@ public class BtnSelect_Item : MonoBehaviour
     private string texture_new  = "new2";
     private NewMarkType new_mark_type;
 
-    private void Start()  { }
-    private void Update() { }
 
     public void SetTexture(int texture_id, Popup_Show.PopupType popup_type)
     {

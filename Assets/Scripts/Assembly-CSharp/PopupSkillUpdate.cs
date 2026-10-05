@@ -10,13 +10,7 @@ public class PopupSkillUpdate : MonoBehaviour
 
 	public PopupSkillUpdateBuy btn_buy;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void ShowSkillUpdate()
 	{

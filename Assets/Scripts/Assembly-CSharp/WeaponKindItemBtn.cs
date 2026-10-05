@@ -23,9 +23,6 @@ public class WeaponKindItemBtn : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

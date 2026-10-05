@@ -23,13 +23,7 @@ public class ScrollList_WeaponItem : MonoBehaviour
 
 	private NewMarkType new_mark_type;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void DoCreate(TUIWeaponAttributeInfo m_attribute_info, Dictionary<int, NewMarkType> m_new_mark_list)
 	{

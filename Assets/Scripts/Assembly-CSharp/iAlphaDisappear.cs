@@ -13,9 +13,6 @@ public class iAlphaDisappear : MonoBehaviour
 		m_fSpeed = 1f / fTime;
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

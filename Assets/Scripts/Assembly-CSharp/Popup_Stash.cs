@@ -38,9 +38,6 @@ public class Popup_Stash : MonoBehaviour
 
 	public PopupCrystalNoEnough popup_crystal_no_enough;
 
-	private void Awake()
-	{
-	}
 
 	private void Start()
 	{
@@ -48,9 +45,6 @@ public class Popup_Stash : MonoBehaviour
 		SetSellBtnEnableEx(false);
 	}
 
-	private void Update()
-	{
-	}
 
 	public void ShowCapacityAdd()
 	{

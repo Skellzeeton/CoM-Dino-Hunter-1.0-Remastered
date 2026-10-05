@@ -32,9 +32,6 @@ public class iServerSaveData : MonoBehaviour
 		HttpClient.Instance().AddServer("DataServer", "http://192.168.0.190:8090/gameapi/gp.do", -1f, null);
 	}
 
-	private void Start()
-	{
-	}
 
 	private void Update()
 	{

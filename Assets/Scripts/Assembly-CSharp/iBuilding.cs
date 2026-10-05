@@ -51,7 +51,6 @@ public class iBuilding : MonoBehaviour
 			m_AudioController = base.gameObject.AddComponent<TAudioController>();
 	}
 
-	private void Start()  { }
 
 	private void Update()
 	{

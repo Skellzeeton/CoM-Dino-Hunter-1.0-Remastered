@@ -40,17 +40,8 @@ public class iCamera : MonoBehaviour
 		m_bActive = false;
 	}
 
-	public void Start()
-	{
-	}
 
-	public void Update()
-	{
-	}
 
-	public void LateUpdate()
-	{
-	}
 
 	public void SetRotateLimit(float pitchmin, float pitchmax, float yawmin, float yawmax)
 	{

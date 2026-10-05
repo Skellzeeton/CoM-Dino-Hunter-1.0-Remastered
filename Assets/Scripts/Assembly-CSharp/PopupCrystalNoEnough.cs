@@ -12,13 +12,7 @@ public class PopupCrystalNoEnough : MonoBehaviour
 
 	private int crystal_no_enough_count;
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void SetTitle(string m_str)
 	{

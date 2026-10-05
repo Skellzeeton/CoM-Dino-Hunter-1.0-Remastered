@@ -106,9 +106,6 @@ public class TUIScaleThumb : TUINeedUpdateBase
 		UpdateRect();
 	}
 
-	private void Start()
-	{
-	}
 
 	public void initThumbData()
 	{

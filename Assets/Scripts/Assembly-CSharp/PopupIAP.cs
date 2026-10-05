@@ -30,13 +30,7 @@ public class PopupIAP : MonoBehaviour
 		Hide();
 	}
 
-	private void Start()
-	{
-	}
 
-	private void Update()
-	{
-	}
 
 	public void Hide()
 	{
