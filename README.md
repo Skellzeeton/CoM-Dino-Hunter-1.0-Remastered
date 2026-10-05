@@ -1,5 +1,5 @@
 ## CoM Dino Hunter Legacy Remastered
-<img width="857" height="562" alt="Screenshot from 2026-04-19 04-21-41" src="https://github.com/user-attachments/assets/3e35cf23-30d5-47f7-a95f-8d82b5a598d8" />
+<img width="1328" height="876" alt="Screenshot from 2026-10-05 03-03-01" src="https://github.com/user-attachments/assets/e0a22bec-20b4-41ab-b2ce-6b1207c5bf8b" />
 
 - *credit goes to Nick for the 1.0 revival which i used to make this mod.*
 
@@ -18,6 +18,8 @@
 
 - **Rebalanced material sell prices and material drops**
 
+- **Reworked the flamethrowers to deal extra damage as burn damage along with slowing dinos up to 35% or bosses by 17.5%, they are great support now!**
+
 - **Brought back the material drops system for dinos from the 0.5 version**
 
 - **Added timed missions and also added melee only missions to the game**
@@ -30,13 +32,13 @@
 
 - **Added enraged bosses which are the new strongest dinos**
 
-- **All dinos have a 1/500 change to drop a crystal material now that sells for 1 crystal with bosses always dropping 1-3 depending on the boss**
+- **All dinos have a 1/500-1/300 chance to drop a crystal depending on the dino now with bosses always dropping 1-3 depending on the boss**
 
 - **Added two new settings to the game**
 
 - **Added more materials**
 
-- **Added a new weapon to the game**
+- **Added a new flamethrower weapon to the game**
 
 - **Added the ice map from the newer versions of the game**
 
@@ -56,7 +58,7 @@
 
 - **Added a lot of new audio and added some of the unused sounds**
 
-- **Made the audio a lot quieter overall for your own safety. It is no longer at a dangerous volume anymore**
+- **Made the audio a lot quieter and consistent overall for your own safety. It is no longer at a dangerous volume anymore**
 
 - **Made some of the audio cleaner**
 
