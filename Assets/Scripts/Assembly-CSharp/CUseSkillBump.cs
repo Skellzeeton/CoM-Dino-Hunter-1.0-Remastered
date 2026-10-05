@@ -13,6 +13,8 @@ public class CUseSkillBump : CUseSkill
 
 	protected float m_fBumpFuncTimeCount;
 
+	protected float m_fEffectiveBumpTime;
+
 	protected Vector3 m_v3Src;
 
 	protected Vector3 m_v3Dst;
@@ -33,12 +35,13 @@ public class CUseSkillBump : CUseSkill
 		m_pSkillInfoLevel.GetSkillModeValue(0, ref m_fBumpDis);
 		m_pSkillInfoLevel.GetSkillModeValue(1, ref m_fBumpTime);
 		m_pSkillInfoLevel.GetSkillModeValue(2, ref m_fBumpFuncTime);
+		m_fEffectiveBumpTime = m_fBumpTime;
 		CCharMob bumpMob = charbase as CCharMob;
 		if (bumpMob != null)
 		{
 			float slowMult = CWeaponBurnManager.Instance.GetMoveSpeedMultiplier(bumpMob);
 			if (slowMult > 0f && slowMult < 1f)
-				m_fBumpTime /= slowMult;
+				m_fEffectiveBumpTime /= slowMult;
 		}
 		m_fBumpFuncTimeCount = 0f;
 		m_v3Src = charbase.Pos;
@@ -53,7 +56,7 @@ public class CUseSkillBump : CUseSkill
 			);
 			m_v3Dst = charbase.Pos + charbase.Dir2D * m_fBumpDis;
 		}
-		m_fSpeed = m_fBumpDis / m_fBumpTime;
+		m_fSpeed = m_fBumpDis / m_fEffectiveBumpTime;
 		float speed = 1f;
 		switch (charbase.CharType)
 		{
@@ -167,22 +170,18 @@ public class CUseSkillBump : CUseSkill
 			m_fBumpFuncTimeCount = 0f;
 			SkillEffect(charbase, m_Target);
 		}
-		if (m_fBumpTimeCount < m_fBumpTime)
+		if (m_fBumpTimeCount < m_fEffectiveBumpTime)
 		{
 			m_fBumpTimeCount += deltaTime;
-			float t = Mathf.Clamp01(m_fBumpTimeCount / m_fBumpTime);
+			float t = Mathf.Clamp01(m_fBumpTimeCount / m_fEffectiveBumpTime);
 			Vector3 nextPos = Vector3.Lerp(m_v3Src, m_v3Dst, t);
 			if (charbase.IsPlayer() || charbase.IsUser())
-			{
 				nextPos = ClampBumpPositionForPlayer(charbase, nextPos);
-			}
 			charbase.Pos = nextPos;
-			if (m_fBumpTimeCount >= m_fBumpTime)
+			if (m_fBumpTimeCount >= m_fEffectiveBumpTime)
 			{
 				if (m_RushEffect != null)
-				{
 					m_RushEffect.iRushEffect_StopEffect();
-				}
 				return kUseSkillStatus.Success;
 			}
 		}

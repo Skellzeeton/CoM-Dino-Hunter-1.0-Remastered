@@ -8,9 +8,9 @@ public class CWeaponBurnManager : MonoBehaviour
     public const float TickInterval = 1f;
     public const float DisplayInterval = 1f;
 
-    private const float NormalSlowPerStack = 0.02f;
+    private const float NormalSlowPerStack = 0.035f;
     private const float NormalMaxSlow = 0.35f;
-    private const float BossSlowPerStack = 0.01f;
+    private const float BossSlowPerStack = 0.0175f;
     private const float BossMaxSlow = 0.175f;
 
     private class BurnState
@@ -26,6 +26,14 @@ public class CWeaponBurnManager : MonoBehaviour
         public float accumulatedDamage;
         public float timer;
         public Action<CCharMob, float> showText;
+    }
+
+    private class SlowEntry
+    {
+        public float baseSpeed;
+        public float lastAppliedSpeed;
+        public float lastMult = 1f;
+        public int   lastStacks;
     }
 
     private static CWeaponBurnManager s_Instance;
@@ -46,10 +54,9 @@ public class CWeaponBurnManager : MonoBehaviour
 
     private readonly Dictionary<CCharMob, List<BurnState>> m_Burns = new Dictionary<CCharMob, List<BurnState>>();
     private readonly Dictionary<CCharMob, DisplayState> m_Displays = new Dictionary<CCharMob, DisplayState>();
+    private readonly Dictionary<CCharMob, SlowEntry> m_Slows = new Dictionary<CCharMob, SlowEntry>();
     private readonly List<CCharMob> m_PendingMobRemoval = new List<CCharMob>();
     private readonly List<BurnState> m_PendingBurnRemoval = new List<BurnState>();
-
-    private readonly Dictionary<CCharMob, float> m_OriginalMoveSpeeds = new Dictionary<CCharMob, float>();
 
     private void Awake()
     {
@@ -67,9 +74,9 @@ public class CWeaponBurnManager : MonoBehaviour
             s_Instance = null;
         m_Burns.Clear();
         m_Displays.Clear();
+        m_Slows.Clear();
         m_PendingMobRemoval.Clear();
         m_PendingBurnRemoval.Clear();
-        m_OriginalMoveSpeeds.Clear();
     }
 
     private bool IsGameActive()
@@ -160,7 +167,7 @@ public class CWeaponBurnManager : MonoBehaviour
 
     private void RefreshBurnSlow(CCharMob mob)
     {
-        if (mob == null)
+        if (mob == null || mob.Property == null)
             return;
         List<BurnState> burns;
         if (!m_Burns.TryGetValue(mob, out burns) || burns.Count <= 0 || mob.isDead)
@@ -168,33 +175,65 @@ public class CWeaponBurnManager : MonoBehaviour
             RestoreMobSpeed(mob);
             return;
         }
-        float originalSpeed;
-        if (!m_OriginalMoveSpeeds.TryGetValue(mob, out originalSpeed))
-        {
-            originalSpeed = mob.Property.GetValue(kProEnum.MoveSpeed);
-            m_OriginalMoveSpeeds[mob] = originalSpeed;
-        }
+        int stacks = burns.Count;
         bool isBoss = mob.IsBoss();
         float slowPerStack = isBoss ? BossSlowPerStack : NormalSlowPerStack;
-        float maxSlow = isBoss ? BossMaxSlow : NormalMaxSlow;
-        float slow = Mathf.Min(maxSlow, burns.Count * slowPerStack);
-        float speedMultiplier = 1f - slow;
-        mob.Property.SetValueBase(kProEnum.MoveSpeed, originalSpeed * speedMultiplier);
+        float maxSlow      = isBoss ? BossMaxSlow      : NormalMaxSlow;
+        float slow = Mathf.Min(maxSlow, stacks * slowPerStack);
+        float mult = 1f - slow;
+        SlowEntry entry;
+        float currentBase = mob.Property.GetValueBase(kProEnum.MoveSpeed);
+        if (!m_Slows.TryGetValue(mob, out entry))
+        {
+            entry = new SlowEntry
+            {
+                baseSpeed        = currentBase,
+                lastAppliedSpeed = currentBase,
+                lastMult         = 1f,
+                lastStacks       = 0
+            };
+            m_Slows[mob] = entry;
+        }
+        else if (!Mathf.Approximately(currentBase, entry.lastAppliedSpeed))
+        {
+            float externalRatio = currentBase / entry.lastAppliedSpeed;
+            entry.baseSpeed *= externalRatio;
+        }
+        float target = entry.baseSpeed * mult;
+        if (!Mathf.Approximately(target, entry.lastAppliedSpeed) ||
+        !Mathf.Approximately(mult,   entry.lastMult) ||
+        stacks != entry.lastStacks)
+        {
+            mob.Property.SetValueBase(kProEnum.MoveSpeed, target);
+            entry.lastAppliedSpeed = target;
+            entry.lastMult         = mult;
+            entry.lastStacks       = stacks;
+        }
     }
 
     private void RestoreMobSpeed(CCharMob mob)
     {
         if (ReferenceEquals(mob, null))
             return;
-        float originalSpeed;
-        if (m_OriginalMoveSpeeds.TryGetValue(mob, out originalSpeed))
+        SlowEntry entry;
+        if (!m_Slows.TryGetValue(mob, out entry))
+            return;
+        if (mob.Property != null)
         {
-            if (mob != null && mob.Property != null)
+            float currentBase = mob.Property.GetValueBase(kProEnum.MoveSpeed);
+            float toRestore;
+            if (Mathf.Approximately(currentBase, entry.lastAppliedSpeed))
             {
-                mob.Property.SetValueBase(kProEnum.MoveSpeed, originalSpeed);
+                toRestore = entry.baseSpeed;
             }
-            m_OriginalMoveSpeeds.Remove(mob);
+            else
+            {
+                float externalRatio = currentBase / entry.lastAppliedSpeed;
+                toRestore = entry.baseSpeed * externalRatio;
+            }
+            mob.Property.SetValueBase(kProEnum.MoveSpeed, toRestore);
         }
+        m_Slows.Remove(mob);
     }
 
     private void Update()
