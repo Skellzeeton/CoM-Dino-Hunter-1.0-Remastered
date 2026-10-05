@@ -38,6 +38,23 @@ public class CCharMob : CCharBase
 
 	protected Dictionary<int, Vector3> m_dictAssistAim;
 
+	[NonSerialized]
+	public bool m_bIsOffNavMesh = false;
+
+	[NonSerialized]
+	public bool m_bRecoveryActive = false;
+
+	[NonSerialized]
+	private float m_fNavMeshCheckTime = 0f;
+
+	private const float NavMeshCheckInterval  = 2.5f;
+
+	private const float NavMeshMaxDistance    = 5f;
+
+	private const float NavMeshTeleportThreshold = 2.5f;
+
+	private UnityEngine.AI.NavMeshHit m_CachedNavMeshHit;
+
 	public CSkillComboInfo m_pSkillComboInfo;
 
 	public int m_nCurComboIndex;
@@ -78,6 +95,9 @@ public class CCharMob : CCharBase
 
 	[NonSerialized]
 	public float m_fFreezeTime;
+
+	[NonSerialized]
+	public bool m_bIsFlyingMob = false;
 
 	public iBuilding m_TargetBuilding;
 
@@ -172,6 +192,30 @@ public class CCharMob : CCharBase
 		}
 		base.Update();
 		float num = Time.deltaTime * m_fTimeScale;
+		if (m_GameScene != null && m_GameScene.IsRoomMaster() && !base.isDead)
+		{
+			m_fNavMeshCheckTime -= num;
+			if (m_fNavMeshCheckTime <= 0f)
+			{
+				m_fNavMeshCheckTime = NavMeshCheckInterval;
+				if (!IsOnNavMesh())
+				{
+					if (!m_bRecoveryActive)
+					{
+						RecoverToNavMesh();
+					}
+				}
+				else if (m_bIsOffNavMesh || m_bRecoveryActive)
+				{
+					m_bIsOffNavMesh = false;
+					m_bRecoveryActive = false;
+				}
+			}
+			if (m_bRecoveryActive)
+			{
+				CheckRecoveryComplete();
+			}
+		}
 		if (m_Behavior != null)
 		{
 			m_Behavior.Update(this, num);
@@ -630,6 +674,10 @@ public class CCharMob : CCharBase
 		{
 			m_LifeBar = gameUI.CreateLifeBar(this);
 		}
+		m_bIsOffNavMesh = false;
+		m_bRecoveryActive = false;
+		m_fNavMeshCheckTime = 0f;
+		m_bIsFlyingMob = false;
 		InitAssistAimInfo();
 	}
 
@@ -691,6 +739,7 @@ public class CCharMob : CCharBase
 			}
 			m_Behavior.Install(node);
 			OnEnterAI(nCurAIID, nAI);
+			m_bIsFlyingMob = (aIInfo.nBehavior == 2);
 		}
 	}
 
@@ -763,6 +812,84 @@ public class CCharMob : CCharBase
 		for (int i = 0; i < navMeshPath.corners.Length; i++)
 		{
 			m_ltPath.Add(navMeshPath.corners[i]);
+		}
+	}
+
+	public bool IsOnNavMesh()
+	{
+		if (!m_bIsOffNavMesh &&
+		Vector3.Distance(base.Pos, m_CachedNavMeshHit.position) < 0.05f)
+		{
+			return true;
+		}
+		if (UnityEngine.AI.NavMesh.SamplePosition(
+				base.Pos,
+				out m_CachedNavMeshHit,
+				1.0f,
+				UnityEngine.AI.NavMesh.AllAreas))
+		{
+			float distance = Vector3.Distance(base.Pos, m_CachedNavMeshHit.position);
+			return distance < 0.05f;
+		}
+		return false;
+	}
+
+	public bool GetNearestNavMeshPoint(out Vector3 nearestPoint)
+	{
+		if (m_CachedNavMeshHit.hit &&
+		Vector3.Distance(base.Pos, m_CachedNavMeshHit.position) < NavMeshMaxDistance)
+		{
+			nearestPoint = m_CachedNavMeshHit.position;
+			return true;
+		}
+		if (UnityEngine.AI.NavMesh.SamplePosition(
+				base.Pos,
+				out m_CachedNavMeshHit,
+				NavMeshMaxDistance,
+				UnityEngine.AI.NavMesh.AllAreas))
+		{
+			nearestPoint = m_CachedNavMeshHit.position;
+			return true;
+		}
+		nearestPoint = Vector3.zero;
+		return false;
+	}
+
+	public bool RecoverToNavMesh()
+	{
+		Vector3 nearestPoint;
+		if (!GetNearestNavMeshPoint(out nearestPoint))
+		{
+			return false;
+		}
+		float distanceToNavMesh = Vector3.Distance(base.Pos, nearestPoint);
+		if (distanceToNavMesh < NavMeshTeleportThreshold)
+		{
+			base.transform.position = nearestPoint;
+			m_bIsOffNavMesh    = false;
+			m_bRecoveryActive  = false;
+			return true;
+		}
+		m_ltPath.Clear();
+		m_ltPath.Add(nearestPoint);
+		m_bHasPurposePoint  = true;
+		m_v3PurposePoint    = nearestPoint;
+		m_bIsOffNavMesh     = true;
+		m_bRecoveryActive   = true;
+		ResetAI();
+		return true;
+	}
+
+	public void CheckRecoveryComplete()
+	{
+		if (!m_bRecoveryActive)
+			return;
+		if (m_ltPath.Count == 0 ||
+		Vector3.Distance(base.Pos, m_v3PurposePoint) < 0.06f)
+		{
+			m_bRecoveryActive = false;
+			m_bIsOffNavMesh   = false;
+			m_bHasPurposePoint = false;
 		}
 	}
 }

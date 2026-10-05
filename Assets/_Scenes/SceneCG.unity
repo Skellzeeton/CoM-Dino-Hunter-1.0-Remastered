@@ -297,11 +297,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToPreload:
   - prefab: {fileID: 1560494770998771, guid: d23db6e89fe44ab41937004a36a4e4ea, type: 3}
-  - prefab: {fileID: 1699980911718780, guid: 6298c68cb47599b4ab3c75c15ae58fe1, type: 3}
+  - prefab: {fileID: 1102869035601409, guid: c5b30f48f878a3a4e91e6c0f2b9b6ea0, type: 3}
   - prefab: {fileID: 1047560171733073, guid: f2a34687c4ef9db4399f5d08ae5495b2, type: 3}
   - prefab: {fileID: 1921226980896773, guid: 175d4ce897c1d9c4ba4fa7657c9ba847, type: 3}
   - prefab: {fileID: 1572689102572129, guid: 592ddb9d4c8e78346bbf29505d98f677, type: 3}
-  - prefab: {fileID: 1095330877428080, guid: af3885f2424b98744ac96ec4f50235e7, type: 3}
+  - prefab: {fileID: 1798180357201212, guid: 8cc2cd795a4d6e146b64c50323780a5c, type: 3}
   - prefab: {fileID: 1504228811745573, guid: 58138ed8d51109b428741c1603253e31, type: 3}
 --- !u!4 &627049958
 Transform:
@@ -354,7 +354,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 9
+  serializedVersion: 10
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
@@ -369,6 +369,12 @@ LightingSettings:
   m_BakeResolution: 2
   m_Padding: 2
   m_LightmapCompression: 3
+  m_LightmapPackingMode: 1
+  m_LightmapPackingMethod: 0
+  m_XAtlasPackingAttempts: 16384
+  m_XAtlasBruteForce: 0
+  m_XAtlasBlockAlign: 0
+  m_XAtlasRepackUnderutilizedLightmaps: 1
   m_AO: 1
   m_AOMaxDistance: 1
   m_CompAOExponent: 1

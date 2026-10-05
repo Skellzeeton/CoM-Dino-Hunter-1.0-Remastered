@@ -4,15 +4,19 @@ using UnityEngine;
 public class doRandomFlyHeightTask : Task
 {
     protected iGameSceneBase m_GameScene;
+    private float m_fTimeToNextChange = 0f;
+    private Vector3 m_v3LastDirection = Vector3.zero;
 
     public doRandomFlyHeightTask(Node node)
-        : base(node)
+    : base(node)
     {
     }
 
     public override void OnEnter(Object inputParam)
     {
         m_GameScene = iGameApp.GetInstance().m_GameScene;
+        m_fTimeToNextChange = 0f;
+        m_v3LastDirection = Vector3.zero;
     }
 
     public override kTreeRunStatus OnUpdate(Object inputParam, float deltaTime)
@@ -22,32 +26,93 @@ public class doRandomFlyHeightTask : Task
         {
             return kTreeRunStatus.Failture;
         }
-        bool flag = false;
-        for (int num = 5; num > 0; num--)
+        CCharUser user = m_GameScene != null ? m_GameScene.GetUser() : null;
+        if (user == null)
         {
-            Vector3 vector = cCharMob.Pos + new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
-            vector.y = m_GameScene.m_fNavPlane;
-            Vector3 vector2 = vector - cCharMob.Pos;
-            float magnitude = vector2.magnitude;
-            if (!Physics.Raycast(cCharMob.Pos, vector2 / magnitude, magnitude, int.MinValue))
+            return kTreeRunStatus.Success;
+        }
+        m_fTimeToNextChange -= deltaTime;
+        float distToUser = Vector3.Distance(cCharMob.Pos, user.Pos);
+        bool shouldChange = m_fTimeToNextChange <= 0f ||
+        distToUser > doFlyParameters.MaxDistanceFromUser;
+        if (!shouldChange)
+        {
+            return kTreeRunStatus.Success;
+        }
+        m_fTimeToNextChange = Random.Range(doFlyParameters.ChangeIntervalMin,
+                doFlyParameters.ChangeIntervalMax);
+        Vector3 target = GenerateCombatPosition(cCharMob, user);
+        cCharMob.m_v3BirthPos = target;
+        return kTreeRunStatus.Success;
+    }
+
+    private Vector3 GenerateCombatPosition(CCharMob cCharMob, CCharUser user)
+    {
+        Vector3 target = Vector3.zero;
+        bool found = false;
+        int attempts = 8;
+        for (int i = 0; i < attempts; i++)
+        {
+            Vector2 randomCircle = Random.insideUnitCircle *
+            Random.Range(doFlyParameters.MinRandomRadius, doFlyParameters.MaxRandomRadius);
+            Vector3 candidate = user.Pos + new Vector3(randomCircle.x, 0f, randomCircle.y);
+            candidate.y = m_GameScene.m_fNavPlane;
+            if (IsValidPosition(cCharMob, candidate))
             {
-                cCharMob.m_v3BirthPos = vector;
-                flag = true;
+                Vector3 newDirection = candidate - cCharMob.Pos;
+                newDirection.y = 0f;
+                if (m_v3LastDirection != Vector3.zero)
+                {
+                    float angle = Vector3.Angle(m_v3LastDirection, newDirection);
+                    if (angle < 60f && i < attempts - 1)
+                        continue;
+                }
+                target = candidate;
+                found = true;
+                m_v3LastDirection = newDirection.normalized;
                 break;
             }
         }
-        if (!flag)
+        if (!found)
         {
-            CCharUser user = m_GameScene.GetUser();
-            if (user != null)
+            Vector3 toUser = user.Pos - cCharMob.Pos;
+            toUser.y = 0f;
+            if (toUser.sqrMagnitude > 0.001f)
             {
-                Vector3 vector3 = user.Pos - cCharMob.Pos;
-                if (vector3 != Vector3.zero)
-                {
-                    cCharMob.m_v3BirthPos = cCharMob.Pos + vector3.normalized * 10f;
-                }
+                Vector3 dirToUser = toUser.normalized;
+                float fallbackDist = Mathf.Min(
+                        Vector3.Distance(cCharMob.Pos, user.Pos),
+                        doFlyParameters.MaxDistanceFromUser * 0.7f
+                );
+                Vector2 randomPerp = Random.insideUnitCircle * 3f;
+                Vector3 perp = Vector3.Cross(dirToUser, Vector3.up).normalized * randomPerp.x;
+                target = cCharMob.Pos + dirToUser * fallbackDist + perp;
+                target.y = m_GameScene.m_fNavPlane;
+            }
+            else
+            {
+                target = cCharMob.Pos;
             }
         }
-        return kTreeRunStatus.Success;
+        Vector3 offsetFromUser = target - user.Pos;
+        offsetFromUser.y = 0f;
+        if (offsetFromUser.magnitude > doFlyParameters.MaxDistanceFromUser)
+        {
+            offsetFromUser = offsetFromUser.normalized * doFlyParameters.MaxDistanceFromUser;
+            target = user.Pos + offsetFromUser;
+            target.y = m_GameScene.m_fNavPlane;
+        }
+        return target;
+    }
+
+    private bool IsValidPosition(CCharMob cCharMob, Vector3 position)
+    {
+        Vector3 toPosition = position - cCharMob.Pos;
+        float distance = toPosition.magnitude;
+        if (distance < 0.5f)
+            return false;
+        if (Physics.Raycast(cCharMob.Pos, toPosition / distance, distance, int.MinValue))
+            return false;
+        return true;
     }
 }

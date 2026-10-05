@@ -5,10 +5,12 @@ public class gyUISkillButton : MonoBehaviour
 	public UIFilledSprite mMask;
 	public UISprite mIcon;
 	public UISprite mIconAnim;
+	public UILabel mCooldownLabel;
 	protected bool m_bCD;
 	protected float m_fTime;
 	protected float m_fTimeCount;
 	private bool m_bFinishTweenPlayed;
+	public bool m_bPause { get; set; }
 
 	private void Awake()
 	{
@@ -17,11 +19,17 @@ public class gyUISkillButton : MonoBehaviour
 			mMask.fillAmount = 0f;
 		}
 		m_bFinishTweenPlayed = false;
+		m_bPause = false;
+		if (mCooldownLabel != null)
+		{
+			mCooldownLabel.text = "";
+			mCooldownLabel.gameObject.SetActiveRecursively(false);
+		}
 	}
 
 	private void Update()
 	{
-		if (!m_bCD)
+		if (!m_bCD || m_bPause)
 		{
 			return;
 		}
@@ -52,9 +60,24 @@ public class gyUISkillButton : MonoBehaviour
 		{
 			FinishCD();
 		}
-		else if (mMask != null)
+		else
 		{
-			mMask.fillAmount = 1f - (m_fTimeCount / m_fTime);
+			if (mMask != null)
+			{
+				mMask.fillAmount = 1f - (m_fTimeCount / m_fTime);
+			}
+			if (mCooldownLabel != null && mCooldownLabel.gameObject.activeSelf)
+			{
+				float remaining = m_fTime - m_fTimeCount;
+				if (remaining <= 5f)
+				{
+					mCooldownLabel.text = "[FF0000]" + remaining.ToString("0.0") + "s[-]";
+				}
+				else
+				{
+					mCooldownLabel.text = remaining.ToString("0.0") + "s";
+				}
+			}
 		}
 	}
 
@@ -88,18 +111,34 @@ public class gyUISkillButton : MonoBehaviour
 		{
 			mMask.fillAmount = 1f;
 		}
+		if (mCooldownLabel != null)
+		{
+			mCooldownLabel.gameObject.SetActive(true);
+			float remaining = m_fTime;
+			if (remaining <= 5f)
+			{
+				mCooldownLabel.text = "[FF0000]" + remaining.ToString("0.0") + "s[-]";
+			}
+			else
+			{
+				mCooldownLabel.text = remaining.ToString("0.0") + "s";
+			}
+		}
 	}
 
 	public void FinishCD()
 	{
 		m_bCD = false;
 		m_fTimeCount = m_fTime;
-
 		if (mMask != null)
 		{
 			mMask.fillAmount = 0f;
 		}
-
+		if (mCooldownLabel != null)
+		{
+			mCooldownLabel.text = "";
+			mCooldownLabel.gameObject.SetActive(false);
+		}
 		if (m_bFinishTweenPlayed)
 		{
 			return;
