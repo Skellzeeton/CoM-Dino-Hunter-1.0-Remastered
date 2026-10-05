@@ -27,10 +27,6 @@ public class gyUIPanelRevive : MonoBehaviour
 		m_bPause = false;
 	}
 
-	private void Start()
-	{
-	}
-
 	private void Update()
 	{
 		if (!m_bShow || m_bPause)

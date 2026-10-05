@@ -444,14 +444,13 @@ public class iGameUIBase : MonoBehaviour
 	{
 		if (!(m_UIManager == null) && !(m_UIManager.mPanelRevive == null))
 		{
-			return;
-			/*m_UIManager.mPanelRevive.Show(bShow);
+			m_UIManager.mPanelRevive.Show(bShow);
 			if (bShow)
 			{
 				m_UIManager.mPanelRevive.ShowStatistcs(true);
 				m_UIManager.mPanelRevive.SetLostGold(m_GameState.GainGoldInGame);
 				m_UIManager.mPanelRevive.SetReviveTime(10f);
-			}*/
+			}
 		}
 	}
 
@@ -1467,12 +1466,12 @@ public class iGameUIBase : MonoBehaviour
 		{
 			return;
 		}
-		if (dataCenter.Crystal < 10)
+		if (dataCenter.Crystal < 5)
 		{
-			m_GameScene.StartIAPPurchase(10 - dataCenter.Crystal);
+			m_GameScene.StartIAPPurchase(5 - dataCenter.Crystal);
 			return;
 		}
-		dataCenter.AddCrystal(-10);
+		dataCenter.AddCrystal(-5);
 		dataCenter.Save();
 		CUISound.GetInstance().Play("UI_Crystal");
 		m_GameScene.ReviveGame();

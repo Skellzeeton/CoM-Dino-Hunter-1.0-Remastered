@@ -175,6 +175,8 @@ public class iGameSceneBase
 
 	protected iBuilding m_Building;
 
+	protected bool m_bHasRevived;
+
 	protected float m_fLightningTimer;
 
 	protected float m_fLightningActiveTimer;
@@ -262,6 +264,11 @@ public class iGameSceneBase
 		{
 			return m_bPause;
 		}
+	}
+
+	public bool CanRevive
+	{
+		get { return !m_bHasRevived; }
 	}
 
 	public virtual void Initialize()
@@ -495,6 +502,7 @@ public class iGameSceneBase
 	{
 		ClearNPC();
 		ClearPlayer();
+		m_bHasRevived = false;
 		if (m_TaskManager != null)
 		{
 			m_TaskManager.Reset();
@@ -842,6 +850,7 @@ public class iGameSceneBase
 		m_StatusTime = 1f;
 		m_StatusTimeCount = 0f;
 		m_bMissionSuccess = false;
+		m_bHasRevived = false;
 		PrefabLoadResource();
 		iGameApp.GetInstance().Flurry_EnterStage(m_curGameLevelInfo.nID);
 		m_GameUI.HideGameUI();
@@ -1002,18 +1011,18 @@ public class iGameSceneBase
 
 	public virtual void GameOver(bool bSuccess)
 	{
-		if (m_User.isDead)
+		if (m_User.isDead && !m_bHasRevived)
 		{
 			m_Status = kGameStatus.GameOver_Revive;
 			m_StatusStep = 0;
-			m_StatusTime = 4f;
+			m_StatusTime = 10f;
 			m_StatusTimeCount = 0f;
 			CSoundScene.GetInstance().StopBGM();
 			CSoundScene.GetInstance().StopAmbienceBGM();
-			m_GameUI.ShowRevive(false);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+			m_GameUI.ShowRevive(true);
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
 		else
 		{
 			m_Status = kGameStatus.GameOver;
@@ -1137,13 +1146,14 @@ public class iGameSceneBase
 
 	public virtual void ReviveGame()
 	{
+		m_bHasRevived = true;
 		m_Status = kGameStatus.Gameing;
 		m_bMissionSuccess = false;
 		Time.timeScale = 1f;
 		m_GameUI.ShowRevive(false);
 		m_GameUI.ShowGameUI();
 		m_User.Revive(m_User.Property.GetValue(kProEnum.HPMax));
-		m_User.AddBuff(10, 4f);
+		m_User.AddBuff(10, 5f);
 		m_User.ResetSkillCD();
 		if (m_bIsSkyScene && CurGameLevelInfo != null)
 		{

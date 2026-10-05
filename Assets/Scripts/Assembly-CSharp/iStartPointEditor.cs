@@ -29,14 +29,6 @@ public class iStartPointEditor : MonoBehaviour
 		base.gameObject.name = "iStartPointEditor";
 	}
 
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
-
 	private void OnEnable()
 	{
 		if (m_StartPointManager == null)
@@ -44,18 +36,6 @@ public class iStartPointEditor : MonoBehaviour
 			m_StartPointManager = new CStartPointManager();
 		}
 		Load();
-	}
-
-	private void OnDisable()
-	{
-	}
-
-	private void OnDestroy()
-	{
-	}
-
-	private void OnLevelWasLoaded()
-	{
 	}
 
 	private void OnDrawGizmos()
